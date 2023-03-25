@@ -604,7 +604,7 @@ country_event = {		#Italy Reunited
 	trigger = {
 		OR = {
 			SRD = {
-				has_completed_focus = SRD_kingdom_of_italy
+				has_completed_focus = SRD_italia_riunita
 				owns_state = 2
 				owns_state = 158
 				owns_state = 160
@@ -860,9 +860,7 @@ country_event = {		#Death of Valois
 	is_triggered_only = no
 	
 	trigger = {
-		FRA = {
-			has_country_flag = FRA_valois_is_dead
-		}
+		64 = { is_owned_and_controlled_by = FRA }
 	}
 
 	fire_only_once = yes

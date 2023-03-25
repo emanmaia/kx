@@ -1018,6 +1018,18 @@ leader_traits = {
 		political_power_gain = 0.15
 		improve_relations_maintain_cost_factor = -0.25
 	}
+	### Sardinia
+	SRD_Explorer_King = { #Amedeo I, initial
+		random = no
+		stability_factor = 0.05
+		political_power_cost = 0.05
+	}
+	SRD_Iron_King = { #Amedeo I, upgraded
+		random = no
+		stability_factor = 0.1
+		army_org_factor = 0.05
+		army_morale_factor = 0.1
+	}
 	#### M.O.J.
 	fervent_educator = {
 		random = no
@@ -1130,6 +1142,57 @@ leader_traits = {
 		army_morale_factor = 0.05
 		experience_gain_army = 0.01
 	}
+	### Albania
+	honor_bound = {
+        political_power_gain = 0.16
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
+    courage_teuta = {
+        army_morale_factor = 0.08
+
+        ai_will_do = {
+            factor = 1
+        }
+    } 
+    
+    like_maximinus_thrax = {
+        army_attack_factor = 0.08
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    
+    good_of_pyrrhus = {
+        army_defence_factor = 0.08
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+    
+    my_will_alone = {
+        political_power_gain = 0.1
+        war_support_factor = 0.14
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+	
+	socialism_star = {
+        stability_factor = 0.07
+	political_power_gain = 0.1
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+	
 	### Armenia
 	ARM_national_savior = {
 		random = no

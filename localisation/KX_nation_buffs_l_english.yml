@@ -1,5 +1,6 @@
 ﻿l_english: 
  # A
+ custom_diff_strong_abk:0 "@ABK Strengthen Abkhazia"
  custom_diff_strong_afg:0 "@AFG Strengthen Afghanistan"
  custom_diff_strong_ala:0 "@ALA Strengthen Alaska"
  custom_diff_strong_alb:0 "@ALB Strengthen Albania"
@@ -137,12 +138,14 @@
  custom_diff_strong_ngr:0 "@NGR Strengthen the Nigerian Free State"
  custom_diff_strong_nic:0 "@NIC Strengthen Nicaragua"
  custom_diff_strong_nmb:0 "@NMB Strengthen Die Alten Kämpfer"
+ custom_diff_strong_nor:0 "@NOR Strengthen Norway"
  custom_diff_strong_nsw:0 "@NSW Strengthen Neuschwabenland"
+ custom_diff_strong_nvn:0 "@NVN Strengthen the Navajo Nation"
  custom_diff_strong_nyc:0 "@NYC Strengthen New York City"
 
  # O
  custom_diff_strong_oma:0 "@OMA Strengthen Muscat"
- custom_diff_strong_ott:0 "@OTT Strengthen the Ottoman Empire"
+ custom_diff_strong_tur:0 "@TUR Strengthen the Ottoman Empire"
 
  # P
  custom_diff_strong_pal:0 "@PAL Strengthen the Mutasarrifate of Jerusalem"
@@ -208,6 +211,7 @@
  custom_diff_strong_uzb:0 "@UZB Strengthen the Khanate of Khiva"
 
  # V 
+ custom_diff_strong_vin:0 "@VIN Strengthen Vietnam"
  custom_diff_strong_vnc:0 "@VNC Strengthen Venice"
  # W
  custom_diff_strong_wal:0 "@WAL Strengthen the Welsh Union"

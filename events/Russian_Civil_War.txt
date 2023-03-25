@@ -3131,7 +3131,10 @@ country_event = {
 		hidden_effect = {
 			every_state = {
 				limit = {
-					is_core_rrf_state = yes
+					OR = {
+						is_core_rrf_state = yes
+						state = 821
+					}
 				}
 				add_core_of = RUS
 				remove_core_of = RRF
@@ -3165,7 +3168,10 @@ country_event = {
 		hidden_effect = {
 			every_state = {
 				limit = {
-					is_core_rrf_state = yes
+					OR = {
+						is_core_rrf_state = yes
+						state = 821
+					}
 				}
 				add_core_of = RUS
 				remove_core_of = RRF
@@ -3188,7 +3194,10 @@ country_event = {
 		hidden_effect = {
 			every_state = {
 				limit = {
-					is_core_rrf_state = yes
+					OR = {
+						is_core_rrf_state = yes
+						state = 821
+					}
 				}
 				add_core_of = RUS
 				remove_core_of = RRF
@@ -3211,7 +3220,10 @@ country_event = {
 		hidden_effect = {
 			every_state = {
 				limit = {
-					is_core_rrf_state = yes
+					OR = {
+						is_core_rrf_state = yes
+						state = 821
+					}
 				}
 				add_core_of = RUS
 				remove_core_of = RRF
@@ -3234,7 +3246,10 @@ country_event = {
 		hidden_effect = {
 			every_state = {
 				limit = {
-					is_core_rrf_state = yes
+					OR = {
+						is_core_rrf_state = yes
+						state = 821
+					}
 				}
 				add_core_of = RUS
 				remove_core_of = RRF
@@ -3252,7 +3267,10 @@ country_event = {
 		hidden_effect = {
 			every_state = {
 				limit = {
-					is_core_rrf_state = yes
+					OR = {
+						is_core_rrf_state = yes
+						state = 821
+					}
 				}
 				add_core_of = RUS
 				remove_core_of = RRF
@@ -3503,7 +3521,7 @@ country_event = { #RCW
 			remove_ideas = rus_divided_staff2
 			remove_ideas = rus_divided_marine
 			remove_ideas = rus_brest_litovsk
-			remove_ideas = rus_memories_of_rev
+			remove_ideas = RUS_scars_of_russian_revolution
 			RUS_remove_riga_accords = yes		
 			every_country = {
 				limit = {
@@ -3661,7 +3679,7 @@ country_event = { #RCW
 			remove_ideas = rus_divided_staff2
 			remove_ideas = rus_divided_marine
 			remove_ideas = rus_brest_litovsk
-			remove_ideas = rus_memories_of_rev
+			remove_ideas = RUS_scars_of_russian_revolution
 			RUS_remove_riga_accords = yes		
 			every_country = {
 				limit = {
@@ -4358,7 +4376,7 @@ country_event = { #RCW
 						remove_ideas = rus_divided_staff2
 						remove_ideas = rus_divided_marine
 						remove_ideas = rus_brest_litovsk
-						remove_ideas = rus_memories_of_rev
+						remove_ideas = RUS_scars_of_russian_revolution
 						RUS_remove_riga_accords = yes		
 						every_country = {
 							limit = {
@@ -4508,7 +4526,7 @@ country_event = { #RCW
 			remove_ideas = rus_divided_staff2
 			remove_ideas = rus_divided_marine
 			remove_ideas = rus_brest_litovsk
-			remove_ideas = rus_memories_of_rev
+			remove_ideas = RUS_scars_of_russian_revolution
 			RUS_remove_riga_accords = yes		
 			every_country = {
 				limit = {

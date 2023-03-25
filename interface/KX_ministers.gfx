@@ -213,6 +213,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/CAL/CAL_Tamon_Yamaguchi.png"
 	}
 	spriteType = {
+		name = "GFX_idea_CAL_Kichisaburo_Nomura_hog_pau"
+		texturefile = "gfx/interface/ministers/CAL/CAL_Kichisaburo_Nomura.png"
+	}
+	spriteType = {
 		name = "GFX_idea_CAL_Norton_II_hog_pau"
 		texturefile = "gfx/interface/ministers/CAL/CAL_Norton_II.png"
 	}
@@ -2532,6 +2536,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_SRI_Arturo_Labriola_hog_rso"
 		texturefile = "gfx/interface/ministers/SRI/SRI_Arturo_Labriola.png"
+	}
+	spriteType = {
+		name = "GFX_idea_SRI_Riccardo_Lombardi_hog_rso"
+		texturefile = "gfx/interface/ministers/SRI/SRI_Riccardo_Lombardi.png"
 	}
 	spriteType = {
 		name = "GFX_idea_NFA_Louis_Napoleon_Bonaparte_hog_pau"

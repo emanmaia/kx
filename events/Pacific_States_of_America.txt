@@ -4998,49 +4998,38 @@ country_event = { # America is reunited
 			NOT = {
 				has_global_flag = CAl_peaceoutgang
 			}
-			NOT = {
-				OR = {
-					has_country_flag = PSA_Norton_america
-					has_country_flag = CAL_JAP_USA
-					has_country_flag = USA_spiritualist
+		}
+		set_country_flag = PSA_reunited_america_flag
+		if = {
+		limit = {
+		has_country_flag = CAL_JAP_USA
+		}
+		set_cosmetic_tag = CAL_JAP_USA
+		}
+		if = {
+		limit = {
+		has_country_flag = USA_SPIRITUALIST
+		}
+		set_cosmetic_tag = USA_SPIRITUALIST
+		}
+		if = {
+		limit = {
+		has_country_flag = CAL_Norton_PSA_flag
+		}
+		set_cosmetic_tag = CAL_Norton_PSA
+		}
+		if = {
+		limit = {
+		OR = {
+		NOT = {
+		has_country_flag = USA_SPIRITUALIST
+		has_country_flag = CAL_JAP_USA
+		has_country_flag = CAL_Norton_PSA_flag
 				}
 			}
 		}
-		set_country_flag = PSA_reunited_america_flag
 		set_cosmetic_tag = NEE_america
-		every_state = {
-			remove_ACW_cores = yes
 		}
-	}
-	option = { # at long last we are reunited
-		name = pacificstates.22.a
-		trigger = {
-			has_country_flag = CAL_JAP_USA
-		}
-		set_country_flag = PSA_reunited_america_flag
-		set_cosmetic_tag = CAL_JAP_USA
-		every_state = {
-			remove_ACW_cores = yes
-		}
-	}
-	option = { # at long last we are reunited
-		name = pacificstates.22.a
-		trigger = {
-			has_country_flag = USA_spiritualist
-		}
-		set_country_flag = PSA_reunited_america_flag
-		set_cosmetic_tag = USA_spiritualist
-		every_state = {
-			remove_ACW_cores = yes
-		}
-	}
-	option = { # at long last we are reunited
-		name = pacificstates.22.a
-		trigger = {
-			has_country_flag = CAL_Norton_PSA_flag
-		}
-		set_country_flag = PSA_reunited_america_flag
-		set_cosmetic_tag = CAL_Norton_PSA
 		every_state = {
 			remove_ACW_cores = yes
 		}
@@ -10711,7 +10700,7 @@ country_event = {# Bodin Addresses Congress
 			ruling_party = national_populist
 			elections_allowed = no
 		}
-		set_country_flag = USA_spiritualist
+		set_country_flag = USA_SPIRITUALIST
 		
 		remove_all_ministers = yes
 		
@@ -11125,7 +11114,7 @@ country_event = {# International Outcry
 	}
 }
 
-country_event = {# Boden Removed
+country_event = {# Bodin Removed
 	id = pacificstates.358
 	immediate = {log = "[GetDateText]: [Root.GetName]: event pacificstates.358"}
 	title = pacificstates.358.t
@@ -11144,13 +11133,18 @@ country_event = {# Boden Removed
 		desc = "POLITICS_MAX_THORNBURG_DESC"
 		picture = "gfx/leaders/CAL/CAL_Max_Thornburg.png"
 		expire = "1965.1.1"
-		ideology = paternal_autocrat_subtype
+		ideology = corporatocracy_subtype
 		traits = { hog_smiling_oilman }
 			}
 		set_politics = {
 			ruling_party = paternal_autocrat
 			election_frequency = 48
 			elections_allowed = yes
+		}
+		set_party_name = {
+				ideology = paternal_autocrat
+				long_name = "Japanese Committee on Trade and Information"
+				name = "Japanese Committee on Trade and Information"
 		}
 		hidden_effect = {
 		add_ideas = CAL_Robert_Taylor_Jones_hog_sco
@@ -11176,13 +11170,18 @@ country_event = {# Boden Removed
 		desc = "POLITICS_RALPH_TOWNSEND_DESC"
 		picture = "gfx/leaders/CAL/CAL_Ralph_Townsend.png"
 		expire = "1965.1.1"
-		ideology = paternal_autocrat_subtype
+		ideology = pataut_pan_asianism_subtype
 		traits = { freind_of_japan }
 			}
 		set_politics = {
 			ruling_party = paternal_autocrat
 			election_frequency = 48
 			elections_allowed = yes
+		}
+		set_party_name = {
+				ideology = paternal_autocrat
+				long_name = "Japanese Committee on Trade and Information"
+				name = "Japanese Committee on Trade and Information"
 		}
 		hidden_effect = {
 		add_ideas = CAL_Robert_Taylor_Jones_hog_sco
@@ -11202,9 +11201,6 @@ country_event = {# Boden Removed
 	}
 	option = {# Kichisaburo Nomura
 		name = pacificstates.358.c
-		trigger = {
-		JAP = { has_government = national_populist }
-		}
 		JAP = {
 		add_political_power = 80
 		add_equipment_to_stockpile = {
@@ -11227,13 +11223,23 @@ country_event = {# Boden Removed
 			election_frequency = 48
 			elections_allowed = yes
 		}
+		set_party_name = {
+				ideology = paternal_autocrat
+				long_name = "Jikyoku Iinkai"
+				name = "Jikyoku Iinkai"
+		}
 		hidden_effect = {
-		add_ideas = CAL_Robert_Taylor_Jones_hog_sco
-		add_ideas = CAL_Robert_MacDonald_Ford_for_npo
-		add_ideas = CAL_Walter_M_Pierce_eco_pau
-		add_ideas = CAL_sessue_hayakawa_sec_pau
+		set_country_flag = JAP_Ministers_Allowed
+			remove_all_ministers = yes
+			add_ideas = {
+				CAL_Kichisaburo_Nomura_hog_pau
+				CAL_Isoroku_Yamamoto_for_npo
+				CAL_Chuichi_Nagumo_eco_npo
+				CAL_Shiro_Ishii_sec_npo
+			}
 		}
 		set_country_flag = CAL_JAP_USA
+		clr_country_flag = USA_SPIRITUALIST
 		add_political_power = 20
 		add_stability = -0.1
 		add_manpower = -5000
@@ -11303,7 +11309,7 @@ country_event = {# Hubbard Stuff
 	}
 }
 
-country_event = {# Boden Dead
+country_event = {# Bodin Dead
 	id = pacificstates.359
 	immediate = {log = "[GetDateText]: [Root.GetName]: event pacificstates.359"}
 	title = pacificstates.359.t
@@ -11513,6 +11519,7 @@ country_event = {# The Japanese Prince of Bel-Air
 		expire = "1965.1.1"
 		ideology = militarism_subtype
 		}
+		set_country_flag = LEADER_GUI_VISIBLE
 	}
 	option = {#Nobuhito
 		name = pacificstates.364.b
@@ -11525,12 +11532,14 @@ country_event = {# The Japanese Prince of Bel-Air
 		expire = "1965.1.1"
 		ideology = militarism_subtype
 		}
+		set_country_flag = LEADER_GUI_VISIBLE
 	}
 	option = {#Kotohito
 		name = pacificstates.364.c
 		ai_chance = {
 			factor = 0
 		}
+		set_country_flag = LEADER_GUI_VISIBLE
 		create_country_leader = {
 		name = "Kan'in Kotohito"
 		picture = "gfx/leaders/FNG/Portrait_FNG_Kanin_Kotohito.png"
@@ -11547,6 +11556,9 @@ country_event = {# The Japanese Prince of Bel-Air
 	}
 	option = {#let Japan decide
 		name = pacificstates.365.f
+		trigger = {
+		is_ai = yes
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -11575,6 +11587,7 @@ country_event = {# we should probably merge these paths one day
 		ai_chance = {
 			factor = 0
 		}
+		set_country_flag = LEADER_GUI_VISIBLE
 		create_country_leader = {
 		name = "Yasuhito"
 		picture = "gfx/leaders/JAP/Portrait_JAP_Yasuhito.png"
@@ -11587,6 +11600,7 @@ country_event = {# we should probably merge these paths one day
 		ai_chance = {
 			factor = 0
 		}
+		set_country_flag = LEADER_GUI_VISIBLE
 		create_country_leader = {
 		name = "Nobuhito"
 		picture = "gfx/leaders/JAP/Portrait_JAP_Nobuhito.png"
@@ -11599,6 +11613,7 @@ country_event = {# we should probably merge these paths one day
 		ai_chance = {
 			factor = 0
 		}
+		set_country_flag = LEADER_GUI_VISIBLE
 		create_country_leader = {
 		name = "Kan'in Kotohito"
 		picture = "gfx/leaders/FNG/Portrait_FNG_Kanin_Kotohito.png"
@@ -11615,6 +11630,9 @@ country_event = {# we should probably merge these paths one day
 	}
 	option = {#let Japan decide
 		name = pacificstates.365.f
+		trigger = {
+		is_ai = yes
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -11642,6 +11660,7 @@ country_event = {# we should probably merge these paths one day
 			factor = 30
 		}
 		CAL = {
+		set_country_flag = LEADER_GUI_VISIBLE
 		create_country_leader = {
 		name = "Yasuhito"
 		picture = "gfx/leaders/JAP/Portrait_JAP_Yasuhito.png"
@@ -11656,6 +11675,7 @@ country_event = {# we should probably merge these paths one day
 			factor = 30
 		}
 		CAL = {
+		set_country_flag = LEADER_GUI_VISIBLE
 		create_country_leader = {
 		name = "Nobuhito"
 		picture = "gfx/leaders/JAP/Portrait_JAP_Nobuhito.png"
@@ -11670,6 +11690,7 @@ country_event = {# we should probably merge these paths one day
 			factor = 30
 		}
 		CAL = {
+		set_country_flag = LEADER_GUI_VISIBLE
 		create_country_leader = {
 		name = "Kan'in Kotohito"
 		picture = "gfx/leaders/FNG/Portrait_FNG_Kanin_Kotohito.png"
@@ -11703,13 +11724,14 @@ country_event = {# we should probably merge these paths one day
 		ai_chance = {
 			factor = 30
 		}
-		CAL = {
-		create_country_leader = {
-		name = "Yasuhito"
-		picture = "gfx/leaders/JAP/Portrait_JAP_Yasuhito.png"
-		expire = "1965.1.1"
-		ideology = militarism_subtype
-		}
+		CAL = {	
+			set_country_flag = LEADER_GUI_VISIBLE
+			create_country_leader = {
+				name = "Yasuhito"
+				picture = "gfx/leaders/JAP/Portrait_JAP_Yasuhito.png"
+				expire = "1965.1.1"
+				ideology = militarism_subtype
+			}
 		}
 	}
 	option = {#Nobuhito
@@ -11718,11 +11740,12 @@ country_event = {# we should probably merge these paths one day
 			factor = 30
 		}
 		CAL = {
-		create_country_leader = {
-		name = "Nobuhito"
-		picture = "gfx/leaders/JAP/Portrait_JAP_Nobuhito.png"
-		expire = "1965.1.1"
-		ideology = militarism_subtype
+			set_country_flag = LEADER_GUI_VISIBLE
+			create_country_leader = {
+				name = "Nobuhito"
+				picture = "gfx/leaders/JAP/Portrait_JAP_Nobuhito.png"
+				expire = "1965.1.1"
+				ideology = militarism_subtype
 			}
 		}
 	}
@@ -11732,11 +11755,12 @@ country_event = {# we should probably merge these paths one day
 			factor = 30
 		}
 		CAL = {
-		create_country_leader = {
-		name = "Kan'in Kotohito"
-		picture = "gfx/leaders/FNG/Portrait_FNG_Kanin_Kotohito.png"
-		expire = "1965.1.1"
-		ideology = militarism_subtype
+			set_country_flag = LEADER_GUI_VISIBLE
+			create_country_leader = {
+				name = "Kan'in Kotohito"
+				picture = "gfx/leaders/FNG/Portrait_FNG_Kanin_Kotohito.png"
+				expire = "1965.1.1"
+				ideology = militarism_subtype
 				}
 			}
 		}
@@ -13798,6 +13822,7 @@ country_event = {
 				name = "Military Committee"
 			}
 			set_country_flag = CAL_JAP_USA
+			clr_country_flag = USA_SPIRITUALIST
 			hidden_effect = {
 				set_country_flag = JAP_Ministers_Allowed
 				remove_all_ministers = yes
