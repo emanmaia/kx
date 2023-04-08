@@ -1225,7 +1225,10 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = SAF
+			OR = {
+				original_tag = SAF
+				original_tag = SFR
+			}
 			has_completed_focus = SAF_native_republic
 		}
 		localization_key = STATE_85_SOUTH_AFRICAN #Lesotho
@@ -6585,14 +6588,20 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = SAF
+			OR = {
+				original_tag = SAF
+				original_tag = SFR
+			}
 			has_completed_focus = SAF_native_republic
 		}
 		localization_key = STATE_542_SOUTH_AFRICAN #Botswana
 	}
 	text = {
 		trigger = {
-			original_tag = SAF
+			OR = {
+				original_tag = SAF
+				original_tag = SFR
+			}
 			has_completed_focus = SAF_stellaland_affairs_act
 		}
 		localization_key = STATE_542_BOER #Stellaland
@@ -6641,7 +6650,10 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = SAF
+			OR = {
+				original_tag = SAF
+				original_tag = SFR
+			}
 			has_completed_focus = SAF_native_republic
 		}
 		localization_key = STATE_545_SOUTH_AFRICAN #Munhumutapa
@@ -8978,7 +8990,10 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = SAF
+			OR = {
+				original_tag = SAF
+				original_tag = SFR
+			}
 			has_completed_focus = SAF_native_republic
 		}
 		localization_key = STATE_719_SOUTH_AFRICAN #Zululand
@@ -11940,7 +11955,10 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = SAF
+			OR = {
+				original_tag = SAF
+				original_tag = SFR
+			}
 			has_completed_focus = SAF_native_republic
 		}
 		localization_key = STATE_947_SOUTH_AFRICAN #Freistata
