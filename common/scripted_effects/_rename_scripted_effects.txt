@@ -4,10 +4,8 @@ enable_renaming = {
 	### set endo states ###
 	every_state = {
 		meta_effect = {
-			text = {
-				set_state_name = [endo_state_flag]
-			}
-			endo_state_flag = "endo_state_[THIS.GetId]"
+			text = { set_state_name = "[STATE_NAME]" }
+			STATE_NAME = "STATE_[PREV.PREV.GetId]_ENDONYM"
 		}
 	}
 	for_each_loop = {

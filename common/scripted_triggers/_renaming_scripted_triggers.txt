@@ -499,7 +499,7 @@ is_oghuz_turkic_tag = {
 	custom_trigger_tooltip = {
 		tooltip = is_oghuz_turkic_tag
 		OR = {
-			tag = TUR
+			is_turkish_tag = yes
 			tag = AZE
 			tag = UZB
 		}
@@ -531,6 +531,36 @@ is_uighur_tag = {
 				tag = TAN
 				NOT = { has_cosmetic_tag = TAN_HAM }
 				NOT = { has_cosmetic_tag = TAN_zhongying }
+			}
+		}
+	}
+}
+
+is_finnish_tag = {
+	OR = {
+		tag = FIN
+		tag = KAR
+	}
+}
+
+is_japanese_tag = {
+	OR = {
+		tag = JAP
+		AND = {
+			tag = TRM
+			has_country_flag = TRM_uses_japanese
+		}
+	}
+}
+
+is_mongolian_tag = {
+	OR = {
+		original_tag = MON
+		AND = {
+			tag = BRY
+			NOT = {
+				has_government = totalist
+				has_government = paternal_autocrat
 			}
 		}
 	}
@@ -741,6 +771,7 @@ is_romanian_tag = {
 			tag = TRS
 			tag = RRM
 			tag = BAN
+			tag = MOL
 		}
 	}
 }
