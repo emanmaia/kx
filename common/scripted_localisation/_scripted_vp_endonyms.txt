@@ -304,7 +304,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_377
 	}
 	text = {
-		trigger = { original_tag = WLS }
+		trigger = { original_tag = WAL }
 		localization_key = VICTORY_POINTS_377_WELSH
 	}
 	text = {
@@ -362,7 +362,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_407
 	}
 	text = {
-		trigger = { original_tag = WLS }
+		trigger = { original_tag = WAL }
 		localization_key = VICTORY_POINTS_407_WELSH
 	}
 	text = {
@@ -8469,7 +8469,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_9364
 	}
 	text = {
-		trigger = { original_tag = WLS }
+		trigger = { original_tag = WAL }
 		localization_key = VICTORY_POINTS_9364_WELSH
 	}
 	text = {

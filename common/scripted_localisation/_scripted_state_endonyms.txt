@@ -1840,7 +1840,7 @@ defined_text = {
 		localization_key = STATE_122 #South Wales
 	}
 	text = {
-		trigger = { original_tag = WLS }
+		trigger = { original_tag = WAL }
 		localization_key = STATE_122_WELSH #De Cymru
 	}
 	text = {
