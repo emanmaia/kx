@@ -4198,7 +4198,7 @@ STATE_1036_PORTUGUESE: "Selva de Bolivar"
 
 STATE_1037: "East Guyana Jungle"
 STATE_1037_ENDONYM: "[1037.Controller.GetStateName_1037]"
-STATE_1037_FRENCH: Jungle du Guyane Or."
+STATE_1037_FRENCH: "Jungle du Guyane Or."
 
 STATE_1038: "Suriname Jungle"
 STATE_1038_DUTCH: "Oerwoud Suriname"

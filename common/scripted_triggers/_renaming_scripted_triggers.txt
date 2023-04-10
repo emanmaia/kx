@@ -623,6 +623,19 @@ is_spanish_south_american_tag = {
 		}
 	}
 }
+is_quechua_speaking_tag = {
+	custom_trigger_tooltip = {
+		tooltip = is_quechua_speaking_tag
+		OR = {
+			has_cosmetic_tag = PRU_quechua
+			has_completed_focus = PRU_indigenous_restoration
+			AND = {
+				original_tag = ECU
+				has_government = totalist
+			}
+		}
+	}
+}
 is_indian_unifier_tag = {
 	OR = {
 		tag = DEH

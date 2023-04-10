@@ -4032,7 +4032,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_4189
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = VICTORY_POINTS_4189_PORTUGUESE
 	}
 	text = {
@@ -5197,7 +5197,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_5178
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = VICTORY_POINTS_5178_PORTUGUESE
 	}
 	text = {
@@ -13148,7 +13148,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_12190
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = VICTORY_POINTS_12190_PORTUGUESE
 	}
 	text = {
@@ -13739,7 +13739,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_12747
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = VICTORY_POINTS_12747_PORTUGUESE
 	}
 	text = {
@@ -14039,7 +14039,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_12985
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = VICTORY_POINTS_12985_PORTUGUESE
 	}
 	text = {
@@ -14355,7 +14355,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_13268
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = VICTORY_POINTS_13268_PORTUGUESE
 	}
 	text = {

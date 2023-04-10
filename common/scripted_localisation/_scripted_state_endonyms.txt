@@ -317,7 +317,7 @@ defined_text = {
 		localization_key = STATE_21
 	}
 	text = {
-		trigger = { is_italian_tag }
+		trigger = { is_italian_tag = yes }
 		localization_key = STATE_21_ITALIAN
 	}
 	text = {
@@ -388,7 +388,7 @@ defined_text = {
 	}
 	text = {
 		trigger = { is_italian_tag = yes }
-		localization_key = STATE_28_ITALIAN: "Alsazia e Lorena"
+		localization_key = STATE_28_ITALIAN #Alsazia e Lorena
 	}
 	text = {
 		localization_key = STATE_28 #Alsace-Lorraine
@@ -10020,7 +10020,7 @@ defined_text = {
 		localization_key = STATE_786 #Budejovice
 	}
 	text = {
-		trigger = { is_czechoslovak_tag }
+		trigger = { is_czechoslovak_tag = yes }
 		localization_key = STATE_786_CZECH
 	}
 	text = {
@@ -13683,6 +13683,7 @@ defined_text = {
 	text = {
 		trigger = { is_german_tag = yes }
 		localization_key = STATE_1088_GERMAN
+	}
 	text = {
 		trigger = { 
 			OR = {
