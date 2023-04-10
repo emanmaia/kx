@@ -73,7 +73,7 @@ defined_text = {
 		localization_key = STATE_5_GERMAN #Ostpreußen
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_5_RUSSIAN
 	}
 	text = {
@@ -159,7 +159,7 @@ defined_text = {
 		localization_key = STATE_10_GERMAN #Warschau
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_10_RUSSIAN #Varshava
 	}
 	text = {
@@ -189,7 +189,7 @@ defined_text = {
 		localization_key = STATE_11_POLISH #Kowno
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_11_RUSSIAN #Kovno
 	}
 	text = {
@@ -215,7 +215,7 @@ defined_text = {
 		localization_key = STATE_12_LITHUANIAN #Vidžemė
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_12_RUSSIAN #Liflandiya
 	}
 	text = {
@@ -237,7 +237,7 @@ defined_text = {
 		localization_key = STATE_13_ESTONIAN #Harju
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_13_RUSSIAN #Estlandiya
 	}
 	text = {
@@ -996,11 +996,11 @@ defined_text = {
 		localization_key = STATE_73_POLISH #Zakarpacie
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_73_UKRAINIAN #Zakarpattia
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_73_RUSSIAN #Zakarpattia
 	}
 	text = {
@@ -1130,11 +1130,11 @@ defined_text = {
 		localization_key = STATE_80_GERMAN #Czernowitz
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_80_RUSSIAN #Chernovitsy
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_80_UKRAINIAN #Chernivtsi
 	}
 	text = {
@@ -1248,7 +1248,7 @@ defined_text = {
 		localization_key = STATE_86_POLISH #Wielkopolska
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_86_POLISH #Wielkopolska
 	}
 	text = {
@@ -1266,7 +1266,7 @@ defined_text = {
 		localization_key = STATE_87_GERMAN #Kalisch
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_87_RUSSIAN #Kalish
 	}
 	text = {
@@ -1288,7 +1288,7 @@ defined_text = {
 		localization_key = STATE_88_GERMAN #Krakau
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_88_RUSSIAN #Krakov
 	}
 	text = {
@@ -1310,11 +1310,11 @@ defined_text = {
 		localization_key = STATE_89_GERMAN #Stanislau
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_89_RUSSIAN #Stanislavov
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_89_UKRAINIAN #Stanyslaviv
 	}
 	text = {
@@ -1332,7 +1332,7 @@ defined_text = {
 		localization_key = STATE_90_GERMAN #Kjelzy
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_90_RUSSIAN #Keltsy
 	}
 	text = {
@@ -1354,11 +1354,11 @@ defined_text = {
 		localization_key = STATE_91_GERMAN #Lemberg
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_91_RUSSIAN #Lvov
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_91_UKRAINIAN #Lviv
 	}
 	text = {
@@ -1372,7 +1372,7 @@ defined_text = {
 		localization_key = STATE_92 #Lublin
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_92_RUSSIAN #Lyublin
 	}
 	text = {
@@ -1386,7 +1386,7 @@ defined_text = {
 		localization_key = STATE_93 #Brest
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_93_UKRAINIAN #Berestya
 	}
 	text = {
@@ -1398,7 +1398,7 @@ defined_text = {
 		localization_key = STATE_93_POLISH #Brześć
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_93_RUSSIAN #Brest-Litovsk
 	}
 	text = {
@@ -1468,7 +1468,7 @@ defined_text = {
 		localization_key = STATE_96_POLISH #Wilno
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_96_RUSSIAN #Vilna
 	}
 	text = {
@@ -1498,7 +1498,7 @@ defined_text = {
 		localization_key = STATE_97_LITHUANIAN #Balstogė
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_97_RUSSIAN #Byelostok
 	}
 	text = {
@@ -1520,7 +1520,7 @@ defined_text = {
 		localization_key = STATE_98_GERMAN #Plotzk
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_98_RUSSIAN #Plotsk
 	}
 	text = {
@@ -1726,7 +1726,7 @@ defined_text = {
 		localization_key = STATE_111_SWEDISH #Tavastland
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_111_RUSSIAN #Tammerfors
 	}
 	text = {
@@ -1740,7 +1740,7 @@ defined_text = {
 		localization_key = STATE_112 #Lisbon
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_112_PORTUGUESE #Lisboa
 	}
 	text = {
@@ -1954,7 +1954,7 @@ defined_text = {
 		localization_key = STATE_137 #Crimea
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_137_UKRAINIAN #Krym
 	}
 	text = {
@@ -1962,7 +1962,7 @@ defined_text = {
 		localization_key = STATE_137_KIPCHAK
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_137_UKRAINIAN #Krym
 	}
 	text = {
@@ -2038,7 +2038,7 @@ defined_text = {
 		localization_key = STATE_145_FINNISH #Ahvenanmaa
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_145_RUSSIAN #Alandskiye Ostrova
 	}
 	text = {
@@ -2060,7 +2060,7 @@ defined_text = {
 		localization_key = STATE_146_FINNISH #Karjala
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_146_RUSSIAN #Kareliya
 	}
 	text = {
@@ -2082,7 +2082,7 @@ defined_text = {
 		localization_key = STATE_147_SWEDISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_147_SWEDISH
 	}
 	text = {
@@ -2096,7 +2096,7 @@ defined_text = {
 		localization_key = STATE_148 #Tornio
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_148_RUSSIAN
 	}
 	text = {
@@ -2130,7 +2130,7 @@ defined_text = {
 		localization_key = STATE_149_SWEDISH #Österbotten
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_149_RUSSIAN #Ostrobotniya
 	}
 	text = {
@@ -2434,7 +2434,7 @@ defined_text = {
 		localization_key = STATE_171 #Galicia
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_171_PORTUGUESE #Galiza
 	}
 	text = {
@@ -2676,7 +2676,7 @@ defined_text = {
 		localization_key = STATE_188_POLISH #Kłajpeda
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_188_RUSSIAN
 	}
 	text = {
@@ -2702,7 +2702,7 @@ defined_text = {
 		localization_key = STATE_189_POLISH #Żmudź
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_189_RUSSIAN #Zhemaitija
 	}
 	text = {
@@ -2728,7 +2728,7 @@ defined_text = {
 		localization_key = STATE_190_LITHUANIAN #Kuršas
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_190_RUSSIAN #Kurlyandiya
 	}
 	text = {
@@ -2750,7 +2750,7 @@ defined_text = {
 		localization_key = STATE_191_ESTONIAN #Tartu
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_191_RUSSIAN #Yuriev
 	}
 	text = {
@@ -2764,7 +2764,7 @@ defined_text = {
 		localization_key = STATE_192 #Odessa
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_192_RUSSIAN
 	}
 	text = {
@@ -2782,7 +2782,7 @@ defined_text = {
 		localization_key = STATE_193 #Chernigov
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_193_RUSSIAN
 	}
 	text = {
@@ -2820,7 +2820,7 @@ defined_text = {
 		localization_key = STATE_196_UKRAINIAN #Tavrida
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_196_UKRAINIAN #Tavrida
 	}
 	text = {
@@ -2852,7 +2852,7 @@ defined_text = {
 		localization_key = STATE_198 #Vinnitsa
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_198_RUSSIAN
 	}
 	text = {
@@ -2870,7 +2870,7 @@ defined_text = {
 		localization_key = STATE_199_UKRAINIAN #Proskuriv
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_199_RUSSIAN
 	}
 	text = {
@@ -2888,7 +2888,7 @@ defined_text = {
 		localization_key = STATE_200 #Alexandrovsk
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_200_RUSSIAN
 	}
 	text = {
@@ -2906,7 +2906,7 @@ defined_text = {
 		localization_key = STATE_201 #Zhitomir
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_201_RUSSIAN
 	}
 	text = {
@@ -2920,7 +2920,7 @@ defined_text = {
 		localization_key = STATE_202 #Kiev
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_202_RUSSIAN #Kiyev
 	}
 	text = {
@@ -2934,7 +2934,7 @@ defined_text = {
 		localization_key = STATE_203 #Cherkasy
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_203_RUSSIAN #Cherkassy
 	}
 	text = {
@@ -3068,7 +3068,7 @@ defined_text = {
 		localization_key = STATE_214 #Archangelsk
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_214_RUSSIAN #Arkhangelsk
 	}
 	text = {
@@ -3082,7 +3082,7 @@ defined_text = {
 		localization_key = STATE_215 #White Karelia
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_215_RUSSIAN #Belaya Kareliya
 	}
 	text = {
@@ -3134,7 +3134,7 @@ defined_text = {
 		localization_key = STATE_219 #Moscow
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_219_RUSSIAN #Moskva
 	}
 	text = {
@@ -3154,7 +3154,7 @@ defined_text = {
 		localization_key = STATE_221 #Kharkov
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_221_RUSSIAN
 	}
 	text = {
@@ -3168,7 +3168,7 @@ defined_text = {
 		localization_key = STATE_222 #Orel
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_222_RUSSIAN #Oryel
 	}
 	text = {
@@ -3200,7 +3200,7 @@ defined_text = {
 		localization_key = STATE_226 #Ekaterinoslav
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_226_RUSSIAN #Yekaterinoslav
 	}
 	text = {
@@ -3214,7 +3214,7 @@ defined_text = {
 		localization_key = STATE_227 #Yuzovka
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_227_RUSSIAN #Yuzovo
 	}
 	text = {
@@ -3246,7 +3246,7 @@ defined_text = {
 		localization_key = STATE_229_AZERBAIJANI #Azerbaycan
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_229_RUSSIAN #Azerbaydzhan
 	}
 	text = {
@@ -3268,7 +3268,7 @@ defined_text = {
 		localization_key = STATE_230_TURKISH #Revan
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_230_RUSSIAN #Erevan
 	}
 	text = {
@@ -3294,7 +3294,7 @@ defined_text = {
 		localization_key = STATE_231_ABKHAZ
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_231_RUSSIAN #Gruziya
 	}
 	text = {
@@ -3336,7 +3336,7 @@ defined_text = {
 		localization_key = STATE_234 #Ekaterinodar
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_234_RUSSIAN #Yekaterinodar
 	}
 	text = {
@@ -3386,7 +3386,7 @@ defined_text = {
 		localization_key = STATE_236 #Astrakhan
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_237_RUSSIAN
 	}
 	text = {
@@ -3412,7 +3412,7 @@ defined_text = {
 		localization_key = STATE_240 #
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_240_RUSSIAN
 	}
 	text = {
@@ -3430,7 +3430,7 @@ defined_text = {
 		localization_key = STATE_241 #Gomel
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_241_RUSSIAN
 	}
 	text = {
@@ -4002,7 +4002,7 @@ defined_text = {
 		localization_key = STATE_295_FRENCH #Léopoldville
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_295_PORTUGUESE #Porto Afonso
 	}
 	text = {
@@ -4016,7 +4016,7 @@ defined_text = {
 		localization_key = STATE_296 #Portuguese Guinea
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_296_PORTUGUESE #Guiné Portuguesa
 	}
 	text = {
@@ -4344,7 +4344,7 @@ defined_text = {
 		localization_key = STATE_328_JAPANESE #Antō
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_328_RUSSIAN #Andon
 	}
 	text = {
@@ -4358,7 +4358,7 @@ defined_text = {
 		localization_key = STATE_329 #Tuva
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_329_RUSSIAN #Uryankhay
 	}
 	text = {
@@ -4380,7 +4380,7 @@ defined_text = {
 		localization_key = STATE_330_CHINESE #Wai Menggu
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_330_RUSSIAN #Mongoliya
 	}
 	text = {
@@ -4544,7 +4544,7 @@ defined_text = {
 		localization_key = STATE_340_GREEK #Proúsa
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_340_RUSSIAN #Prusa
 	}
 	text = {
@@ -4570,7 +4570,7 @@ defined_text = {
 		localization_key = STATE_341_GREEK #Anatolikí Thráki
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_341_RUSSIAN #Adrianopol
 	}
 	text = {
@@ -5040,7 +5040,7 @@ defined_text = {
 		localization_key = STATE_402
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_402_RUSSIAN
 	}
 	text = {
@@ -5080,7 +5080,7 @@ defined_text = {
 		localization_key = STATE_404_OGHUZ
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_404_RUSSIAN #Kirgizkaya Step
 	}
 	text = {
@@ -5356,7 +5356,7 @@ defined_text = {
 		localization_key = STATE_422_INDIAN #Lanka
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_422_PORTUGUESE #Ceilão
 	}
 	text = {
@@ -5873,7 +5873,7 @@ defined_text = {
 		localization_key = STATE_463_JAPANESE #Arasuka
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_463_RUSSIAN #Alyaska
 	}
 	text = {
@@ -6167,7 +6167,7 @@ defined_text = {
 		localization_key = STATE_498 #Northeastern Brazil
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_498_PORTUGUESE #Nordeste
 	}
 	text = {
@@ -6507,7 +6507,7 @@ defined_text = {
 		localization_key = STATE_536_JAPANESE #Hokkaidō
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_536_RUSSIAN #Yezovsk
 	}
 	text = {
@@ -6563,7 +6563,7 @@ defined_text = {
 		localization_key = STATE_540 #
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_540_PORTUGUESE
 	}
 	text = {
@@ -6577,7 +6577,7 @@ defined_text = {
 		localization_key = STATE_541 #
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_541_GERMAN
 	}
 	text = {
@@ -6639,7 +6639,7 @@ defined_text = {
 		localization_key = STATE_544 #
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_544_PORTUGUESE
 	}
 	text = {
@@ -6787,7 +6787,7 @@ defined_text = {
 		localization_key = STATE_555_JAPANESE #Chishima Rettō
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_555_RUSSIAN #Kurilskiye Ostrova
 	}
 	text = {
@@ -7047,7 +7047,7 @@ defined_text = {
 		localization_key = STATE_581 #Uralsk
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_581_RUSSIAN
 	}
 	text = {
@@ -7109,7 +7109,7 @@ defined_text = {
 		localization_key = STATE_584_KARLUK
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_584_RUSSIAN #Zakaspiyskaya Step
 	}
 	text = {
@@ -7430,7 +7430,7 @@ defined_text = {
 		localization_key = STATE_612_CHINESE #Bei Chahaer
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_612_RUSSIAN #Shylyn-Hol
 	}
 	text = {
@@ -7510,7 +7510,7 @@ defined_text = {
 		localization_key = STATE_618_CHINESE #Zhungaer
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_618_RUSSIAN #Dzhungariya
 	}
 	text = {
@@ -7906,7 +7906,7 @@ defined_text = {
 		localization_key = STATE_644 #Northeast Siberia
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_644_RUSSIAN #S.-V. Sibir
 	}
 	text = {
@@ -8040,7 +8040,7 @@ defined_text = {
 		localization_key = STATE_653 #Ekaterinburg
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_653_RUSSIAN #Yekaterinburg
 	}
 	text = {
@@ -8080,7 +8080,7 @@ defined_text = {
 		localization_key = STATE_655_POLISH #Suwałki
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_655_RUSSIAN #Suvalki
 	}
 	text = {
@@ -8646,7 +8646,7 @@ defined_text = {
 		localization_key = STATE_698 #Azores
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_698_PORTUGUESE #Açores
 	}
 	text = {
@@ -8706,7 +8706,7 @@ defined_text = {
 		localization_key = STATE_702 #Cape Verde
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_702_PORTUGUESE #Cabo Verde
 	}
 	text = {
@@ -8862,7 +8862,7 @@ defined_text = {
 		localization_key = STATE_712_OGHUZ
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_712_RUSSIAN #Perovsk
 	}
 	text = {
@@ -8886,8 +8886,8 @@ defined_text = {
 	text = {
 		trigger = {
 			OR = {
-				is_russian_speaking_tag = yes = yes
-				is_russian_speaking_tag = yes = yes
+				is_russian_speaking_tag = yes
+				is_ukrainian_tag = yes
 			}
 		}
 		localization_key = STATE_713_RUSSIAN #Suchava
@@ -8911,7 +8911,7 @@ defined_text = {
 		localization_key = STATE_714_MONGOLIAN #Mergen
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_714_RUSSIAN #Nentszyan
 	}
 	text = {
@@ -8939,7 +8939,7 @@ defined_text = {
 		localization_key = STATE_716_KOREAN #Lyaoning
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_716_RUSSIAN #Lyaonin
 	}
 	text = {
@@ -8961,7 +8961,7 @@ defined_text = {
 		localization_key = STATE_717_KOREAN #Hejang
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_717_RUSSIAN #Khetszyan
 	}
 	text = {
@@ -9027,7 +9027,7 @@ defined_text = {
 		localization_key = STATE_721 #East Timor
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_721_PORTUGUESE #Timor Português
 	}
 	text = {
@@ -9041,7 +9041,7 @@ defined_text = {
 		localization_key = STATE_722 #Petsamo
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_722_RUSSIAN #Pechenga
 	}
 	text = {
@@ -9135,7 +9135,7 @@ defined_text = {
 		localization_key = STATE_729 #Macao
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_729_PORTUGUESE #Macau
 	}
 	text = {
@@ -9371,7 +9371,7 @@ defined_text = {
 		localization_key = STATE_745_CHINESE #Dalian
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_745_RUSSIAN #Dalniy
 	}
 	text = {
@@ -9806,7 +9806,7 @@ defined_text = {
 		localization_key = STATE_773_GREEK #Konstantinoúpolis
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_773_RUSSIAN #Konstantinopol
 	}
 	text = {
@@ -9878,7 +9878,7 @@ defined_text = {
 		localization_key = STATE_777_POLISH #Mazury
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_777_RUSSIAN
 	}
 	text = {
@@ -9982,6 +9982,14 @@ defined_text = {
 	text = {
 		trigger = { original_tag = HUN }
 		localization_key = STATE_784_HUNGARIAN #Orvidék
+	}
+	text = {
+		trigger = { is_south_slav_tag = yes }
+		localization_key = STATE_784_CROATIAN #Orvidék
+	}
+	text = {
+		trigger = { is_czechoslovak_tag = yes }
+		localization_key = STATE_784_CZECH #Orvidék
 	}
 	text = {
 		trigger = { is_german_tag = yes }
@@ -10094,7 +10102,7 @@ defined_text = {
 		localization_key = STATE_791_UKRAINIAN
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_791_RUSSIAN
 	}
 	text = {
@@ -10114,8 +10122,8 @@ defined_text = {
 	text = {
 		trigger = {
 			OR = {
-				is_russian_speaking_tag = yes = yes
-				is_russian_speaking_tag = yes = yes
+				is_ukrainian_tag = yes
+				is_russian_speaking_tag = yes
 			}
 		}
 		localization_key = STATE_792_UKRAINIAN #Volyn
@@ -10349,7 +10357,7 @@ defined_text = {
 		localization_key = STATE_813_ENGLISH #Livingstone
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_813_PORTUGUESE #Sul de Lacerdia
 	}
 	text = {
@@ -10683,7 +10691,7 @@ defined_text = {
 		localization_key = STATE_840_FINNISH #Uusimaa
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_840_RUSSIAN #Nyuland
 	}
 	text = {
@@ -10735,7 +10743,7 @@ defined_text = {
 		localization_key = STATE_844_SWEDISH #Östra Lappland
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_844_RUSSIAN #Laplandiya
 	}
 	text = {
@@ -10970,7 +10978,7 @@ defined_text = {
 		localization_key = STATE_863_SWEDISH #Egentliga Finland
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_863_RUSSIAN #Abo-Bjernbog
 	}
 	text = {
@@ -10988,7 +10996,7 @@ defined_text = {
 		localization_key = STATE_864_SWEDISH #Savolax
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_864_RUSSIAN #Svyatomikhaylovsk
 	}
 	text = {
@@ -11010,7 +11018,7 @@ defined_text = {
 		localization_key = STATE_865_SWEDISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_865_RUSSIAN
 	}
 	text = {
@@ -11074,7 +11082,7 @@ defined_text = {
 		localization_key = STATE_871_GERMAN #Njassaland
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_871_PORTUGUESE #Niassalândia
 	}
 	text = {
@@ -11158,7 +11166,7 @@ defined_text = {
 		localization_key = STATE_879 #Katanga
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_879_PORTUGUESE #Garanganja
 	}
 	text = {
@@ -11172,7 +11180,7 @@ defined_text = {
 		localization_key = STATE_880 #Latgale
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_880_RUSSIAN #Latgaliya
 	}
 	text = {
@@ -11202,7 +11210,7 @@ defined_text = {
 		localization_key = STATE_881_GERMAN #Niederkongo
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_881_PORTUGUESE #Congo Central
 	}
 	text = {
@@ -11242,7 +11250,7 @@ defined_text = {
 		localization_key = STATE_883_KOREAN #Heilungjang
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_883_RUSSIAN #Kheyluntszyan
 	}
 	text = {
@@ -11268,7 +11276,7 @@ defined_text = {
 		localization_key = STATE_884_MONGOLIAN #Hulunbuir
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_884_RUSSIAN #Sinan
 	}
 	text = {
@@ -11290,7 +11298,7 @@ defined_text = {
 		localization_key = STATE_885_KOREAN #Gando
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_885_RUSSIAN #Suntszyan
 	}
 	text = {
@@ -11312,7 +11320,7 @@ defined_text = {
 		localization_key = STATE_886_KOREAN #Gillim
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_886_RUSSIAN #Tsilin
 	}
 	text = {
@@ -11600,7 +11608,7 @@ defined_text = {
 		localization_key = STATE_916 #Old Congo
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_916_PORTUGUESE #Congo Antigo
 	}
 	text = {
@@ -11614,7 +11622,7 @@ defined_text = {
 		localization_key = STATE_917 #Southern Angola
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_917_PORTUGUESE #Angola Meridional
 	}
 	text = {
@@ -12005,7 +12013,7 @@ defined_text = {
 		localization_key = STATE_950_SOUTH_AFRICAN #South East Africa
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_950_PORTUGUESE #Inhambane e Gaza
 	}
 	text = {
@@ -12059,7 +12067,7 @@ defined_text = {
 		localization_key = STATE_955_GERMAN #Ostluangwa
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_955_PORTUGUESE #Aruângua Oriental
 	}
 	text = {
@@ -12077,7 +12085,7 @@ defined_text = {
 		localization_key = STATE_956_GERMAN #Nordzambesia
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_956_PORTUGUESE #Norte de Lacerdia
 	}
 	text = {
@@ -12095,7 +12103,7 @@ defined_text = {
 		localization_key = STATE_957_GERMAN #Nordzambesia
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_957_PORTUGUESE #Norte de Lacerdia
 	}
 	text = {
@@ -12113,7 +12121,7 @@ defined_text = {
 		localization_key = STATE_958_GERMAN #Nordzambesia
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_958_PORTUGUESE #Baroce
 	}
 	text = {
@@ -12127,7 +12135,7 @@ defined_text = {
 		localization_key = STATE_959 #Eastern Angola
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_959_PORTUGUESE #Angola Oriental
 	}
 	text = {
@@ -12211,7 +12219,7 @@ defined_text = {
 		localization_key = STATE_965_ENGLISH #Dar es-Salaam
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_965_PORTUGUESE #Darés Salã
 	}
 	text = {
@@ -12265,7 +12273,7 @@ defined_text = {
 		localization_key = STATE_970 #Mombasa
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_970_PORTUGUESE #Mombaça
 	}
 	text = {
@@ -12297,7 +12305,7 @@ defined_text = {
 		localization_key = STATE_972 #Aru Islands
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_972_PORTUGUESE
 	}
 	text = {
@@ -12591,7 +12599,7 @@ defined_text = {
 		localization_key = STATE_997 #Polesia
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_997_UKRAINIAN #Polissya
 	}
 	text = {
@@ -12607,7 +12615,7 @@ defined_text = {
 		localization_key = STATE_997_POLISH #Polesie
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_997_RUSSIAN #Polesye
 	}
 	text = {
@@ -12629,7 +12637,7 @@ defined_text = {
 		localization_key = STATE_998_ARMENIAN #Lerrnayin Gharabagh
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_998_RUSSIAN #Gornyy Karabakh
 	}
 	text = {
@@ -12673,7 +12681,7 @@ defined_text = {
 		localization_key = STATE_1000_ARMENIAN #Ararat
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1000_RUSSIAN
 	}
 	text = {
@@ -13093,7 +13101,7 @@ defined_text = {
 		localization_key = STATE_1030 #Western Amazonas
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_1030_PORTUGUESE #Amazonas Ocidental
 	}
 	text = {
@@ -13107,7 +13115,7 @@ defined_text = {
 		localization_key = STATE_1031 #Northern Amazonas
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_1031_PORTUGUESE #Amazonas do Norte
 	}
 	text = {
@@ -13127,7 +13135,7 @@ defined_text = {
 		localization_key = STATE_1033 #Eastern Amazonas
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_1033_PORTUGUESE #Amazonas Oriental
 	}
 	text = {
@@ -13161,7 +13169,7 @@ defined_text = {
 		localization_key = STATE_1036 #Bolivar Jungle
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_1036_PORTUGUESE #Selva de Bolivar
 	}
 	text = {
@@ -13209,7 +13217,7 @@ defined_text = {
 		localization_key = STATE_1040 #Acre Jungle
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_1040_PORTUGUESE #Selva do Acre
 	}
 	text = {
@@ -13223,7 +13231,7 @@ defined_text = {
 		localization_key = STATE_1041 #Iguassú
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_1041_PORTUGUESE #Iguaçu
 	}
 	text = {
@@ -13529,7 +13537,7 @@ defined_text = {
 		localization_key = STATE_1080_ABKHAZ
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1080_RUSSIAN #Chernomorye
 	}
 	text = {
@@ -13547,7 +13555,7 @@ defined_text = {
 		localization_key = STATE_1081_TURKISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1081_RUSSIAN #
 	}
 	text = {
@@ -13601,7 +13609,7 @@ defined_text = {
 		localization_key = STATE_1084_CHINESE #Wuliyasutai
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1084_RUSSIAN #Zapadnaya Mongoliya
 	}
 	text = {
@@ -13655,7 +13663,7 @@ defined_text = {
 		localization_key = STATE_1087_BELARUSIAN #Mahilioŭ
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1087_RUSSIAN
 	}
 	text = {
@@ -13678,7 +13686,7 @@ defined_text = {
 	text = {
 		trigger = { 
 			OR = {
-				is_russian_speaking_tag = yes = yes
+				is_russian_speaking_tag = yes
 				is_ukrainian_tag = yes
 			}
 		}
@@ -14142,7 +14150,7 @@ defined_text = {
 		localization_key = STATE_1119_UKRAINIAN
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1119_RUSSIAN
 	}
 	text = {
@@ -14256,7 +14264,7 @@ defined_text = {
 		localization_key = STATE_1124_POLISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1124_RUSSIAN
 	}
 	text = {
@@ -14278,7 +14286,7 @@ defined_text = {
 		localization_key = STATE_1125_POLISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1125_RUSSIAN
 	}
 	text = {
@@ -14304,7 +14312,7 @@ defined_text = {
 		localization_key = STATE_1126_POLISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1126_RUSSIAN
 	}
 	text = {
@@ -14664,7 +14672,7 @@ defined_text = {
 		localization_key = STATE_1148_POLISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1148_RUSSIAN
 	}
 	text = {
@@ -14948,7 +14956,7 @@ defined_text = {
 		localization_key = STATE_1186
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1186_RUSSIAN
 	}
 	text = {
@@ -14966,7 +14974,7 @@ defined_text = {
 		localization_key = STATE_1187
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1187_RUSSIAN
 	}
 	text = {
@@ -14984,7 +14992,7 @@ defined_text = {
 		localization_key = STATE_1188
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1188_RUSSIAN
 	}
 	text = {
@@ -15078,7 +15086,7 @@ defined_text = {
 		localization_key = STATE_1195_KIPCHAK
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1195_RUSSIAN
 	}
 	text = {
@@ -15154,7 +15162,7 @@ defined_text = {
 		localization_key = STATE_1201
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1201_RUSSIAN
 	}
 	text = {
@@ -15273,7 +15281,7 @@ defined_text = {
 		localization_key = STATE_1210
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1210_RUSSIAN
 	}
 	text = {
@@ -15297,7 +15305,7 @@ defined_text = {
 		localization_key = STATE_1211
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1211_RUSSIAN
 	}
 	text = {
@@ -15470,7 +15478,7 @@ defined_text = {
 		localization_key = STATE_1224_OGHUZ
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1224_RUSSIAN
 	}
 	text = {
@@ -15488,7 +15496,7 @@ defined_text = {
 		localization_key = STATE_1225_GREEK
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1225_RUSSIAN
 	}
 	text = {
@@ -15534,7 +15542,7 @@ defined_text = {
 		localization_key = STATE_1228_POLISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1228_RUSSIAN
 	}
 	text = {
@@ -15578,7 +15586,7 @@ defined_text = {
 		localization_key = STATE_1232_KIPCHAK
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1232_RUSSIAN
 	}
 	text = {
@@ -15592,7 +15600,7 @@ defined_text = {
 		localization_key = STATE_1233
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1233_RUSSIAN
 	}
 	text = {
@@ -15606,7 +15614,7 @@ defined_text = {
 		localization_key = STATE_1220
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1234_RUSSIAN
 	}
 	text = {
@@ -15632,7 +15640,7 @@ defined_text = {
 		localization_key = STATE_1237
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1237_RUSSIAN
 	}
 	text = {
@@ -15646,7 +15654,7 @@ defined_text = {
 		localization_key = STATE_1238
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1238_RUSSIAN
 	}
 	text = {
@@ -15660,7 +15668,7 @@ defined_text = {
 		localization_key = STATE_1239
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1239_RUSSIAN
 	}
 	text = {
@@ -15674,7 +15682,7 @@ defined_text = {
 		localization_key = STATE_1240
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1240_RUSSIAN
 	}
 	text = {
@@ -15688,7 +15696,7 @@ defined_text = {
 		localization_key = STATE_1241
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1241_RUSSIAN
 	}
 	text = {
@@ -15708,7 +15716,7 @@ defined_text = {
 		localization_key = STATE_1243
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1243_RUSSIAN
 	}
 	text = {
@@ -15844,7 +15852,7 @@ defined_text = {
 		localization_key = STATE_1263
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1263_RUSSIAN
 	}
 	text = {
@@ -15964,7 +15972,7 @@ defined_text = {
 		localization_key = STATE_1273
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1273_RUSSIAN
 	}
 	text = {
@@ -15998,7 +16006,7 @@ defined_text = {
 		localization_key = STATE_1276
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1263_RUSSIAN
 	}
 	text = {
@@ -16076,7 +16084,7 @@ defined_text = {
 		localization_key = STATE_1279_OGHUZ
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1279_RUSSIAN
 	}
 	text = {
@@ -16118,7 +16126,7 @@ defined_text = {
 		localization_key = STATE_1282
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1282_RUSSIAN
 	}
 	text = {
@@ -16138,7 +16146,7 @@ defined_text = {
 		localization_key = STATE_1284
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1284_RUSSIAN
 	}
 	text = {
@@ -16152,7 +16160,7 @@ defined_text = {
 		localization_key = STATE_1285
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1285_RUSSIAN
 	}
 	text = {
@@ -16166,7 +16174,7 @@ defined_text = {
 		localization_key = STATE_1286
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1286_RUSSIAN
 	}
 	text = {
@@ -16180,7 +16188,7 @@ defined_text = {
 		localization_key = STATE_1287
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1287_BELARUSIAN
 	}
 	text = {
@@ -16349,7 +16357,7 @@ defined_text = {
 		trigger = { 
 			OR = {
 				original_tag = ARM 
-				is_russian_speaking_tag = yes = yes
+				is_russian_speaking_tag = yes
 			}
 		}
 		localization_key = STATE_1298_ARMENIAN
@@ -16383,7 +16391,7 @@ defined_text = {
 		localization_key = STATE_1300
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1300_RUSSIAN
 	}
 	text = {
@@ -16437,7 +16445,7 @@ defined_text = {
 		localization_key = STATE_1303_ARMENIAN
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1303_ARMENIAN
 	}
 	text = {
@@ -16455,7 +16463,7 @@ defined_text = {
 		localization_key = STATE_1304_TURKISH
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1304_RUSSIAN
 	}
 	text = {
@@ -16535,7 +16543,7 @@ defined_text = {
 		localization_key = STATE_1314_GERMAN
 	}
 	text = {
-		trigger = { is_russian_speaking_tag = yes = yes }
+		trigger = { is_russian_speaking_tag = yes }
 		localization_key = STATE_1314_RUSSIAN
 	}
 	text = {
@@ -16559,7 +16567,7 @@ defined_text = {
 		localization_key = STATE_1316
 	}
 	text = {
-		trigger = { is_portuguese_tag = yes }
+		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_1316_PORTUGUESE
 	}
 	text = {
