@@ -352,6 +352,10 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_392
 	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = VICTORY_POINTS_392_ULYANOVSK
+	}
+	text = {
 		localization_key = VICTORY_POINTS_392
 	}
 }
@@ -1875,6 +1879,10 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_1821
+	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = VICTORY_POINTS_1821_SVERDLOVSK
+	}
 	text = {
 		localization_key = VICTORY_POINTS_1821
 	}
@@ -5360,6 +5368,10 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_6174
 	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = VICTORY_POINTS_6174_LENINGRAD
+	}
+	text = {
 		localization_key = VICTORY_POINTS_6174
 	}
 }
@@ -7731,12 +7743,6 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_8010
-	text = {
-		trigger = {
-			BHU = { has_country_leader = { character = BHU_tshering_penjor } }
-		}
-		localization_key = VICTORY_POINTS_8010_TSHERING_PENJOR
-	}
 	text = {
 		localization_key = VICTORY_POINTS_8010
 	}
@@ -11393,6 +11399,10 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_11375
 	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = VICTORY_POINTS_11375_GORKY
+	}
+	text = {
 		localization_key = VICTORY_POINTS_11375
 	}
 }
@@ -11688,6 +11698,10 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_11523
+	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = VICTORY_POINTS_11523_ENGELS
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_11523
@@ -13338,13 +13352,6 @@ defined_text = {
 	text = {
 		trigger = { original_tag = INS }
 		localization_key = VICTORY_POINTS_12371_INDONESIAN
-	}
-	text = {
-		trigger = {
-			original_tag = INS
-			has_country_leader = { character = INS_sukarno }
-		}
-		localization_key = VICTORY_POINTS_12371_INDONESIAN_SUKARNO
 	}
 	text = {
 		localization_key = VICTORY_POINTS_12371
@@ -17078,6 +17085,10 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_6245
+	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = VICTORY_POINTS_6245_BAKUNIN
+	}
 	text = {
 		localization_key = VICTORY_POINTS_6245
 	}

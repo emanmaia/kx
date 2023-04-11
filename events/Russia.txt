@@ -34126,9 +34126,7 @@ country_event = { #Rename for Russian Cities
 	option = {
 		name = russoc.112.a
 		set_country_flag = soviet_speaking_tag
-		every_owned_state = {
-			do_soviet_renames_in_europe = yes
-		}
+		every_controlled_state = { rename_state_effect = yes }
 	}
 }
 

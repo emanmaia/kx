@@ -2806,6 +2806,10 @@ defined_text = {
 defined_text = {
 	name = GetStateName_195
 	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = STATE_195_LENINGRAD
+	}
+	text = {
 		localization_key = STATE_195 #Petrograd
 	}
 }
@@ -3490,6 +3494,10 @@ defined_text = {
 defined_text = {
 	name = GetStateName_247
 	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = STATE_247_BAKUNIN
+	}
+	text = {
 		localization_key = STATE_247 #Tver
 	}
 }
@@ -3516,6 +3524,10 @@ defined_text = {
 defined_text = {
 	name = GetStateName_250
 	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = STATE_250_ULYANOVSK
+	}
+	text = {
 		localization_key = STATE_250 #Simbirsk
 	}
 }
@@ -3527,6 +3539,10 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_252
+	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = STATE_252_GORKY
+	}
 	text = {
 		localization_key = STATE_252 #Nizhny Novgorod
 	}
@@ -5030,7 +5046,19 @@ defined_text = {
 defined_text = {
 	name = GetStateName_401
 	text = {
-		localization_key = STATE_401 #Pokrovsk
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = STATE_401_ENGELS
+	}
+	text = {
+		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		localization_key = STATE_401
+	}
+	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = STATE_401_GERMAN
+	}
+	text = {
+		localization_key = STATE_401
 	}
 }
 defined_text = {
@@ -8035,6 +8063,10 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_653
+	text = {
+		trigger = { has_country_flag = soviet_speaking_tag }
+		localization_key = STATE_653_SVERDLOVSK
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_653 #Ekaterinburg

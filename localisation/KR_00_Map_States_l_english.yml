@@ -855,6 +855,7 @@ STATE_194_ENDONYM: "[194.Controller.GetStateName_194]"
 
 STATE_195: "Petrograd"
 STATE_195_ENDONYM: "[195.Controller.GetStateName_195]"
+STATE_195_LENINGRAD: "Leningrad"
 
 STATE_196: "Taurida"
 STATE_196_ENDONYM: "[196.Controller.GetStateName_196]"
@@ -1068,6 +1069,7 @@ STATE_246_ENDONYM: "[246.Controller.GetStateName_246]"
 
 STATE_247: "Tver"
 STATE_247_ENDONYM: "[247.Controller.GetStateName_247]"
+STATE_247_BAKUNIN: "Bakunin"
 
 STATE_248: "Yaroslavl"
 STATE_248_ENDONYM: "[248.Controller.GetStateName_248]"
@@ -1078,12 +1080,15 @@ STATE_249_KIPCHAK: "Qazan"
 
 STATE_250: "Simbirsk"
 STATE_250_ENDONYM: "[250.Controller.GetStateName_250]"
+STATE_250_ULYANOVSK: "Ulyanovsk"
 
 STATE_251: "Samara"
 STATE_251_ENDONYM: "[251.Controller.GetStateName_251]"
 
 STATE_252: "Nizhny Novgorod"
 STATE_252_ENDONYM: "[252.Controller.GetStateName_252]"
+STATE_252_GORKY: "Gorky"
+
 
 STATE_253: "Vladimir"
 STATE_253_ENDONYM: "[253.Controller.GetStateName_253]"
@@ -1625,6 +1630,8 @@ STATE_400_ENDONYM: "[400.Controller.GetStateName_400]"
 
 STATE_401: "Pokrovsk"
 STATE_401_ENDONYM: "[401.Controller.GetStateName_401]"
+STATE_401_GERMAN: "Kosakenstadt"
+STATE_401_ENGELS: "Engels"
 
 STATE_402: "Turgay"
 STATE_402_ENDONYM: "[402.Controller.GetStateName_402]"
@@ -2604,6 +2611,7 @@ STATE_652_ENDONYM: "[652.Controller.GetStateName_652]"
 STATE_653: "Ekaterinburg"
 STATE_653_ENDONYM: "[653.Controller.GetStateName_653]"
 STATE_653_RUSSIAN: "Yekaterinburg"
+STATE_653_SVERDLOVSK: "Sverdlovsk"
 
 STATE_654: "Ulala"
 STATE_654_ENDONYM: "[654.Controller.GetStateName_654]"
