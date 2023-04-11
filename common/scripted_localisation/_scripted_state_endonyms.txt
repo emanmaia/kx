@@ -2806,8 +2806,25 @@ defined_text = {
 defined_text = {
 	name = GetStateName_195
 	text = {
-		trigger = { has_country_flag = soviet_speaking_tag }
+		trigger = { 195 = { has_state_flag = renamed_state_leningrad } }
 		localization_key = STATE_195_LENINGRAD
+	}
+	text = {
+		trigger = { 
+			NOT = { has_global_flag = allowrenaming_flag } 
+			195 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = STATE_195_IMPERIAL_ENGLISH
+	}
+	text = {
+		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		localization_key = STATE_195
+	}
+	text = {
+		trigger = { 
+			195 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = STATE_195_IMPERIAL
 	}
 	text = {
 		localization_key = STATE_195 #Petrograd
@@ -3054,6 +3071,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_213
 	text = {
+		trigger = { 
+			213 = { has_state_flag = renamed_state_imperial } 
+			is_finnish_tag = no
+		}
+		localization_key = STATE_213_IMPERIAL
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_213 #Murmansk
 	}
@@ -3114,7 +3138,23 @@ defined_text = {
 defined_text = {
 	name = GetStateName_217
 	text = {
-		localization_key = STATE_217 #Tsaritsyn
+		trigger = { 
+			217 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = STATE_217_IMPERIAL
+	}
+	text = {
+		trigger = { 
+			217 = { has_state_flag = renamed_state_rykov }
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+		}
+		localization_key = STATE_217_RYKOV
+	}
+	text = {
+		localization_key = STATE_217 #
 	}
 }
 defined_text = {
@@ -3133,6 +3173,16 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_219
+	text = {
+		trigger = { 
+			219 = { has_state_flag = renamed_state_tsentrograd }
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+		}
+		localization_key = STATE_219_TSENTROGRAD
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_219 #Moscow
@@ -3228,8 +3278,18 @@ defined_text = {
 defined_text = {
 	name = GetStateName_228
 	text = {
+		trigger = { 
+			228 = { has_state_flag = zhdanov_renamed }
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+		}
+		localization_key = STATE_228_ZHDANOV
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
-		localization_key = STATE_228 #Starobyelsk
+		localization_key = STATE_228 #
 	}
 	text = {
 		trigger = { is_kipchak_turkic_tag = yes }
@@ -3405,6 +3465,16 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_239
+	text = {
+		trigger = { 
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+			239 = { has_state_flag = renamed_state_rykov }
+		}
+		localization_key = STATE_239_RYKOV
+	}
 	text = {
 		localization_key = STATE_239 #Saratov
 	}
@@ -5027,6 +5097,16 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_398
+	text = {
+		trigger = { 
+			has_state_flag = renamed_state_molotov 
+			has_country_leader = {
+				name = "Vyacheslav Molotov"
+				ruling_only = yes
+			}
+		}
+		localization_key = STATE_398_MOLOTOV
+	}
 	text = {
 		localization_key = STATE_398 #Perm
 	}
@@ -6993,7 +7073,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_570
 	text = {
-		localization_key = STATE_570 #Novo-Nikolayevsk
+		trigger = { 
+			570 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = STATE_570_IMPERIAL
+	}
+	text = {
+		localization_key = STATE_570 #
 	}
 }
 defined_text = {
@@ -8064,16 +8150,18 @@ defined_text = {
 defined_text = {
 	name = GetStateName_653
 	text = {
+		trigger = { 
+			653 = { has_state_flag = renamed_state_zhdanovgrad } 
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+		}
+		localization_key = STATE_653_ZHDANOVGRAD
+	}
+	text = {
 		trigger = { has_country_flag = soviet_speaking_tag }
 		localization_key = STATE_653_SVERDLOVSK
-	}
-	text = {
-		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
-		localization_key = STATE_653 #Ekaterinburg
-	}
-	text = {
-		trigger = { is_russian_speaking_tag = yes }
-		localization_key = STATE_653_RUSSIAN #Yekaterinburg
 	}
 	text = {
 		localization_key = STATE_653 #Ekaterinburg
@@ -15090,6 +15178,12 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_1193
+	text = {
+		trigger = { 
+			1193 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = STATE_1193_IMPERIAL
+	}
 	text = {
 		localization_key = STATE_1193
 	}

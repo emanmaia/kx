@@ -1840,12 +1840,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_1734
-	text = {
-		localization_key = VICTORY_POINTS_1734
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_1751
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -1879,6 +1873,16 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_1821
+	text = {
+		trigger = { 
+			653 = { has_state_flag = renamed_state_zhdanovgrad } 
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+		}
+		localization_key = VICTORY_POINTS_1821_ZHDANOVGRAD
+	}
 	text = {
 		trigger = { has_country_flag = soviet_speaking_tag }
 		localization_key = VICTORY_POINTS_1821_SVERDLOVSK
@@ -2616,6 +2620,13 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_3134
 	text = {
+		trigger = { 
+			213 = { has_state_flag = renamed_state_imperial } 
+			is_finnish_tag = no
+		}
+		localization_key = VICTORY_POINTS_3134_IMPERIAL
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_3134
 	}
@@ -3070,6 +3081,22 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_3529
 	text = {
+		trigger = { 
+			217 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = VICTORY_POINTS_3529_IMPERIAL
+	}
+	text = {
+		trigger = { 
+			217 = { has_state_flag = renamed_state_rykov }
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+		}
+		localization_key = VICTORY_POINTS_3529_RYKOV
+	}
+	text = {
 		localization_key = VICTORY_POINTS_3529
 	}
 }
@@ -3157,6 +3184,16 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_3578
+	text = {
+		trigger = { 
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+			239 = { has_state_flag = renamed_state_rykov }
+		}
+		localization_key = VICTORY_POINTS_3578_RYKOV
+	}
 	text = {
 		localization_key = VICTORY_POINTS_3578
 	}
@@ -5368,8 +5405,25 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_6174
 	text = {
-		trigger = { has_country_flag = soviet_speaking_tag }
+		trigger = { 195 = { has_state_flag = renamed_state_leningrad } }
 		localization_key = VICTORY_POINTS_6174_LENINGRAD
+	}
+	text = {
+		trigger = { 
+			NOT = { has_global_flag = allowrenaming_flag } 
+			195 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = VICTORY_POINTS_6174_IMPERIAL_ENGLISH
+	}
+	text = {
+		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		localization_key = VICTORY_POINTS_6174
+	}
+	text = {
+		trigger = { 
+			195 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = VICTORY_POINTS_6174_IMPERIAL
 	}
 	text = {
 		localization_key = VICTORY_POINTS_6174
@@ -5528,12 +5582,124 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_6332
 	text = {
-		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
+		trigger = { 
+			NOT = { has_global_flag = allowrenaming_flag } 
+			is_russian_speaking_tag = no
+			is_polish_tag = no
+			5 = {
+				NOT = {
+					has_state_flag = renamed_state_korolevets
+					has_state_flag = renamed_state_savinkovsk
+					has_state_flag = renamed_state_vladimir
+					has_state_flag = renamed_state_dmitri
+					has_state_flag = renamed_state_wrangelburg
+					has_state_flag = renamed_state_tukhachevsk
+					has_state_flag = renamed_state_zhukov
+					has_state_flag = renamed_state_frunzensk
+					has_state_flag = renamed_state_kornilovsk
+					has_state_flag = renamed_state_novooktyabrsk
+					has_state_flag = renamed_state_elizavetburg
+					has_state_flag = renamed_state_apraksin
+					has_state_flag = renamed_state_saltykov
+				}
+			}
+		}
 		localization_key = VICTORY_POINTS_6332
 	}
 	text = {
 		trigger = { is_polish_tag = yes }
 		localization_key = VICTORY_POINTS_6332_POLISH
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_korolevets }
+		}
+		localization_key = VICTORY_POINTS_6332_RUSSIAN
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_savinkovsk }
+		}
+		localization_key = VICTORY_POINTS_6332_SAVINKOVSK
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_vladimir }
+		}
+		localization_key = VICTORY_POINTS_6332_VLADIMIR
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_dmitri }
+		}
+		localization_key = VICTORY_POINTS_6332_DMITRI
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_wrangelburg }
+		}
+		localization_key = VICTORY_POINTS_6332_WRANGELBURG
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_tukhachevsk }
+		}
+		localization_key = VICTORY_POINTS_6332_TUKHACHEVSK
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_zhukov }
+		}
+		localization_key = VICTORY_POINTS_6332_ZHUKOV
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_frunzensk }
+		}
+		localization_key = VICTORY_POINTS_6332_FRUNZENSK
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_kornilovsk }
+		}
+		localization_key = VICTORY_POINTS_6332_KORNILOVSK
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_novooktyabrsk }
+		}
+		localization_key = VICTORY_POINTS_6332_NOVOOKTYABRSK
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_elizavetburg }
+		}
+		localization_key = VICTORY_POINTS_6332_ELIZAVETBURG
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_apraksin }
+		}
+		localization_key = VICTORY_POINTS_6332_APRAKSIN
+	}
+	text = {
+		trigger = { 
+			is_russian_speaking_tag = yes
+			5 = { has_state_flag = renamed_state_saltykov }
+		}
+		localization_key = VICTORY_POINTS_6332_SALTYKOV
 	}
 	text = {
 		localization_key = VICTORY_POINTS_6332
@@ -5618,6 +5784,16 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_6380
 	text = {
+		trigger = { 
+			219 = { has_state_flag = renamed_state_tsentrograd }
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+		}
+		localization_key = VICTORY_POINTS_6380_TSENTROGRAD
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_6380
 	}
@@ -5663,6 +5839,16 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_6420
+	text = {
+		trigger = { 
+			228 = { has_state_flag = zhdanov_renamed }
+			has_country_leader = {
+				name = "Andrei Zhdanov"
+				ruling_only = yes
+			}
+		}
+		localization_key = VICTORY_POINTS_6420_ZHDANOV
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_6420
@@ -6972,6 +7158,12 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_7274
 	text = {
+		trigger = { 
+			570 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = VICTORY_POINTS_7274_IMPERIAL
+	}
+	text = {
 		localization_key = VICTORY_POINTS_7274
 	}
 }
@@ -7049,6 +7241,16 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_7375
+	text = {
+		trigger = { 
+			has_state_flag = renamed_state_molotov 
+			has_country_leader = {
+				name = "Vyacheslav Molotov"
+				ruling_only = yes
+			}
+		}
+		localization_key = VICTORY_POINTS_7375_MOLOTOV
+	}
 	text = {
 		localization_key = VICTORY_POINTS_7375
 	}
@@ -8114,6 +8316,12 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_9097
+	text = {
+		trigger = { 
+			195 = { has_state_flag = renamed_petrodvorets } 
+		}
+		localization_key = VICTORY_POINTS_9097_IMPERIAL
+	}
 	text = {
 		localization_key = VICTORY_POINTS_9097
 	}
@@ -15063,12 +15271,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_289
 	}
 }
-defined_text = {
-	name = GetVictoryPointName_294
-	text = {
-		localization_key = VICTORY_POINTS_294
-	}
-}
+
 defined_text = {
 	name = GetVictoryPointName_315
 	text = {
@@ -15153,12 +15356,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_417
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_418
-	text = {
-		localization_key = VICTORY_POINTS_418
 	}
 }
 defined_text = {
@@ -15278,12 +15475,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_525
-	text = {
-		localization_key = VICTORY_POINTS_525
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_536
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -15299,24 +15490,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_536
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_541
-	text = {
-		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
-		localization_key = VICTORY_POINTS_541
-	}
-	text = {
-		trigger = { is_german_tag = yes }
-		localization_key = VICTORY_POINTS_541_GERMAN
-	}
-	text = {
-		trigger = { original_tag = HUN }
-		localization_key = VICTORY_POINTS_541_HUNGARIAN
-	}
-	text = {
-		localization_key = VICTORY_POINTS_541
 	}
 }
 defined_text = {
@@ -15453,20 +15626,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_657
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_670
-	text = {
-		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
-		localization_key = VICTORY_POINTS_670
-	}
-	text = {
-		trigger = { original_tag = MTR }
-		localization_key = VICTORY_POINTS_670_MOUNTAIN
-	}
-	text = {
-		localization_key = VICTORY_POINTS_670
 	}
 }
 defined_text = {
@@ -15666,12 +15825,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_772
-	text = {
-		localization_key = VICTORY_POINTS_772
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_822
 	text = {
 		localization_key = VICTORY_POINTS_822
@@ -15767,12 +15920,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_1305
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_1387
-	text = {
-		localization_key = VICTORY_POINTS_1387
 	}
 }
 defined_text = {
@@ -15994,12 +16141,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_1969
-	text = {
-		localization_key = VICTORY_POINTS_1969
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_1990
 	text = {
 		localization_key = VICTORY_POINTS_1990
@@ -16063,12 +16204,6 @@ defined_text = {
 	name = GetVictoryPointName_2210
 	text = {
 		localization_key = VICTORY_POINTS_2210
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_2220
-	text = {
-		localization_key = VICTORY_POINTS_2220
 	}
 }
 defined_text = {
@@ -16136,18 +16271,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_3254
-	text = {
-		localization_key = VICTORY_POINTS_3254
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_3309
-	text = {
-		localization_key = VICTORY_POINTS_3309
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_3310
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -16187,12 +16310,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_3414
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_3417
-	text = {
-		localization_key = VICTORY_POINTS_3417
 	}
 }
 defined_text = {
@@ -16341,18 +16458,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_3484
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_3516
-	text = {
-		localization_key = VICTORY_POINTS_3516
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_3529
-	text = {
-		localization_key = VICTORY_POINTS_3529
 	}
 }
 defined_text = {
@@ -16544,12 +16649,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_3668
-	text = {
-		localization_key = VICTORY_POINTS_3668
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_3670
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -16599,12 +16698,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_3694
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_3707
-	text = {
-		localization_key = VICTORY_POINTS_3707
 	}
 }
 defined_text = {
@@ -16687,12 +16780,6 @@ defined_text = {
 	name = GetVictoryPointName_3824
 	text = {
 		localization_key = VICTORY_POINTS_3824
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_3838
-	text = {
-		localization_key = VICTORY_POINTS_3838
 	}
 }
 defined_text = {
@@ -16840,12 +16927,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_4356
-	text = {
-		localization_key = VICTORY_POINTS_4356
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_4357
 	text = {
 		localization_key = VICTORY_POINTS_4357
@@ -16936,12 +17017,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_4607
-	text = {
-		localization_key = VICTORY_POINTS_4607
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_4625
 	text = {
 		localization_key = VICTORY_POINTS_4625
@@ -17013,12 +17088,6 @@ defined_text = {
 	name = GetVictoryPointName_4941
 	text = {
 		localization_key = VICTORY_POINTS_4941
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_4975
-	text = {
-		localization_key = VICTORY_POINTS_4975
 	}
 }
 defined_text = {
@@ -17121,12 +17190,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_6314
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_6326
-	text = {
-		localization_key = VICTORY_POINTS_6326
 	}
 }
 defined_text = {
@@ -17402,12 +17465,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_6680
-	text = {
-		localization_key = VICTORY_POINTS_6680
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_6690
 	text = {
 		localization_key = VICTORY_POINTS_6690
@@ -17445,12 +17502,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_6724
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_6730
-	text = {
-		localization_key = VICTORY_POINTS_6730
 	}
 }
 defined_text = {
@@ -17517,18 +17568,6 @@ defined_text = {
 	name = GetVictoryPointName_6785
 	text = {
 		localization_key = VICTORY_POINTS_6785
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_6786
-	text = {
-		localization_key = VICTORY_POINTS_6786
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_6794
-	text = {
-		localization_key = VICTORY_POINTS_6794
 	}
 }
 defined_text = {
@@ -17601,24 +17640,7 @@ defined_text = {
 		localization_key = VICTORY_POINTS_6971
 	}
 }
-defined_text = {
-	name = GetVictoryPointName_6973
-	text = {
-		localization_key = VICTORY_POINTS_6973
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_6997
-	text = {
-		localization_key = VICTORY_POINTS_6997
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_7005
-	text = {
-		localization_key = VICTORY_POINTS_7005
-	}
-}
+
 defined_text = {
 	name = GetVictoryPointName_7015
 	text = {
@@ -17650,12 +17672,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_7274
-	text = {
-		localization_key = VICTORY_POINTS_7274
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_7384
 	text = {
 		localization_key = VICTORY_POINTS_7384
@@ -17683,12 +17699,6 @@ defined_text = {
 	name = GetVictoryPointName_7463
 	text = {
 		localization_key = VICTORY_POINTS_7463
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_7477
-	text = {
-		localization_key = VICTORY_POINTS_7477
 	}
 }
 defined_text = {
@@ -17805,12 +17815,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_7661
-	text = {
-		localization_key = VICTORY_POINTS_7661
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_7688
 	text = {
 		localization_key = VICTORY_POINTS_7688
@@ -17841,12 +17845,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_7899
-	text = {
-		localization_key = VICTORY_POINTS_7899
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_7904
 	text = {
 		localization_key = VICTORY_POINTS_7904
@@ -17862,12 +17860,6 @@ defined_text = {
 	name = GetVictoryPointName_7973
 	text = {
 		localization_key = VICTORY_POINTS_7973
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_7980
-	text = {
-		localization_key = VICTORY_POINTS_7980
 	}
 }
 defined_text = {
@@ -17913,18 +17905,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_9206
-	text = {
-		localization_key = VICTORY_POINTS_9206
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_9288
-	text = {
-		localization_key = VICTORY_POINTS_9288
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_9324
 	text = {
 		localization_key = VICTORY_POINTS_9324
@@ -17952,6 +17932,12 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_9402
+	text = {
+		trigger = { 
+			1193 = { has_state_flag = renamed_state_imperial }
+		}
+		localization_key = VICTORY_POINTS_9402_IMPERIAL
+	}
 	text = {
 		localization_key = VICTORY_POINTS_9402
 	}
@@ -18101,12 +18087,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_9541
-	text = {
-		localization_key = VICTORY_POINTS_9541
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_9559
 	text = {
 		localization_key = VICTORY_POINTS_9559
@@ -18188,12 +18168,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_9619
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_9627
-	text = {
-		localization_key = VICTORY_POINTS_9627
 	}
 }
 defined_text = {
@@ -18379,12 +18353,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_10076
-	text = {
-		localization_key = VICTORY_POINTS_10076
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_10104
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -18440,12 +18408,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_10201
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_10203
-	text = {
-		localization_key = VICTORY_POINTS_10203
 	}
 }
 defined_text = {
@@ -18601,12 +18563,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_10842
-	text = {
-		localization_key = VICTORY_POINTS_10842
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_10846
 	text = {
 		localization_key = VICTORY_POINTS_10846
@@ -18628,12 +18584,6 @@ defined_text = {
 	name = GetVictoryPointName_10929
 	text = {
 		localization_key = VICTORY_POINTS_10929
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_10934
-	text = {
-		localization_key = VICTORY_POINTS_10934
 	}
 }
 defined_text = {
@@ -18675,12 +18625,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_11108
-	text = {
-		localization_key = VICTORY_POINTS_11108
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_11220
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -18695,12 +18639,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_11274
-	text = {
-		localization_key = VICTORY_POINTS_11274
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_11292
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -18712,12 +18650,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_11292
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_11336
-	text = {
-		localization_key = VICTORY_POINTS_11336
 	}
 }
 defined_text = {
@@ -18778,18 +18710,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_11435
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_11437
-	text = {
-		localization_key = VICTORY_POINTS_11437
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_11476
-	text = {
-		localization_key = VICTORY_POINTS_11476
 	}
 }
 defined_text = {
@@ -18973,12 +18893,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_11610
-	text = {
-		localization_key = VICTORY_POINTS_11610
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_11612
 	text = {
 		localization_key = VICTORY_POINTS_11612
@@ -18988,12 +18902,6 @@ defined_text = {
 	name = GetVictoryPointName_14784
 	text = {
 		localization_key = VICTORY_POINTS_14784
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_11617
-	text = {
-		localization_key = VICTORY_POINTS_11617
 	}
 }
 defined_text = {
@@ -19047,12 +18955,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_11666
-	text = {
-		localization_key = VICTORY_POINTS_11666
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_11676
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -19064,18 +18966,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_11676
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_11679
-	text = {
-		localization_key = VICTORY_POINTS_11679
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_11735
-	text = {
-		localization_key = VICTORY_POINTS_11735
 	}
 }
 defined_text = {
@@ -19129,12 +19019,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_11846
-	text = {
-		localization_key = VICTORY_POINTS_11846
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_11872
 	text = {
 		localization_key = VICTORY_POINTS_11872
@@ -19162,12 +19046,6 @@ defined_text = {
 	name = GetVictoryPointName_12127
 	text = {
 		localization_key = VICTORY_POINTS_12127
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_12128
-	text = {
-		localization_key = VICTORY_POINTS_12128
 	}
 }
 defined_text = {
@@ -19273,12 +19151,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_12351
-	text = {
-		localization_key = VICTORY_POINTS_12351
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_12417
 	text = {
 		localization_key = VICTORY_POINTS_12417
@@ -19381,12 +19253,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_12766
-	text = {
-		localization_key = VICTORY_POINTS_12766
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_12830
 	text = {
 		localization_key = VICTORY_POINTS_12830
@@ -19408,12 +19274,6 @@ defined_text = {
 	name = GetVictoryPointName_12891
 	text = {
 		localization_key = VICTORY_POINTS_12891
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_12930
-	text = {
-		localization_key = VICTORY_POINTS_12930
 	}
 }
 defined_text = {
@@ -19444,12 +19304,6 @@ defined_text = {
 	name = GetVictoryPointName_12991
 	text = {
 		localization_key = VICTORY_POINTS_12991
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_13021
-	text = {
-		localization_key = VICTORY_POINTS_13021
 	}
 }
 defined_text = {
@@ -19577,12 +19431,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_13553
-	text = {
-		localization_key = VICTORY_POINTS_13553
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_13560
 	text = {
 		localization_key = VICTORY_POINTS_13560
@@ -19606,12 +19454,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_13632
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_13641
-	text = {
-		localization_key = VICTORY_POINTS_13641
 	}
 }
 defined_text = {
@@ -19642,12 +19484,6 @@ defined_text = {
 	name = GetVictoryPointName_13678
 	text = {
 		localization_key = VICTORY_POINTS_13678
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_13674
-	text = {
-		localization_key = VICTORY_POINTS_13674
 	}
 }
 defined_text = {
@@ -19687,12 +19523,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetVictoryPointName_13820
-	text = {
-		localization_key = VICTORY_POINTS_13820
-	}
-}
-defined_text = {
 	name = GetVictoryPointName_13826
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
@@ -19726,24 +19556,6 @@ defined_text = {
 	}
 	text = {
 		localization_key = VICTORY_POINTS_13827
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_13828
-	text = {
-		localization_key = VICTORY_POINTS_13828
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_13831
-	text = {
-		localization_key = VICTORY_POINTS_13831
-	}
-}
-defined_text = {
-	name = GetVictoryPointName_13832
-	text = {
-		localization_key = VICTORY_POINTS_13832
 	}
 }
 defined_text = {
