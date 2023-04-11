@@ -3097,6 +3097,10 @@ defined_text = {
 		localization_key = VICTORY_POINTS_3529_RYKOV
 	}
 	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = VICTORY_POINTS_3529_GERMAN
+	}
+	text = {
 		localization_key = VICTORY_POINTS_3529
 	}
 }
@@ -3704,6 +3708,20 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_3957
+	text = {
+		trigger = { 
+			original_tag = BBR 
+			361 = { has_state_flag = renamed_state_new_sodom }
+		}
+		localization_key = VICTORY_POINTS_3957_NEW_SODOM
+	}
+	text = {
+		trigger = { 
+			original_tag = BBR 
+			361 = { has_state_flag = renamed_state_new_bethlehem }
+		}
+		localization_key = VICTORY_POINTS_3957_NEW_BETHLEHEM
+	}
 	text = {
 		localization_key = VICTORY_POINTS_3957
 	}
@@ -4701,6 +4719,26 @@ defined_text = {
 		localization_key = VICTORY_POINTS_4801_CHINESE
 	}
 	text = {
+		trigger = { 
+			is_mongolian_tag = yes 
+			330 = { has_state_flag = renamed_state_ulaanbaatar }
+		}
+		localization_key = VICTORY_POINTS_4801_MONGOLIAN
+	}
+	text = {
+		trigger = { 
+			is_mongolian_tag = yes 
+			330 = { has_state_flag = renamed_state_gada }
+		}
+		localization_key = VICTORY_POINTS_4801_GADA
+	}
+	text = {
+		trigger = { 
+			330 = { has_state_flag = renamed_state_ungern }
+		}
+		localization_key = VICTORY_POINTS_4801_UNGERN
+	}
+	text = {
 		localization_key = VICTORY_POINTS_4801
 	}
 }
@@ -5420,6 +5458,10 @@ defined_text = {
 		localization_key = VICTORY_POINTS_6174
 	}
 	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = VICTORY_POINTS_6174_GERMAN
+	}
+	text = {
 		trigger = { 
 			195 = { has_state_flag = renamed_state_imperial }
 		}
@@ -5796,6 +5838,10 @@ defined_text = {
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_6380
+	}
+	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = VICTORY_POINTS_6380_GERMAN
 	}
 	text = {
 		trigger = { is_russian_speaking_tag = yes }
@@ -7096,6 +7142,27 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_7202
 	text = {
+		trigger = { 
+			original_tag = BBR 
+			346 = { has_state_flag = renamed_state_new_jerusalem }
+		}
+		localization_key = VICTORY_POINTS_7202_NEW_JERUSALEM
+	}
+	text = {
+		trigger = { 
+			original_tag = BBR 
+			346 = { has_state_flag = renamed_state_new_aksum }
+		}
+		localization_key = VICTORY_POINTS_7202_NEW_AKSUM
+	}
+	text = {
+		trigger = { 
+			original_tag = BBR 
+			346 = { has_state_flag = renamed_state_new_thebes }
+		}
+		localization_key = VICTORY_POINTS_7202_NEW_THEBES
+	}
+	text = {
 		localization_key = VICTORY_POINTS_7202
 	}
 }
@@ -7698,6 +7765,13 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_7797
 	text = {
+		trigger = { 
+			original_tag = BBR 
+			368 = { has_state_flag = renamed_state_menefer }
+		}
+		localization_key = VICTORY_POINTS_7797_MENEFER
+	}
+	text = {
 		localization_key = VICTORY_POINTS_7797
 	}
 }
@@ -7945,6 +8019,17 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_8010
+	text = {
+		trigger = {
+			BHU = { 
+				has_country_leader = {
+					name = "Tshering Penjor" 
+					ruling_only = yes
+				}
+			}
+		}
+		localization_key = VICTORY_POINTS_8010_TSHERING_PENJOR
+	}
 	text = {
 		localization_key = VICTORY_POINTS_8010
 	}
@@ -8685,6 +8770,10 @@ defined_text = {
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_9417
+	}
+	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = VICTORY_POINTS_9417_GERMAN
 	}
 	text = {
 		trigger = { is_kipchak_turkic_tag = yes }
@@ -9765,9 +9854,17 @@ defined_text = {
 	text = {
 		localization_key = VICTORY_POINTS_9909
 	}
-}
+} 
+
 defined_text = {
 	name = GetVictoryPointName_9914
+	text = {
+		trigger = { 
+			original_tag = ALB
+			44 = { has_state_flag = renamed_state_enver }
+		}
+		localization_key = VICTORY_POINTS_9914_ENVER #
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_9914
@@ -10932,6 +11029,13 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_10836
+	text = {
+		trigger = { 
+			original_tag = LIB
+			808 = { is_core_of = LIB }
+		}
+		localization_key = VICTORY_POINTS_10836_LIBERIAN
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_10836
@@ -19651,8 +19755,35 @@ defined_text = {
 defined_text = {
 	name = GetVictoryPointName_13950
 	text = {
+		trigger = { 
+			original_tag = LPD
+			881 = { has_state_flag = renamed_state_jerusalem }
+		}
+		localization_key = VICTORY_POINTS_13950_JERUSALEM #Mother Base
+	}
+	text = {
+		trigger = { 
+			original_tag = MSF
+			881 = { has_state_flag = renamed_state_mother_base }
+		}
+		localization_key = VICTORY_POINTS_13950_MSF #Mother Base
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = VICTORY_POINTS_13950
+	}
+	text = {
+		trigger = { 
+			881 = { has_state_flag = renamed_state_wilhelmsburg }
+			OR = {
+				is_german_tag = yes
+				has_country_leader = {
+					name = "Franz Ritter von Epp"
+					ruling_only = yes
+				}
+			}
+		}
+		localization_key = VICTORY_POINTS_13950_WILHELMSBURG
 	}
 	text = {
 		trigger = { is_german_tag = yes }
@@ -19661,6 +19792,10 @@ defined_text = {
 	text = {
 		trigger = { is_brz_portuguese = yes }
 		localization_key = VICTORY_POINTS_13950_PORTUGUESE
+	}
+	text = {
+		trigger = { original_tag = KIV }
+		localization_key = VICTORY_POINTS_13950_KIVU
 	}
 	text = {
 		localization_key = VICTORY_POINTS_13950
@@ -19904,6 +20039,13 @@ defined_text = {
 }
 defined_text = {
 	name = GetVictoryPointName_14444
+	text = {
+		trigger = { 
+			original_tag = LIB
+			966 = { has_state_flag = renamed_state_firestone }
+		}
+		localization_key = VICTORY_POINTS_14444_LIBERIAN
+	}
 	text = {
 		localization_key = VICTORY_POINTS_14444
 	}

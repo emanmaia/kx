@@ -315,14 +315,18 @@ is_german_tag = {
 			tag = DDR
 			tag = BAY
 			tag = GEX
-				AND = {
-					original_tag = BAT
-					has_socialist_government = no
-				}
-				AND = {
-					original_tag = SWI
-					has_global_flag = SWI_germanization
-				}
+			AND = {
+				original_tag = BAT
+				has_socialist_government = no
+			}
+			AND = {
+				original_tag = SWI
+				has_global_flag = SWI_germanization
+			}
+			AND = {
+				original_tag = DKB
+				has_country_flag = DKB_germanization
+			}
 			tag = MAF
 			tag = GEA
 		}
@@ -509,7 +513,10 @@ is_kipchak_turkic_tag = {
 	custom_trigger_tooltip = {
 		tooltip = is_kipchak_turkic_tag
 		OR = {
-			tag = ALO
+			AND = {
+				tag = ALO
+				NOT = { has_country_flag = ALO_speaks_russian }
+			}
 			AND = {
 				tag = CRM
 				NOT = { has_government = radical_socialist }

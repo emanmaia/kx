@@ -567,6 +567,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_44
 	text = {
+		trigger = { 
+			original_tag = ALB
+			44 = { has_state_flag = renamed_state_enver }
+		}
+		localization_key = STATE_44_ENVER #
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_44 #Albania
 	}
@@ -623,8 +630,19 @@ defined_text = {
 defined_text = {
 	name = GetStateName_48
 	text = {
+		trigger = {
+			original_tag = BUL
+			has_country_leader = {
+				name = "Gajaz Ishaki"
+				ruling_only = yes
+			}
+			48 = { has_state_flag = renamed_state_new_phanagoria }
+		}
+		localization_key = STATE_48_VOLGA_BULGARIAN #
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
-		localization_key = STATE_48 #Sofia
+		localization_key = STATE_48
 	}
 	text = {
 		trigger = { original_tag = BUL }
@@ -2821,6 +2839,10 @@ defined_text = {
 		localization_key = STATE_195
 	}
 	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = STATE_195_GERMAN
+	}
+	text = {
 		trigger = { 
 			195 = { has_state_flag = renamed_state_imperial }
 		}
@@ -3154,6 +3176,10 @@ defined_text = {
 		localization_key = STATE_217_RYKOV
 	}
 	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = STATE_217_GERMAN
+	}
+	text = {
 		localization_key = STATE_217 #
 	}
 }
@@ -3186,6 +3212,10 @@ defined_text = {
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_219 #Moscow
+	}
+	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = STATE_219_GERMAN
 	}
 	text = {
 		trigger = { is_russian_speaking_tag = yes }
@@ -3580,6 +3610,17 @@ defined_text = {
 defined_text = {
 	name = GetStateName_249
 	text = {
+		trigger = {
+			original_tag = BUL
+			has_country_leader = {
+				name = "Gajaz Ishaki"
+				ruling_only = yes
+			}
+			249 = { has_state_flag = renamed_state_bolghar }
+		}
+		localization_key = STATE_249_VOLGA_BULGARIAN #
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_249 #
 	}
@@ -3790,6 +3831,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_272
 	text = {
+		trigger = { 
+			original_tag = LIB
+			272 = { is_core_of = LIB }
+		}
+		localization_key = STATE_272_LIBERIAN
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_272 #Senegal
 	}
@@ -3817,6 +3865,13 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_274
+	text = {
+		trigger = { 
+			original_tag = LIB
+			274 = { is_core_of = LIB }
+		}
+		localization_key = STATE_274_LIBERIAN
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_274 #Gold Coast
@@ -6905,6 +6960,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_556
 	text = {
+		trigger = { 
+			original_tag = LIB
+			556 = { is_core_of = LIB }
+		}
+		localization_key = STATE_556_LIBERIAN
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_556 #Bamako
 	}
@@ -6918,6 +6980,13 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_557
+	text = {
+		trigger = { 
+			original_tag = LIB
+			557 = { is_core_of = LIB }
+		}
+		localization_key = STATE_557_LIBERIAN
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_557 #Mauritania
@@ -8794,6 +8863,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_700
 	text = {
+		trigger = { 
+			original_tag = LIB
+			700 = { is_core_of = LIB }
+		}
+		localization_key = STATE_700_LIBERIAN
+	}
+	text = {
 		localization_key = STATE_700 #Sierra Leone
 	}
 }
@@ -10373,6 +10449,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_806
 	text = {
+		trigger = { 
+			original_tag = LIB
+			806 = { is_core_of = LIB }
+		}
+		localization_key = STATE_806_LIBERIAN
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_806 #Guinea
 	}
@@ -10386,6 +10469,13 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_807
+	text = {
+		trigger = { 
+			original_tag = LIB
+			807 = { is_core_of = LIB }
+		}
+		localization_key = STATE_807_LIBERIAN
+	}
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_807 #Ivory Coast
@@ -10405,6 +10495,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_808
 	text = {
+		trigger = { 
+			original_tag = LIB
+			808 = { is_core_of = LIB }
+		}
+		localization_key = STATE_808_LIBERIAN
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_808 #Upper Volta
 	}
@@ -10418,6 +10515,13 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_809
+	text = {
+		trigger = { 
+			original_tag = LIB
+			809 = { is_core_of = LIB }
+		}
+		localization_key = STATE_809_LIBERIAN
+	}
 	text = {
 		localization_key = STATE_809 #Niger
 	}
@@ -10467,6 +10571,10 @@ defined_text = {
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_813 #South Zambesia
+	}
+	text = {
+		trigger = { original_tag = ZIM }
+		localization_key = STATE_813_RHODESIAN #
 	}
 	text = {
 		trigger = { is_german_tag = yes }
@@ -11031,6 +11139,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_860
 	text = {
+		trigger = { 
+			original_tag = LIB
+			860 = { is_core_of = LIB }
+		}
+		localization_key = STATE_860_LIBERIAN
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_860 #Asawad
 	}
@@ -11198,6 +11313,10 @@ defined_text = {
 		localization_key = STATE_871 #Nyasaland
 	}
 	text = {
+		trigger = { original_tag = ZIM }
+		localization_key = STATE_871 #
+	}
+	text = {
 		trigger = { is_german_tag = yes }
 		localization_key = STATE_871_GERMAN #Njassaland
 	}
@@ -11264,11 +11383,25 @@ defined_text = {
 defined_text = {
 	name = GetStateName_876
 	text = {
+		trigger = { 
+			original_tag = LIB
+			876 = { is_core_of = LIB }
+		}
+		localization_key = STATE_876_LIBERIAN
+	}
+	text = {
 		localization_key = STATE_876 #Dahomey
 	}
 }
 defined_text = {
 	name = GetStateName_877
+	text = {
+		trigger = { 
+			original_tag = LIB
+			877 = { is_core_of = LIB }
+		}
+		localization_key = STATE_877_LIBERIAN
+	}
 	text = {
 		localization_key = STATE_877 #Togoland
 	}
@@ -11288,6 +11421,10 @@ defined_text = {
 	text = {
 		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_879_PORTUGUESE #Garanganja
+	}
+	text = {
+		trigger = { original_tag = KIV }
+		localization_key = STATE_879_KIVU #Congo Central
 	}
 	text = {
 		localization_key = STATE_879 #Katanga
@@ -11322,6 +11459,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_881
 	text = {
+		trigger = { 
+			original_tag = MSF
+			881 = { has_state_flag = renamed_state_mother_base }
+		}
+		localization_key = STATE_881_MSF #Mother Base
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_881 #Bas-Congo
 	}
@@ -11332,6 +11476,10 @@ defined_text = {
 	text = {
 		trigger = { is_brz_portuguese = yes }
 		localization_key = STATE_881_PORTUGUESE #Congo Central
+	}
+	text = {
+		trigger = { original_tag = KIV }
+		localization_key = STATE_881_KIVU #Congo Central
 	}
 	text = {
 		localization_key = STATE_881 #Bas-Congo
@@ -12183,6 +12331,10 @@ defined_text = {
 		localization_key = STATE_955 #East Luangwa
 	}
 	text = {
+		trigger = { original_tag = ZIM }
+		localization_key = STATE_955_RHODESIAN #
+	}
+	text = {
 		trigger = { is_german_tag = yes }
 		localization_key = STATE_955_GERMAN #Ostluangwa
 	}
@@ -12199,6 +12351,10 @@ defined_text = {
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_956 #Northern Zambesia
+	}
+	text = {
+		trigger = { original_tag = ZIM }
+		localization_key = STATE_956_RHODESIAN #
 	}
 	text = {
 		trigger = { is_german_tag = yes }
@@ -12219,6 +12375,10 @@ defined_text = {
 		localization_key = STATE_957 #North Wales
 	}
 	text = {
+		trigger = { original_tag = ZIM }
+		localization_key = STATE_957
+	}
+	text = {
 		trigger = { is_german_tag = yes }
 		localization_key = STATE_957_GERMAN #Nordzambesia
 	}
@@ -12235,6 +12395,10 @@ defined_text = {
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_958 #Barotseland
+	}
+	text = {
+		trigger = { original_tag = ZIM }
+		localization_key = STATE_958
 	}
 	text = {
 		trigger = { is_german_tag = yes }
@@ -12307,6 +12471,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_963
 	text = {
+		trigger = { 
+			original_tag = LIB
+			963 = { is_core_of = LIB }
+		}
+		localization_key = STATE_963_LIBERIAN
+	}
+	text = {
 		localization_key = STATE_963 #Perak
 	}
 }
@@ -12355,6 +12526,13 @@ defined_text = {
 defined_text = {
 	name = GetStateName_967
 	text = {
+		trigger = { 
+			original_tag = LIB
+			967 = { is_core_of = LIB }
+		}
+		localization_key = STATE_967_LIBERIAN
+	}
+	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_967 #Ifni
 	}
@@ -12368,6 +12546,13 @@ defined_text = {
 }
 defined_text = {
 	name = GetStateName_968
+	text = {
+		trigger = { 
+			original_tag = LIB
+			968 = { is_core_of = LIB }
+		}
+		localization_key = STATE_968_LIBERIAN
+	}
 	text = {
 		localization_key = STATE_968 #Ifni
 	}
@@ -15977,6 +16162,10 @@ defined_text = {
 	text = {
 		trigger = { NOT = { has_global_flag = allowrenaming_flag } }
 		localization_key = STATE_1263
+	}
+	text = {
+		trigger = { is_german_tag = yes }
+		localization_key = STATE_1263_GERMAN
 	}
 	text = {
 		trigger = { is_russian_speaking_tag = yes }
