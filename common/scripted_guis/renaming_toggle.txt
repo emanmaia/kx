@@ -27,6 +27,7 @@ scripted_gui = {
 					set_variable = { global.renaming_frame = 2 }
 				}
 				every_state = { rename_state_effect = yes }
+				add_to_variable = { global.kr_options_dirty = 1 }
 			}
 		}
 

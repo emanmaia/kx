@@ -4463,12 +4463,10 @@ country_event = {#The Ultimate Apotheosis
 		ai_chance = {
 			factor = 0
 		}
-		effect_tooltip = {
-			set_province_name = { id = 9914 name = "Enver"}
-			44 = { 
-				set_state_name = "Enver" 
-				set_state_flag = renamed_state_enver
-			}
+		set_province_name = { id = 9914 name = "Enver"}
+		44 = { 
+			set_state_name = "Enver" 
+			set_state_flag = renamed_state_enver
 		}
 		hidden_effect = {
 			every_controlled_state = { rename_state_effect = yes }
@@ -4491,12 +4489,10 @@ country_event = {#The Ultimate Apotheosis
 		ai_chance = {
 			factor = 90
 		}
-		effect_tooltip = {
-			set_province_name = { id = 9914 name = "Enver"}
-			44 = { 
-				set_state_name = "Enver" 
-				set_state_flag = renamed_state_enver
-			}
+		set_province_name = { id = 9914 name = "Enver"}
+		44 = { 
+			set_state_name = "Enver" 
+			set_state_flag = renamed_state_enver
 		}
 		hidden_effect = {
 			every_controlled_state = { rename_state_effect = yes }

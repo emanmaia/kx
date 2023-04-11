@@ -7625,10 +7625,11 @@ country_event = {
 	option = {
 		name = molotov.1.a
 		add_stability = 0.1
-		effect_tooltip = { set_province_name = { id = 7375 name = "Molotov" } }
-		hidden_effect = {
-			398 = { set_state_flag = renamed_state_molotov }
-			every_controlled_state = { rename_state_effect = yes }
+		set_province_name = { id = 7375 name = "Molotov" }
+		398 = {
+			set_state_name = "Molotov
+			set_state_flag = renamed_state_molotov 
+			hidden_effect = { every_controlled_state = { rename_state_effect = yes } }
 		}
 	}
 }
