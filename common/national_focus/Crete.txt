@@ -87,4 +87,296 @@ focus_tree = {
 	
 		}
 	}
+	focus = {
+		id = CRE_kidnapping
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_black_monday_strikes
+		}
+		x = 0
+		y = 3
+		relative_position_id = CRE_island_under_iron_cross
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_germany_btfo
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_kidnapping
+		}
+		mutually_exclusive = {
+			 focus = CRE_germany_stays
+		}
+		x = 3
+		y = 1
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	
+	focus = {
+		id = CRE_free_nation
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_germany_btfo
+		}
+		x = 1
+		y = 2
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_towards_tur
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_germany_btfo
+		}
+		x = 3
+		y = 2
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_vilayet
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_towards_tur
+		}
+		x = 3
+		y = 3
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_import_turks
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_vilayet
+		}
+		x = 3
+		y = 6
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_towards_gre
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_germany_btfo
+		}
+		x = 5
+		y = 2
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_towards_gre
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_germany_btfo
+		}
+		x = 5
+		y = 2
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_retvrn_of_gayreek
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_towards_gre
+		}
+		x = 5
+		y = 3
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_theriso_legecy
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_retvrn_of_gayreek
+		}
+		x = 5
+		y = 6
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_integrate_gov
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_towards_gre
+			focus = CRE_towards_tur
+		}
+		x = 4
+		y = 4
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_advisors
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_integrate_gov
+		}
+		x = 4
+		y = 5
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_annexation
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_advisors
+		}
+		prerequisite = {
+			focus = CRE_import_turks
+			focus = CRE_theriso_legecy
+		}
+		mutually_exclusive = {
+			focus = CRE_puppet
+		}
+		x = 5
+		y = 7
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_puppet
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_advisors
+		}
+		prerequisite = {
+			focus = CRE_import_turks
+			focus = CRE_theriso_legecy
+		}
+		mutually_exclusive = {
+			focus = CRE_annexation
+		}
+		x = 3
+		y = 7
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_germany_stays
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_kidnapping
+		}
+		mutually_exclusive = {
+			 focus = CRE_germany_btfo
+		}
+		x = -5
+		y = 1
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
 }
