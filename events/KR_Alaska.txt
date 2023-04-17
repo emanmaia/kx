@@ -3528,6 +3528,7 @@ country_event = { # flavour event about jewish settlement
 
 	option = { # epic
 		name = Alaska.115.a
+		add_manpower = 2500
 		hidden_effect = {
 			country_event = {
 				id = Alaska.116
@@ -3550,6 +3551,11 @@ country_event = { # flavour event about jewish settlement pt.2
 
 	option = { # epic
 		name = Alaska.116.a
+		trigger = {
+			NOT = {
+				has_government = social_democrat
+			}
+		}
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -3566,6 +3572,20 @@ country_event = { # flavour event about jewish settlement pt.2
 				}
 			}
 		}
+		create_corps_commander = {
+			name = "Mickey Marcus"
+			portrait_path = "gfx/leaders/ALA/Portrait_Alaska_Mickey_Marcus.png"
+			traits = { 
+				infantry_leader 
+				ranger
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		add_manpower = 1200
 		if = {
 			limit = {
 				has_country_leader = {
@@ -5025,6 +5045,74 @@ country_event = { # Indigenous Infantry Program
 		add_stability = 0.04
 		add_political_power = 125
 		increase_ruling_party_popularity_by_3 = yes
+	}
+}
+
+country_event = { # Alaskan Ambitions
+	id = Alaska.210
+	immediate = {log = "[GetDateText]: [Root.GetName]: event Alaska.207"}
+	title = Alaska.210.t
+	desc = Alaska.210.d
+	picture = GFX_report_event_ALA_map
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_in_faction = no
+		has_war = no
+	}
+
+	option = { # Claim America
+		name = Alaska.210.a
+		ai_chance = {
+			factor = 0
+		}
+		create_wargoal = { type = annex_everything target = USA }
+		create_wargoal = { type = annex_everything target = COR }
+		create_wargoal = { type = annex_everything target = TEX }
+		create_wargoal = { type = annex_everything target = CSA }
+		create_wargoal = { type = annex_everything target = CAL }
+		every_state = {
+            limit = {
+				is_united_states = yes
+			}
+			add_claim_by = ALA
+		}
+	}
+	
+	option = { # Greater Alaska
+		name = Alaska.210.b
+		ai_chance = {
+			factor = 0
+		}
+		add_state_core = 637
+		add_state_core = 473
+		add_state_core = 471
+		add_state_core = 472
+		add_state_core = 1202
+		create_wargoal = {
+			type = annex_everything 
+			target = CAN
+		}
+		create_wargoal = {
+			type = annex_everything 
+			target = RUS
+		}
+		create_wargoal = {
+			type = annex_everything 
+			target = TRM
+		}
+	}
+	
+	option = { # Do Nothing
+		name = Alaska.210.c
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 60
+		add_stability = 0.06
 	}
 }
 

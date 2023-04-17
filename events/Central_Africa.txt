@@ -1378,7 +1378,7 @@ country_event = { # The Bomimi Massacre
 	immediate = { log = "[GetDateText]: [Root.GetName]: event cea_flavour.1" }
 	title = cea_flavour.1.t
 	desc = cea_flavour.1.d
-	picture = GFX_report_event_CEA_bokassa_speech
+	picture = GFX_report_event_CEA_bokassa_uniform
 	
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -3267,6 +3267,9 @@ country_event = { # Big Fuckoff Formable
 	option = { # 
 		name = cea_flavour.73.a
 		set_cosmetic_tag = CEA_SULTANATE5
+	}
+	option = { # 
+		name = cea_flavour.73.c
 	}
 }
 

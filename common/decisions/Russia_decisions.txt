@@ -2540,6 +2540,46 @@ RUS_Alliance_decisions = {
 				factor = 0
 				FROM = { is_ai = no }
 			}
+			modifier = {
+				factor = 0
+				FROM = { tag = COR }
+				OR = {
+					has_game_rule = {
+						rule = COR_foreign_policy
+						option = COR_FOREIGN_POLICY_ENTENTE
+					}
+					has_game_rule = {
+						rule = COR_foreign_policy
+						option = COR_FOREIGN_POLICY_REICHSPAKT
+					}
+					has_game_rule = {
+						rule = COR_foreign_policy
+						option = COR_FOREIGN_POLICY_EXPANSIONISM
+					}
+					has_game_rule = {
+						rule = COR_foreign_policy
+						option = COR_FOREIGN_POLICY_ISOLATIONISM
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = { tag = CSA }
+				OR = {
+					has_game_rule = {
+						rule = CSA_foreign_policy
+						option = CSA_FOREIGN_POLICY_INTERNATIONALE
+					}
+					has_game_rule = {
+						rule = CSA_foreign_policy
+						option = CSA_FOREIGN_POLICY_WORLD_REVOLUTION
+					}
+					has_game_rule = {
+						rule = CSA_foreign_policy
+						option = CSA_FOREIGN_POLICY_MONROEISM
+					}
+				}
+			}
 		}
 
 		cancel_effect = {
@@ -3020,30 +3060,30 @@ RUS_China_Policy_decisions = {
 		icon = hol_exchange_intelligence_data
 
 		available = {
-			AND = {
-				OR = {
-					tag = DKB
-					AND = {
+			OR = {
+				AND = {
+					OR = {
 						tag = RUS
-						OR = {
-							has_government = totalist
-							has_country_flag = soviet_russia_restored
-						}
+						tag = DKB
+					}
+					OR = {
+						has_government = totalist
+						has_country_flag = soviet_russia_restored
 					}
 				}
-				OR = {
+				AND = {
 					tag = DKB
-					AND = {
-						CHI = {
-							has_completed_focus = CHI_thegeneralissimohasrisenfromthedead
-						}
+					CHI = {
+						has_completed_focus = CHI_thegeneralissimohasrisenfromthedead
 					}
 				}
-				OR = {
+				AND = {
 					country_exists = CHI
-					AND = {
-						country_exists = GXC
-						GXC = { GXC_has_LKMT_government = yes }
+					OR = {	
+						AND = {
+							country_exists = GXC
+							GXC = { GXC_has_LKMT_government = yes }
+						}
 						CHI = { exists = no }
 					}
 				}
@@ -4571,6 +4611,16 @@ RUS_Foreign_Policy_decisions = {
 			}
 			modifier = {
 				factor = 0
+				DKB = {
+					OR = {
+						is_subject_of = ROOT
+						is_guaranteed_by = ROOT
+					}
+					has_war_with = FROM
+				}
+			}
+			modifier = {
+				factor = 0
 				FROM = {
 					tag = GEO
 					is_subject = no
@@ -4635,9 +4685,16 @@ RUS_Foreign_Policy_decisions = {
 				TUR = { country_event = { id = ottfor.52 days = 18 } }
 			}			
 			if = {
-				limit = { FROM = { tag = AKB } }
+				limit = { FROM = { tag = ABK } }
 				create_wargoal = {
 					target = ABK
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = { FROM = { tag = CRM } }
+				create_wargoal = {
+					target = CRM
 					type = annex_everything
 				}
 			}
@@ -4740,6 +4797,16 @@ RUS_Foreign_Policy_decisions = {
 					FROM = { is_in_faction = yes }
 				}
 			}
+			modifier = {
+				factor = 0
+				DKB = {
+					OR = {
+						is_subject_of = ROOT
+						is_guaranteed_by = ROOT
+					}
+					has_war_with = FROM
+				}
+			}
 		}
 
 		complete_effect = {
@@ -4779,7 +4846,7 @@ RUS_Foreign_Policy_decisions = {
 			}
 			if = {
 				limit = {
-					FROM = { tag = DKB }
+					FROM = { tag = KUB }
 				}
 				if = {
 					limit = {
@@ -4802,7 +4869,7 @@ RUS_Foreign_Policy_decisions = {
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove RUS_Attack_Caucasus target: [From.GetName]"
+			log = "[GetDateText]: [Root.GetName]: Decision remove RUS_Attack_Cossacks target: [From.GetName]"
 			clear_decision_attack_AI = yes
 		}
 	}
@@ -5182,89 +5249,6 @@ RUS_Foreign_Policy_decisions = {
 			}
 		}
 	}
-	RUS_Buy_White_Ruthenia = {
-		icon = generic_civil_support
-
-		available = {
-			OR = {
-				is_owner_neighbor_of = FROM
-				any_allied_country = { is_owner_neighbor_of = FROM }
-			}
-		}
-
-		visible = {
-			can_declare_war_on = FROM
-			NOT = { has_global_flag = danzig_treaty_active }
-		}
-
-		targets = { WHR }
-		target_root_trigger = {
-			OR = {
-				has_completed_focus = RUS_Buy_State_Bonds_In_White_Ruthenia
-				has_completed_focus = RUS_Destroy_German_Imperialists
-				has_completed_focus = RUS_Solving_Territorial_Disputes
-			}
-		}
-		target_trigger = {
-			can_declare_war_on = FROM
-			FROM = { WHR_is_monarchy = yes }
-		}
-
-		cost = 10
-		days_remove = 14
-		fire_only_once = yes
-		war_with_target_on_remove = yes
-
-		ai_will_do = {
-			factor = 100
-			modifier = {
-				factor = 0
-				RUS_dont_attack_if_vulnerable_or_preparing = yes
-			}
-			modifier = {
-				factor = 0
-				FROM = { RUS_dont_attack_if_target_is_stronger = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { RUS_dont_attack_if_faction_is_stronger = yes }
-			}
-			modifier = {
-				factor = 0
-				FROM = { RUS_dont_attack_if_overlord_is_stronger = yes }
-			}
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_Buy_White_Ruthenia target: [From.GetName]"
-			set_country_flag = { flag = imminent_war days = 20 value = 1 }
-			FROM = {
-				add_ai_strategy = {
-					type = prepare_for_war
-					id = ROOT
-					value = 1000
-				}
-			}
-			RUS = {
-				country_event = {
-					id = rusfor.1265
-					days = 2
-					random = 48
-				}
-			}
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision remove RUS_Buy_White_Ruthenia target: [From.GetName]"
-			FROM = {
-				add_ai_strategy = {
-					type = prepare_for_war
-					id = ROOT
-					value = -1000
-				}
-			}
-		}
-	}
 	RUS_Intervene_In_White_Ruthenia = {
 		icon = generic_civil_support
 
@@ -5276,7 +5260,15 @@ RUS_Foreign_Policy_decisions = {
 		}
 
 		visible = {
-			can_declare_war_on = FROM
+			OR = {
+				can_declare_war_on = FROM
+				FROM = {
+					has_country_leader = {
+						name = "Stanisłaŭ Bułak-Bałachowič"
+						ruling_only = yes
+					}
+				}
+			}
 			NOT = { has_global_flag = danzig_treaty_active }
 		}
 
@@ -5289,9 +5281,14 @@ RUS_Foreign_Policy_decisions = {
 			}
 		}
 		target_trigger = {
-			can_declare_war_on = FROM
-			FROM = { 
-				WHR_is_monarchy = no
+			OR = {
+				can_declare_war_on = FROM
+				FROM = {
+					has_country_leader = {
+						name = "Stanisłaŭ Bułak-Bałachowič"
+						ruling_only = yes
+					}
+				}
 			}
 		}
 
@@ -5330,11 +5327,30 @@ RUS_Foreign_Policy_decisions = {
 					value = 1000
 				}
 			}
-			RUS = {
-				country_event = {
-					id = rusfor.1240
-					days = 2
-					random = 48
+			if = {
+				limit = {
+					WHR = {
+						has_country_leader = {
+							name = "Stanisłaŭ Bułak-Bałachowič"
+							ruling_only = yes
+						}
+					}
+				}
+				RUS = {
+					country_event = {
+						id = rusfor.1242
+						days = 2
+						random = 48
+					}
+				}
+			}
+			else = {
+				RUS = {
+					country_event = {
+						id = rusfor.1240
+						days = 2
+						random = 48
+					}
 				}
 			}
 		}
@@ -6502,9 +6518,12 @@ RUS_Foreign_Policy_decisions = {
 					is_in_faction_with = GEX
 				}
 			}
-			has_war = no
-			NOT = { country_exists = GER }
-		}		
+			at_peace_or_same_enemies_as_ENT = yes
+			OR = {
+				GER = { exists = no }
+				ENT = { has_war_with = GER }
+			}
+		}
 		
 		targets = { ENT }
 		target_root_trigger = {

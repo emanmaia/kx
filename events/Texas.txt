@@ -2125,6 +2125,7 @@ country_event = { #1937 Election
 			popularity = 0.15
 		}
 		hidden_effect = {
+                        set_country_flag = TXS_election_over
 			random_other_country = {
 				news_event = { id = TXS.84 days = 1 }
 			}
@@ -3496,7 +3497,8 @@ country_event = { # America is reunited
 		OR = {
 			tag = TXS
 			tag = ALA
-			has_completed_focus = PAN_restoring_the_union
+			has_country_flag = ARZ_GREATER_ARIZONA
+			has_country_flag = PAN_US_PRESIDENT
 		}
 		owns_state = 361 #Maryland
 		owns_state = 371 #Louisiana
@@ -3532,7 +3534,6 @@ country_event = { # America is reunited
 				has_country_flag = TXS_kingdom_founded
 				AND = {
 					OR = {
-						has_completed_focus = PAN_restoring_the_union
 						tag = TXS
 					}
 					NOT = { has_country_flag = TXS_Remove_Texaco }
@@ -3548,7 +3549,20 @@ country_event = { # America is reunited
 			}
 		}
 		set_country_flag = TXS_UNITED_AMERICA
+		if = {
+		limit = {
+		NOT = {
+		has_country_flag = ARZ_GREATER_ARIZONA
+			}
+		}
 		set_cosmetic_tag = NEE_america
+		}
+		if = {
+		limit = {
+		has_country_flag = ARZ_GREATER_ARIZONA
+		}
+		set_cosmetic_tag = ARZ_USA
+		}
 		if = {
 			limit = {
 				CAL = {
@@ -3565,10 +3579,11 @@ country_event = { # America is reunited
 				}
 			}
 		}
-		every_owned_state = {
-			FROM.OWNER = { 
-				add_state_core = PREV
-			}
+		every_state = {
+                limit = {
+					is_united_states = yes
+				}
+			add_core_of = ROOT
 		}
 	}
 	option = { # at long last we are reunited
@@ -3601,10 +3616,11 @@ country_event = { # America is reunited
 				}
 			}
 		}
-		every_owned_state = {
-			FROM.OWNER = { 
-				add_state_core = PREV
-			}
+		every_state = {
+                limit = {
+					is_united_states = yes
+				}
+			add_core_of = ROOT
 		}
 		set_country_flag = TXS_UNITED_AMERICA
 	}
@@ -3626,10 +3642,11 @@ country_event = { # America is reunited
 				}
 			}
 		}
-		every_owned_state = {
-			FROM.OWNER = { 
-				add_state_core = PREV
-			}
+		every_state = {
+                limit = {
+					is_united_states = yes
+				}
+			add_core_of = ROOT
 		}
 		set_country_flag = TXS_UNITED_AMERICA
 	}
@@ -3640,6 +3657,12 @@ country_event = { # America is reunited
 		}
 		
 		set_cosmetic_tag = ALA_JEW_USA
+		every_state = {
+                limit = {
+					is_united_states = yes
+				}
+			add_core_of = ROOT
+			}
 		if = {
 			limit = {
 				CAL = {
@@ -3660,7 +3683,6 @@ country_event = { # America is reunited
 		name = TXS.30.e
 		trigger = {
 			NOT = {
-				has_completed_focus = PAN_restoring_the_union
 				AND = {
 					tag = TXS
 					NOT = { has_country_flag = TXS_Remove_Texaco }
@@ -3693,10 +3715,11 @@ country_event = { # America is reunited
 				}
 			}
 		}
-		every_owned_state = {
-			FROM.OWNER = { 
-				add_state_core = PREV
-			}
+		every_state = {
+                limit = {
+					is_united_states = yes
+				}
+			add_core_of = ROOT
 		}
 	}
 	
@@ -3715,44 +3738,14 @@ country_event = { # America is reunited
 				}
 			}
 		}
-		every_owned_state = {
-			FROM.OWNER = { 
-				add_state_core = PREV
-			}
+		every_state = {
+                limit = {
+					is_united_states = yes
+				}
+			add_core_of = ROOT
 		}
 		set_country_flag = TXS_UNITED_AMERICA
 		set_cosmetic_tag = USA_GER
-	}
-
-	option = { # at long last we are reunited
-		name = TXS.30.a
-		trigger = {
-			tag = PAN
-		}
-		set_country_flag = TXS_UNITED_AMERICA
-		
-		if = {
-			limit = {
-				CAL = {
-					is_in_faction = yes
-					exists = yes
-				}
-				has_global_flag = CAL_seperatist_claim
-			}
-			CAL = {
-				every_owned_state = {
-					FROM.OWNER = { 
-						add_state_core = ROOT
-					}
-				}
-			}
-		}
-		every_owned_state = {
-			FROM.OWNER = { 
-				add_state_core = PREV
-			}
-		}
-		set_cosmetic_tag = NEE_america
 	}
 	
 	option = { # at long last we are reunited
@@ -4540,6 +4533,13 @@ country_event = { # Post War Elections
 			ruling_party = syndicalist
 			elections_allowed = yes
 		}
+		remove_all_ministers = yes
+		add_ideas = {
+			TXS_Homer_Brooks_hog_syn
+			TXS_Manuela_Solis_Sager_for_syn
+			TXS_Francisca_Reyes_Esparza_eco_syn
+			TXS_Emma_Tenayuca_sec_syn
+		}
 		set_cosmetic_tag = TXS
 	}
 	option = {
@@ -4557,6 +4557,13 @@ country_event = { # Post War Elections
 		set_politics = {
 			ruling_party = radical_socialist
 			elections_allowed = yes
+		}
+		remove_all_ministers = yes
+		add_ideas = {
+			TXS_Woodie_Guthrie_hog_rso
+			TXS_Rosendo_Dorame_for_rso
+			TXS_Fernando_Palomares_eco_rso
+			TXS_Will_Geer_sec_rso
 		}
 		set_cosmetic_tag = TXS
 	}
@@ -6625,7 +6632,7 @@ country_event = { # LBJ Speech
 			desc = "POLITICS_WOODIE_GURTHIE_DESC"
 			picture = "gfx/leaders/TXS/Portrait_Texas_woodie.png"
 			expire = "1965.1.1"
-			ideology = radical_progressivism_subtype
+			ideology = cowboy_communalism_subtype
 			traits = { cowboy }
 		}
 		hidden_effect = {
@@ -7946,6 +7953,27 @@ country_event = { # Graves Death
 			remove_ideas = TXS_William_Sidney_Graves_carm
 		}
 		set_country_flag = William_Sidney_Graves_dead
+	}
+}
+
+country_event = { # Socialist Flag
+	id = TXS.124
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TXS.124"}
+	title = TXS.124.t
+	desc = TXS.124.d
+	picture = GFX_report_event_TXS_flag
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #Socialist Flag
+		name = TXS.124.a
+		add_political_power = 10
+	}
+	
+	option = { #Socialist Flag
+		name = TXS.124.b
+		drop_cosmetic_tag = yes
 	}
 }
 

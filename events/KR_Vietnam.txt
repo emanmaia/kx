@@ -429,7 +429,7 @@ country_event = {#The decision
 	check_variable = {
 			var = VIN_conservative_inclination
 			value = 3
-			compare = greater_than
+			compare = greater_than_or_equals
 		}
 	}
 	country_event = {
@@ -445,7 +445,7 @@ country_event = {#The decision
 	check_variable = {
 			var = VIN_autocracy_inclination
 			value = 3
-			compare = greater_than
+			compare = greater_than_or_equals
 		}
 	}
 	country_event = {
@@ -461,7 +461,7 @@ country_event = {#The decision
 	check_variable = {
 			var = VIN_religious_inclination
 			value = 3
-			compare = greater_than
+			compare = greater_than_or_equals
 		}
 	}
 	set_country_flag = VIN_Religious
@@ -722,11 +722,11 @@ country_event = {# mine cousin retarded tbh
 			name = "Dao Dua"
 			}
 			remove_all_ministers = yes
-			add_ideas = VIN_Cao_Hoai_Sang_for_npo
-			add_ideas = VIN_Tran_Quang_Vinh_eco_npo
-			add_ideas = VIN_Cao_Hoai_Sang_sec_npo
+			add_ideas = VIN_Nguyen_Thanh_Nam_for_npo
+			add_ideas = VIN_Nguyen_Thanh_Nam_eco_npo
+			add_ideas = VIN_Nguyen_Thanh_Nam_sec_npo
 			add_ideas = VIN_Nguyen_Thanh_Nam_hog_npo
-			}
+		}
 		complete_national_focus = VIN_True_Global_Faith
 		}
 	option = {#Hoa Hao
@@ -1060,8 +1060,13 @@ country_event = {#
 			long_name = "Peace and Love Party"
 			name = "Peace and Love Party"
 		}
-		remove_ideas_with_trait = head_of_government
+		hidden_effect = {
+		remove_all_ministers = yes
+		add_ideas = VIN_Nguyen_Thanh_Nam_for_npo
+		add_ideas = VIN_Nguyen_Thanh_Nam_eco_npo
+		add_ideas = VIN_Nguyen_Thanh_Nam_sec_npo
 		add_ideas = VIN_Nguyen_Thanh_Nam_hog_npo
+		}
 		complete_national_focus = VIN_Heavenly_Mandate
 		country_event = {
 			days = 28

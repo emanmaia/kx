@@ -484,12 +484,29 @@ NEE_leftist_decisions = {
 		icon = generic_prepare_civil_war
 		allowed = { original_tag = NEE }
 		available = {
-		has_government = radical_socialist
-		has_cosmetic_tag = NEE_LERMOND_FLAG
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
+			OR = {
+				has_cosmetic_tag = NEE_LERMOND_FLAG
+				has_cosmetic_tag = NEE_lermond_BCC
+				has_cosmetic_tag = NEE_HIVE
+				has_cosmetic_tag = NEE_ECOANARCHISM
+				has_cosmetic_tag = NEE_FOSTERAULT
+				has_cosmetic_tag = NEE_commoner
+			}
 		}
+
 		visible = {
-			is_subject_of = CAN
-			has_government = radical_socialist
+			OR = {
+				is_subject_of = CAN
+				is_in_faction_with = CAN
+			}
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
 		}
 
 		cost = freedec?0
@@ -518,8 +535,11 @@ NEE_leftist_decisions = {
 			log = "[GetDateText]: [Root.GetName]: Decision NEE_leftist_declare_independence_from_CAN"
 			add_political_power = 100
 			add_war_support = 0.10
-			CAN = {
-				set_autonomy = { target = NEE autonomy_state = autonomy_free }
+			if = {
+				limit = { is_subject_of = CAN }
+				CAN = {
+					set_autonomy = { target = NEE autonomy_state = autonomy_free }
+				}
 			}
 			random_other_country = {
 				limit = {
@@ -536,6 +556,7 @@ NEE_leftist_decisions = {
 			CAN = {
 				country_event = { id = newengland.15 hours = 8 }
 			}
+			set_country_flag = NEE_leftist_declared_independence_flag
 		}
 	}
 
@@ -546,6 +567,7 @@ NEE_leftist_decisions = {
 			ROOT = {
 				is_subject = no
 				controls_all_owned_states = yes
+				has_country_flag = NEE_leftist_declared_independence_flag
 				CSA = {
 					OR = {
 					exists = no
@@ -598,24 +620,38 @@ NEE_leftist_decisions = {
 			ROOT = {
 				is_subject = no
 				controls_all_owned_states = yes
+				has_country_flag = NEE_leftist_declared_independence_flag
 				CSA = {
 					OR = {
-					exists = no
-					NOT = {
-					has_government = radical_socialist
-					}
+						exists = no
+						NOT = {
+						has_government = radical_socialist
+						}
 					}
 				}
 			}
 		}
 
 		visible = {
-			has_government = radical_socialist
-			has_cosmetic_tag = NEE_LERMOND_FLAG
+			has_global_flag = USA_civil_war_begun_flag
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
+			OR = {
+				has_cosmetic_tag = NEE_LERMOND_FLAG
+				has_cosmetic_tag = NEE_HIVE
+				has_cosmetic_tag = NEE_ECOANARCHISM
+				has_cosmetic_tag = NEE_FOSTERAULT
+				has_cosmetic_tag = NEE_commoner
+			}
 		}
 
 		target_root_trigger = {
-			has_government = radical_socialist
+			OR = {
+				has_government = radical_socialist
+				has_government = syndicalist
+			}
 		}
 
 		targets = { CAL USA CSA TEX COR BBR WCC }
@@ -724,7 +760,10 @@ NEE_reclaiming_america = {
 					check_variable = { NEE_legitimacy > 40 }
 				}
 			}
-			NOT = { country_exists = CAL }
+			OR = {
+				NOT = { country_exists = CAL }
+				CAL = { has_elected_government = no }
+			}
 			OR = {
 				NOT = { country_exists = USA }
 				USA = { has_elected_government = no }
@@ -770,6 +809,7 @@ NEE_reclaiming_america = {
 			is_subject = no
 			controls_all_owned_states = yes
 			can_declare_war_on = FROM
+			NOT = { has_wargoal_against = FROM }
 			custom_trigger_tooltip = {
 				tooltip = "Legitimacy greater than 60"
 				check_variable = { NEE_legitimacy > 60 }
@@ -784,7 +824,7 @@ NEE_reclaiming_america = {
 			has_country_flag = NEE_claimed_america
 		}
 
-		targets = { CAL USA CSA TEX }
+		targets = { CAL USA CSA TEX COR BBR WCC }
 
 		target_trigger = {
 			can_declare_war_on = FROM
@@ -852,6 +892,7 @@ NEE_reclaiming_america_dominion = {
 		available = {
 			is_subject = yes
 			controls_all_owned_states = yes
+			NOT = { has_wargoal_against = FROM }
 			has_completed_focus = NEE_prepare_to_move_south
 		}
 

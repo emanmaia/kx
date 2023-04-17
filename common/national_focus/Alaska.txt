@@ -648,6 +648,7 @@ focus_tree = {
 					has_war_with = COR
 				}
 			}
+			has_war = no
 			has_democratic_government = yes
 		}
 		relative_position_id = ALA_internal_elections
@@ -1046,12 +1047,23 @@ focus_tree = {
 					name = "Dmitry Karbyshev"
 					portrait_path = "gfx/leaders/SOV/Portrait_SOV_Dimitry_Karbaskyev.png"
 					traits = { winter_specialist war_hero }
+					skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 2
+				}
+				create_corps_commander = {
+					name = "Lev Sedov"
+					portrait_path = "gfx/leaders/SOV/Portrait_SOV_Lev_Sedov.png"
+					traits = { politically_connected }
 					skill = 1
 					attack_skill = 1
 					defense_skill = 1
 					planning_skill = 1
 					logistics_skill = 1
 				}
+				
 			}
 			hidden_effect = {
 				country_event = {
@@ -1498,6 +1510,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 5
+		}
+		available = {
+			has_war = no
 		}
 
 		available_if_capitulated = yes
@@ -2241,6 +2256,7 @@ focus_tree = {
 		cost = 5.00
 		available = {
 			has_government = paternal_autocrat
+			has_war = no
 		}
 		bypass = {
 			hidden_trigger = {
