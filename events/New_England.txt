@@ -439,10 +439,6 @@ country_event = { # Independent New England
 				days = 122
 			}
 			country_event = {
-				id = newengland.44
-				days = 162
-			}
-			country_event = {
 				id = newengland.54
 				days = 200
 				random = 100
@@ -559,6 +555,12 @@ country_event = { # America is reunited
 				}
 			}
 			set_cosmetic_tag = NEE_ancap_USA
+			hidden_effect = {
+				country_event = {
+					id = newenglandmilflavor.1004
+					days = 20
+				}
+			}
 		}
 		if = {
 			limit = {
@@ -6229,9 +6231,13 @@ country_event = { # 1937 "World Series"
 	desc = newengland.44.d
 	picture = GFX_report_event_USA_world_series_36
 
-	is_triggered_only = yes
+	fire_only_once = yes
 	
-	trigger = { has_war = no }
+	trigger = {
+		tag = NEE
+		date > 1937.10.6
+		has_war = no 
+	}
 
 	option = { # Flavor
 		name = newengland.44.a
@@ -6259,7 +6265,7 @@ country_event = { # Red Sox win the World Series!
 	immediate = {log = "[GetDateText]: [Root.GetName]: event newengland.43"}
 	title = newengland.45.t
 	desc = newengland.45.d
-	picture = GFX_report_event_USA_world_series_36
+	picture = GFX_report_event_NEE_Baseball
 
 	is_triggered_only = yes
 	
@@ -6275,7 +6281,7 @@ country_event = { # Bees win the World Series!
 	immediate = {log = "[GetDateText]: [Root.GetName]: event newengland.43"}
 	title = newengland.46.t
 	desc = newengland.46.d
-	picture = GFX_report_event_USA_world_series_36
+	picture = GFX_report_event_NEE_Baseball
 
 	is_triggered_only = yes
 	
@@ -17604,6 +17610,12 @@ country_event = {# Pershing democracy or army
 				days = 5
 			}
 		}
+		hidden_effect = {
+			country_event = {
+				id = newenglandmilflavor.1004
+				days = 50
+			}
+		}
 	}	
 	option = {#army
 		name = newenglandmilflavor.40.b
@@ -20275,6 +20287,12 @@ country_event = {# Pershing death
 				days = 5
 			}
 		}
+		hidden_effect = {
+			country_event = {
+				id = newenglandmilflavor.1004
+				days = 50
+			}
+		}
 	}	
 	option = {#army
 		name = newenglandmilflavor.102.b
@@ -21675,7 +21693,7 @@ country_event = {# flaggotry
 	log = "[GetDateText]: [Root.GetName]: event newenglandmilflavor.1002"
 	set_country_flag = NEE_flag_picker_active_flag
 	}
-	title =newenglandmilflavor.1003.t
+	title = newenglandmilflavor.1003.t
 	desc = newenglandmilflavor.1003.d
 	picture = GFX_NEE_flag
 
@@ -21795,7 +21813,37 @@ country_event = {# flaggotry
 
 }	
 
+country_event = {# for the love of fredonia brought us here
+	id = newenglandmilflavor.1004
+	immediate = { log = "[GetDateText]: [Root.GetName]: event newenglandmilflavor.1004" }
+	title = newenglandmilflavor.1004.t
+	desc = newenglandmilflavor.1004.d
+	picture = GFX_NEE_fredonia
 
+	is_triggered_only = yes
+	
+	option = {#Nope
+		name = newenglandmilflavor.1004.a
+		add_political_power = 17
+	}	
+
+	option = {#United States
+	    trigger = { has_country_flag = NEE_pershing_post_dem }
+		name = newenglandmilflavor.1004.b
+		set_cosmetic_tag = NEE_us_fredonia
+	}
+	
+	option = {#United Territories
+	    trigger = { has_cosmetic_tag = NEE_ancap_USA }
+		name = newenglandmilflavor.1004.c
+		set_cosmetic_tag = NEE_ut_fredonia
+	}
+	
+	option = {#Fredonia
+		name = newenglandmilflavor.1004.e
+		set_cosmetic_tag = NEE_fredonia
+	}
+}
 
 
 
@@ -24724,6 +24772,7 @@ country_event = { # Baseball Hall of Fame
 	immediate = { log = "[GetDateText]: [Root.GetName]: event miscnee.10 FROM = [From.GetName]" }
 	title = miscnee.10.t
 	desc = miscnee.10.d
+	picture = GFX_report_event_NEE_Baseball
 
 	is_triggered_only = yes
 
