@@ -12,7 +12,7 @@ focus_tree = {
 		}
 	}
 	default = no
-
+	continuous_focus_position = { x = 1500 y = 2000 }	
 	focus = {
 		id = CRE_island_under_iron_cross
 		icon = GFX_goal_government_icon
@@ -117,7 +117,7 @@ focus_tree = {
 		mutually_exclusive = {
 			 focus = CRE_germany_stays
 		}
-		x = 3
+		x = 4
 		y = 1
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -136,8 +136,609 @@ focus_tree = {
 		prerequisite = {
 			focus = CRE_germany_btfo
 		}
-		x = 1
+		x = -1
 		y = 2
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_prepare_elections
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_free_nation
+		}
+		x = -2
+		y = 3
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_deal_with_radical_students
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_free_nation
+		}
+		x = 0
+		y = 3
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_elections
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_prepare_elections
+		}
+		prerequisite = {
+			focus = CRE_deal_with_radical_students
+		}
+		x = -1
+		y = 4
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_Tsouderos
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_elections
+		}
+		x = 4
+		y = 5
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_infrastuture_focus
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_Tsouderos
+		}
+		x = 3
+		y = 6
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_look_to_canada
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_infrastuture_focus
+		}
+		x = 3
+		y = 7
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_legecy_of_venizelos
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_Tsouderos
+		}
+		x = 5
+		y = 6
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_unfettered_democracy
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_legecy_of_venizelos
+		}
+		x = 5
+		y = 7
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_bastion_of_greek_republicanism
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_look_to_canada
+		}
+		prerequisite = {
+			focus = CRE_unfettered_democracy
+		}
+		x = 4
+		y = 8
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_for_the_republic #conquest of greece
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_bastion_of_greek_republicanism
+		}
+		mutually_exclusive = {
+			focus = CRE_rejoin_motherland
+		}
+		x = 3
+		y = 9
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_rejoin_motherland
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_bastion_of_greek_republicanism
+		}
+		mutually_exclusive = {
+			focus = CRE_for_the_republic
+		}
+		x = 5
+		y = 9
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_Tzikas
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_elections
+		}
+		x = -1
+		y = 5
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_work_with_resistence
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_Tzikas
+		}
+		x = 0
+		y = 6
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_support_from_petrakogiorgis
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_work_with_resistence
+		}
+		x = 0
+		y = 7
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_court_international_business
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_Tzikas
+		}
+		x = -2
+		y = 6
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_crete_economic_mircale
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_court_international_business
+		}
+		x = -2
+		y = 7
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_free_state_redeemed
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_crete_economic_mircale
+		}
+		prerequisite = {
+			focus = CRE_support_from_petrakogiorgis
+		}
+		x = -1
+		y = 8
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_seek_great_power_protection
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_free_state_redeemed
+		}
+		mutually_exclusive = {
+			focus = CRE_indie_island
+		}
+		x = 0
+		y = 9
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_indie_island
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_free_state_redeemed
+		}
+		mutually_exclusive = {
+			focus = CRE_seek_great_power_protection
+		}
+		x = -2
+		y = 9
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_Zaimis
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_elections
+		}
+		x = -4
+		y = 5
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_Zaimis
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_elections
+		}
+		x = -4
+		y = 5
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_Zaimis
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_elections
+		}
+		x = -6
+		y = 5
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_across_the_aisle
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_Zaimis
+		}
+		x = -5
+		y = 8
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_across_the_aisle
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_Zaimis
+		}
+		x = -5
+		y = 6
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_support_the_church
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_across_the_aisle
+		}
+		x = -5
+		y = 7
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	
+	focus = {
+		id = CRE_erase_debt #aka beg for foregin loans
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_Zaimis
+		}
+		x = -7
+		y = 6
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_moderate_eco_approch
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_erase_debt
+		}
+		x = -7
+		y = 7
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_royal_republican
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_support_the_church
+		}
+		prerequisite = {
+			focus = CRE_moderate_eco_approch
+		}
+		x = -6
+		y = 8
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_reunion_with_greece
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_royal_republican
+		}
+		mutually_exclusive = {
+			focus = CRE_crete_monarchy
+		}
+		mutually_exclusive = {
+			focus = CRE_king_in_exile
+		}
+		x = -6
+		y = 9
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_king_in_exile
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_royal_republican
+		}
+		mutually_exclusive = {
+			focus = CRE_crete_monarchy
+		}
+		mutually_exclusive = {
+			focus = CRE_reunion_with_greece
+		}
+		x = -8
+		y = 9
+		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_crete_monarchy
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_royal_republican
+		}
+		mutually_exclusive = {
+			focus = CRE_reunion_with_greece
+		}
+		mutually_exclusive = {
+			focus = CRE_king_in_exile
+		}
+		x = -4
+		y = 9
 		relative_position_id = CRE_kidnapping
 		cost = 10
 		completion_reward = {
@@ -154,7 +755,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CRE_germany_btfo
 		}
-		x = 3
+		x = 8
 		y = 2
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -172,7 +773,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CRE_towards_tur
 		}
-		x = 3
+		x = 8
 		y = 3
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -190,7 +791,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CRE_vilayet
 		}
-		x = 3
+		x = 8
 		y = 6
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -226,7 +827,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CRE_germany_btfo
 		}
-		x = 5
+		x = 10
 		y = 2
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -244,7 +845,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CRE_towards_gre
 		}
-		x = 5
+		x = 10
 		y = 3
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -262,7 +863,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CRE_retvrn_of_gayreek
 		}
-		x = 5
+		x = 10
 		y = 6
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -281,7 +882,7 @@ focus_tree = {
 			focus = CRE_towards_gre
 			focus = CRE_towards_tur
 		}
-		x = 4
+		x = 9
 		y = 4
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -299,7 +900,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CRE_integrate_gov
 		}
-		x = 4
+		x = 9
 		y = 5
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -324,7 +925,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = CRE_puppet
 		}
-		x = 5
+		x = 10
 		y = 7
 		relative_position_id = CRE_kidnapping
 		cost = 10
@@ -349,7 +950,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = CRE_annexation
 		}
-		x = 3
+		x = 8
 		y = 7
 		relative_position_id = CRE_kidnapping
 		cost = 10
