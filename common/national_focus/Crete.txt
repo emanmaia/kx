@@ -971,9 +971,234 @@ focus_tree = {
 		mutually_exclusive = {
 			 focus = CRE_germany_btfo
 		}
-		x = -5
+		x = -23
 		y = 1
 		relative_position_id = CRE_kidnapping
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_steady_as_she_goes
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_germany_stays
+		}
+		x = 10
+		y = 1
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_regin_in_crete_gov
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_steady_as_she_goes
+		}
+		x = 11
+		y = 2
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_force_student_resignations
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_regin_in_crete_gov
+		}
+		x = 11
+		y = 3
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_request_kaiserliche_marine_support
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_steady_as_she_goes
+		}
+		x = 9
+		y = 2
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_naval_recovery
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_request_kaiserliche_marine_support
+		}
+		x = 9
+		y = 3
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_med_frontline
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_naval_recovery
+		}
+		prerequisite = {
+			focus = CRE_force_student_resignations
+		}
+		x = 10
+		y = 4
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_protectors_of_the_suez
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_med_frontline
+		}
+		x = 10
+		y = 5
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_ostaseisn_lessons
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_med_frontline
+		}
+		x = 12
+		y = 5
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_a_permeant_lease
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_ostaseisn_lessons
+		}
+		x = 11
+		y = 6
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_expand_base
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_med_frontline
+		}
+		x = 8
+		y = 5
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_creten_shipyards
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_expand_base
+		}
+		x = 9
+		y = 6
+		relative_position_id = CRE_germany_stays
+		cost = 10
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
+	
+		}
+	}
+	focus = {
+		id = CRE_gruss_an_kiel
+		icon = GFX_goal_government_icon
+		available = {
+			
+		}
+		prerequisite = {
+			focus = CRE_creten_shipyards
+		}
+		prerequisite = {
+			focus = CRE_protectors_of_the_suez
+		}
+		prerequisite = {
+			focus = CRE_question_of_germanifaction
+		}
+		x = 9
+		y = 6
+		relative_position_id = CRE_germany_stays
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus CRE_survey_garrison"
