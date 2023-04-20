@@ -1997,17 +1997,14 @@ focus_tree = {
 		y = 8
 		cost = 0
 		available = {
-			owns_state = 292 #Najd
-			owns_state = 915 #Ha'il
+			hidden_trigger = { always = no }
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus YEM_Rassid_Arabia"
-			add_stability = 0.1
-			set_cosmetic_tag = RAS_ARB
-			add_ideas = YEM_arabian_integration
+			custom_effect_tooltip = unlock_focuses
 		}
 	}
 
@@ -2249,10 +2246,7 @@ focus_tree = {
 			678 = {
 				add_core_of = YEM
 			}
-			679 = {
-				add_core_of = YEM
-			}
-			754 = {
+			995 = {
 				add_core_of = YEM
 			}
 		}
@@ -2378,10 +2372,7 @@ focus_tree = {
 			}
 			every_state = {
 				limit = {
-				OR = {
 					is_core_of = SAU
-					is_claimed_by = SAU
-					}
 				}
 				add_core_of = YEM
 			}
@@ -2391,7 +2382,6 @@ focus_tree = {
 				}
 				add_core_of = YEM
 			}
-			country_event = yemen.47
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL }
 	}

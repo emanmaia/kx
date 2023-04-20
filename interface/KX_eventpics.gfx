@@ -6277,6 +6277,44 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/Europe/Switzerland/SWI_military_coup.png"
 	}
 	
+	### Canada ###
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_arthur_currie"
+		texturefile = "gfx/event_pictures/North America/Canada/report_event_CAN_arthur_currie.png"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_edward_prince"
+		texturefile = "gfx/event_pictures/North America/Canada/report_event_CAN_edward_prince.png"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_meighen2"
+		texturefile = "gfx/event_pictures/North America/Canada/report_event_CAN_meighen2.png"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_excalibur"
+		texturefile = "gfx/event_pictures/North America/Canada/report_event_CAN_excalibur.png"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_edward_the_void_stares_back"
+		texturefile = "gfx/event_pictures/North America/Canada/report_event_CAN_edward_the_void_stares_back.png"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_somber_edward"
+		texturefile = "gfx/event_pictures/North America/Canada/report_event_CAN_somber_edward.png"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_report_event_CAN_macdonald"
+		texturefile = "gfx/event_pictures/North America/Canada/report_event_CAN_macdonald.png"
+	}
+	
 	### Abkhazia ###
 	
 	spriteType = {

@@ -128,6 +128,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/ideas/PAN_garrison_debt.png"
 	}
 	spriteType = {
+		name = "GFX_idea_PAN_canal_idea"
+		texturefile = "gfx/interface/ideas/ideas/PAN_canal_idea.png"
+	}
+	spriteType = {
 		name = "GFX_idea_PAN_drugpic"
 		texturefile = "gfx/interface/ideas/ideas/PAN_Drugs_Panama.png"
 	}
@@ -5001,6 +5005,33 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_tver_karelians"
 		texturefile = "gfx/interface/ideas/ideas/tver_karelians.png"
+	}
+	
+	### Canada ###
+	
+	spriteType = {
+		name = "GFX_idea_CAN_raf_idea"
+		texturefile = "gfx/interface/ideas/CAN/CAN_raf_idea.png"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_CAN_royal_army_idea"
+		texturefile = "gfx/interface/ideas/CAN/CAN_royal_army_idea.png"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_CAN_royal_navy_idea"
+		texturefile = "gfx/interface/ideas/CAN/CAN_royal_navy_idea.png"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_CAN_pm_in_exile_idea"
+		texturefile = "gfx/interface/ideas/CAN/CAN_pm_in_exile_idea.png"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_CAN_breaking_center_idea"
+		texturefile = "gfx/interface/ideas/CAN/CAN_breaking_center_idea.png"
 	}
 		
 	spriteType = {

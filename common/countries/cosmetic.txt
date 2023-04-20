@@ -584,10 +584,6 @@ YAK_TRM = {
 	color = rgb { 216 244 247 }
 	color_ui = rgb { 216 244 247 }
 }
-YAK_SMOLIN = {
-	color = rgb { 216 244 247 }
-	color_ui = rgb { 216 244 247 }
-}
 BRY_TRM = {
 	color = rgb { 216 244 247 }
 	color_ui = rgb { 216 244 247 }
@@ -3351,6 +3347,27 @@ IRE_uk_exile = {
 IRE_uk = {
 	color = rgb { 160 6 31 }
 	color_ui = rgb { 150 0 24 }
+}
+
+CAN_UK = {
+	color = rgb { 150 0 24 }
+	color_ui = rgb { 150 0 24 }
+}
+CAN_UK_CAN = {
+	color = rgb { 150 0 24 }
+	color_ui = rgb { 150 0 24 }
+}
+ENT_IMPERIAL_FEDERATION = {
+	color = rgb { 150 0 24 }
+	color_ui = rgb { 150 0 24 }
+}
+MKT = {
+	color = rgb { 81 63 167 }
+	color_ui = rgb { 81 63 167 }
+}
+MKT_BRIT = {
+	color = rgb { 81 63 167 }
+	color_ui = rgb { 81 63 167 }
 }
 CAR_kingdom = {
 	color = rgb { 255 141 35 }

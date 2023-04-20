@@ -223,12 +223,24 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 			modifier = {
+				factor = 20
+				OR = {
+					has_idea = GBR_Malcolm_MacDonald_hog_sde
+					has_idea = GBR_Archibald_Sinclair_hog_mli
+				}
+			}
+			modifier = {
 				factor = 5
 				has_idea = GBR_Robert_Cecil_hog_sco
 			}
 			modifier = {
 				factor = 2
-				has_idea = GBR_Anthony_Eden_hog_sco
+				OR = {
+					has_idea = GBR_Edward_Halifax_hog_sco
+					has_idea = GBR_Stanley_Baldwin_hog_sco
+					has_idea = GBR_Anthony_Eden_hog_sco
+					has_idea = GBR_Neville_Chamberlain_hog_sco
+				}
 			}
 		}
 
@@ -357,7 +369,10 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				factor = 5
-				has_idea = GBR_Henry_Page_Croft_hog_ade
+				OR = {
+					has_idea = CAN_Lord_Beaverbrook_hog_pau
+					has_idea = CAN_Harold_Harmsworth_hog_pau
+				}
 			}
 		}
 
@@ -2098,6 +2113,7 @@ focus_tree = {
 				tooltip = GBR_has_over_25_ships
 				check_variable = { ROOT.num_ships > 25 }
 			}
+			has_country_flag = CAN_allowed_us_to_take_over
 		}
 
 		ai_will_do = {

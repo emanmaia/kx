@@ -34,6 +34,7 @@ country_event = { # Liberation of the UK
 			random_other_country = { news_event = worldnews.185 }
 			CAN_create_uk_cores = yes
 			CAN_release_uk = yes
+			remove_ideas = CAN_brit_govt_exile_idea
 		}
 
 		if = {
@@ -77,8 +78,10 @@ country_event = { # Liberation of the UK
 				limit = {
 					GBR = { is_in_faction_with = CAN }
 				}
-				GBR = {
+				CAN = {
 					country_event = { id = canada.302 days = 6 }
+				}
+				GBR = {
 					add_timed_idea = {
 						idea = CAN_british_arrivals
 						days = 365
@@ -121,6 +124,7 @@ country_event = { # Liberation of the UK
 			random_other_country = { news_event = worldnews.185 }
 			CAN_create_uk_cores = yes
 			CAN_release_uk = yes
+			remove_ideas = CAN_brit_govt_exile_idea
 		}
 
 		if = {
@@ -468,20 +472,25 @@ country_event = {
 
 	option = {
 		name = uk.10.a
-		set_party_name = {
-			ideology = paternal_autocrat
-			name = GBR_bra_party
-			long_name = GBR_bra_party_long
-		}
 		if = {
 			limit = {
-				NOT = { has_government = paternal_autocrat }
+				tag = GBR
 			}
-			set_politics = {
-				ruling_party = paternal_autocrat
-				elections_allowed = no
+			set_party_name = {
+				ideology = paternal_autocrat
+				name = GBR_bra_party
+				long_name = GBR_bra_party_long
 			}
 		}
+		#if = {
+			#limit = {
+				#NOT = { has_government = paternal_autocrat }
+			#}
+			#set_politics = {
+				#ruling_party = paternal_autocrat
+				#elections_allowed = no
+			#}
+		#}
 		GBR_returning_king_check = yes
 		hidden_effect = {
 			country_event = { id = uk.11 days = 4 }
@@ -796,7 +805,12 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				has_idea = GBR_Anthony_Eden_hog_sco
+				OR = {
+					has_idea = GBR_Edward_Halifax_hog_sco
+					has_idea = GBR_Stanley_Baldwin_hog_sco
+					has_idea = GBR_Anthony_Eden_hog_sco
+					has_idea = GBR_Neville_Chamberlain_hog_sco
+				}
 			}
 		}
 		set_country_flag = GBR_unions_controlled
@@ -954,7 +968,12 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.5
-				has_idea = GBR_Anthony_Eden_hog_sco
+				OR = {
+					has_idea = GBR_Edward_Halifax_hog_sco
+					has_idea = GBR_Stanley_Baldwin_hog_sco
+					has_idea = GBR_Anthony_Eden_hog_sco
+					has_idea = GBR_Neville_Chamberlain_hog_sco
+				}
 			}
 			modifier = {
 				factor = 0.1
@@ -1052,6 +1071,11 @@ country_event = {
 
 	option = {
 		name = uk.26.a #Make sure the sentences are not harsh
+		trigger = {
+			NOT = {
+				has_government = national_populist
+			}
+		}
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -1103,7 +1127,12 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.5
-				has_idea = GBR_Anthony_Eden_hog_sco
+				OR = {
+					has_idea = GBR_Edward_Halifax_hog_sco
+					has_idea = GBR_Stanley_Baldwin_hog_sco
+					has_idea = GBR_Anthony_Eden_hog_sco
+					has_idea = GBR_Neville_Chamberlain_hog_sco
+				}
 			}
 		}
 		add_political_power = 50
@@ -1226,7 +1255,14 @@ country_event = {
 #			}
 		}
 		add_political_power = -50
-		set_country_flag = GBR_labour_leader_gaitskell
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = GBR_labour_leader_macdonald
+				}
+			}
+			set_country_flag = GBR_labour_leader_gaitskell
+		}
 #		If = {
 #			limit = { NOT = { has_global_flag = ENG_labour_was_in_power } }
 		add_to_variable = { GBR_synd_unrest = 1 }
@@ -1235,6 +1271,14 @@ country_event = {
 	}
 	option = {
 		name = uk.29.c #Ban the Labour party
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = GBR_Archibald_Sinclair_hog_mli
+					has_idea = GBR_Malcolm_MacDonald_hog_sde
+				}
+			}
+		}
 		ai_chance = {
 			factor = 30
 			modifier = {
@@ -1264,7 +1308,12 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.5
-				has_idea = GBR_Anthony_Eden_hog_sco
+				OR = {
+					has_idea = GBR_Edward_Halifax_hog_sco
+					has_idea = GBR_Stanley_Baldwin_hog_sco
+					has_idea = GBR_Anthony_Eden_hog_sco
+					has_idea = GBR_Neville_Chamberlain_hog_sco
+				}
 			}
 			modifier = {
 				factor = 2
@@ -1345,7 +1394,12 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.5
-				has_idea = GBR_Anthony_Eden_hog_sco
+				OR = {
+					has_idea = GBR_Edward_Halifax_hog_sco
+					has_idea = GBR_Stanley_Baldwin_hog_sco
+					has_idea = GBR_Anthony_Eden_hog_sco
+					has_idea = GBR_Neville_Chamberlain_hog_sco
+				}
 			}
 		}
 		add_popularity = { ideology = paternal_autocrat popularity = 0.05 }
@@ -1384,7 +1438,12 @@ country_event = {
 			}
 			modifier = {
 				factor = 0.5
-				has_idea = GBR_Anthony_Eden_hog_sco
+				OR = {
+					has_idea = GBR_Edward_Halifax_hog_sco
+					has_idea = GBR_Stanley_Baldwin_hog_sco
+					has_idea = GBR_Anthony_Eden_hog_sco
+					has_idea = GBR_Neville_Chamberlain_hog_sco
+				}
 			}
 		}
 		add_political_power = -50
@@ -1453,10 +1512,26 @@ country_event = {
 				name = GBR_military_government_party
 				long_name = GBR_military_government_party_long
 			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				name = GBR_auth_tories_party
-				long_name = GBR_auth_tories_party_long
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = GBR_soccreds_exist
+					}
+				}
+			
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = GBR_auth_tories_party
+					long_name = GBR_auth_tories_party_long
+				}
+			}
+			else = {
+			
+				set_party_name = {
+					ideology = authoritarian_democrat
+					name = GBR_social_credit_party
+					long_name = GBR_social_credit_party_long
+				}
 			}
 		}
 	}
@@ -1533,6 +1608,16 @@ country_event = {
 				}
 			}
 			else_if = {
+				limit = { has_country_flag = GBR_cons_leader_halifax }
+				set_country_flag = GBR_Halifax_PM
+				add_ideas = {
+					GBR_Edward_Halifax_hog_sco
+					GBR_John_Colville_for_sco
+					GBR_John_Siddeley_eco_sco
+					GBR_Edward_Cavendish_sec_sco
+				}
+			}
+			else_if = {
 				limit = { has_country_flag = GBR_cons_leader_eden }
 				set_country_flag = GBR_Eden_PM
 				add_ideas = {
@@ -1559,6 +1644,72 @@ country_event = {
 					GBR_Robert_Boothby_for_sco
 					GBR_Philip_Lloyd_Greame_eco_sco
 					GBR_Randolph_Churchill_sec_sco
+				}
+			}
+		}
+	}
+	option = {
+		name = uk.33.e #Social Credit
+		trigger = {
+			has_country_flag = GBR_soccreds_exist
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = GBR_return_of_the_king
+						option = GBR_RETURN_OF_THE_KING_DEMOCRACY_MARLIB
+					}
+					has_game_rule = {
+						rule = GBR_return_of_the_king
+						option = GBR_RETURN_OF_THE_KING_DEMOCRACY_SOCDEM
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { has_country_flag = GBR_labour_leader_gaitskell }
+			}
+		}
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = authoritarian_democrat
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 48
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		GBR_returning_king_check = yes
+		hidden_effect = {
+			else = {
+				add_popularity = { ideology = authoritarian_democrat popularity = bra_supp }
+			}
+			clear_variable = new_pataut
+			clear_variable = bra_supp
+			if = {
+				limit = { has_country_flag = GBR_Douglas_PM }
+				set_country_flag = GBR_soccreds_leader_douglas
+				add_ideas = {
+					CAN_CH_Douglas_hog_ade
+					GBR_Arthur_Wellesley_for_ade
+					GBR_John_Carnegie_eco_ade
+					GBR_Maxwell_Knight_sec_ade
+				}
+			}
+			
+			else_if = {
+				limit = { has_country_flag = GBR_Hargrave_PM }
+				set_country_flag = GBR_soccreds_leader_douglas
+				add_ideas = {
+					CAN_John_Hargrave_hog_pau
+					GBR_Arthur_Wellesley_for_ade
+					GBR_John_Carnegie_eco_ade
+					GBR_Maxwell_Knight_sec_ade
 				}
 			}
 		}
@@ -1602,9 +1753,18 @@ country_event = {
 			add_popularity = { ideology = market_liberal popularity = bra_supp }
 			clear_variable = new_pataut
 			clear_variable = bra_supp
-			set_country_flag = GBR_Simon_PM
+			if = {
+				limit = {
+					has_country_flag = GBR_liberal_leader_sinclair
+				}
+				add_ideas = GBR_Archibald_Sinclair_hog_mli
+				set_country_flag = GBR_Sinclair_PM
+			}
+			else = {
+				add_ideas = GBR_John_Simon_hog_mli
+				set_country_flag = GBR_Simon_PM
+			}
 			add_ideas = {
-				GBR_John_Simon_hog_mli
 				GBR_Violet_Bonham_Carter_for_mli
 				GBR_Isaac_Foot_eco_mli
 				GBR_John_Anderson_sec_mli
@@ -1666,6 +1826,11 @@ country_event = {
 				set_country_flag = GBR_Gaitskell_PM
 				add_ideas = GBR_Hugh_Gaitskell_hog_sde
 			}
+			else_if = {
+				limit = { has_country_flag = GBR_labour_leader_macdonald }
+				set_country_flag = GBR_MacDonald_PM
+				add_ideas = GBR_Malcolm_MacDonald_hog_sde
+			}
 			else = {
 				set_country_flag = GBR_Attlee_PM
 				add_ideas = GBR_Clement_Attlee_hog_sde
@@ -1695,6 +1860,19 @@ country_event = {
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event uk.34"
 		remove_all_ministers = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					date > 1944.1.1
+				}
+				clr_country_flag = GBR_cons_leader_cecil
+				clr_country_flag = GBR_cons_leader_croft
+				clr_country_flag = GBR_cons_leader_baldwin
+				clr_country_flag = GBR_cons_leader_chamberlain
+				clr_country_flag = GBR_cons_leader_halifax
+				set_country_flag = GBR_cons_leader_eden
+			}
+		}
 	}
 
 	option = {
@@ -1733,6 +1911,36 @@ country_event = {
 					GBR_Adrian_Carton_de_Wiart_for_sco
 					GBR_George_Lane_Fox_eco_sco
 					GBR_Desmond_Morton_sec_sco
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = GBR_cons_leader_halifax }
+				set_country_flag = GBR_Halifax_PM
+				add_ideas = {
+					GBR_Edward_Halifax_hog_sco
+					GBR_John_Colville_for_sco
+					GBR_John_Siddeley_eco_sco
+					GBR_Edward_Cavendish_sec_sco
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = GBR_cons_leader_baldwin }
+				set_country_flag = GBR_Baldwin_PM
+				add_ideas = {
+					GBR_Stanley_Baldwin_hog_sco
+					GBR_John_Colville_for_sco
+					GBR_John_Siddeley_eco_sco
+					GBR_Edward_Cavendish_sec_sco
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = GBR_cons_leader_chamberlain }
+				set_country_flag = GBR_Chamberlain_PM
+				add_ideas = {
+					GBR_Neville_Chamberlain_hog_sco
+					GBR_John_Colville_for_sco
+					GBR_John_Siddeley_eco_sco
+					GBR_Edward_Cavendish_sec_sco
 				}
 			}
 			else_if = {
@@ -1779,9 +1987,18 @@ country_event = {
 		}
 		GBR_returning_king_check = yes
 		hidden_effect = {
-			set_country_flag = GBR_Simon_PM
+			if = {
+				limit = {
+					has_country_flag = GBR_liberal_leader_sinclair
+				}
+				add_ideas = GBR_Archibald_Sinclair_hog_mli
+				set_country_flag = GBR_Sinclair_PM
+			}
+			else = {
+				add_ideas = GBR_John_Simon_hog_mli
+				set_country_flag = GBR_Simon_PM
+			}
 			add_ideas = {
-				GBR_John_Simon_hog_mli
 				GBR_Violet_Bonham_Carter_for_mli
 				GBR_Isaac_Foot_eco_mli
 				GBR_John_Anderson_sec_mli
@@ -1833,6 +2050,46 @@ country_event = {
 				add_ideas = GBR_Hugh_Gaitskell_eco_sde
 			}
 			add_ideas = GBR_James_Chuter_Ede_sec_sde
+		}
+	}
+	
+	option = {
+		name = uk.33.e #Social Credit
+		trigger = {
+			has_country_flag = GBR_soccreds_exist
+		}
+		ai_chance = {
+			factor = 40
+		}
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.10 }
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		GBR_returning_king_check = yes
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = GBR_Douglas_PM }
+				set_country_flag = GBR_soccreds_leader_douglas
+				add_ideas = {
+					CAN_CH_Douglas_hog_ade
+					GBR_Arthur_Wellesley_for_ade
+					GBR_John_Carnegie_eco_ade
+					GBR_Maxwell_Knight_sec_ade
+				}
+			}
+			
+			else_if = {
+				limit = { has_country_flag = GBR_Hargrave_PM }
+				set_country_flag = GBR_soccreds_leader_douglas
+				add_ideas = {
+					CAN_John_Hargrave_hog_pau
+					GBR_Arthur_Wellesley_for_ade
+					GBR_John_Carnegie_eco_ade
+					GBR_Maxwell_Knight_sec_ade
+				}
+			}
 		}
 	}
 }
@@ -2849,6 +3106,10 @@ country_event = {
 				has_country_flag = CAN_promised_ireland_ind
 				has_global_flag = ENT_britain_agree_northire
 			}
+			
+			NOT = {
+				has_comsetic_tag = CAN_UK
+			}
 		}
 		ai_chance = {
 			factor = 25
@@ -2877,6 +3138,9 @@ country_event = {
 			OR = {
 				has_country_flag = CAN_promised_ireland_ind
 				has_global_flag = ENT_britain_agree_northire
+			}
+			NOT = {
+				has_comsetic_tag = CAN_UK
 			}
 		}
 		ai_chance = {

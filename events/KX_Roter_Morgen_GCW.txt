@@ -733,11 +733,11 @@ country_event = { # GRU setup
 					name = "Karl Artelt"
 					portrait_path = "gfx/leaders/GRU/Portrait_Germany_Karl_Artelt.png"
 					traits = { politically_connected radsoc_rev_leaders }
-					skill = 2
+					skill = 3
 
-					attack_skill = 2
+					attack_skill = 1
 					defense_skill = 3
-					planning_skill = 2
+					planning_skill = 3
 					logistics_skill = 1
 				}
 				

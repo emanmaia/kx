@@ -47,6 +47,151 @@ defined_text = {
 }
 
 defined_text = {
+	name = CAN_pm_name
+	text = {
+		trigger = { has_idea = CAN_Tim_Buck_hog_tot }
+		localization_key = CAN_Tim_Buck_hog_tot
+	}
+	text = {
+		trigger = { has_idea = CAN_Richard_Parmater_Pettipiece_hog_syn }
+		localization_key = CAN_Richard_Parmater_Pettipiece_hog_syn
+	}
+	text = {
+		trigger = { has_idea = CAN_Claude_Jodoin_hog_rso }
+		localization_key = CAN_Claude_Jodoin_hog_rso
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_RB_Bennett_hog_sco
+		}
+		localization_key = CAN_RB_Bennett_hog_sco
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Major_James_Coldwell_hog_sde
+		}
+		localization_key = CAN_Major_James_Coldwell_hog_sde
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_JS_Woodsworth_hog_sde
+		}
+		localization_key = CAN_JS_Woodsworth_hog_sde
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Louis_St_Laurent_hog_sli
+		}
+		localization_key = CAN_Louis_St_Laurent_hog_sli
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Charles_Gavan_Power_hog_mli
+			
+		}
+		localization_key = CAN_Charles_Gavan_Power_hog_mli
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_William_Lyon_Mackenzie_King_hog_mli
+			
+		}
+		localization_key = CAN_William_Lyon_Mackenzie_King_hog_mli
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_John_Bracken_hog_sco
+			
+		}
+		localization_key = CAN_John_Bracken_hog_sco
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Robert_Manion_hog_sco
+			
+		}
+		localization_key = CAN_Robert_Manion_hog_sco
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Arthur_Meighen_hog_ade
+			
+		}
+		localization_key = CAN_Arthur_Meighen_hog_ade
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_JH_Blackmore_hog_ade
+			
+		}
+		localization_key = CAN_JH_Blackmore_hog_ade
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Ernest_Manning_hog_ade
+			
+		}
+		localization_key = CAN_Ernest_Manning_hog_ade
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Harry_Crerar_hog_pau
+			
+		}
+		localization_key = CAN_Harry_Crerar_hog_pau
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_William_Aberhart_hog_pau
+			
+		}
+		localization_key = CAN_William_Aberhart_hog_pau
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_John_Hargrave_hog_pau
+			
+		}
+		localization_key = CAN_John_Hargrave_hog_pau
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Adrien_Arcand_hog_npo
+			
+		}
+		localization_key = CAN_Adrien_Arcand_hog_npo
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_JFC_Fuller_hog_npo
+			
+		}
+		localization_key = CAN_JFC_Fuller_hog_npo
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Anthony_Ludovici_hog_npo
+			
+		}
+		localization_key = CAN_Anthony_Ludovici_hog_npo
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_John_Ross_Taylor_hog_npo
+			
+		}
+		localization_key = CAN_John_Ross_Taylor_hog_npo
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Edward_VIII_hog_npo
+			
+		}
+		localization_key = CAN_Edward_VIII_hog_npo
+	}
+}
+
+defined_text = {
 	name = CAN_kings_influence
 	text = {
 		trigger = { tag = GBR }
@@ -150,53 +295,203 @@ defined_text = {
 	name = GetBritishExilePM
 	text = {
 		trigger = {
-			GBR = { has_country_flag = GBR_Chamberlain_PM }
+			has_idea = CAN_Malcolm_MacDonald_lobe_sde
 		}
-		localization_key = GBR_PM_Chamberlain
+		localization_key = CAN_Malcolm_MacDonald_lobe_sde
 	}
 	text = {
 		trigger = {
-			GBR = { has_country_flag = GBR_Croft_PM }
+			has_idea = CAN_Archibald_Sinclair_lobe_mli
 		}
-		localization_key = GBR_PM_Croft
+		localization_key = CAN_Archibald_Sinclair_lobe_mli
 	}
 	text = {
 		trigger = {
-			GBR = { has_country_flag = GBR_Cecil_PM }
+			has_idea = CAN_Douglas_Hogg_lobe_ade
 		}
-		localization_key = GBR_PM_Cecil
+		localization_key = CAN_Douglas_Hogg_lobe_ade
 	}
 	text = {
 		trigger = {
-			GBR = { has_country_flag = GBR_Vansittart_PM }
+			has_idea = CAN_Stanley_Baldwin_lobe_ade
 		}
-		localization_key = GBR_PM_Vansittart
+		localization_key = CAN_Stanley_Baldwin_lobe_ade
 	}
 	text = {
 		trigger = {
-			GBR = { has_country_flag = GBR_Eden_PM }
+			has_idea = CAN_Neville_Chamberlain_lobe_ade
 		}
-		localization_key = GBR_PM_Eden
+		localization_key = CAN_Neville_Chamberlain_lobe_ade
 	}
 	text = {
 		trigger = {
-			GBR = { has_country_flag = GBR_Simon_PM }
+			has_idea = CAN_Henry_Page_Croft_lobe_pau
 		}
-		localization_key = GBR_PM_Simon
+		localization_key = CAN_Henry_Page_Croft_lobe_pau
 	}
 	text = {
 		trigger = {
-			GBR = { has_country_flag = GBR_Gaitskell_PM }
+			has_idea = CAN_Lord_Beaverbrook_lobe_pau
 		}
-		localization_key = GBR_PM_Gaitskell
+		localization_key = CAN_Lord_Beaverbrook_lobe_pau
 	}
 	text = {
 		trigger = {
-			GBR = { has_country_flag = GBR_Attlee_PM }
+			has_idea = CAN_Harold_Harmsworth_lobe_pau
 		}
-		localization_key = GBR_PM_Attlee
+		localization_key = CAN_Harold_Harmsworth_lobe_pau
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Robert_Cecil_lobe_ade
+		}
+		localization_key = CAN_Robert_Cecil_lobe_ade
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Robert_Vansittart_lobe_ade
+		}
+		localization_key = CAN_Robert_Vansittart_lobe_ade
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Anthony_Eden_lobe_ade
+		}
+		localization_key = CAN_Anthony_Eden_lobe_ade
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Edward_Halifax_lobe_sco
+		}
+		localization_key = CAN_Edward_Halifax_lobe_sco
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_CH_Douglas_lobe_pau
+		}
+		localization_key = CAN_CH_Douglas_lobe_pau
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_John_Hargrave_lobe_pau
+		}
+		localization_key = CAN_John_Hargrave_lobe_pau
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_JFC_Fuller_lobe_npo
+		}
+		localization_key = CAN_JFC_Fuller_lobe_npo
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Anthony_Ludovici_lobe_npo
+		}
+		localization_key = CAN_Anthony_Ludovici_lobe_npo
 	}
 }
+
+
+defined_text = {
+	name = GetBritishExilePMPortrait
+	text = {
+		trigger = {
+			has_idea = CAN_Malcolm_MacDonald_lobe_sde
+		}
+		localization_key = GFX_Portrait_Britain_Malcolm_MacDonald
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Archibald_Sinclair_lobe_mli
+		}
+		localization_key = GFX_Portrait_Britain_Archibald_Sinclair
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Douglas_Hogg_lobe_ade
+		}
+		localization_key = GFX_Portrait_Britain_Douglas_Hogg
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Stanley_Baldwin_lobe_ade
+		}
+		localization_key = GFX_Portrait_Britain_Stanley_Baldwin
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Neville_Chamberlain_lobe_ade
+		}
+		localization_key = GFX_Portrait_Britain_Neville_Chamberlain
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Henry_Page_Croft_lobe_pau
+		}
+		localization_key = GFX_Portrait_Britain_Henry_Page_Croft
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Robert_Cecil_lobe_ade
+		}
+		localization_key = GFX_Portrait_Britain_Robert_Cecil
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Lord_Beaverbrook_lobe_pau
+		}
+		localization_key = GFX_Portrait_Canada_Lord_Beaverbrook
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Harold_Harmsworth_lobe_pau
+		}
+		localization_key = GFX_Portrait_England_Britain_Harold_Harmsworth
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Robert_Vansittart_lobe_ade
+		}
+		localization_key = GFX_Portrait_Britain_Robert_Vansittart
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Anthony_Eden_lobe_ade
+		}
+		localization_key = GFX_Portrait_Britain_Anthony_Eden
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Edward_Halifax_lobe_sco
+		}
+		localization_key = GFX_Portrait_Britain_Lord_Halifax
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_CH_Douglas_lobe_pau
+		}
+		localization_key = GFX_Portrait_Britain_Clifford_Hugh_Douglas
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_John_Hargrave_lobe_pau
+		}
+		localization_key = GFX_Portrait_Britain_John_Hargrave
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_JFC_Fuller_lobe_npo
+		}
+		localization_key = GFX_Portrait_Canada_JFC_Fuller
+	}
+	text = {
+		trigger = {
+			has_idea = CAN_Anthony_Ludovici_lobe_npo
+		}
+		localization_key = GFX_Portrait_Britain_Anthony_Ludovici
+	}
+}
+
 
 defined_text = {
 	name = CAN_iedc1
@@ -503,6 +798,24 @@ defined_text = {
 			check_variable = { global.iedc_members^num < 15 }
 		}
 		localization_key = CAN_iedc14_last
+	}
+}
+
+defined_text = {
+	name = CANGetIEDCName
+	text = {
+		trigger = {
+			has_global_flag = CAN_IEDC_reformed
+		}
+		localization_key = "Commonwealth Zone"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = CAN_IEDC_reformed
+			}
+		}
+		localization_key = "IEDC"
 	}
 }
 

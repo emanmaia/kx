@@ -596,9 +596,10 @@ country_event = {
 		has_global_flag = CAN_iedc_created
 		NOT = {
 			has_idea = CAN_iedc_main
+			has_idea = CAN_iedc_main2
 			AND = {
 				is_in_faction = yes
-				any_allied_country = { has_idea = CAN_iedc_main }
+				any_allied_country = { OR = { has_idea = CAN_iedc_main has_idea = CAN_iedc_main2 } }
 			}
 		}
 	}
@@ -631,7 +632,10 @@ country_event = {
 
 	trigger = {
 		tag = ENT
-		has_idea = CAN_iedc_main
+		OR = { 
+			has_idea = CAN_iedc_main 
+			has_idea = CAN_iedc_main2 
+		} 
 		check_variable = { global.iedc_members^num < 2 }
 		has_global_flag = { flag = CAN_iedc_created days > 180 }
 	}
@@ -648,6 +652,10 @@ country_event = {
 		if = {
 			limit = { has_idea = CAN_iedc_main }
 			remove_ideas = CAN_iedc_main
+		}
+		if = {
+			limit = { has_idea = CAN_iedc_main2 }
+			remove_ideas = CAN_iedc_main2
 		}
 		if = {
 			limit = { has_idea = CAN_iedc_econ1 }
@@ -4076,6 +4084,10 @@ country_event = {
 
 	trigger = {
 		check_variable = { var = global.king_edward_story value = 0 compare = equals }
+		OR = {
+			has_country_flag = CAN_edward_failed_power_grab
+			has_country_flag = CAN_eddy_party_animal
+		}
 	}
 
 	option = {
@@ -4245,7 +4257,7 @@ country_event = {
 		}
 		else = {
 			set_global_flag = CAN_king_busy
-			country_event = { id = entente.100 days = 1 } #start the crisis
+			#country_event = { id = entente.100 days = 1 } #start the crisis
 		}
 	}
 }
@@ -4769,558 +4781,558 @@ news_event = {
 ### Abdication Crisis
 
 # Government divided over marriage
-country_event = {
-	id = entente.100
-	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.100" }
-	title = entente.100.t
-	picture = GFX_report_event_CAN_cabinet
+# country_event = {
+	# id = entente.100
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event entente.100" }
+	# title = entente.100.t
+	# picture = GFX_report_event_CAN_cabinet
 
-	desc = {
-		text = entente.100.d.exiles
-		trigger = { NOT = { tag = GBR } }
-	}
-	desc = {
-		text = entente.100.d.home
-		trigger = { tag = GBR }
-	}
+	# desc = {
+		# text = entente.100.d.exiles
+		# trigger = { NOT = { tag = GBR } }
+	# }
+	# desc = {
+		# text = entente.100.d.home
+		# trigger = { tag = GBR }
+	# }
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = KR_british_king_base
-	}
+	# trigger = {
+		# has_country_flag = KR_british_king_base
+	# }
 
-	option = {
-		name = entente.100.a
-		if = {
-			limit = {
-				NOT = { tag = GBR }
-				check_variable = { king_influence > 1 }
-			}
-			custom_effect_tooltip = CAN_exile_influence_decrease
-			subtract_from_variable = { king_influence = 2 }
-			CAN_calc_exile_influence_effects = yes
-		}
-		else_if = {
-			limit = {
-				NOT = { tag = GBR }
-				check_variable = { king_influence > 0 }
-			}
-			custom_effect_tooltip = CAN_exile_influence_decrease
-			subtract_from_variable = { king_influence = 1 }
-			CAN_calc_exile_influence_effects = yes
-		}
-		add_stability = -0.05
-		set_variable = { king_support = king_popularity }
-		every_other_country = {
-			limit = {
-				exists = yes
-				CAN_is_commonwealth_tag = yes
-				has_socialist_government = no
-				is_in_faction_with = ROOT
-			}
-			country_event = entente.101
-		}
-		hidden_effect = {
-			country_event = { id = entente.104 days = 5 }
-		}
-	}
-}
+	# option = {
+		# name = entente.100.a
+		# if = {
+			# limit = {
+				# NOT = { tag = GBR }
+				# check_variable = { king_influence > 1 }
+			# }
+			# custom_effect_tooltip = CAN_exile_influence_decrease
+			# subtract_from_variable = { king_influence = 2 }
+			# CAN_calc_exile_influence_effects = yes
+		# }
+		# else_if = {
+			# limit = {
+				# NOT = { tag = GBR }
+				# check_variable = { king_influence > 0 }
+			# }
+			# custom_effect_tooltip = CAN_exile_influence_decrease
+			# subtract_from_variable = { king_influence = 1 }
+			# CAN_calc_exile_influence_effects = yes
+		# }
+		# add_stability = -0.05
+		# set_variable = { king_support = king_popularity }
+		# every_other_country = {
+			# limit = {
+				# exists = yes
+				# CAN_is_commonwealth_tag = yes
+				# has_socialist_government = no
+				# is_in_faction_with = ROOT
+			# }
+			# country_event = entente.101
+		# }
+		# hidden_effect = {
+			# country_event = { id = entente.104 days = 5 }
+		# }
+	# }
+# }
 
-# Dominions informed of crisis
-country_event = {
-	id = entente.101
-	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.101" }
-	title = entente.101.t
-	desc = entente.101.d
-	picture = GFX_report_event_CAN_edward2
+Dominions informed of crisis
+# country_event = {
+	# id = entente.101
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event entente.101" }
+	# title = entente.101.t
+	# desc = entente.101.d
+	# picture = GFX_report_event_CAN_edward2
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	option = {
-		name = entente.101.a #We support the king, no matter what
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				OR = {
-					tag = DEH
-					tag = JAM
-				}
-			}
-			modifier = {
-				factor = 0
-				tag = CAN
-				OR = {
-					has_government = market_liberal
-					has_government = social_liberal
-				}
-			}
-			modifier = {
-				factor = 0
-				tag = SAF
-				has_government = authoritarian_democrat
-			}
-			modifier = {
-				factor = 2
-				NOT = { tag = SAF }
-				has_government = authoritarian_democrat
-			}
-			modifier = {
-				factor = 0
-				has_government = social_democrat
-			}
-			modifier = {
-				factor = 2
-				has_government = social_conservative
-			}
-			modifier = {
-				factor = 3
-				has_government = paternal_autocrat
-			}
-		}
-		FROM = {
-			country_event = { id = entente.102 days = 1 random = 72 }
-		}
-	}
-	option = {
-		name = entente.101.b #If he pursues this, he must abdicate
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				OR = {
-					tag = DEH
-					tag = JAM
-				}
-			}
-			modifier = {
-				factor = 2
-				NOT = { tag = CAN }
-				OR = {
-					has_government = market_liberal
-					has_government = social_liberal
-				}
-			}
-			modifier = {
-				factor = 0
-				tag = AST
-				has_government = national_populist
-			}
-			modifier = {
-				factor = 2
-				NOT = { tag = AST }
-				has_government = national_populist
-			}
-		}
-		FROM = {
-			country_event = { id = entente.103 days = 1 random = 72 }
-		}
-	}
-	option = {
-		name = entente.101.c #We have no interest in weighing in on the matter
-		ai_chance = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					tag = CAN
-					tag = GBR
-					tag = AST
-					tag = NZL
-					tag = SAF
-					tag = CAF
-				}
-			}
-		}
-	}
-}
+	# option = {
+		# name = entente.101.a #We support the king, no matter what
+		# ai_chance = {
+			# factor = 50
+			# modifier = {
+				# factor = 0
+				# OR = {
+					# tag = DEH
+					# tag = JAM
+				# }
+			# }
+			# modifier = {
+				# factor = 0
+				# tag = CAN
+				# OR = {
+					# has_government = market_liberal
+					# has_government = social_liberal
+				# }
+			# }
+			# modifier = {
+				# factor = 0
+				# tag = SAF
+				# has_government = authoritarian_democrat
+			# }
+			# modifier = {
+				# factor = 2
+				# NOT = { tag = SAF }
+				# has_government = authoritarian_democrat
+			# }
+			# modifier = {
+				# factor = 0
+				# has_government = social_democrat
+			# }
+			# modifier = {
+				# factor = 2
+				# has_government = social_conservative
+			# }
+			# modifier = {
+				# factor = 3
+				# has_government = paternal_autocrat
+			# }
+		# }
+		# FROM = {
+			# country_event = { id = entente.102 days = 1 random = 72 }
+		# }
+	# }
+	# option = {
+		# name = entente.101.b #If he pursues this, he must abdicate
+		# ai_chance = {
+			# factor = 50
+			# modifier = {
+				# factor = 0
+				# OR = {
+					# tag = DEH
+					# tag = JAM
+				# }
+			# }
+			# modifier = {
+				# factor = 2
+				# NOT = { tag = CAN }
+				# OR = {
+					# has_government = market_liberal
+					# has_government = social_liberal
+				# }
+			# }
+			# modifier = {
+				# factor = 0
+				# tag = AST
+				# has_government = national_populist
+			# }
+			# modifier = {
+				# factor = 2
+				# NOT = { tag = AST }
+				# has_government = national_populist
+			# }
+		# }
+		# FROM = {
+			# country_event = { id = entente.103 days = 1 random = 72 }
+		# }
+	# }
+	# option = {
+		# name = entente.101.c #We have no interest in weighing in on the matter
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# factor = 0
+				# OR = {
+					# tag = CAN
+					# tag = GBR
+					# tag = AST
+					# tag = NZL
+					# tag = SAF
+					# tag = CAF
+				# }
+			# }
+		# }
+	# }
+# }
 
-# Dominion supports the king
-country_event = {
-	id = entente.102
-	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.102" }
-	title = entente.102.t
-	desc = entente.102.d
-	picture = GFX_report_event_CAN_edward_meet
+Dominion supports the king
+# country_event = {
+	# id = entente.102
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event entente.102" }
+	# title = entente.102.t
+	# desc = entente.102.d
+	# picture = GFX_report_event_CAN_edward_meet
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = KR_british_king_base
-	}
+	# trigger = {
+		# has_country_flag = KR_british_king_base
+	# }
 
-	option = {
-		name = entente.102.a
-		add_to_variable = { king_support = 1 }
-	}
-}
+	# option = {
+		# name = entente.102.a
+		# add_to_variable = { king_support = 1 }
+	# }
+# }
 
-# Dominion believes the king should abdicate
-country_event = {
-	id = entente.103
-	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.103" }
-	title = entente.103.t
-	desc = entente.103.d
-	picture = GFX_report_event_CAN_edward_party
+Dominion believes the king should abdicate
+# country_event = {
+	# id = entente.103
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event entente.103" }
+	# title = entente.103.t
+	# desc = entente.103.d
+	# picture = GFX_report_event_CAN_edward_party
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = KR_british_king_base
-	}
+	# trigger = {
+		# has_country_flag = KR_british_king_base
+	# }
 
-	option = {
-		name = entente.103.a
-		subtract_from_variable = { king_support = 1 }
-	}
-}
+	# option = {
+		# name = entente.103.a
+		# subtract_from_variable = { king_support = 1 }
+	# }
+# }
 
-# King makes plea
-country_event = {
-	id = entente.104
-	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.104" }
-	title = entente.104.t
-	desc = entente.104.d
-	picture = GFX_report_event_CAN_edward2
+King makes plea
+# country_event = {
+	# id = entente.104
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event entente.104" }
+	# title = entente.104.t
+	# desc = entente.104.d
+	# picture = GFX_report_event_CAN_edward2
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = KR_british_king_base
-	}
+	# trigger = {
+		# has_country_flag = KR_british_king_base
+	# }
 
-	option = {
-		name = entente.104.a
-		add_political_power = -100
-		hidden_effect = {
-			if = {
-				limit = {
-					check_variable = { king_popularity > 1 }
-					check_variable = { king_support > 3 }
-					NOT = {
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ABDICATES
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ALBERT
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_HENRY
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_GEORGE
-						}
-					}
-				}
-				# king is too popular to abdicate
-				country_event = { id = entente.105 days = 1 }
-			}
-			else_if = {
-				limit = {
-					NOT = { tag = GBR }
-					NOT = { has_government = authoritarian_democrat }
-					check_variable = { king_influence > 3 }
-					NOT = {
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ABDICATES
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ALBERT
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_HENRY
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_GEORGE
-						}
-					}
-				}
-				# king's allies prevent him from abdicating
-				country_event = { id = entente.106 days = 1 }
-			}
-			else_if = {
-				limit = {
-					NOT = { tag = GBR }
-					has_government = authoritarian_democrat
-					check_variable = { king_influence > 2 }
-					NOT = {
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ABDICATES
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_ALBERT
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_HENRY
-						}
-						has_game_rule = {
-							rule = CAN_british_king
-							option = CAN_BRITISH_KING_GEORGE
-						}
-					}
-				}
-				# king's allies prevent him from abdicating
-				country_event = { id = entente.106 days = 1 }
-			}
-			else = {
-				# abdication decision event
-				country_event = { id = entente.107 days = 1 }
-			}
-		}
-	}
-}
+	# option = {
+		# name = entente.104.a
+		# add_political_power = -100
+		# hidden_effect = {
+			# if = {
+				# limit = {
+					# check_variable = { king_popularity > 1 }
+					# check_variable = { king_support > 3 }
+					# NOT = {
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_ABDICATES
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_ALBERT
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_HENRY
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_GEORGE
+						# }
+					# }
+				# }
+				king is too popular to abdicate
+				# country_event = { id = entente.105 days = 1 }
+			# }
+			# else_if = {
+				# limit = {
+					# NOT = { tag = GBR }
+					# NOT = { has_government = authoritarian_democrat }
+					# check_variable = { king_influence > 3 }
+					# NOT = {
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_ABDICATES
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_ALBERT
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_HENRY
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_GEORGE
+						# }
+					# }
+				# }
+				king's allies prevent him from abdicating
+				# country_event = { id = entente.106 days = 1 }
+			# }
+			# else_if = {
+				# limit = {
+					# NOT = { tag = GBR }
+					# has_government = authoritarian_democrat
+					# check_variable = { king_influence > 2 }
+					# NOT = {
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_ABDICATES
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_ALBERT
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_HENRY
+						# }
+						# has_game_rule = {
+							# rule = CAN_british_king
+							# option = CAN_BRITISH_KING_GEORGE
+						# }
+					# }
+				# }
+				king's allies prevent him from abdicating
+				# country_event = { id = entente.106 days = 1 }
+			# }
+			# else = {
+				abdication decision event
+				# country_event = { id = entente.107 days = 1 }
+			# }
+		# }
+	# }
+# }
 
-# King too popular to abdicate
-country_event = {
-	id = entente.105
-	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.105" }
-	title = entente.105.t
-	desc = entente.105.d
-	picture = GFX_report_event_CAN_crowd2
+King too popular to abdicate
+# country_event = {
+	# id = entente.105
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event entente.105" }
+	# title = entente.105.t
+	# desc = entente.105.d
+	# picture = GFX_report_event_CAN_crowd2
 
-	is_triggered_only = yes
-	major = yes
+	# is_triggered_only = yes
+	# major = yes
 
-	show_major = {
-		OR = {
-			tag = FROM
-			AND = {
-				CAN_is_commonwealth_tag = yes
-				has_socialist_government = no
-				is_in_faction_with = FROM
-			}
-		}
-	}
+	# show_major = {
+		# OR = {
+			# tag = FROM
+			# AND = {
+				# CAN_is_commonwealth_tag = yes
+				# has_socialist_government = no
+				# is_in_faction_with = FROM
+			# }
+		# }
+	# }
 
-	option = {
-		name = entente.105.a
-		trigger = { tag = FROM }
-		clr_global_flag = CAN_king_busy
-		add_political_power = 50
-		custom_effect_tooltip = CAN_king_popularity_increase
-		add_to_variable = { king_popularity = 1 }
-		CAN_calc_royal_visit_effects = yes
-		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
-		}
-	}
-	option = {
-		name = entente.105.a
-		trigger = { NOT = { tag = FROM } }
-	}
-}
+	# option = {
+		# name = entente.105.a
+		# trigger = { tag = FROM }
+		# clr_global_flag = CAN_king_busy
+		# add_political_power = 50
+		# custom_effect_tooltip = CAN_king_popularity_increase
+		# add_to_variable = { king_popularity = 1 }
+		# CAN_calc_royal_visit_effects = yes
+		# hidden_effect = {
+			# country_event = { id = entente.50 days = 90 random = 1440 }
+		# }
+	# }
+	# option = {
+		# name = entente.105.a
+		# trigger = { NOT = { tag = FROM } }
+	# }
+# }
 
-# King's allies prevent him from abdicating
-country_event = {
-	id = entente.106
-	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.106" }
-	title = entente.106.t
-	desc = entente.106.d
-	picture = GFX_report_event_CAN_cabinet
+King's allies prevent him from abdicating
+# country_event = {
+	# id = entente.106
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event entente.106" }
+	# title = entente.106.t
+	# desc = entente.106.d
+	# picture = GFX_report_event_CAN_cabinet
 
-	is_triggered_only = yes
-	major = yes
+	# is_triggered_only = yes
+	# major = yes
 
-	show_major = {
-		OR = {
-			tag = FROM
-			AND = {
-				CAN_is_commonwealth_tag = yes
-				has_socialist_government = no
-				is_in_faction_with = FROM
-			}
-		}
-	}
+	# show_major = {
+		# OR = {
+			# tag = FROM
+			# AND = {
+				# CAN_is_commonwealth_tag = yes
+				# has_socialist_government = no
+				# is_in_faction_with = FROM
+			# }
+		# }
+	# }
 
-	option = {
-		name = entente.106.a
-		trigger = { tag = FROM }
-		add_political_power = -50
-		clr_global_flag = CAN_king_busy
-		if = {
-			limit = { has_country_leader_with_trait = CAN_popular_figurehead }
-			remove_country_leader_trait = CAN_popular_figurehead
-			set_country_flag = GBR_remove_figurehead_trait
-		}
-		else_if = {
-			limit = { has_country_leader_with_trait = CAN_returning_king }
-			remove_country_leader_trait = CAN_returning_king
-			set_country_flag = GBR_remove_returning_king_trait
-		}
-		else = {
-			add_country_leader_trait = CAN_unpopular_monarch
-			set_country_flag = GBR_has_unpopular_monarch
-		}
-		custom_effect_tooltip = CAN_exile_influence_decrease
-		set_variable = { king_influence = 0 }
-		CAN_calc_exile_influence_effects = yes
-		if = {
-			limit = { check_variable = { king_popularity > 0 } }
-			custom_effect_tooltip = CAN_king_popularity_decrease
-			subtract_from_variable = { king_popularity = 1 }
-			CAN_calc_royal_visit_effects = yes
-		}
-		hidden_effect = {
-			country_event = { id = entente.50 days = 90 random = 1440 }
-		}
-	}
-	option = {
-		name = entente.106.a
-		trigger = { NOT = { tag = FROM } }
-	}
-}
+	# option = {
+		# name = entente.106.a
+		# trigger = { tag = FROM }
+		# add_political_power = -50
+		# clr_global_flag = CAN_king_busy
+		# if = {
+			# limit = { has_country_leader_with_trait = CAN_popular_figurehead }
+			# remove_country_leader_trait = CAN_popular_figurehead
+			# set_country_flag = GBR_remove_figurehead_trait
+		# }
+		# else_if = {
+			# limit = { has_country_leader_with_trait = CAN_returning_king }
+			# remove_country_leader_trait = CAN_returning_king
+			# set_country_flag = GBR_remove_returning_king_trait
+		# }
+		# else = {
+			# add_country_leader_trait = CAN_unpopular_monarch
+			# set_country_flag = GBR_has_unpopular_monarch
+		# }
+		# custom_effect_tooltip = CAN_exile_influence_decrease
+		# set_variable = { king_influence = 0 }
+		# CAN_calc_exile_influence_effects = yes
+		# if = {
+			# limit = { check_variable = { king_popularity > 0 } }
+			# custom_effect_tooltip = CAN_king_popularity_decrease
+			# subtract_from_variable = { king_popularity = 1 }
+			# CAN_calc_royal_visit_effects = yes
+		# }
+		# hidden_effect = {
+			# country_event = { id = entente.50 days = 90 random = 1440 }
+		# }
+	# }
+	# option = {
+		# name = entente.106.a
+		# trigger = { NOT = { tag = FROM } }
+	# }
+# }
 
-# Abdication possible
-country_event = {
-	id = entente.107
-	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.107" }
-	title = entente.107.t
-	desc = entente.107.d
-	picture = GFX_report_event_CAN_commons2
+Abdication possible
+# country_event = {
+	# id = entente.107
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event entente.107" }
+	# title = entente.107.t
+	# desc = entente.107.d
+	# picture = GFX_report_event_CAN_commons2
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	trigger = {
-		has_country_flag = KR_british_king_base
-	}
+	# trigger = {
+		# has_country_flag = KR_british_king_base
+	# }
 
-	option = {
-		name = entente.107.a #For the good of the Empire, he must abdicate
-		ai_chance = {
-			factor = 80
-			modifier = {
-				factor = 0.5
-				check_variable = { king_support > 3 }
-			}
-			modifier = {
-				factor = 0.5
-				check_variable = { king_popularity > 1 }
-			}
-			modifier = {
-				factor = 0
-				has_game_rule = {
-					rule = CAN_british_king
-					option = CAN_BRITISH_KING_EDWARD
-				}
-			}
-		}
-		custom_effect_tooltip = CAN_edward_will_step_down
-		if = {
-			limit = {
-				check_variable = { king_popularity > 1 }
-			}
-			add_stability = -0.10
-			add_political_power = -100
-			decrease_ruling_party_popularity_by_10 = yes
-		}
-		else_if = {
-			limit = {
-				check_variable = { king_popularity < 2 }
-				check_variable = { king_popularity > 0 }
-			}
-			add_stability = -0.10
-			add_political_power = -50
-			decrease_ruling_party_popularity_by_5 = yes
-		}
-		else = {
-			add_stability = -0.05
-		}
-		country_event = entente.108
-	}
-	option = {
-		name = entente.107.b #He is our King, and he remains so!
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 0.5
-				check_variable = { king_popularity < 1 }
-			}
-			modifier = {
-				factor = 0.5
-				check_variable = { king_support < 0 }
-			}
-			modifier = {
-				factor = 1.5
-				check_variable = { king_support > 2 }
-			}
-			modifier = {
-				factor = 2
-				check_variable = { king_popularity > 0 }
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_ABDICATES
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_ALBERT
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_HENRY
-					}
-					has_game_rule = {
-						rule = CAN_british_king
-						option = CAN_BRITISH_KING_GEORGE
-					}
-				}
-			}
-		}
-		clr_global_flag = CAN_king_busy
-		if = {
-			limit = { has_country_leader_with_trait = CAN_popular_figurehead }
-			remove_country_leader_trait = CAN_popular_figurehead
-			set_country_flag = GBR_remove_figurehead_trait
-		}
-		else_if = {
-			limit = { has_country_leader_with_trait = CAN_returning_king }
-			remove_country_leader_trait = CAN_returning_king
-			set_country_flag = GBR_remove_returning_king_trait
-		}
-		else = {
-			add_country_leader_trait = CAN_unpopular_monarch
-			set_country_flag = GBR_has_unpopular_monarch
-		}
-		if = {
-			limit = {
-				check_variable = { king_popularity < 2 }
-				check_variable = { king_popularity > 0 }
-			}
-			add_political_power = -100
-			decrease_ruling_party_popularity_by_10 = yes
-		}
-		else_if = {
-			limit = {
-				check_variable = { king_popularity < 1 }
-			}
-			add_stability = -0.05
-			add_political_power = -200
-			decrease_ruling_party_popularity_by_20 = yes
-		}
-		else = {
-			add_political_power = -50
-		}
-		hidden_effect = {
-			news_event = { id = entente.110 days = 1 }
-			country_event = { id = entente.50 days = 90 random = 1440 }
-		}
-	}
-}
+	# option = {
+		# name = entente.107.a #For the good of the Empire, he must abdicate
+		# ai_chance = {
+			# factor = 80
+			# modifier = {
+				# factor = 0.5
+				# check_variable = { king_support > 3 }
+			# }
+			# modifier = {
+				# factor = 0.5
+				# check_variable = { king_popularity > 1 }
+			# }
+			# modifier = {
+				# factor = 0
+				# has_game_rule = {
+					# rule = CAN_british_king
+					# option = CAN_BRITISH_KING_EDWARD
+				# }
+			# }
+		# }
+		# custom_effect_tooltip = CAN_edward_will_step_down
+		# if = {
+			# limit = {
+				# check_variable = { king_popularity > 1 }
+			# }
+			# add_stability = -0.10
+			# add_political_power = -100
+			# decrease_ruling_party_popularity_by_10 = yes
+		# }
+		# else_if = {
+			# limit = {
+				# check_variable = { king_popularity < 2 }
+				# check_variable = { king_popularity > 0 }
+			# }
+			# add_stability = -0.10
+			# add_political_power = -50
+			# decrease_ruling_party_popularity_by_5 = yes
+		# }
+		# else = {
+			# add_stability = -0.05
+		# }
+		# country_event = entente.108
+	# }
+	# option = {
+		# name = entente.107.b #He is our King, and he remains so!
+		# ai_chance = {
+			# factor = 20
+			# modifier = {
+				# factor = 0.5
+				# check_variable = { king_popularity < 1 }
+			# }
+			# modifier = {
+				# factor = 0.5
+				# check_variable = { king_support < 0 }
+			# }
+			# modifier = {
+				# factor = 1.5
+				# check_variable = { king_support > 2 }
+			# }
+			# modifier = {
+				# factor = 2
+				# check_variable = { king_popularity > 0 }
+			# }
+			# modifier = {
+				# factor = 0
+				# OR = {
+					# has_game_rule = {
+						# rule = CAN_british_king
+						# option = CAN_BRITISH_KING_ABDICATES
+					# }
+					# has_game_rule = {
+						# rule = CAN_british_king
+						# option = CAN_BRITISH_KING_ALBERT
+					# }
+					# has_game_rule = {
+						# rule = CAN_british_king
+						# option = CAN_BRITISH_KING_HENRY
+					# }
+					# has_game_rule = {
+						# rule = CAN_british_king
+						# option = CAN_BRITISH_KING_GEORGE
+					# }
+				# }
+			# }
+		# }
+		# clr_global_flag = CAN_king_busy
+		# if = {
+			# limit = { has_country_leader_with_trait = CAN_popular_figurehead }
+			# remove_country_leader_trait = CAN_popular_figurehead
+			# set_country_flag = GBR_remove_figurehead_trait
+		# }
+		# else_if = {
+			# limit = { has_country_leader_with_trait = CAN_returning_king }
+			# remove_country_leader_trait = CAN_returning_king
+			# set_country_flag = GBR_remove_returning_king_trait
+		# }
+		# else = {
+			# add_country_leader_trait = CAN_unpopular_monarch
+			# set_country_flag = GBR_has_unpopular_monarch
+		# }
+		# if = {
+			# limit = {
+				# check_variable = { king_popularity < 2 }
+				# check_variable = { king_popularity > 0 }
+			# }
+			# add_political_power = -100
+			# decrease_ruling_party_popularity_by_10 = yes
+		# }
+		# else_if = {
+			# limit = {
+				# check_variable = { king_popularity < 1 }
+			# }
+			# add_stability = -0.05
+			# add_political_power = -200
+			# decrease_ruling_party_popularity_by_20 = yes
+		# }
+		# else = {
+			# add_political_power = -50
+		# }
+		# hidden_effect = {
+			# news_event = { id = entente.110 days = 1 }
+			# country_event = { id = entente.50 days = 90 random = 1440 }
+		# }
+	# }
+# }
 
 # Choosing the new king
 country_event = {
@@ -9402,6 +9414,1355 @@ country_event = {
 	}
 }
 
+country_event = { # A British proposal
+	id = entente.2105
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.2105" }
+	title = entente.2105.t
+	desc = entente.2105.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Yes
+		name = entente.2105.a
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			NOT = {
+				is_subject_of = ENT
+			}
+		}
+		add_political_power = -25
+		add_ideas = CAN_currency_idea
+		GBR = {
+			country_event = {
+				id = entente.106
+				days = 1
+			}
+		}
+	}
+	option = { # We're a puppet...
+		name = entente.2105.b
+		ai_chance = {
+			factor = 100
+		}
+		trigger = {
+			is_subject_of = ENT
+		}
+		add_political_power = -25
+		add_ideas = CAN_currency_idea
+		GBR = {
+			country_event = {
+				id = entente.106
+				days = 1
+			}
+		}
+	}
+	option = { # No
+		name = entente.2105.c
+		ai_chance = {
+			factor = 50
+		}
+		add_political_power = 25
+		GBR = {
+			country_event = {
+				id = entente.107
+				days = 1
+			}
+		}
+	}
+}
+country_event = { # A country accepts
+	id = entente.2106
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.2106" }
+	title = entente.2106.t
+	desc = entente.2106.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Yes
+		name = entente.2106.a
+		add_political_power = 10
+		add_opinion_modifier = {
+			target = FROM
+			modifier = GBR_sterling_yes
+		}
+	}
+}
+country_event = { # A country does not accept the Sterling Area
+	id = entente.2107
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.2107" }
+	title = entente.2107.t
+	desc = entente.2107.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Yes
+		name = entente.2107.a
+		add_political_power = -10
+		add_opinion_modifier = {
+			target = FROM
+			modifier = GBR_sterling_no
+		}
+	}
+}
+country_event = { # A country loses the Sterling
+	id = entente.2108
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.2108" }
+	title = entente.2108.t
+	desc = entente.2108.d
+	picture = GFX_report_event_generic_read_write
+
+	trigger = {
+		has_idea = CAN_currency_idea
+		OR = {
+			NOT = {
+				is_in_faction_with = GBR
+			}
+			NOT = {
+				country_exists = GBR
+			}
+			GBR = {
+				is_subject = yes
+			}
+		}
+	}
+
+	option = {
+		name = entente.2108.a
+		remove_ideas = CAN_currency_idea
+	}
+}
+
+# Fate of Canadian Entente Leadership
+country_event = {
+	id = entente.400
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.400" }
+	title = entente.400.t
+	desc = entente.400.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #Take Command
+		name = entente.400.a
+		ai_chance = {
+			factor = 50
+		}
+		set_global_flag = CAN_entente_leadership
+	}
+	
+	option = { #Accept British Leadership
+		name = entente.400.b
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = CAN_brit_leadership
+		GBR = {
+			set_country_flag = CAN_allowed_us_to_take_over
+		}
+	}
+}
+
+# Interventionism or Peace?
+country_event = {
+	id = entente.401
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente.401" }
+	title = entente.401.t
+	desc = entente.401.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #Intervene for the Sake of Peace
+		name = entente.401.a
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = CAN_working_towards_peace
+	}
+	
+	option = { #Please Not another World War
+		name = entente.401.b
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = CAN_interventionist
+	}
+}
+
+### Imperial Federation Stuff ###
+
+add_namespace = imp_fed
+
+# Invitation to the Federation
+
+country_event = {
+	id = imp_fed.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event imp_fed.1" }
+	title = imp_fed.1.t
+	desc = imp_fed.1.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = imp_fed.1.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = -30
+				has_country_flag = CAN_more_likely_to_imperial_federation
+			}
+		}
+		ENT = {
+			country_event = { #Accepted
+				id = imp_fed.2
+				days = 1
+			}
+			change_tag_from = ROOT
+		}
+	}
+	
+	option = { #no
+		name = imp_fed.1.b
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			NOT = {
+				is_subject_of = ENT
+			}
+		}
+		ENT = { #Denied
+			country_event = {
+				id = imp_fed.3
+				days = 1
+			}
+		}
+		if = {
+			limit = {
+				tag = DEH
+			}
+			set_country_flag = DEH_refused_entente
+		}
+		if = {
+			limit = {
+				tag = SAF
+			}
+			set_country_flag = SAF_refused_entente
+		}
+		if = {
+			limit = {
+				tag = SFR
+			}
+			set_country_flag = SAF_refused_entente
+		}
+		if = {
+			limit = {
+				tag = AST
+			}
+			set_country_flag = AST_refused_entente
+		}
+		if = {
+			limit = {
+				tag = NZL
+			}
+			set_country_flag = NZL_refused_entente
+		}
+		if = {
+			limit = {
+				tag = NZL
+			}
+			set_country_flag = SAF_refused_entente
+		}
+	}
+}
+
+# Invitation Accepted
+
+country_event = {
+	id = imp_fed.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event imp_fed.2" }
+	title = imp_fed.2.t
+	desc = imp_fed.2.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #Wonderful!
+		name = imp_fed.2.a
+		every_state = {
+			limit = {
+				is_core_of = FROM
+			}
+			ENT = {
+				add_state_core = PREV
+			}
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+		FROM = {
+			every_unit_leader = {
+				set_nationality = ROOT
+			}
+		}
+	}
+}
+
+# Invitation Denied
+
+country_event = {
+	id = imp_fed.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event imp_fed.3" }
+	title = imp_fed.3.t
+	desc = imp_fed.3.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #Death to Them
+		name = imp_fed.3.a
+		effect_tooltip = {
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		FROM = {
+			country_event = {
+				id = imp_fed.4
+				days = 4
+			}
+		}
+	}
+	
+	option = { #It was fun while it lasted
+		name = imp_fed.3.b
+		add_stability = -0.02
+		add_political_power = -20
+	}
+}
+
+# Canada is coming to kill us
+
+country_event = {
+	id = imp_fed.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event imp_fed.4" }
+	title = imp_fed.4.t
+	desc = imp_fed.4.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #Throw off the Entente's Chains!
+		name = imp_fed.4.a
+		ai_chance = {
+			factor = 50
+		}
+		leave_faction = yes
+		seperate_peace_all_wars = yes
+		ENT = {
+			create_wargoal = {
+				type = annex_everything
+				target = ROOT
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = AST_refused_entente
+			}
+			AST_become_republic = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = NZL_refused_entente
+			}
+			NZL_become_republic = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = SAF_refused_entente
+			}
+			if = {
+				limit = {
+					has_idea = SAF_idea_great_trek_reenactment_positive
+				}
+				remove_ideas = SAF_idea_great_trek_reenactment_positive
+			}
+			else = {
+				remove_ideas = SAF_idea_great_trek_reenactment_negative
+			}
+			add_war_support = 0.1
+			custom_effect_tooltip = SAF_tt_Malan_becomes_president
+			hidden_effect = {
+				set_cosmetic_tag = SAF_republic
+			}
+			leave_faction = yes
+			set_global_flag = saf_boer_war
+			
+			if = {
+				limit = {
+					has_war = yes
+				}
+
+				# first peace out with faction leaders
+				every_country = {
+					limit = {
+						is_faction_leader = yes
+						has_war_with = SAF
+						has_war_with = ENT
+					}
+					SAF = { white_peace = PREV }
+				}
+
+				# then all non-puppets who aren't in factions
+				every_country = {
+					limit = {
+						is_in_faction = no
+						is_subject = no
+						has_war_with = SAF
+						has_war_with = ENT
+					}
+					SAF = { white_peace = PREV }
+				}
+			}
+
+			if = {
+				limit = {
+					has_idea = SAF_wavering_dominion
+				}
+				remove_ideas = SAF_wavering_dominion
+			}
+			else_if = {
+				limit = {
+					has_idea = SAF_neutral_dominion
+				}
+				remove_ideas = SAF_neutral_dominion
+			}
+			
+			hidden_effect = {
+				create_country_leader = {
+					name = "Daniel François Malan"
+					desc = "POLITICS_DANIEL_MALAN_DESC"
+					picture = "gfx/leaders/SAF/SAF_Daniel_Francois_Malan.png"
+					expire = "1965.1.1"
+					ideology = pataut_boer_nationalism_subtype
+				}
+			}
+			if = {
+				limit = {
+					is_in_tech_sharing_group = entente_research
+				}
+				remove_from_tech_sharing_group = entente_research
+			}
+			if = {
+				limit = {
+					has_country_flag = saf_national_turned_pataut
+				}
+				add_popularity = { ideology = paternal_autocrat popularity = 0.1 }
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = SAF_reorganise_the_national_party
+				}
+				add_popularity = { ideology = national_populist popularity = 0.1 }
+			}
+			else = {
+				add_popularity = { ideology = authoritarian_democrat popularity = 0.1 }
+			}
+			set_politics = {
+				ruling_party = paternal_autocrat
+				elections_allowed = no
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = DEH_refused_entente
+			}
+			set_country_flag = DEH_abandon_dominion
+			if = {
+				limit = {
+					NOT = {
+						has_cosmetic_tag = DEH_IND
+					}
+				}
+				set_cosmetic_tag = DEH_IND
+			}
+			if = {
+				limit = {
+					has_government = market_liberal
+				}
+				DEH_election_liberal = yes
+			}
+			if = {
+				limit = {
+					has_government = social_liberal
+				}
+				DEH_election_swaraj = yes
+			}
+			if = {
+				limit = {
+					has_government = social_democrat
+				}
+				DEH_election_jinnah = yes
+			}
+			if = {
+				limit = {
+					has_government = social_conservative
+				}
+				DEH_election_unionist = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = imp_fed.5
+				days = 4
+			}
+		}
+	}
+	
+	option = { #We have Reconsidered
+		name = imp_fed.4.b
+		ai_chance = {
+			factor = 50
+		}
+		ENT = {
+			country_event = { #Accepted
+				id = imp_fed.2
+				days = 1
+			}
+			change_tag_from = ROOT
+		}
+	}
+}
 
 
+# Nope to the Nope
 
+country_event = {
+	id = imp_fed.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event imp_fed.5" }
+	title = imp_fed.5.t
+	desc = imp_fed.5.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #Well Fuck them
+		name = imp_fed.5.a
+		
+	}
+}
+
+
+add_namespace = entente_japan
+
+# Japan in the Entente?
+
+country_event = {
+	id = entente_japan.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.1" }
+	title = entente_japan.1.t
+	desc = entente_japan.1.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = entente_japan.1.a
+		ai_chance = {
+			factor = 50
+		}
+		JAP = {
+			country_event = entente_japan.2
+		}
+	}
+	
+	option = { #no
+		name = entente_japan.1.b
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = CAN_no_japan_alliance
+	}
+}
+
+# Invitation to the Entente
+
+country_event = {
+	id = entente_japan.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.2" }
+	title = entente_japan.2.t
+	desc = entente_japan.2.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = entente_japan.2.a
+		ai_chance = {
+			factor = 50
+		}
+		CAN = {
+			country_event = entente_japan.3
+		}
+	}
+	
+	option = { #NAP
+		name = entente_japan.1.b
+		ai_chance = {
+			factor = 50
+		}
+		CAN = {
+			country_event = entente_japan.4
+		}
+	}
+	
+	option = { #Nah Fuck em
+		name = entente_japan.1.c
+		ai_chance = {
+			factor = 50
+		}
+		CAN = {
+			country_event = entente_japan.5
+		}
+	}
+}
+
+# Japan Accepts
+
+country_event = {
+	id = entente_japan.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.3" }
+	title = entente_japan.3.t
+	desc = entente_japan.3.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = entente_japan.3.a
+		set_country_flag = CAN_JAP_alliance_restored
+		CAN = {
+			add_to_faction = JAP
+			country_event = entente_japan.3
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = JAP
+			}
+			CAN = {
+				add_to_faction = PREV
+			}
+		}
+	}
+}
+
+# Japan Non-Agression Pact 
+
+country_event = {
+	id = entente_japan.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.4" }
+	title = entente_japan.4.t
+	desc = entente_japan.4.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = entente_japan.4.a
+		diplomatic_relation = {
+			country = JAP
+			relation = non_aggression_pact
+		}
+		JAP = {
+			diplomatic_relation = {
+				country = CAN
+				relation = non_aggression_pact
+			}
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = CAN
+			}
+			diplomatic_relation = {
+				country = JAP
+				relation = non_aggression_pact
+			}
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = JAP
+			}
+			diplomatic_relation = {
+				country = CAN
+				relation = non_aggression_pact
+			}
+		}
+	}
+}
+
+# Japan Says Fack Off
+
+country_event = {
+	id = entente_japan.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.5" }
+	title = entente_japan.5.t
+	desc = entente_japan.5.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = entente_japan.5.a
+		add_political_power = -10
+		set_country_flag = CAN_hostile_with_japan
+	}
+}
+
+add_namespace = acw_peace
+
+# Put Aside our Differences to focus on the CSA
+
+country_event = {
+	id = acw_peace.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.1" }
+	title = acw_peace.1.t
+	desc = acw_peace.1.d
+	picture = GFX_report_event_CAN_commission
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = acw_peace.1.a
+		ai_chance = {
+			factor = 75
+		}
+		set_country_flag = ACW_FOCUS_ON_CSA
+		if = {
+			limit = {
+				NOT = {
+					has_war_with = CSA
+				}
+			}
+			declare_war_on = {
+				target = CSA
+				type = annex_everything
+			}
+		}
+		every_country = {
+			limit = {
+				has_war_with = ROOT
+				NOT = {
+					tag = CSA
+				}
+			}
+			white_peace_with_ROOT = yes
+		}
+	}
+	
+	option = { #no
+		name = acw_peace.1.b
+		ai_chance = {
+			factor = 25
+		}
+		add_war_support = 0.05
+	}
+}
+
+# CSA Gone, Now What
+
+country_event = {
+	id = acw_peace.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.2" }
+	title = acw_peace.2.t
+	desc = acw_peace.2.d
+	picture = GFX_report_event_CAN_commission
+	
+	immediate = {
+		set_variable = { ACW_peace_participants = 1 }
+		set_variable = { ACW_peace_rejections = 1 }
+	}
+
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = ACW_FOCUS_ON_CSA
+		NOT = {
+			country_exists = CSA
+		}
+	}
+
+	option = { #Accept Proposal
+		name = acw_peace.2.a
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				tag = COR
+			}
+			set_global_flag = COR_accepted_proposal
+			set_country_flag = ACW_accepted_proposal
+			add_to_variable = { ACW_peace_participants = 1 }
+		}
+		if = {
+			limit = {
+				tag = USA
+			}
+			set_global_flag = USA_accepted_proposal
+			set_country_flag = ACW_accepted_proposal
+			add_to_variable = { ACW_peace_participants = 1 }
+		}
+		if = {
+			limit = {
+				tag = TEX
+			}
+			set_global_flag = TEX_accepted_proposal
+			set_country_flag = ACW_accepted_proposal
+			add_to_variable = { ACW_peace_participants = 1 }
+		}
+		if = {
+			limit = {
+				tag = CAL
+			}
+			set_global_flag = CAL_accepted_proposal
+			set_country_flag = ACW_accepted_proposal
+			add_to_variable = { ACW_peace_participants = 1 }
+		}
+		
+		if = {
+			limit = {
+				check_variable = { ACW_peace_participants > 2 }
+			}
+			country_event = { #Referendum Announced
+				id = acw_peace.3
+				days = 4
+			}
+		}
+		else = {
+			country_event = { #Referendum Cancelled
+				id = acw_peace.5
+				days = 4
+			}
+		} 
+	}
+	
+	option = { #no
+		name = acw_peace.2.b
+		ai_chance = {
+			factor = 50		
+		}
+		add_war_support = 0.05
+		if = {
+			limit = {
+				tag = COR
+			}
+			set_global_flag = COR_no_accepted_proposal
+			set_country_flag = ACW_no_accepted_proposal
+			add_to_variable = { ACW_peace_rejections = 1 }
+		}
+		if = {
+			limit = {
+				tag = USA
+			}
+			set_global_flag = USA_no_accepted_proposal
+			set_country_flag = ACW_no_accepted_proposal
+			add_to_variable = { ACW_peace_rejections = 1 }
+		}
+		if = {
+			limit = {
+				tag = TEX
+			}
+			set_global_flag = TEX_no_accepted_proposal
+			set_country_flag = ACW_no_accepted_proposal
+			add_to_variable = { ACW_peace_rejections = 1 }
+		}
+		if = {
+			limit = {
+				tag = CAL
+			}
+			set_global_flag = CAL_no_accepted_proposal
+			set_country_flag = ACW_no_accepted_proposal
+			add_to_variable = { ACW_peace_rejections = 1 }
+		}
+	}
+}
+
+# Confrence not a failure
+
+country_event = {
+	id = acw_peace.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.3" }
+	title = acw_peace.3.t
+	desc = acw_peace.3.d
+	picture = GFX_report_event_CAN_commission
+	
+	is_triggered_only = yes
+	
+
+	option = { #Yay
+		name = acw_peace.3.a
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			country_event = acw_peace.4
+		}
+		else = {
+			CAN = {
+				country_event = acw_peace.4
+			}
+		}
+	}
+}
+
+# Confrence not a failure
+
+country_event = {
+	id = acw_peace.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.4" }
+	title = acw_peace.4.t
+	desc = acw_peace.4.d
+	picture = GFX_report_event_CAN_commission
+	
+	is_triggered_only = yes
+	
+	immediate = {	
+		hidden_effect = {
+			if = {
+				every_country = {
+					limit = {
+						has_country_flag = ACW_no_accepted_proposal
+					}
+					add_ideas = ACW_ilegitimate_government
+				}
+			}
+		}
+	}
+
+	option = { #USA
+		name = acw_peace.4.a
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			has_global_flag = USA_accepted_proposal
+			COR = { is_ai = yes }
+			WCC = { is_ai = yes }
+			CAL = { is_ai = yes }
+			TEX = { is_ai = yes }
+		}
+		USA = {
+			if = {
+				
+		if = {
+			limit = {
+				has_global_flag = TEX_accepted_proposal
+			}
+			USA = {
+				annex_country = {
+					target = TEX
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = COR_accepted_proposal
+			}
+			USA = {
+				annex_country = {
+					target = COR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = CAL_accepted_proposal
+			}
+			USA = {
+				annex_country = {
+					target = CAL
+					transfer_troops = no
+				}
+			}
+		}
+	}
+	
+	option = { #TEX
+		name = acw_peace.4.b
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			has_global_flag = TEX_accepted_proposal
+			COR = { is_ai = yes }
+			WCC = { is_ai = yes }
+			CAL = { is_ai = yes }
+			USA = { is_ai = yes }
+		}
+		if = {
+			limit = {
+				has_global_flag = USA_accepted_proposal
+			}
+			TEX = {
+				annex_country = {
+					target = USA
+					transfer_troops = no
+				}
+				annex_country = {
+					target = WCC
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = COR_accepted_proposal
+			}
+			TEX = {
+				annex_country = {
+					target = COR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = CAL_accepted_proposal
+			}
+			TEX = {
+				annex_country = {
+					target = CAL
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { ACW_peace_rejections > 0 }
+			}
+			USA = {
+				add_ideas = ACW_legitimate_government
+			}
+		}
+	}
+	
+	option = { #CAL
+		name = acw_peace.4.c
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			has_global_flag = CAL_accepted_proposal
+			COR = { is_ai = yes }
+			WCC = { is_ai = yes }
+			CAL = { is_ai = yes }
+			USA = { is_ai = yes }
+		}
+		if = {
+			limit = {
+				has_global_flag = USA_accepted_proposal
+			}
+			CAL = {
+				annex_country = {
+					target = USA
+					transfer_troops = no
+				}
+				annex_country = {
+					target = WCC
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = COR_accepted_proposal
+			}
+			CAL = {
+				annex_country = {
+					target = COR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = TEX_accepted_proposal
+			}
+			CAL = {
+				annex_country = {
+					target = TEX
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { ACW_peace_rejections > 0 }
+			}
+			CAL = {
+				add_ideas = ACW_legitimate_government
+			}
+		}
+	}
+	
+	option = { #COR
+		name = acw_peace.4.e
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			has_global_flag = COR_accepted_proposal
+			USA = { is_ai = yes }
+			WCC = { is_ai = yes }
+			CAL = { is_ai = yes }
+			TEX = { is_ai = yes }
+		}
+		if = {
+			limit = {
+				has_global_flag = USA_accepted_proposal
+			}
+			COR = {
+				annex_country = {
+					target = USA
+					transfer_troops = no
+				}
+				annex_country = {
+					target = WCC
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = CAL_accepted_proposal
+			}
+			COR = {
+				annex_country = {
+					target = CAL
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = TEX_accepted_proposal
+			}
+			COR = {
+				annex_country = {
+					target = TEX
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { ACW_peace_rejections > 0 }
+			}
+			COR = {
+				add_ideas = ACW_legitimate_government
+			}
+		}
+	}
+}
+
+# Failure
+
+country_event = {
+	id = acw_peace.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.5" }
+	title = acw_peace.5.t
+	desc = acw_peace.5.d
+	picture = GFX_report_event_CAN_commission
+	
+	is_triggered_only = yes
+	
+	option = { #Don't Make me Come Down There
+		name = acw_peace.5.a
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			tag = CAN
+		}
+		every_country = {
+			limit = {
+				has_country_flag = ACW_no_accepted_proposal
+			}
+			country_event = {
+				id = acw_peace.6
+				days = 4
+			}
+		}
+		
+	}
+	
+	option = { #Fuck it we tried
+		name = acw_peace.5.a
+		ai_chance = {
+			factor = 50
+		}
+		add_stability = -0.05
+		set_global_flag = ACW_peace_plan_failed
+	}
+}
+
+# Canada 'Suggests' We Reconsider
+
+country_event = {
+	id = acw_peace.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.6" }
+	title = acw_peace.6.t
+	desc = acw_peace.6.d
+	picture = GFX_report_event_CAN_commission
+	
+	is_triggered_only = yes
+	
+	option = { #Don't Make me Come Down There
+		name = acw_peace.6.a
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				tag = COR
+			}
+			set_global_flag = COR_accepted_proposal
+			set_global_flag = COR_no_accepted_proposal
+			set_country_flag = ACW_accepted_proposal
+			clr_country_flag = ACW_no_accepted_proposal
+			add_to_variable = { ACW_peace_participants = 1 }
+			subtract_from_variable = { ACW_peace_rejections = 1 }
+		}
+		if = {
+			limit = {
+				tag = USA
+			}
+			set_global_flag = USA_accepted_proposal
+			clr_global_flag = USA_no_accepted_proposal
+			set_country_flag = ACW_accepted_proposal
+			clr_country_flag = ACW_no_accepted_proposal
+			add_to_variable = { ACW_peace_participants = 1 }
+			subtract_from_variable = { ACW_peace_rejections = 1 }
+		}
+		if = {
+			limit = {
+				tag = TEX
+			}
+			set_global_flag = TEX_accepted_proposal
+			clr_global_flag = TEX_no_accepted_proposal
+			set_country_flag = ACW_accepted_proposal
+			clr_country_flag = ACW_no_accepted_proposal
+			add_to_variable = { ACW_peace_participants = 1 }
+			subtract_from_variable = { ACW_peace_rejections = 1 }
+		}
+		if = {
+			limit = {
+				tag = CAL
+			}
+			set_global_flag = CAL_accepted_proposal
+			clr_global_flag = CAL_no_accepted_proposal
+			set_country_flag = ACW_accepted_proposal
+			clr_country_flag = ACW_no_accepted_proposal
+			add_to_variable = { ACW_peace_participants = 1 }
+			subtract_from_variable = { ACW_peace_rejections = 1 }
+		}
+		
+		if = {
+			limit = {
+				check_variable = { ACW_peace_participants > 2 }
+			}
+			country_event = { #Referendum Announced
+				id = acw_peace.3
+				days = 4
+			}
+		}
+		else = {
+			CAN = {
+				country_event = { #Referendum Cancelled
+					id = acw_peace.7
+					days = 4
+				}
+			}
+		} 
+		
+	}
+	
+	option = { #no
+		name = acw_peace.6.b
+		ai_chance = {
+			factor = 50
+		}
+		set_global_flag = ACW_refused_mediation
+		
+		if = {
+			limit = {
+				check_variable = { ACW_peace_participants > 2 }
+			}
+			country_event = { #Referendum Announced
+				id = acw_peace.3
+				days = 4
+			}
+		}
+		else = {
+			CAN = {
+				country_event = { #Referendum Cancelled
+					id = acw_peace.7
+					days = 4
+				}
+			}
+		} 
+	}
+}
+
+# A Second Failure
+
+country_event = {
+	id = acw_peace.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event entente_japan.7" }
+	title = acw_peace.7.t
+	desc = acw_peace.7.d
+	picture = GFX_report_event_CAN_commission
+	
+	is_triggered_only = yes
+	
+	option = { #We Tried
+		name = acw_peace.7.a
+		ai_chance = {
+			factor = 50
+		}
+		add_stability = -0.05
+		set_global_flag = ACW_peace_plan_failed
+		
+	}
+	
+	option = { #Fuck Em Up
+		name = acw_peace.7.b
+		ai_chance = {
+			factor = 50
+		}
+		every_country = {
+			limit = {
+				is_acw_tag = yes
+			}
+			CAN = {
+				declare_war_on = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+	}
+}

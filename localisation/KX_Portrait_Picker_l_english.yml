@@ -32,7 +32,9 @@ CAN_Edward_Picker:0 "Edward's Outfit"
 TEX_Huey_Picker:0 "Huey's Outfit"
 CAN_WLMK_Picker:0 "Mackenzie King's Outfit"
 VIN_Bao_Dai_Picker:0 "Bao Dai's Outfit"
+CAN_arcand_Picker:0 "Arcand's Outfit"
 COR_Yockey_Picker:0 "Yockey's Outfit"
+CAN_cambridge_Picker:0 "Cambridge's Outfit"
 JAP_Yasuhito_Picker:0 "Yasuhito's Outfit"
 
 ### Tooltips ###
@@ -269,6 +271,17 @@ portrait_picker.33.d:0 "How will Prime Minister Mackenzie King look today?"
 portrait_picker.33.a:0 "I'll put on my coat!"
 portrait_picker.33.b:0 "I'll put on my hat!"
 portrait_picker.33.c:0 "I'll take off my hat!"
+
+portrait_picker.360.t:0 "Arcand's Look"
+portrait_picker.360.d:0 "How will Prime Minister Arcand look today?"
+portrait_picker.360.a:0 "I'll put on my uniform!"
+portrait_picker.360.b:0 "I'll go terrorize local children!"
+
+portrait_picker.361.t:0 "Cambridge's Look"
+portrait_picker.361.d:0 "How will Governor-General Cambridge look today?"
+portrait_picker.361.a:0 "I'll put on my Cort Outfit!"
+portrait_picker.361.b:0 "I'll go put on my Army Uniform!"
+portrait_picker.361.c:0 "I'll get my Suit and Pipe!"
 
 portrait_picker.34.t:0 "Bao Dai's Look"
 portrait_picker.34.d:0 "How will Bao Dai look today?"

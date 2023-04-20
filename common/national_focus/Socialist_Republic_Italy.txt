@@ -8,7 +8,6 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 200 y = 2300 }
 	focus = {
 		id = SRI_4th_congress
 		icon = GFX_GRU_union_congress-4049
@@ -29,7 +28,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_assess_the_economy
-		icon = GFX_goal_FRA_develop_SRI
+		icon = GFX_SRI_future
 		cost = 6.00
 		x = 16
 		y = 0
@@ -188,13 +187,13 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_mafia_peace
-		icon = GFX_goal_NYC_pure_gangster_state
+		icon = GFX_goal_conspiracy
 		cost = 7.00
 		mutually_exclusive = {
 			focus = SRI_mafia_war
 		}
-		x = 43
-		y = 6
+		x = 44
+		y = 4
 		available = {
 			has_idea = SRI_crime_problem
 			NOT = {
@@ -215,13 +214,13 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_mafia_war
-		icon = GFX_goal_NYC_Kill_Mob
+		icon = GFX_goal_generic_imprison_people
 		cost = 7.00
 		mutually_exclusive = {
 			focus = SRI_mafia_peace
 		}
-		x = 45
-		y = 6
+		x = 46
+		y = 4
 		available = {
 			has_idea = SRI_crime_problem
 			NOT = {
@@ -268,7 +267,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_stregthen_the_republic
-		icon = GFX_SRI_syndicalist_victory
+		icon = GFX_goal_ideology_syndicalist
 		cost = 0.00
 		prerequisite = {
 			focus = SRI_4th_congress
@@ -345,7 +344,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_naval_exericises
-		icon = GFX_MAF_naval_aerial_observation
+		icon = GFX_goal_generic_coastal_navy
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_risorgimento
@@ -370,7 +369,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_naval_training
-		icon = GFX_goal_FIU_Admiraltreuen_Deckhands
+		icon = GFX_goal_generic_navy_doctrines_tactics
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_red_navy
@@ -404,7 +403,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_expand_shipbuilding_1
-		icon = GFX_goal_VIN_expand_ba_son_shipyard
+		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 10.00
 		prerequisite = {
 			focus = SRI_red_navy
@@ -445,7 +444,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_ship_contracts
-		icon = GFX_goal_NIC_buy_ship
+		icon = GFX_goal_navy_decision
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_red_navy
@@ -480,7 +479,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_submarines
-		icon = GFX_GRU_submarine_focus-4016
+		icon = GFX_goal_generic_navy_submarine
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_naval_training
@@ -548,7 +547,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_focus_on_civilian
-		icon = GFX_goal_POL_Rebuilding_Krakow
+		icon = GFX_goal_generic_construct_civ_factory
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_create_the_iri
@@ -656,7 +655,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_focus_on_military
-		icon = GFX_goal_POL_Munitions_Districts
+		icon = GFX_goal_generic_construct_mil_factory
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_create_the_iri
@@ -689,7 +688,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_militerized_economy
-		icon = GFX_goal_NIC_Military_Industry
+		icon = GFX_goal_Focus_Military_Mobilisation
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_focus_on_civilian
@@ -769,7 +768,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_centralized_command
-		icon = GFX_goal_generic_army_high_command
+		icon = GFX_goal_officers
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_armata_rossa
@@ -1150,7 +1149,7 @@ focus_tree = {
 }
 	focus = {
 		id = SRI_strengthen_democracy
-		icon = GFX_SRI_radical_socialist_victory
+		icon = GFX_goal_ideology_radical_socialist
 		cost = 0.00
 		prerequisite = {
 			focus = SRI_4th_congress
@@ -1533,7 +1532,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_agrian_communes
-		icon = GFX_goal_CSA_resource_nationalisation
+		icon = GFX_all_resource
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_communal_syndicalism
@@ -1565,7 +1564,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_industry_program
-		icon = GFX_RUS_Cautious_Industrialization
+		icon = GFX_goal_factory_complex
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_decentralized_economy
@@ -1596,7 +1595,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_decentralized_economy
-		icon = GFX_goal_SRD_rebuild_piedmont
+		icon = GFX_goal_construction_engineering
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_communal_syndicalism
@@ -1628,7 +1627,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_expand_railways
-		icon = GFX_goal_POL_Warszawa_Glowna_Railway_Station
+		icon = GFX_goal_generic_construct_infrastructure
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_decentralized_economy
@@ -1675,7 +1674,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_sense_of_dedication
-		icon = GFX_goal_generic_happy_workers
+		icon = GFX_goal_generic_national_unity
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_expand_railways
@@ -1736,7 +1735,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_expand_universtites
-		icon = GFX_goal_generic_red_university
+		icon = GFX_goal_tfv_generic_tech_sharing
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_revolutionary_education
@@ -1756,7 +1755,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_support_uri
-		icon = GFX_goal_CZE_radar_research
+		icon = GFX_goal_generic_radar
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_expand_universtites
@@ -1796,7 +1795,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_synethetic_research
-		icon = GFX_goal_AUS_galicia_oil
+		icon = GFX_goal_generic_oil_refinery
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_expand_universtites
@@ -1929,7 +1928,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_military_exercises
-		icon = GFX_goal_TEX_maneuver_excersices
+		icon = GFX_goal_military_academy
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_risorgimento
@@ -1955,7 +1954,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_reenforce_the_south
-		icon = GFX_goal_ALB_Bunker
+		icon = GFX_goal_nested_fortifications
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_military_exercises
@@ -2039,7 +2038,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_reenforce_the_coast
-		icon = GFX_goal_generic_coastal_navy2
+		icon = GFX_goal_generic_navy_cruiser
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_military_exercises
@@ -2126,7 +2125,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_reenforce_the_po_line
-		icon = GFX_goal_POL_Establish_Border_Forts
+		icon = GFX_goal_nested_fortifications
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_military_exercises
@@ -2359,7 +2358,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_comitato
-		icon = GFX_RUS_Revolutionary_Terror
+		icon = GFX_goal_generic_army_cooperation
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_guardie_rosse
@@ -2399,7 +2398,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_small_unit_tactics
-		icon = GFX_goal_CSA_militia_support
+		icon = GFX_goal_military_academy
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_comitato
@@ -2436,7 +2435,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_reform_the_guards
-		icon = GFX_BBR_red_militia_justice
+		icon = GFX_goal_army_guy_2
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_small_unit_tactics
@@ -2471,7 +2470,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_home_guard
-		icon = GFX_CSA_defensive_outlook
+		icon = GFX_goal_USA_national_guard
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_reform_the_guards
@@ -2503,7 +2502,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_guerrilla_warfare
-		icon = GFX_goal_NIC_Strong_Guerilla_Doctrine
+		icon = GFX_SIA_Urban_Warfare_NF
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_home_guard
@@ -2569,7 +2568,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_artillery_effort
-		icon = GFX_goal_KSV_rail_gun
+		icon = GFX_goal_national_artillery
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_guardie_rosse
@@ -2608,7 +2607,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_anti_air
-		icon = GFX_goal_generic_anti_air_gun
+		icon = GFX_focus_generic_air_defense2
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_artillery_effort
@@ -2702,7 +2701,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_prepare_for_liberation
-		icon = GFX_goal_ALB_Guardians
+		icon = GFX_goal_national_arsenal
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_guardie_rosse
@@ -2740,7 +2739,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_support_brigades
-		icon = GFX_goal_generic_female_liberation_syndicalist
+		icon = GFX_goal_generic_major_alliance
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_prepare_for_liberation
@@ -2777,7 +2776,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_arditi_del_popolo
-		icon = GFX_goal_FIU_shelter_arditi
+		icon = GFX_goal_generic_special_forces
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_support_brigades
@@ -2815,7 +2814,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_italian_auto_industry
-		icon = GFX_goal_CZE_autoaction
+		icon = GFX_goal_Automobile_Production
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_armata_rossa
@@ -2846,7 +2845,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_motorized_offensive
-		icon = GFX_goal_VIN_motorization
+		icon = GFX_goal_generic_armored_cars
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_italian_auto_industry
@@ -2873,7 +2872,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_tanks
-		icon = GFX_goal_CSA_tanks_of_the_revolution
+		icon = GFX_goal_light_tanks
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_motorized_offensive
@@ -2910,7 +2909,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_integrate_red_guards
-		icon = GFX_goal_CSA_professional_red_army
+		icon = GFX_goal_generic_join_faction
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_centralized_command
@@ -2950,7 +2949,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_disolve_the_guards
-		icon = GFX_RUS_Combat_Army_Mutiny
+		icon = GFX_goal_broken_red_star
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_integrate_red_guards
@@ -2985,7 +2984,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_officer_training
-		icon = GFX_GRU_elected_officers-3999
+		icon = GFX_goal_conscription
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_disolve_the_guards
@@ -3017,7 +3016,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_central_logistics
-		icon = GFX_goal_ATH_logistics
+		icon = GFX_goal_planning_bonus
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_officer_training
@@ -3049,7 +3048,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_fronte_militare_clandestino
-		icon = GFX_goal_POL_International_Polish_Agents
+		icon = GFX_goal_secret_agents
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_officer_training
@@ -3106,7 +3105,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_military_build_up
-		icon = GFX_goal_HOL_military_union
+		icon = GFX_focus_generic_combined_arms
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_reform_the_guards
@@ -3142,7 +3141,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_small_arms_industry
-		icon = GFX_goal_CSA_proletarian_arms
+		icon = GFX_goal_generic_small_arms
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_military_build_up
@@ -3173,7 +3172,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_mobilize_the_people
-		icon = GFX_goal_FRA_arms_of_the_people
+		icon = GFX_goal_national_mobilization
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_military_build_up
@@ -3214,7 +3213,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_military_research
-		icon = GFX_goal_military_research_2
+		icon = GFX_goal_great_science
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_military_build_up
@@ -3245,7 +3244,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_female_soldiers
-		icon = GFX_goal_NIC_Empower_Sandinistas
+		icon = GFX_focus_generic_female_soldiers
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_mobilize_the_people
@@ -3293,7 +3292,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_air_training_school
-		icon = GFX_goal_KSV_rule_from_the_air
+		icon = GFX_goal_generic_air_doctrine
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_aeronautica_rossa
@@ -3321,7 +3320,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_bomber_efforts
-		icon = GFX_GRU_bomber_focus-4012
+		icon = GFX_goal_HOL_luchtkruiser
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_air_training_school
@@ -3351,7 +3350,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_cas_efforts
-		icon = GFX_GRU_ground_support_focus-4018
+		icon = GFX_focus_usa_escort_fighters
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_air_training_school
@@ -3380,7 +3379,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_fighter_efforts
-		icon = GFX_GRU_fighter_focus-4011
+		icon = GFX_goal_HOL_D21
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_air_training_school
@@ -3409,7 +3408,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_paratroopers
-		icon = GFX_goal_generic_paratroopers
+		icon = GFX_goal_generic_special_forces
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_bomber_efforts
@@ -3440,7 +3439,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_maintance_schools
-		icon = GFX_goal_CZE_air_industry
+		icon = GFX_goal_industry_air
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_bomber_efforts
@@ -3469,7 +3468,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_red_jets
-		icon = GFX_goal_generic_jet
+		icon = GFX_focus_CZE_military_aeronautical_institute
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_paratroopers
@@ -3500,7 +3499,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_naval_aircraft
-		icon = GFX_goal_FIU_naval_bomber
+		icon = GFX_goal_generic_air_fighter2
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_naval_training
@@ -3532,7 +3531,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_destroyers
-		icon = GFX_goal_NFA_unchallenged_fleet
+		icon = GFX_focus_generic_destroyer
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_naval_training
@@ -3576,7 +3575,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_merchant_marine
-		icon = GFX_goal_CAL_trade_fleet
+		icon = GFX_goal_generic_coastal_navy
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_destroyers
@@ -3615,7 +3614,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_light_cruisers
-		icon = GFX_GRU_cruiser_focus-4015
+		icon = GFX_focus_generic_cruiser2
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_submarines
@@ -3650,7 +3649,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_expand_shipbuilding_2
-		icon = GFX_goal_generic_shipyard
+		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 8.00
 		prerequisite = {
 			focus = SRI_light_cruisers
@@ -3693,7 +3692,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_battle_cruisers
-		icon = GFX_goal_FIU_secure_fleet
+		icon = GFX_focus_generic_navy_battleship2
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_expand_shipbuilding_2
@@ -3729,7 +3728,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_battle_ships
-		icon = GFX_GRU_battleship_focus-4014
+		icon = GFX_goal_generic_navy_battleship
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_battle_cruisers
@@ -3767,7 +3766,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_carriers
-		icon = GFX_GRU_carrier_focus-4013
+		icon = GFX_goal_generic_navy_carrier
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_battle_cruisers
@@ -3805,7 +3804,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SRI_marines
-		icon = GFX_goal_CSA_red_marines
+		icon = GFX_goal_generic_amphibious_assault
 		cost = 6.00
 		prerequisite = {
 			focus = SRI_expand_shipbuilding_2
@@ -6073,7 +6072,7 @@ focus = {
 		cost = 7.2
 		x = 3
 
-		y = 8
+		y = 7
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_mafia_takeover"
@@ -6094,7 +6093,7 @@ focus = {
 		
 		cost = 7.2
 		x = 1
-		y = 9
+		y = 8
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_bosses_in_line"
@@ -6135,7 +6134,7 @@ focus = {
 		
 		cost = 7.2
 		x = 5
-		y = 9
+		y = 8
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_nation_of_intimidation"
@@ -6167,7 +6166,7 @@ focus = {
 		
 		cost = 7.2
 		x = 3
-		y = 10
+		y = 9
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_operations_northwards"
@@ -6206,7 +6205,7 @@ focus = {
 		
 		cost = 7.2
 		x = 2
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_criminals_govern_criminals"
@@ -6253,7 +6252,7 @@ focus = {
 		
 		cost = 7.2
 		x = 1
-		y = 10
+		y = 9
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_unify_chain_of_command"
@@ -6282,7 +6281,7 @@ focus = {
 		
 		cost = 7.2
 		x = -1
-		y = 10
+		y = 9
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_settle_criminal_feuds"
@@ -6315,7 +6314,7 @@ focus = {
 		
 		cost = 7.2
 		x = 0
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_some_enforcement"
@@ -6353,7 +6352,7 @@ focus = {
 				
 		cost = 7.2
 		x = 1
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_discipline_the_mafia"
@@ -6383,7 +6382,7 @@ focus = {
 				
 		cost = 7.2
 		x = 1
-		y = 13
+		y = 12
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_establish_mafia_contacts_north"
@@ -6406,7 +6405,7 @@ focus = {
 		
 		cost = 7.2
 		x = 5
-		y = 10
+		y = 9
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6432,7 +6431,7 @@ focus = {
 		
 		cost = 7.2
 		x = 5
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6472,7 +6471,7 @@ focus = {
 		
 		cost = 7.2
 		x = 5
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6508,7 +6507,7 @@ focus = {
 		
 		cost = 7.2
 		x = 5
-		y = 13
+		y = 12
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6536,7 +6535,7 @@ focus = {
 		
 		cost = 7.2
 		x = 1
-		y = 14
+		y = 13
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6564,7 +6563,7 @@ focus = {
 		
 		cost = 7.2
 		x = 1
-		y = 15
+		y = 14
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6591,7 +6590,7 @@ focus = {
 		
 		cost = 1.5
 		x = 5
-		y = 14
+		y = 13
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6634,7 +6633,7 @@ focus = {
 		
 		cost = 7.2
 		x = 4
-		y = 15
+		y = 14
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6661,7 +6660,7 @@ focus = {
 		
 		cost = 7.2
 		x = 6
-		y = 15
+		y = 14
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_protection_racketeering"
@@ -6682,7 +6681,7 @@ focus = {
 		}
 		cost = 7.2
 		x = 16 
-		y = 7
+		y = 6
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_NeoSanfedisti_coup"
@@ -6703,7 +6702,7 @@ focus = {
 		
 		cost = 1
 		x = 14
-		y = 8
+		y = 7
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_end_anticatholicism"
@@ -6723,7 +6722,7 @@ focus = {
 		
 		cost = 1
 		x = 16
-		y = 8
+		y = 7
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_end_syndies"
@@ -6754,7 +6753,7 @@ focus = {
 		
 		cost = 1
 		x = 18
-		y = 8
+		y = 7
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_a_tighter_hold"
@@ -6780,7 +6779,7 @@ focus = {
 		
 		cost = 3
 		x = 16
-		y = 9
+		y = 8
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_future_of_italy"	
@@ -6799,7 +6798,7 @@ focus = {
 		}
 		cost = 4
 		x = 21
-		y = 10
+		y = 9
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_Pios_Vision"
@@ -6819,7 +6818,7 @@ focus = {
 		
 		cost = 4
 		x = 11
-		y = 10
+		y = 9
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_Ziggiottis_Plan"
@@ -6838,7 +6837,7 @@ focus = {
 		}
 		cost = 2.5
 		x = 16
-		y = 10
+		y = 9
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_the_others"
@@ -6857,7 +6856,7 @@ focus = {
 		}
 		cost = 2
 		x = 15
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus deal_with_mafia"
@@ -6877,7 +6876,7 @@ focus = {
 		}
 		cost = 2
 		x = 17
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_deal_evolaism"
@@ -6898,7 +6897,7 @@ focus = {
 		}
 		cost = 4
 		x = 16
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_south_redeemed"
@@ -6918,7 +6917,7 @@ focus = {
 		
 		cost = 4
 		x = 9
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_meaningful_land_reform"
@@ -6941,7 +6940,7 @@ focus = {
 		
 		cost = 4
 		x = 13
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_light_hand"
@@ -6961,7 +6960,7 @@ focus = {
 		
 		cost = 4
 		x = 11
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_hope_of_faith"
@@ -6981,7 +6980,7 @@ focus = {
 		
 		cost = 4
 		x = 9
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_return_of_nobilty"
@@ -7005,7 +7004,7 @@ focus = {
 		
 		cost = 4
 		x = 11
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_light_of_reason"
@@ -7034,7 +7033,7 @@ focus = {
 		
 		cost = 7.2
 		x = 13
-		y = 13
+		y = 12
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_Aproch_North"
@@ -7065,7 +7064,7 @@ focus = {
 		
 		cost = 14.4
 		x = 12
-		y = 14
+		y = 13
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_economic_integeration"
@@ -7094,7 +7093,7 @@ focus = {
 		
 		cost = 14.4
 		x = 14
-		y = 14
+		y = 13
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_a_better_federation"
@@ -7117,7 +7116,7 @@ focus = {
 		
 		cost = 3
 		x = 13
-		y = 15
+		y = 14
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_Holy_Italia"
@@ -7139,7 +7138,7 @@ focus = {
 		
 		cost = 4
 		x = 21
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_catholic_means_universal"
@@ -7159,7 +7158,7 @@ focus = {
 		
 		cost = 4
 		x = 21
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_erase_nationalism"
@@ -7179,7 +7178,7 @@ focus = {
 		
 		cost = 4
 		x = 19
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_no_mercy"
@@ -7199,7 +7198,7 @@ focus = {
 		
 		cost = 4
 		x = 23
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_God_sees_no_classes"
@@ -7223,7 +7222,7 @@ focus = {
 		
 		cost = 4
 		x = 23
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_blessed_are_the_poor"
@@ -7255,7 +7254,7 @@ focus = {
 		
 		cost = 3
 		x = 19
-		y = 13
+		y = 12
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_The_Chair_of_Peter"
@@ -7278,7 +7277,7 @@ focus = {
 		
 		cost = 10.2
 		x = 18
-		y = 14
+		y = 13
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_peaceful_union"
@@ -7305,7 +7304,7 @@ focus = {
 		
 		cost = 3.2
 		x = 20
-		y = 14
+		y = 13
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_march_north"
@@ -7332,7 +7331,7 @@ focus = {
 		
 		cost = 2.3
 		x = 19
-		y = 15
+		y = 14
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_papal_crowning"
@@ -7354,7 +7353,7 @@ focus = {
 		}
 		cost = 2
 		x = 29
-		y = 8
+		y = 7
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_Pios_Papacy"
@@ -7375,7 +7374,7 @@ focus = {
 		
 		cost = 2
 		x = 28
-		y = 9
+		y = 8
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_address_cardinals"
@@ -7397,7 +7396,7 @@ focus = {
 		
 		cost = 2
 		x = 30
-		y = 9
+		y = 8
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_address_laity"
@@ -7419,7 +7418,7 @@ focus = {
 		
 		cost = 14.4
 		x = 29
-		y = 10
+		y = 9
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_preparing_the_council"	
@@ -7439,7 +7438,7 @@ focus = {
 		
 		cost = 7.2
 		x = 26
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_church_of_yesterday"
@@ -7459,7 +7458,7 @@ focus = {
 		
 		cost = 7.2
 		x = 29
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_church_of_today"
@@ -7479,7 +7478,7 @@ focus = {
 		
 		cost = 7.2
 		x = 32
-		y = 11
+		y = 10
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_church_of_tomorrow"
@@ -7497,7 +7496,7 @@ focus = {
 		
 		cost = 3
 		x = 27
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_decree_on_freemasonary"
@@ -7514,7 +7513,7 @@ focus = {
 		
 		cost = 3
 		x = 28
-		y = 13
+		y = 12
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_decree_on_protestantism"
@@ -7532,7 +7531,7 @@ focus = {
 		
 		cost = 3
 		x = 31
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_decree_on_socialism"
@@ -7555,7 +7554,7 @@ focus = {
 		
 		cost = 3
 		x = 30
-		y = 13
+		y = 12
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_decree_on_capitalism"
@@ -7572,7 +7571,7 @@ focus = {
 		
 		cost = 7.2
 		x = 33
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_decree_on_nationalism"
@@ -7592,7 +7591,7 @@ focus = {
 		
 		cost = 7.2
 		x = 33
-		y = 13
+		y = 12
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_new_crusader_era"
@@ -7612,7 +7611,7 @@ focus = {
 		
 		cost = 7.2
 		x = 29
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_baptize_all_nations"
@@ -7632,7 +7631,7 @@ focus = {
 		
 		cost = 7.2
 		x = 25
-		y = 12
+		y = 11
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_papal_authority"
@@ -7653,7 +7652,7 @@ focus = {
 		
 		cost = 7.2
 		x = 25
-		y = 13
+		y = 12
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_beauty_of_latin"
@@ -7680,7 +7679,7 @@ focus = {
 		
 		cost = 8.3
 		x = 29
-		y = 14
+		y = 13
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_closing_the_council"
@@ -7696,7 +7695,7 @@ focus = {
 		}
 		cost = 2
 		x = 29
-		y = 15
+		y = 14
 		ai_will_do = { factor = 50 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: SRI_into_the_world"

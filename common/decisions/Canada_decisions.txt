@@ -72,6 +72,7 @@ CAN_political_decisions = {
 
 		available = {
 			has_war = yes
+			has_war_support > 0.75
 			enemies_strength_ratio > 0.75
 			NOT = { has_capitulated = yes }
 		}
@@ -99,7 +100,7 @@ CAN_political_decisions = {
 			}
 			add_ideas = extensive_conscription
 			hidden_effect = {
-				country_event = { id = canada.100 days = 3 }
+				country_event = { id = canada.117 days = 3 }
 			}
 		}
 
@@ -1795,6 +1796,7 @@ KR_foreign_support = {
 				has_global_flag = CAN_met_with_germany
 				has_war_with = FROM
 			}
+			has_completed_focus = CAN_german_treaty
 		}
 
 		priority = 10
@@ -2371,75 +2373,6 @@ CAN_returning_home_decisions = {
 						gives_military_access_to = ROOT
 					}
 				}
-			}
-		}
-	}
-
-	CAN_seize_greenland = {
-		icon = generic_tank
-
-		allowed = { tag = CAN }
-
-		available = {
-			ROOT = {
-				controls_all_owned_states = yes
-			}
-			FROM = {
-				OR = {
-					has_socialist_government = yes
-					has_war_with = GER
-					has_capitulated = yes
-				}
-			}
-		}
-
-		visible = {
-			is_faction_leader = yes
-			can_declare_war_on = FROM
-			FROM = {
-				owns_state = 101 #Coastal Greenland
-				OR = {
-					has_socialist_government = yes
-					has_war_with = GER
-					has_capitulated = yes
-				}
-			}
-		}
-
-		cost = 0
-		fire_only_once = yes
-
-		targets = { DEN }
-		target_trigger = {
-			can_declare_war_on = FROM
-			FROM = {
-				owns_state = 101 #Coastal Greenland
-				OR = {
-					has_socialist_government = yes
-					has_war_with = GER
-					has_capitulated = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision CAN_seize_greenland target: [From.GetName]"
-			transfer_state = 101 #Coastal Greenland
-			transfer_state = 926 #Humboldt Glacier
-			if = {
-				limit = { 337 = { is_owned_by = FROM } }
-				transfer_state = 337 #Faeroe Islands
-			}
-			if = {
-				limit = { 100 = { is_owned_by = FROM } }
-				transfer_state = 100 #Iceland (just in case)
-			}
-			FROM = {
-				country_event = canada.231
 			}
 		}
 	}
@@ -3170,7 +3103,10 @@ CAN_iedc_decisions = {
 			}
 		}
 		visible = {
-			has_idea = CAN_iedc_main
+			OR = {
+				has_idea = CAN_iedc_main
+				has_idea = CAN_iedc_main2
+			}
 			has_socialist_government = no
 			NOT = {
 				is_in_array = { global.iedc_members = FROM }
@@ -3195,7 +3131,10 @@ CAN_iedc_decisions = {
 
 		priority = 5
 		target_root_trigger = {
-			has_idea = CAN_iedc_main
+			OR = {
+				has_idea = CAN_iedc_main
+				has_idea = CAN_iedc_main2
+			}
 		}
 
 		target_array = allies
@@ -3255,10 +3194,16 @@ CAN_iedc_decisions = {
 		}
 		visible = {
 			is_ai = no
-			NOT = { has_idea = CAN_iedc_main }
+			NOT = { OR = {
+				has_idea = CAN_iedc_main
+				has_idea = CAN_iedc_main2
+			} }
 			is_in_array = { global.iedc_members = ROOT }
 			FROM = {
+				OR = {
 				has_idea = CAN_iedc_main
+				has_idea = CAN_iedc_main2
+			}
 				is_in_faction_with = ROOT
 			}
 		}
@@ -3274,7 +3219,10 @@ CAN_iedc_decisions = {
 
 		target_trigger = {
 			FROM = {
+				OR = {
 				has_idea = CAN_iedc_main
+				has_idea = CAN_iedc_main2
+			}
 				is_in_faction_with = ROOT
 			}
 		}
@@ -3312,7 +3260,10 @@ CAN_iedc_decisions = {
 			}
 		}
 		visible = {
-			has_idea = CAN_iedc_main
+			OR = {
+				has_idea = CAN_iedc_main
+				has_idea = CAN_iedc_main2
+			}
 		}
 
 		cost = 0
@@ -3385,7 +3336,10 @@ CAN_iedc_decisions = {
 			}
 		}
 		visible = {
-			has_idea = CAN_iedc_main
+			OR = {
+				has_idea = CAN_iedc_main
+				has_idea = CAN_iedc_main2
+			}
 			FROM = {
 				NOT = { tag = ROOT }
 				is_in_array = { global.iedc_members = THIS }
@@ -3405,7 +3359,10 @@ CAN_iedc_decisions = {
 		fire_only_once = no
 
 		target_root_trigger = {
-			has_idea = CAN_iedc_main
+			OR = {
+				has_idea = CAN_iedc_main
+				has_idea = CAN_iedc_main2
+			}
 		}
 
 		target_array = global.iedc_members
@@ -3856,6 +3813,243 @@ highlight_state_targets = {
 			}
 		}
 	}
+	
+	### Defense Scheme No. 1 
+
+	CAN_maple_line = {
+		icon = fortress
+		allowed = {
+			tag = CAN
+		}
+
+		available = {
+			OR = {
+				CAN = { controls_state = 357 }
+				AND = {
+					357 = { is_owned_by = NEE }
+					NEE = { is_subject_of = CAN }
+				}
+				AND = {
+					357 = { is_owned_by = NEE }
+					NEE = { is_in_faction_with = CAN }
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = CAN_defense_one
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+		days_remove = 70
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_war_with = CSA
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CAN_maple_line"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CAN_maple_line"
+			796 = {
+				add_building_construction = { type = bunker province = 11654 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6707 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 9664 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 11680 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 11650 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6717 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 11660 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 706 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 3894 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6911 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 734 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 3733 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 3747 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6795 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6778 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 598 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 3602 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 11662 level = 3 instant_build = yes }
+			}
+			933 = { add_building_construction = { type = bunker province = 7629 level = 3 instant_build = yes }	}
+			934 = { add_building_construction = { type = bunker province = 10481 level = 3 instant_build = yes }	}
+			357 = {
+				add_building_construction = { type = bunker province = 6719 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 12202 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 12221 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 10247 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 4287 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 1282 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 1619 level = 3 instant_build = yes }
+			}
+		}
+	}
+
+	CAN_georgian_line = {
+		icon = fortress
+		allowed = {
+			tag = CAN
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = CAN_defense_one
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+		days_remove = 70
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_war_with = CSA
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CAN_georgian_line"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CAN_georgian_line"
+			682 = {
+				add_building_construction = { type = bunker province = 7899 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 1769 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 4875 level = 2 instant_build = yes }
+			}
+			467 = {
+				add_building_construction = { type = bunker province = 1873 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 4790 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 12145 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 1848 level = 2 instant_build = yes }
+			}
+			469 = {
+				add_building_construction = { type = bunker province = 1788 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 12603 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 3769 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 10552 level = 2 instant_build = yes }
+			}
+			470 = {
+				add_building_construction = { type = bunker province = 7718 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 1262 level = 2 instant_build = yes }
+			}
+			473 = {
+				add_building_construction = { type = bunker province = 7280 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 12578 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 7677 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 7753 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 4428 level = 3 instant_build = yes }
+			}
+		}
+	}
+	
+	CAN_st_lawrence_line = {
+		icon = fortress
+		allowed = {
+			tag = CAN
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = CAN_defense_one
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+		days_remove = 70
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_war_with = CSA
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CAN_st_lawrence_line"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CAN_st_lawrence_line"
+			276 = {
+				add_building_construction = { type = bunker province = 3605 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6625 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 4270 level = 3 instant_build = yes }
+			}
+			468 = {
+				add_building_construction = { type = bunker province = 4345 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 9601 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 7291 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 12149 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 7345 level = 3 instant_build = yes }
+			}
+		}
+	}
+	
+	CAN_fortify_great_lakes = {
+		icon = fortress
+		allowed = {
+			tag = CAN
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = CAN_defense_one
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+		days_remove = 70
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_war_with = CSA
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CAN_fortify_great_lakes"
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision remove CAN_fortify_great_lakes"
+			276 = {
+				add_building_construction = { type = bunker province = 9711 level = 4 instant_build = yes }
+				add_building_construction = { type = bunker province = 9667 level = 4 instant_build = yes }
+				add_building_construction = { type = bunker province = 749 level = 4 instant_build = yes }
+			}
+			682 = {
+				add_building_construction = { type = bunker province = 12582 level = 3 instant_build = yes }
+			}
+		}
+	}
+	
+	### Intervene
 
 	CAN_intervene_in_ACW_USA = {
 		icon = generic_ignite_civil_war
@@ -6704,4 +6898,253 @@ highlight_state_targets = {
 		}
 	}
 
+}
+
+ENT_imperial_federation_decisions = {
+	ENT_invite_to_imperial_fed = {
+		icon = generic_agreement
+		available = {
+			ROOT = {
+				has_capitulated = no
+				custom_trigger_tooltip = {
+					tooltip = CAN_not_currently_inviting
+					NOT = { has_country_flag = { flag = CAN_inviting_to_imp_fed value > 0 } }
+				}
+			}
+			FROM = {
+				has_capitulated = no
+			}
+		}
+		visible = {
+			has_completed_focus = CAN_towards_imperial_federation
+			has_socialist_government = no
+			FROM = {
+				is_in_array = { global.ENT_imperial_integration_array = FROM }
+				has_socialist_government = no
+				is_in_faction_with = ROOT
+				OR = {
+					is_subject = no
+					is_subject_of = ROOT
+				}
+				NOT = {
+					tag = ROOT
+					has_country_flag = CAN_invited_to_imp_fed
+					has_country_flag = CAN_refused_imp_fed
+				}
+			}
+		}
+
+		cost = 0
+		fire_only_once = no
+
+		priority = 5
+		target_root_trigger = {
+			has_global_flag = ENT_IMP_FED
+		}
+
+		target_array = allies
+
+		target_trigger = {
+			FROM = {
+				has_socialist_government = no
+				is_in_faction_with = ROOT
+				OR = {
+					is_subject = no
+					is_subject_of = ROOT
+				}
+				NOT = {
+					tag = ROOT
+					has_country_flag = CAN_invited_to_imp_fed
+					has_country_flag = CAN_refused_imp_fed
+				}
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CAN_invite_into_iedc target: [From.GetName]"
+			clr_country_flag = CAN_inviting_to_iedc
+			set_country_flag = { flag = CAN_inviting_to_imp_fed days = 4 value = 1 }
+			FROM = {
+				set_country_flag = CAN_invited_to_imp_fed
+				country_event = { id = imp_fed.1 days = 1 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 
+		}
+	}
+	
+	ENT_form_imperial_fed = {
+
+		icon = generic_formable_nations
+		allowed = { tag = ENT }
+		available = {
+			NOT = {
+				country_exists = AST
+				country_exists = NZL
+				country_exists = DEH
+				country_exists = SAF
+				country_exists = SFR
+				country_exists = ZAM
+				country_exists = ZIM
+				country_exists = KEN
+				country_exists = UGA
+				country_exists = CIV
+				country_exists = NGR
+				country_exists = CAF
+			}
+			owns_state = 985
+			owns_state = 284
+			owns_state = 126
+			owns_state = 739
+			owns_state = 275
+		}
+
+		visible = {
+			has_completed_focus = CEA_united_states_of_latin_africa
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision form_centroamerica"
+			set_cosmetic_tag = ENT_IMPERIAL_FEDERATION
+
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = AST
+						is_core_of = NZL
+						is_core_of = DEH
+						is_core_of = SAF
+						is_core_of = SFR
+						is_core_of = ZAM
+						is_core_of = ZIM
+						is_core_of = KEN
+						is_core_of = UGA
+						is_core_of = CIV
+						is_core_of = NGR
+						is_core_of = CAF
+					}
+				}
+				ENT = {
+					add_state_core = PREV
+				}
+			}
+		}
+	}
+}
+
+political_actions = {
+	
+	CAN_restore_protectorate = {
+
+		icon = generic_formable_nations
+		allowed = { tag = CAN }
+		available = {
+			1247 = {
+				OR = {
+					is_owned_by_ROOT_or_ally = yes
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = CAN_miskito_coast
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CAN_restore_protectorate"
+			remove_state_claim = 1247
+			NIC = {
+				remove_state_claim = 1247
+				remove_state_core = 1247
+			}
+			CAN_setup_miskito_protectorate = yes
+			MKT = {
+				get_current_government_type = yes
+			}
+			CAN = {
+				puppet = MKT
+			}
+			MKT = {
+				restore_previous_government_type = yes
+			}
+			set_global_flag = CAN_RESTORED_MISKITO
+		}
+	}
+	
+	CAN_expand_protectorate = {
+
+		icon = generic_formable_nations
+		allowed = { tag = CAN }
+		available = {
+			1071 = {
+				OR = {
+					is_owned_by_ROOT_or_ally = yes
+				}
+			}
+			1261 = {
+				OR = {
+					is_owned_by_ROOT_or_ally = yes
+				}
+			}
+			1249 = {
+				OR = {
+					is_owned_by_ROOT_or_ally = yes
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = CAN_miskito_coast
+			has_global_flag = CAN_RESTORED_MISKITO
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision CAN_restore_protectorate"
+			NIC = {
+				remove_state_claim = 1071
+				remove_state_core = 1071
+				remove_state_claim = 1261
+				remove_state_core = 1261
+			}
+			HON = {
+				remove_state_claim = 1249
+				remove_state_core = 1249
+			}
+			MKT = {
+				transfer_state = 1071
+				transfer_state = 1261
+				transfer_state = 1249
+				
+				add_state_core = 1071
+				add_state_core = 1261
+				add_state_core = 1249
+			}
+		}
+	}
 }

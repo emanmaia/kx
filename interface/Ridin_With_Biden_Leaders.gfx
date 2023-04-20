@@ -3,6 +3,10 @@ spriteTypes = {
 		name = "GFX_HOS_button"
 		texturefile = "gfx/interface/HOS_button.png"
 	}
+	spriteType = {
+		name = "GFX_UK_pm_button"
+		texturefile = "gfx/interface/gui/UK_pm_button.png"
+	}
 	### Leaders ###
 	spriteType = {
 		name = "GFX_Portrait_Canada_RB_Bennett"
@@ -29,6 +33,10 @@ spriteTypes = {
 		texturefile = "gfx/leaders/CAN/Portrait_Canada_John_Bracken.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_Canada_John_Diefenbaker"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_John_Diefenbaker.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_Canada_Robert_Manion"
 		texturefile = "gfx/leaders/CAN/Portrait_Canada_Robert_Manion.png"
 	}
@@ -49,24 +57,84 @@ spriteTypes = {
 		texturefile = "gfx/leaders/CAN/Portrait_Canada_Vacant_Office.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_Canada_Henry_Herbert_Stevens"
-		texturefile = "gfx/leaders/CAN/Portrait_Canada_Henry_Herbert_Stevens.png"
+		name = "GFX_Portrait_Canada_Vacant_Office_2"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_Vacant_Office_2.png"
 	}
 	spriteType = {
-		name = "GFX_Portrait_Canada_John_Diefenbaker"
-		texturefile = "gfx/leaders/CAN/Portrait_Canada_John_Diefenbaker.png"
+		name = "GFX_Portrait_Canada_Henry_Herbert_Stevens"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_Henry_Herbert_Stevens.png"
 	}
 	spriteType = {
 		name = "GFX_Portrait_Canada_Louis_St_Laurent"
 		texturefile = "gfx/leaders/CAN/Portrait_Canada_Louis_St_Laurent.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_Canada_Lester_B_Pearson"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_Lester_B_Pearson.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_Canada_Major_James_Coldwell"
 		texturefile = "gfx/leaders/CAN/Portrait_Canada_Major_James_Coldwell.png"
 	}
 	spriteType = {
+		name = "GFX_Portrait_Canada_Tommy_Douglas"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_Tommy_Douglas.png"
+	}
+	spriteType = {
 		name = "GFX_Portrait_Canada_JS_Woodsworth"
 		texturefile = "gfx/leaders/CAN/Portrait_Canada_JS_Woodsworth.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_William_Aberhart"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_William_Aberhart.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_Ernest_Manning"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_Ernest_Manning.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Britain_John_Hargrave"
+		texturefile = "gfx/leaders/CAN/Portrait_Britain_John_Hargrave.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Quebec_Real_Caouette"
+		texturefile = "gfx/leaders/QUE/Portrait_Quebec_Real_Caouette.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_Adrien_Arcand_KX"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_Adrien_Arcand_KX.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_Adrien_Arcand_Suit"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_Adrien_Arcand_Suit.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_JFC_Fuller"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_JFC_Fuller.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Britain_Anthony_Ludovici"
+		texturefile = "gfx/leaders/CAN/Portrait_Britain_Anthony_Ludovici.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_John_Ross_Taylor"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_John_Ross_Taylor.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_King_Edward_VIII_Evil"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_King_Edward_VIII_Evil.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Britain_Clifford_Hugh_Douglas"
+		texturefile = "gfx/leaders/CAN/Portrait_Britain_Clifford_Hugh_Douglas.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_Lord_Beaverbrook"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_Lord_Beaverbrook.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_England_Britain_Harold_Harmsworth"
+		texturefile = "gfx/leaders/CAN/Portrait_England_Britain_Harold_Harmsworth.png"
 	}
 	
 	### Great Britain ###
@@ -77,13 +145,23 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_Portrait_Britain_Lord_Halifax"
+		texturefile = "gfx/leaders/CAN/Portrait_Britain_Lord_Halifax.png"
+	}
+	
+	spriteType = {
 		name = "GFX_Portrait_Britain_Douglas_Hogg"
 		texturefile = "gfx/leaders/CAN/Portrait_Britain_Douglas_Hogg.png"
 	}
 	
 	spriteType = {
-		name = "GFX_Portrait_Britain_Herbert_Morrison"
-		texturefile = "gfx/leaders/CAN/Portrait_Britain_Herbert_Morrison.png"
+		name = "GFX_Portrait_Britain_Stanley_Baldwin"
+		texturefile = "gfx/leaders/CAN/Portrait_Britain_Stanley_Baldwin.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_Britain_Neville_Chamberlain"
+		texturefile = "gfx/leaders/CAN/Portrait_Britain_Neville_Chamberlain.png"
 	}
 	
 	spriteType = {
@@ -102,6 +180,16 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_Portrait_Britain_Archibald_Sinclair"
+		texturefile = "gfx/leaders/CAN/Portrait_Britain_Archibald_Sinclair.png"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_Britain_Malcolm_MacDonald"
+		texturefile = "gfx/leaders/CAN/Portrait_Britain_Malcolm_MacDonald.png"
+	}
+	
+	spriteType = {
 		name = "GFX_Portrait_Britain_Hugh_Gaitskell"
 		texturefile = "gfx/leaders/ENG/Portrait_Britain_Hugh_Gaitskell.png"
 	}
@@ -115,7 +203,7 @@ spriteTypes = {
 		name = "GFX_Portrait_Britain_John_Simon"
 		texturefile = "gfx/leaders/CAN/Portrait_Britain_John_Simon.png"
 	}
-
+	
 	###Krauts###
 	spriteType = {
 		name = "GFX_Portrait_Germany_Franz_von_Papen"
@@ -2568,6 +2656,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Portrait_NEE_Adna_Chaffee"
 		texturefile = "gfx/leaders/NEE/Portrait_NEE_Adna_Chaffee.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Canada_King_Edward_VIII_Knight"
+		texturefile = "gfx/leaders/CAN/Portrait_Canada_King_Edward_VIII_Knight.png"
 	}
 	### Georgia ###
 	spriteType = {

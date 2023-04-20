@@ -475,7 +475,10 @@ country_event = {
 			tag = GBR
 			tag = CAN
 		}
-		has_government = paternal_autocrat
+		OR = {
+			has_government = paternal_autocrat
+			has_government = national_populist
+		}
 		NOT = {
 			has_country_flag = CAN_LEADER_CHANGE
 		}
@@ -2715,7 +2718,7 @@ country_event = { #Edward Picker
 		if = {	
 			limit = { has_country_leader = { name = "Edward VIII" ruling_only = yes } }
 			set_country_leader_portrait = {
-				portrait = "gfx/leaders/CAN/Portrait_Canada_King_Edward_VIII_Autocratic.png"
+				portrait = "gfx/leaders/CAN/Portrait_Canada_King_Edward_VIII_Army.png"
 			}
 		}
 		set_country_flag = CAN_portrait_change
@@ -2765,7 +2768,7 @@ country_event = { #Edward Picker
 		if = {	
 			limit = { has_country_leader = { name = "Edward VIII" ruling_only = yes } }
 			set_country_leader_portrait = {
-				portrait = "gfx/leaders/CAN/Portrait_Canada_King_Edward_VIII_Uniform.png"
+				portrait = "gfx/leaders/CAN/Portrait_Canada_King_Edward_VIII_Autocratic.png"
 			}
 		}
 		set_country_flag = CAN_portrait_change
@@ -3007,8 +3010,106 @@ country_event = { #WLMK Picker
 		}
 		set_country_flag = CAN_WLMK_suit_portrait
 	}
+	
+	
 }
-country_event = { #Bao Dai Portrait
+
+country_event = { #Arcand Picker
+	id = portrait_picker.360
+	title = portrait_picker.360.t 
+	desc = portrait_picker.360.d
+
+	is_triggered_only = yes
+	
+	option = { #Normal Arcand
+		name = portrait_picker.360.a
+		ai_chance = {
+			factor = 0
+		}
+		if = {	
+			limit = { has_country_leader = { name = "Adrien Arcand" ruling_only = yes } }
+			set_country_leader_portrait = {
+				portrait = "gfx/leaders/CAN/Portrait_CAN_Adrien_Arcand.png"
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = CAN_scary_arcand
+			}
+			clr_country_flag = CAN_scary_arcand
+		}
+	}
+
+	option = { #Scary Arcand
+		name = portrait_picker.360.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {	
+			limit = { has_country_leader = { name = "Adrien Arcand" ruling_only = yes } }
+			set_country_leader_portrait = {
+				portrait = "gfx/leaders/CAN/Portrait_CAN_Adrien_Arcand_Suit.png"
+			}
+		}
+		set_country_flag = CAN_scary_arcand
+	}
+	
+	
+	
+}
+
+country_event = { #Cambridge Picker
+	id = portrait_picker.361
+	title = portrait_picker.361.t 
+	desc = portrait_picker.361.d
+
+	is_triggered_only = yes
+	
+	option = { #GG Uniform
+		name = portrait_picker.361.a
+		ai_chance = {
+			factor = 0
+		}
+		if = {	
+			limit = { has_country_leader = { name = "Alexander Cambridge" ruling_only = yes } }
+			set_country_leader_portrait = {
+				portrait = "gfx/leaders/CAN/Portrait_Canada_Alexander_Cambridge_GG.png"
+			}
+		}
+		
+	}
+
+	option = { #Army Uniform
+		name = portrait_picker.361.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {	
+			limit = { has_country_leader = { name = "Alexander Cambridge" ruling_only = yes } }
+			set_country_leader_portrait = {
+				portrait = "gfx/leaders/CAN/Portrait_Canada_Alexander_Cambridge_Army.png"
+			}
+		}
+		
+	}
+
+	option = { #Suit
+		name = portrait_picker.361.c
+		ai_chance = {
+			factor = 0
+		}
+		if = {	
+			limit = { has_country_leader = { name = "Alexander Cambridge" ruling_only = yes } }
+			set_country_leader_portrait = {
+				portrait = "gfx/leaders/CAN/Portrait_Canada_Alexander_Cambridge.png"
+			}
+		}
+		
+	}
+
+}
+	
+	country_event = { #Bao Dai Portrait
 	id = portrait_picker.34
 	title = portrait_picker.34.t 
 	desc = portrait_picker.34.d
@@ -3085,40 +3186,6 @@ country_event = { #Yockey Portrait
 			limit = { has_country_leader = { name = "Francis Parker Yockey" ruling_only = yes } }
 			set_country_leader_portrait = {
 				portrait = "gfx/leaders/COR/Portrait_COR_Francis_Parker_Yockey.png"
-			}
-		}
-	}
-}
-
-country_event = { #Yasuhito Portrait
-	id = portrait_picker.37
-	title = portrait_picker.37.t 
-	desc = portrait_picker.37.d
-
-	is_triggered_only = yes
-	
-	option = { #
-		name = portrait_picker.37.a
-		ai_chance = {
-			factor = 0
-		}
-		if = {	
-			limit = { has_country_leader = { name = "Yasuhito" ruling_only = yes } }
-			set_country_leader_portrait = {
-				portrait = "gfx/leaders/JAP/Portrait_JAP_Yasuhito.png"
-			}
-		}
-	}
-	
-	option = { #
-		name = portrait_picker.37.b
-		ai_chance = {
-			factor = 0
-		}
-		if = {	
-			limit = { has_country_leader = { name = "Yasuhito" ruling_only = yes } }
-			set_country_leader_portrait = {
-				portrait = "gfx/leaders/JAP/Portrait_JAP_Yasuhito_Military.png"
 			}
 		}
 	}

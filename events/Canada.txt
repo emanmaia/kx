@@ -58,6 +58,22 @@ country_event = {
 
 	option = {
 		name = canada.3.a
+		country_event = { id = canada.3100 days = 1 }
+	}
+}
+
+country_event = {
+	id = canada.3100
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.3100" }
+	title = canada.3100.t
+	desc = canada.3100.d
+	picture = GFX_report_event_CAN_edward_prince
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3100.a
+		
 	}
 }
 
@@ -277,8 +293,8 @@ country_event = {
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event canada.8"
 		hidden_effect = {
-			remove_ideas = CAN_Austen_Chamberlain_lobe_ade
-			GBR = { clr_country_flag = GBR_Chamberlain_PM }
+			remove_ideas = CAN_Douglas_Hogg_lobe_ade
+			GBR = { clr_country_flag = GBR_Hogg_PM }
 		}
 	}
 
@@ -338,6 +354,13 @@ country_event = {
 				check_variable = { CAN_conservative_support < 1 }
 			}
 		}
+		hidden_effect = {
+			country_event = {
+				id = canada.81
+				days = 600
+				random_days = 200
+			}
+		}
 		add_political_power = 50
 		GBR = { set_country_flag = GBR_Cecil_PM }
 		add_ideas = CAN_Robert_Cecil_lobe_ade
@@ -367,10 +390,238 @@ country_event = {
 				}
 			}
 		}
-		GBR = { set_country_flag = GBR_Eden_PM }
-		add_ideas = CAN_Anthony_Eden_lobe_ade
+		GBR = { set_country_flag = GBR_Halifax_PM }
+		add_ideas = CAN_Edward_Halifax_lobe_sco
 		add_stability = 0.03
 		increase_ruling_party_popularity_by_5 = yes
+	}
+	option = {
+		name = canada.8.e #A vote by the Exiles should be organized
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = GBR_return_of_the_king
+						option = GBR_RETURN_OF_THE_KING_DEMOCRACY_AUTDEM
+					}
+					has_game_rule = {
+						rule = GBR_return_of_the_king
+						option = GBR_RETURN_OF_THE_KING_AUTDEM
+					}
+				}
+			}
+		}
+		GBR = { set_country_flag = GBR_Baldwin_PM }
+		add_ideas = CAN_Stanley_Baldwin_lobe_ade
+		add_stability = 0.03
+		increase_ruling_party_popularity_by_5 = yes
+		hidden_effect = {
+			country_event = {
+				id = canada.80
+				days = 400
+				random_days = 120
+			}
+			country_event = {
+				id = canada.81
+				days = 600
+				random_days = 200
+			}
+		}
+	}
+}
+
+# Baldwin Resigns
+country_event = {
+	id = canada.80
+	title = canada.80.t
+	desc = canada.80.d
+	picture = GFX_report_event_CAN_commons2
+
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event canada.8"
+		hidden_effect = {
+			remove_ideas = CAN_Stanley_Baldwin_lobe_ade
+			GBR = { clr_country_flag = GBR_Baldwin_PM }
+		}
+	}
+	
+	trigger = {
+		has_idea = CAN_Stanley_Baldwin_lobe_ade
+		has_global_flag = CAN_king_edward_VIII
+		has_elected_government = yes
+	}
+
+	option = { #Halifax
+		name = canada.80.a
+		ai_chance = {
+			factor = 33
+		}
+		add_ideas = CAN_Edward_Halifax_lobe_sco
+	}
+	
+	option = { #Chamberlain
+		name = canada.80.b
+		ai_chance = {
+			factor = 33
+		}
+		add_ideas = CAN_Neville_Chamberlain_lobe_ade
+		GBR = {
+			set_country_flag = GBR_Chamberlain_PM
+		}
+	}
+	
+	option = { #Eden
+		name = canada.80.c
+		ai_chance = {
+			factor = 33
+		}
+		add_ideas = CAN_Anthony_Eden_lobe_ade
+		GBR = {
+			set_country_flag = GBR_Eden_PM
+		}
+	}
+}
+
+# Exile Vote?
+country_event = {
+	id = canada.81
+	title = canada.81.t
+	desc = canada.81.d
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.81" }
+	picture = GFX_report_event_CAN_commons2
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_elected_government = yes
+	}
+
+	option = { #They Have Enough Influence Already
+		name = canada.81.a
+		ai_chance = {
+			factor = 50
+		}
+		add_political_power = 50
+		add_stability = -0.05
+	}
+	
+	option = { #Own Elections
+		name = canada.81.b
+		ai_chance = {
+			factor = 40
+		}
+		add_political_power = -50
+		add_stability = 0.05
+		hidden_effect = {
+			country_event = {
+				id = canada.82
+				days = 30
+			}
+		}
+	}
+	
+	option = { #Allow Vote
+		name = canada.81.c
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.10
+				OR = {
+					has_government = social_conservative
+					has_government = authoritarian_democrat
+				}
+			}
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.10
+		}
+	}
+}
+
+# Exile Vote?
+country_event = {
+	id = canada.82
+	title = canada.82.t
+	desc = canada.82.d
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.82" }
+	picture = GFX_report_event_CAN_commons2
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_elected_government = yes
+	}
+
+	option = { #Tories
+		name = canada.82.a
+		ai_chance = {
+			factor = 60
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.02
+		}
+	}
+	
+	option = { #Liberals
+		name = canada.82.b
+		ai_chance = {
+			factor = 40
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.02
+		}
+		GBR_reset_GB_PM = yes
+		add_ideas = CAN_Archibald_Sinclair_lobe_mli
+		GBR = {
+			set_country_flag = GBR_Sinclair_PM
+		}
+	}
+	
+	option = { #National Labour
+		name = canada.82.c
+		ai_chance = {
+			factor = 20
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.02
+		}
+		GBR_reset_GB_PM = yes
+		add_idea = CAN_Malcolm_MacDonald_lobe_sde
+		GBR = {
+			set_country_flag = GBR_MacDonald_PM
+		}
+	}
+}
+
+# McDonalds Dead
+country_event = {
+	id = canada.83
+	title = canada.83.t
+	desc = canada.83.d
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.83" }
+	picture = GFX_report_event_CAN_macdonald
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_elected_government = yes
+	}
+
+	option = { #Tories
+		name = canada.83.a
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.02
+		}
+		add_manpower = -1
 	}
 }
 
@@ -549,6 +800,7 @@ country_event = {
 				has_authoritarian_government = yes
 			}
 		}
+		set_country_flag = CAN_vanier_plan_flag
 		add_ideas = CAN_Georges_Vanier_carm_sco
 		if = {
 			limit = { check_variable = { king_influence > 1 } }
@@ -566,6 +818,7 @@ country_event = {
 				has_government = market_liberal
 			}
 		}
+		set_country_flag = CAN_fuller_plan_flag
 		decrease_ruling_party_popularity_by_5 = yes
 		add_ideas = CAN_JFC_Fuller_carm_ade
 		if = {
@@ -1685,7 +1938,7 @@ country_event = {
 		hidden_effect = {
 			add_ideas = CAN_William_Lyon_Mackenzie_King_hog_mli
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -1740,7 +1993,7 @@ country_event = {
 		hidden_effect = {
 			add_ideas = CAN_RB_Bennett_hog_sco
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -1788,11 +2041,13 @@ country_event = {
 			election_frequency = 60
 			elections_allowed = yes
 		}
+		set_temp_variable = { coalition_partner_var = token:social_democrat }
+		add_to_coalition = yes
 		GBR_returning_king_check = yes
 		hidden_effect = {
 			add_ideas = CAN_William_Lyon_Mackenzie_King_hog_mli
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -2256,126 +2511,20 @@ country_event = {
 
 	option = {
 		name = canada.58.a
-		trigger = { has_government = social_conservative }
+		ai_chance = {
+			factor = 20
+		}
 		hidden_effect = {
-			set_variable = { chance_pass = 80 }
-			if = {
-				limit = { NOT = { has_country_flag = CAN_has_senate_reform } }
-				add_to_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = {
-					has_country_flag = CAN_C7_full_cons
-					NOT = { has_idea = CAN_Henry_Page_Croft_lobe_pau }
-				}
-				subtract_from_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = { has_country_flag = CAN_C7_econ_comp }
-				add_to_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = { has_country_flag = CAN_C7_sec_none }
-				subtract_from_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = { has_country_flag = CAN_C7_sec_lapointe }
-				add_to_variable = { chance_pass = 10 }
-			}
-			set_variable = { vote = random }
-			multiply_variable = { vote = 100 }
-			if = {
-				limit = { check_variable = { vote < chance_pass } }
-				country_event = { id = canada.59 days = 1 }
-			}
-			else_if = {
-				limit = {
-					OR = {
-						has_game_rule = {
-							rule = CAN_political_path
-							option = CAN_POLITICAL_PATH_CONSERVATIVE
-						}
-						has_game_rule = {
-							rule = CAN_political_path
-							option = CAN_POLITICAL_PATH_AUTHORITARIAN
-						}
-					}
-				}
-				country_event = { id = canada.59 days = 1 }
-			}
-			else = {
-				country_event = { id = canada.61 days = 1 }
-			}
+			country_event = { id = canada.61 days = 1 }
 		}
 	}
 	option = {
-		name = canada.58.a
-		trigger = { has_government = market_liberal }
+		name = canada.58.b
+		ai_chance = {
+			factor = 80
+		}
 		hidden_effect = {
-			set_variable = { chance_pass = 80 }
-			if = {
-				limit = { has_country_flag = CAN_has_senate_reform }
-				add_to_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = { has_country_flag = CAN_lib_ccf_coalition }
-				subtract_from_variable = { chance_pass = 30 }
-			}
-			if = {
-				limit = { has_country_flag = CAN_C7_limited_cons }
-				subtract_from_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = { has_country_flag = CAN_C7_full_cons }
-				subtract_from_variable = { chance_pass = 20 }
-			}
-			if = {
-				limit = { has_country_flag = CAN_C7_econ_comp }
-				add_to_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = { has_country_flag = CAN_C7_sec_none }
-				add_to_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = {
-					has_country_flag = CAN_lib_ccf_coalition
-					has_country_flag = CAN_C7_sec_winter
-					OR = {
-						has_country_flag = CAN_C7_full_cons
-						has_country_flag = CAN_C7_limited_cons
-					}
-				}
-				add_to_variable = { chance_pass = 10 }
-			}
-			if = {
-				limit = { has_idea = CAN_Robert_Cecil_lobe_ade }
-				add_to_variable = { chance_pass = 10 }
-			}
-			set_variable = { vote = random }
-			multiply_variable = { vote = 100 }
-			if = {
-				limit = { check_variable = { vote < chance_pass } }
-				country_event = { id = canada.59 days = 1 }
-			}
-			else_if = {
-				limit = {
-					OR = {
-						has_game_rule = {
-							rule = CAN_political_path
-							option = CAN_POLITICAL_PATH_LIBERAL
-						}
-						has_game_rule = {
-							rule = CAN_political_path
-							option = CAN_POLITICAL_PATH_LIBERAL_SOCDEM
-						}
-					}
-				}
-				country_event = { id = canada.59 days = 1 }
-			}
-			else = {
-				country_event = { id = canada.61 days = 1 }
-			}
+			country_event = { id = canada.59 days = 1 }
 		}
 	}
 }
@@ -2509,7 +2658,12 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_idea = extensive_conscription }
-				country_event = { id = canada.100 days = 3 }
+				country_event = { 
+					id = canada.100 
+					days = 3 
+					random_days = 5
+				}
+				set_country_flag = CAN_C7_full_cons_complete
 			}
 			else_if = {
 				limit = { has_idea = limited_conscription }
@@ -2605,21 +2759,21 @@ country_event = {
 		has_elected_government = yes
 	}
 
-	option = {
+	option = { #Support Bennett
 		name = canada.62.a
+		trigger = {
+			has_government = market_liberal
+		}
 		set_country_flag = CAN_fallen_government
 		custom_effect_tooltip = LOM_elections_three_months
 		add_stability = -0.10
 		decrease_ruling_party_popularity_by_10 = yes
+		set_country_flag = CAN_king_support_cons
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.10
+		}
 		hidden_effect = {
-			if = {
-				limit = { has_government = market_liberal }
-				set_variable = { CAN_conservative_support = 3 }
-			}
-			if = {
-				limit = { has_government = social_conservative }
-				set_variable = { CAN_liberal_support = 3 }
-			}
 			meta_effect = {
 				text = {
 					set_politics = {
@@ -2638,6 +2792,782 @@ country_event = {
 			country_event = { id = canada.66 days = 50 random = 240 } #Meighen Outlines Bill C-8
 		}
 	}
+	
+	option = { #Support King
+		name = canada.62.b
+		trigger = {
+			has_government = market_liberal
+		}
+		set_country_flag = CAN_fallen_government
+		custom_effect_tooltip = LOM_elections_three_months
+		set_country_flag = CAN_king_support_king
+		add_stability = -0.10
+		hidden_effect = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = [RULING_PARTY_TAG]
+						last_election = "[CURRENT_DATE]"
+						election_frequency = 3
+						elections_allowed = yes
+					}
+				}
+				RULING_PARTY_TAG = "[Root.GetRulingIdeologyId]"
+				CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+			}
+			GBR_returning_king_check = yes
+			country_event = { id = canada.63 days = 10 } #Meighen replaces Bennett
+			country_event = { id = canada.65 days = 30 random = 240 } #King Promises New Deal
+			country_event = { id = canada.66 days = 50 random = 240 } #Meighen Outlines Bill C-8
+		}
+	}
+	
+	option = { #Support King
+		name = canada.62.a_2
+		trigger = {
+			has_government = social_conservative
+		}
+		set_country_flag = CAN_fallen_government
+		custom_effect_tooltip = LOM_elections_three_months
+		add_stability = -0.10
+		decrease_ruling_party_popularity_by_10 = yes
+		set_country_flag = CAN_king_support_cons
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.10
+		}
+		hidden_effect = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = [RULING_PARTY_TAG]
+						last_election = "[CURRENT_DATE]"
+						election_frequency = 3
+						elections_allowed = yes
+					}
+				}
+				RULING_PARTY_TAG = "[Root.GetRulingIdeologyId]"
+				CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+			}
+			GBR_returning_king_check = yes
+			country_event = { id = canada.63 days = 10 } #Meighen replaces Bennett
+			country_event = { id = canada.65 days = 30 random = 240 } #King Promises New Deal
+			country_event = { id = canada.66 days = 50 random = 240 } #Meighen Outlines Bill C-8
+		}
+	}
+	
+	option = { #Support Bennett
+		name = canada.62.b_2
+		trigger = {
+			has_government = social_conservative
+		}
+		set_country_flag = CAN_fallen_government
+		custom_effect_tooltip = LOM_elections_three_months
+		set_country_flag = CAN_king_support_king
+		add_stability = -0.10
+		hidden_effect = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = [RULING_PARTY_TAG]
+						last_election = "[CURRENT_DATE]"
+						election_frequency = 3
+						elections_allowed = yes
+					}
+				}
+				RULING_PARTY_TAG = "[Root.GetRulingIdeologyId]"
+				CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+			}
+			GBR_returning_king_check = yes
+			country_event = { id = canada.63 days = 10 } #Meighen replaces Bennett
+			country_event = { id = canada.65 days = 30 random = 240 } #King Promises New Deal
+			country_event = { id = canada.66 days = 50 random = 240 } #Meighen Outlines Bill C-8
+		}
+	}
+	
+	
+	option = { #Royal Perogative
+		name = canada.62.c
+		add_stability = -0.10
+		hidden_effect = {
+			country_event = { id = canada.622 days = 4 }
+		}
+		set_country_flag = CAN_royal_perogative
+	}
+	
+}
+
+# Royal Perogative Asserted
+country_event = {
+	id = canada.622
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.622" }
+	title = canada.622.t
+	desc = canada.622.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.622.a
+		hidden_effect = {
+			add_ideas = CAN_Robert_Manion_for_sco
+			if = {
+				limit = { has_idea = CAN_brit_govt_exile_idea }
+				CAN_add_british_pm_in_exile = yes
+			}
+			add_ideas = CAN_John_Bracken_eco_sco
+			add_ideas = CAN_John_Diefenbaker_sec_sco
+			country_event = { id = canada.51 days = 1 }
+		}
+		set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = no
+		}
+		hidden_effect = {
+			country_event = {
+				id = canada.623
+				days = 6
+			}
+		}
+	}
+}
+
+# Conservative Protest
+country_event = {
+	id = canada.623
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.623" }
+	title = canada.623.t
+	desc = canada.623.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.623.a
+		remove_all_ministers = yes
+		add_popularity = {
+			ideology = social_conservative 
+			popularity = -0.06
+		}
+		hidden_effect = {
+			country_event = {
+				id = canada.624
+				days = 6
+			}
+		}
+	}
+	
+	option = { # Election
+		name = canada.623.b
+		remove_all_ministers = yes
+		hidden_effect = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = [RULING_PARTY_TAG]
+						last_election = "[CURRENT_DATE]"
+						election_frequency = 3
+						elections_allowed = yes
+					}
+				}
+				RULING_PARTY_TAG = "[Root.GetRulingIdeologyId]"
+				CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+			}
+			remove_all_ministers = yes
+			GBR_returning_king_check = yes
+			country_event = { id = canada.63 days = 10 } #Meighen replaces Bennett
+			country_event = { id = canada.65 days = 30 random = 240 } #King Promises New Deal
+			country_event = { id = canada.66 days = 50 random = 240 } #Meighen Outlines Bill C-8
+			country_event = { id = canada.66 days = 50 random = 800 } #Meighen Outlines Bill C-8
+			set_country_flag = CAN_edward_failed_power_grab
+		}
+	}
+}
+
+# Establishment Discredited
+country_event = {
+	id = canada.624
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.624" }
+	title = canada.624.t
+	desc = canada.624.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.624.a
+		add_popularity = {
+			ideology = social_conservative 
+			popularity = -0.06
+		}
+		add_popularity = {
+			ideology = market_liberal 
+			popularity = -0.06
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.09
+		}
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.09
+		}
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.09
+		}
+		hidden_effect = {	
+			country_event = {
+				id = canada.625
+				days = 12
+			}
+		}
+	}
+}
+
+# New Government
+country_event = {
+	id = canada.625
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.625" }
+	title = canada.625.t
+	desc = canada.625.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = { #Natpop Govt
+		name = canada.625.a
+		remove_ideas_with_trait = head_of_government
+		remove_ideas_with_trait = economy_minister
+		remove_ideas_with_trait = security_minister
+		add_ideas = {
+			CAN_Adrien_Arcand_hog_npo
+			CAN_John_Ross_Taylor_eco_npo
+			CAN_Chuck_Crate_sec_npo
+		}
+		set_politics = {
+			ruling_party = national_populist
+			elections_allowed = no
+		}
+		add_popularity = { ideology = national_populist popularity = 0.20 }
+	}
+	
+	option = { #SocCred Govt
+		name = canada.625.b
+		remove_ideas_with_trait = head_of_government
+		remove_ideas_with_trait = economy_minister
+		remove_ideas_with_trait = security_minister
+		add_ideas = {
+			CAN_CH_Douglas_eco_ade
+			CAN_Ernest_Manning_sec_ade
+		}
+		country_event = {
+			id = canada.401
+			days = 4
+		}
+		set_country_flag = CAN_appointed_soccreds
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		set_country_leader_ideology = social_credit_subtype
+		add_popularity = { ideology = authoritarian_democrat popularity = 0.20 }
+		add_popularity = { ideology = paternal_autocrat popularity = 0.20 }
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = CAN_social_credit_party_long
+			name = CAN_social_credit_party
+		}
+		set_party_name = {
+			ideology = paternal_autocrat
+			long_name = CAN_social_credit_party_long
+			name = CAN_social_credit_party
+		}
+	}
+	
+	option = { #Absolute Monarchy
+		name = canada.625.c
+		set_politics = {
+			ruling_party = paternal_autocrat
+			elections_allowed = no
+		}
+		remove_ideas_with_trait = head_of_government
+		remove_ideas_with_trait = economy_minister
+		remove_ideas_with_trait = security_minister
+		add_ideas = {
+			CAN_Lord_Mountbatten_eco_pau
+			CAN_Maxwell_Knight_sec_pau
+		}
+		set_variable = { king_popularity = 1 }
+		CAN_calc_royal_visit_effects = yes
+		add_stability = -0.10
+		add_political_power = 200
+		add_popularity = { ideology = authoritarian_democrat popularity = -0.20 }
+		add_popularity = { ideology = paternal_autocrat popularity = 0.20 }
+		unlock_decision_tooltip = CAN_consolidate_power
+		unlock_decision_tooltip = CAN_expand_labour_camps
+		unlock_decision_tooltip = CAN_increase_factory_prod
+		unlock_decision_tooltip = CAN_fund_the_military
+		hidden_effect = {
+			random_other_country = {
+				limit = { is_ai = no }
+				news_event = { id = canada.114 days = 1 }
+			}
+			country_event = { id = canada.116 days = 7 }
+			country_event = { id = canada.626 days = 17 }
+		}
+	}
+}
+
+
+# Protests against Absolutism
+country_event = {
+	id = canada.626
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.626" }
+	title = canada.626.t
+	desc = canada.626.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.626.a
+		add_manpower = -600
+		add_political_power = -50
+		add_stability = -0.06
+	}
+	
+	option = {
+		name = canada.626.b
+		add_political_power = 30
+		hidden_effect = {
+			country_event = {
+				id = canada.627
+				days = 1
+			}
+		}
+	}
+}
+
+# King Killed!
+country_event = {
+	id = canada.627
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.627" }
+	title = canada.627.t
+	desc = canada.627.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.627.a
+		add_manpower = -9
+		add_stability = -0.1
+		add_political_power = -60
+		add_country_leader_trait = CAN_king_in_coma
+		set_global_flag = CAN_king_busy
+		hidden_effect = {
+			country_event = {
+				id = canada.6270
+				days = 33
+			}
+		}
+	}
+}
+
+# King in Coma
+country_event = {
+	id = canada.6270
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.6270" }
+	title = canada.6270.t
+	desc = canada.6270.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = { #Pull the Plug
+		name = canada.6270.a
+		country_event = canada.6273
+		add_manpower = -1
+		effect_tooltip = {
+			kill_country_leader = yes
+		}
+	}
+	
+	option = { #Mabye he'll pull through?
+		name = canada.6270.b
+		add_stability = -0.05
+		hidden_effect = {
+			random_list = {
+				50 = { country_event = canada.6271 days = 44 }
+				50 = { country_event = canada.6272 days = 44 }
+			}
+		}
+	}
+}
+
+# King Dead
+country_event = {
+	id = canada.6271
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.6271" }
+	title = canada.6271.t
+	desc = canada.6271.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = { #Pull the Plug
+		name = canada.6271.a
+		country_event = canada.6273
+		add_manpower = -1
+		effect_tooltip = {
+			kill_country_leader = yes
+		}
+	}
+}
+
+# King Awakes
+country_event = {
+	id = canada.6272
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.6272" }
+	title = canada.6272.t
+	desc = canada.6272.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = { #Cool
+		add_stability = 0.05
+		name = canada.6272.a
+		remove_country_leader_trait = CAN_king_in_coma
+		clr_global_flag = CAN_king_busy
+		hidden_effect = {
+			country_event = {
+				id = canada.6274
+				days = 81
+			}
+		}
+	}
+}
+
+# Choosing the new king
+country_event = {
+	id = canada.6273
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.6273" }
+	title = canada.6273.t
+	picture = GFX_report_event_CAN_commons2
+
+	desc = {
+		text = canada.6273.d.george
+		trigger = { NOT = { has_global_flag = CAN_prince_george_dead } }
+	}
+	desc = {
+		text = canada.6273.d.nogeorge
+		trigger = { has_global_flag = CAN_prince_george_dead }
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = KR_british_king_base
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = CAN_Edward_Dead
+		}
+	}
+
+	option = {
+		name = canada.6273.a #Albert
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = CAN_british_king
+					option = CAN_BRITISH_KING_HENRY
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = CAN_british_king
+					option = CAN_BRITISH_KING_GEORGE
+				}
+			}
+		}
+		custom_effect_tooltip = CAN_prince_albert_king
+		hidden_effect = {
+			clr_global_flag = CAN_king_busy
+			clr_global_flag = CAN_king_edward_VIII
+			clr_country_flag = GBR_has_returning_king
+			clr_country_flag = GBR_remove_returning_king_trait
+			clr_country_flag = GBR_has_unpopular_monarch
+			clr_country_flag = GBR_remove_unpopular_monarch_trait
+			clr_country_flag = GBR_remove_figurehead_trait
+			set_global_flag = CAN_king_albert_I
+			set_variable = { king_popularity = 2 }
+			set_variable = { global.king_albert_story = 0 }
+			CAN_create_monarchy = yes
+
+			if = {
+				limit = {
+					DEH = { has_country_leader = { name = "Edward VIII" ruling_only = yes } }
+				}
+				DEH = { DEH_create_monarchy = yes }
+			}
+			if = {
+				limit = {
+					SAF = { has_country_leader = { name = "Edward VIII" ruling_only = yes } }
+				}
+				SAF = { SAF_create_monarchy = yes }
+			}
+			if = {
+				limit = {
+					SCT = { has_country_leader = { name = "Edward II" ruling_only = yes } }
+				}
+				SCT = { create_windsor_scottish_monarchy = yes }
+			}
+			if = {
+				limit = {
+					NEE = { has_country_leader { name = "Albert I" ruling_only = yes } }
+				}
+				NEE = {
+					country_event {
+						id = neebritishflavor.9
+						days = 2
+					}
+				}
+			}
+
+			news_event = { id = entente.111 days = 1 }
+			country_event = { id = entente.50 days = 90 random = 1440 }
+		}
+	}
+	option = {
+		name = canada.6273.b #Henry
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				tag = GBR
+				NOT = {
+					has_game_rule = {
+						rule = CAN_british_king
+						option = CAN_BRITISH_KING_HENRY
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = CAN_british_king
+					option = CAN_BRITISH_KING_GEORGE
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = CAN_british_king
+					option = CAN_BRITISH_KING_ALBERT
+				}
+			}
+		}
+		custom_effect_tooltip = CAN_prince_henry_king
+		if = {
+			limit = { has_unit_leader = 924 }
+			random_unit_leader = {
+				limit = { has_id = 924 }
+				remove_unit_leader = yes
+			}
+		}
+		hidden_effect = {
+			clr_global_flag = CAN_king_busy
+			clr_global_flag = CAN_king_edward_VIII
+			clr_country_flag = GBR_has_returning_king
+			clr_country_flag = GBR_remove_returning_king_trait
+			clr_country_flag = GBR_has_unpopular_monarch
+			clr_country_flag = GBR_remove_unpopular_monarch_trait
+			clr_country_flag = GBR_remove_figurehead_trait
+			set_global_flag = CAN_king_henry_IX
+			clr_global_flag = CAN_king_albert_I
+			clr_global_flag = CAN_king_george_VI
+			set_variable = { king_popularity = 2 }
+			set_variable = { global.king_henry_story = 0 }
+			CAN_create_monarchy = yes
+
+			if = {
+				limit = {
+					DEH = { has_country_leader = { name = "Edward VIII" ruling_only = yes } }
+				}
+				DEH = { DEH_create_monarchy = yes }
+			}
+			if = {
+				limit = {
+					SCT = { has_country_leader = { name = "Edward II" ruling_only = yes } }
+				}
+				SCT = { create_windsor_scottish_monarchy = yes }
+			}
+			if = {
+				limit = {
+					SAF = { has_country_leader = { name = "Edward VIII" ruling_only = yes } }
+				}
+				SAF = { SAF_create_monarchy = yes }
+			}
+			if = {
+				limit = {
+					AST = { has_country_leader = { ruling_only = yes name = "Prince Henry" } }
+				}
+				AST = { country_event = entente.113 }
+			}
+
+			news_event = { id = entente.111 days = 1 }
+			country_event = { id = entente.50 days = 90 random = 1440 }
+		}
+	}
+	option = {
+		name = canada.6273.c #George
+		trigger = { NOT = { has_global_flag = CAN_prince_george_dead } }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = CAN_british_king
+					option = CAN_BRITISH_KING_HENRY
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = CAN_british_king
+					option = CAN_BRITISH_KING_ALBERT
+				}
+			}
+		}
+		custom_effect_tooltip = CAN_prince_george_king
+		hidden_effect = {
+			clr_global_flag = CAN_king_busy
+			clr_global_flag = CAN_king_edward_VIII
+			clr_country_flag = GBR_has_returning_king
+			clr_country_flag = GBR_remove_returning_king_trait
+			clr_country_flag = GBR_has_unpopular_monarch
+			clr_country_flag = GBR_remove_unpopular_monarch_trait
+			clr_country_flag = GBR_remove_figurehead_trait
+			set_global_flag = CAN_king_george_VI
+			clr_global_flag = CAN_king_albert_I
+			clr_global_flag = CAN_king_henry_IX
+			set_variable = { king_popularity = 2 }
+			set_variable = { global.king_george_story = 0 }
+			CAN_create_monarchy = yes
+
+			if = {
+				limit = {
+					DEH = { has_country_leader = { name = "Edward VIII" ruling_only = yes } }
+				}
+				DEH = { DEH_create_monarchy = yes }
+			}
+			if = {
+				limit = {
+					SCT = { has_country_leader = { name = "Edward II" ruling_only = yes } }
+				}
+				SCT = { create_windsor_scottish_monarchy = yes }
+			}
+			if = {
+				limit = {
+					SAF = { has_country_leader = { name = "Edward VIII" ruling_only = yes } }
+				}
+				SAF = { SAF_create_monarchy = yes }
+			}
+			if = {
+				limit = {
+					AST = { has_country_leader = { ruling_only = yes name = "Prince George" } }
+				}
+				AST = { country_event = entente.113 }
+			}
+
+			news_event = { id = entente.111 days = 1 }
+			country_event = { id = entente.50 days = 90 random = 1440 }
+		}
+	}
+}
+
+# Eddy's gone Mad
+country_event = {
+	id = canada.6274
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.6273" }
+	title = canada.6274.t
+	desc = canada.6274.d
+	picture = GFX_report_event_CAN_edward_the_void_stares_back
+
+	is_triggered_only = yes
+
+	option = { #Keep it Under Wraps
+		name = canada.6274.a
+		add_stability = 0.05
+	}
+	
+	option = { #Full Schizo King
+		name = canada.6274.b
+		add_stability = -0.05
+		set_country_flag = CAN_arthurian_edward
+	}
+}
+
+# Eddy Has the Sword
+country_event = {
+	id = canada.6275
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.6275" }
+	title = canada.6275.t
+	desc = canada.6275.d
+	picture = GFX_report_event_CAN_excalibur
+	
+	trigger = {
+		has_country_flag = CAN_arthurian_edward
+		controls_state = 122
+		has_unit_leader = 9208 #Edward
+	}
+
+	fire_only_once = yes
+
+	option = { 
+		name = canada.6275.a
+		add_war_support = 0.1
+		add_political_power = 40
+		random_unit_leader = {
+			limit = {
+				has_id = 9208
+			}
+			add_trait = { trait = swordbearer }
+			set_leader_portrait = GFX_Portrait_Canada_King_Edward_VIII_Knight
+		}
+	}
+	
+}
+
+
+# Edward Abdicates after Backlash
+country_event = {
+	id = canada.628
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.628" }
+	title = canada.628.t
+	desc = canada.628.d
+	picture = GFX_report_event_AST_parliament1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.628.a
+		custom_effect_tooltip = CAN_king_popularity_decrease
+		subtract_from_variable = { king_popularity = 1 }
+		add_country_leader_trait = CAN_unpopular_monarch
+	}
+	
+	option = {
+		name = canada.628.a
+		country_event = entente.108
+	}
 }
 
 # Manion Replaces Bennett as Conservative Leader
@@ -2645,7 +3575,7 @@ country_event = {
 	id = canada.63
 	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.63" }
 	title = canada.63.t
-	picture = GFX_report_event_CAN_manion
+	picture = GFX_report_event_CAN_meighen2
 
 	desc = {
 		text = canada.63.d.fallen
@@ -2687,20 +3617,20 @@ country_event = {
 		if = {
 			limit = { has_government = social_conservative }
 			remove_ideas_with_trait = head_of_government
-			add_ideas = CAN_Robert_Manion_hog_sco
+			add_ideas = CAN_Arthur_Meighen_hog_sco
 		}
 		if = {
 			limit = { has_idea = CAN_Robert_Manion_for_sco }
 			remove_ideas = CAN_Robert_Manion_for_sco
 			add_ideas = CAN_Sidney_Earle_Smith_for_sco
 		}
-		set_country_flag = CAN_cons_leader_manion
+		set_country_flag = CAN_cons_leader_meighen
 		add_popularity = { ideology = social_conservative popularity = 0.05 }
 		if = {
 			limit = { has_country_flag = CAN_is_republic }
 			create_country_leader = {
-				name = "Robert Manion"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Robert_Manion.png"
+				name = "Arthur Meighen"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Arthur_Meighen.png"
 				expire = "1965.1.1"
 				ideology = moderate_authoritarianism_subtype
 			}
@@ -2823,7 +3753,7 @@ country_event = {
 	id = canada.66
 	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.66" }
 	title = canada.66.t
-	picture = GFX_report_event_CAN_manion
+	picture = GFX_report_event_CAN_meighen2
 
 	desc = {
 		text = canada.66.d.cons
@@ -2904,7 +3834,7 @@ country_event = {
 		hidden_effect = {
 			add_ideas = CAN_William_Lyon_Mackenzie_King_hog_mli
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -2944,6 +3874,10 @@ country_event = {
 		GBR_returning_king_check = yes
 		hidden_effect = {
 			if = {
+				limit = { has_country_flag = CAN_cons_leader_meighen }
+				add_ideas = CAN_Arthur_Meighen_hog_sco
+			}
+			if = {
 				limit = { has_country_flag = CAN_cons_leader_manion }
 				add_ideas = CAN_Robert_Manion_hog_sco
 			}
@@ -2951,7 +3885,7 @@ country_event = {
 				add_ideas = CAN_RB_Bennett_hog_sco
 			}
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -3102,7 +4036,12 @@ country_event = {
 		clr_country_flag = CAN_C7_sec_lapointe
 
 		hidden_effect = {
-			country_event = { id = canada.100 days = 3 }
+			country_event = { 
+				id = canada.100 
+				days = 3 
+				random_days = 5
+			}
+			set_country_flag = CAN_C7_full_cons_complete
 		}
 	}
 }
@@ -3124,7 +4063,7 @@ country_event = {
 
 	option = {
 		name = canada.70.a
-		set_country_flag = CAN_lib_leader_stlaurent
+		set_country_flag = OR = { has_idea = CAN_iedc_main	has_idea = CAN_iedc_main2 }
 		if = {
 			limit = { has_government = market_liberal }
 			set_politics = {
@@ -3135,8 +4074,9 @@ country_event = {
 			hidden_effect = {
 				remove_all_ministers = yes
 				add_ideas = CAN_Louis_St_Laurent_hog_sli
+				set_country_leader_ideology = national_liberalism_subtype
 				if = {
-					limit = { has_country_flag = KR_british_king_base }
+					limit = { has_idea = CAN_brit_govt_exile_idea }
 					CAN_add_british_pm_in_exile = yes
 				}
 				else = {
@@ -3178,22 +4118,22 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_country_flag = CAN_cons_leader_manion }
+		NOT = { has_country_flag = CAN_cons_leader_meighen }
 	}
 
 	option = {
 		name = canada.71.a
-		set_country_flag = CAN_cons_leader_manion
+		set_country_flag = CAN_cons_leader_meighen
 		if = {
 			limit = { has_idea = CAN_RB_Bennett_hog_sco }
 			remove_ideas = CAN_RB_Bennett_hog_sco
-			add_ideas = CAN_Robert_Manion_hog_sco
+			add_ideas = CAN_Arthur_Meighen_hog_sco
 		}
-		if = {
-			limit = { has_idea = CAN_Robert_Manion_for_sco }
-			remove_ideas = CAN_Robert_Manion_for_sco
-			add_ideas = CAN_Sidney_Earle_Smith_for_sco
-		}
+		#if = {
+			#limit = { has_idea = CAN_Robert_Manion_for_sco }
+			#remove_ideas = CAN_Robert_Manion_for_sco
+			#add_ideas = CAN_Sidney_Earle_Smith_for_sco
+		#}
 		if = {
 			limit = { has_country_flag = CAN_is_republic }
 			create_country_leader = {
@@ -3285,7 +4225,7 @@ country_event = {
 				name = "Major James Coldwell"
 				picture = "gfx/leaders/CAN/Portrait_Canada_Major_James_Coldwell.png"
 				expire = "1965.1.1"
-				ideology = socdem_democratic_socialism_subtype
+				ideology = social_democrat_subtype
 			}
 		}
 	}
@@ -3331,6 +4271,13 @@ country_event = {
 		log = "[GetDateText]: [Root.GetName]: event canada.75"
 		remove_all_ministers = yes
 		clr_country_flag = CAN_lib_ccf_coalition
+		end_coalition = yes
+		if = {
+			limit = {
+				has_completed_focus = CAN_return_of_the_king
+			}
+			set_country_flag = CAN_has_had_election
+		}
 	}
 
 	option = {
@@ -3358,7 +4305,7 @@ country_event = {
 		hidden_effect = {
 			add_ideas = CAN_William_Lyon_Mackenzie_King_hog_mli
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -3404,7 +4351,7 @@ country_event = {
 		hidden_effect = {
 			add_ideas = CAN_Louis_St_Laurent_hog_sli
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -3450,18 +4397,19 @@ country_event = {
 		GBR_returning_king_check = yes
 		hidden_effect = {
 			if = {
-				limit = { has_country_flag = CAN_cons_leader_manion }
-				add_ideas = CAN_Robert_Manion_hog_sco
+				limit = { has_country_flag = CAN_cons_leader_meighen }
+				add_ideas = CAN_Arthur_Meighen_hog_sco
 			}
 			else_if = {
 				limit = { has_country_flag = CAN_cons_leader_bracken }
 				add_ideas = CAN_John_Bracken_hog_sco
+				set_country_leader_ideology = social_conservative_subtype
 			}
 			else = {
 				add_ideas = CAN_RB_Bennett_hog_sco
 			}
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -3483,49 +4431,51 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = canada.75.b #Nationalists win minority with Conservative support
-		trigger = {
-			has_country_flag = CAN_is_republic
-			has_country_flag = CAN_nat_leader_diefenbaker
-		}
-		ai_chance = {
-			factor = 10
-			modifier = {
-				add = 10
-				date > 1945.1.1
-			}
-		}
-		if = {
-			limit = { national_populist < 0.40 }
-			add_popularity = { ideology = national_populist popularity = 0.20 }
-		}
-		else_if = {
-			limit = { national_populist < 0.60 }
-			add_popularity = { ideology = national_populist popularity = 0.10 }
-		}
-		set_politics = {
-			ruling_party = national_populist
-			election_frequency = 60
-			elections_allowed = yes
-		}
-		GBR_returning_king_check = yes
-		hidden_effect = {
-			add_ideas = {
-				CAN_John_Diefenbaker_hog_npo
-				CAN_George_A_Drew_for_npo
-				CAN_Murdoch_Alexander_MacPherson_eco_npo
-				CAN_Andrew_McNaughton_sec_npo
-			}
-			if = {
-				limit = {
-					date > 1941.1.1
-					NOT = { has_country_flag = CAN_cons_leader_bracken }
-				}
-				country_event = { id = canada.76 days = 60 }
-			}
-		}
-	}
+	# option = {
+		# name = canada.75.b #Nationalists win minority with Conservative support
+		# trigger = {
+			# has_country_flag = CAN_is_republic
+			# has_country_flag = CAN_nat_leader_diefenbaker
+		# }
+		# ai_chance = {
+			# factor = 10
+			# modifier = {
+				# add = 10
+				# date > 1945.1.1
+			# }
+		# }
+		# if = {
+			# limit = { national_populist < 0.40 }
+			# add_popularity = { ideology = national_populist popularity = 0.20 }
+		# }
+		# else_if = {
+			# limit = { national_populist < 0.60 }
+			# add_popularity = { ideology = national_populist popularity = 0.10 }
+		# }
+		# set_politics = {
+			# ruling_party = national_populist
+			# election_frequency = 60
+			# elections_allowed = yes
+		# }
+		# set_temp_variable = { coalition_partner_var = token:social_conservative }
+		# add_to_coalition = yes
+		# GBR_returning_king_check = yes
+		# hidden_effect = {
+			# add_ideas = {
+				# CAN_John_Diefenbaker_hog_npo
+				# CAN_George_A_Drew_for_npo
+				# CAN_Murdoch_Alexander_MacPherson_eco_npo
+				# CAN_Andrew_McNaughton_sec_npo
+			# }
+			# if = {
+				# limit = {
+					# date > 1941.1.1
+					# NOT = { has_country_flag = CAN_cons_leader_bracken }
+				# }
+				# country_event = { id = canada.76 days = 60 }
+			# }
+		# }
+	# }
 	option = {
 		name = canada.75.c #CCF wins minority with Liberal support
 		trigger = {
@@ -3566,10 +4516,21 @@ country_event = {
 			elections_allowed = yes
 		}
 		GBR_returning_king_check = yes
+		if = {
+			limit = { 
+				has_country_flag = CAN_lib_leader_stlaurent
+			}
+			set_temp_variable = { coalition_partner_var = token:social_liberal }
+			add_to_coalition = yes
+		}
+		else = {
+			set_temp_variable = { coalition_partner_var = token:market_liberal }
+			add_to_coalition = yes
+		}
 		hidden_effect = {
 			add_ideas = CAN_Major_James_Coldwell_hog_sde
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -3644,7 +4605,10 @@ country_event = {
 		OR = {
 			has_idea = CAN_Henry_Page_Croft_lobe_pau
 			has_idea = CAN_Robert_Cecil_lobe_ade
+			has_idea = CAN_Edward_Halifax_lobe_sco
+			has_idea = CAN_Stanley_Baldwin_lobe_ade
 			has_idea = CAN_Anthony_Eden_lobe_ade
+			has_idea = CAN_Neville_Chamberlain_lobe_ade
 		}
 		NOT = { has_idea = CAN_rally_the_country }
 		has_country_flag = KR_british_king_base
@@ -3658,21 +4622,7 @@ country_event = {
 	option = {
 		name = canada.77.a
 		clr_country_flag = CAN_king_replaces_pm
-		if = {
-			limit = { has_idea = CAN_Henry_Page_Croft_lobe_pau }
-			remove_ideas = CAN_Henry_Page_Croft_lobe_pau
-			GBR = { clr_country_flag = GBR_Croft_PM }
-		}
-		if = {
-			limit = { has_idea = CAN_Robert_Cecil_lobe_ade }
-			remove_ideas = CAN_Robert_Cecil_lobe_ade
-			GBR = { clr_country_flag = GBR_Cecil_PM }
-		}
-		if = {
-			limit = { has_idea = CAN_Anthony_Eden_lobe_ade }
-			remove_ideas = CAN_Anthony_Eden_lobe_ade
-			GBR = { clr_country_flag = GBR_Eden_PM }
-		}
+		GBR_reset_GB_PM = yes
 		add_ideas = CAN_Robert_Vansittart_lobe_ade
 		GBR = { set_country_flag = GBR_Vansittart_PM }
 		custom_effect_tooltip = CAN_exile_influence_decrease
@@ -3724,9 +4674,7 @@ country_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		days = 5
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = canada.100.a
@@ -4183,7 +5131,7 @@ country_event = {
 		}
 		hidden_effect = {
 			add_ideas = {
-				CAN_Arthur_Meighen_hog_ade
+				CAN_Arthur_Meighen_hog_sco
 				CAN_Andrew_Carnell_eco_ade
 				CAN_WAC_Bennett_sec_ade
 			}
@@ -4248,23 +5196,9 @@ country_event = {
 		unlock_decision_tooltip = CAN_expand_labour_camps
 		unlock_decision_tooltip = CAN_increase_factory_prod
 		unlock_decision_tooltip = CAN_fund_the_military
+		set_country_flag = CAN_WMA_absolutism
+		set_country_flag = CAN_royal_perogative
 		hidden_effect = {
-			if = {
-				limit = { has_global_flag = CAN_king_edward_VIII }
-				add_ideas = CAN_King_Edward_VIII_hog_pau
-			}
-			if = {
-				limit = { has_global_flag = CAN_king_albert_I }
-				add_ideas = CAN_King_Albert_I_hog_pau
-			}
-			if = {
-				limit = { has_global_flag = CAN_king_henry_IX }
-				add_ideas = CAN_King_Henry_IX_hog_pau
-			}
-			if = {
-				limit = { has_global_flag = CAN_king_george_VI }
-				add_ideas = CAN_King_George_VI_hog_pau
-			}
 			add_ideas = {
 				CAN_Lord_Mountbatten_eco_pau
 				CAN_Maxwell_Knight_sec_pau
@@ -7303,14 +8237,11 @@ country_event = {
 	option = {
 		name = canada.300.a
 		add_war_support = -0.20
-		add_timed_idea = {
-			idea = CAN_british_exodus
-			days = 365
-		}
+		add_ideas = CAN_british_exodus
 		set_cosmetic_tag = CAN_Dominion
 		if = {
-			limit = { has_idea = CAN_Austen_Chamberlain_lobe_ade }
-			remove_ideas = CAN_Austen_Chamberlain_lobe_ade
+			limit = { has_idea = CAN_Douglas_Hogg_lobe_ade }
+			remove_ideas = CAN_Douglas_Hogg_lobe_ade
 		}
 		if = {
 			limit = { has_idea = CAN_Henry_Page_Croft_lobe_pau }
@@ -7321,12 +8252,20 @@ country_event = {
 			remove_ideas = CAN_Robert_Cecil_lobe_ade
 		}
 		if = {
-			limit = { has_idea = CAN_Anthony_Eden_lobe_ade }
-			remove_ideas = CAN_Anthony_Eden_lobe_ade
+			limit = { has_idea = CAN_Edward_Halifax_lobe_sco }
+			remove_ideas = CAN_Edward_Halifax_lobe_sco
 		}
 		if = {
 			limit = { has_idea = CAN_Robert_Vansittart_lobe_ade }
 			remove_ideas = CAN_Robert_Vansittart_lobe_ade
+		}
+		if = {
+			limit = { has_idea = CAN_Harold_Harmsworth_lobe_pau }
+			remove_ideas = CAN_Harold_Harmsworth_lobe_pau
+		}
+		if = {
+			limit = { has_idea = CAN_Lord_Beaverbrook_lobe_pau }
+			remove_ideas = CAN_Lord_Beaverbrook_lobe_pau
 		}
 		set_country_flag = Archibald_Montgomery_Massingberd_dead
 		set_country_flag = Sir_Edmund_Ironside_dead
@@ -7343,8 +8282,17 @@ country_event = {
 						has_government = authoritarian_democrat
 						has_government = paternal_autocrat
 					}
+					has_country_flag = CAN_WMA_absolutism
 				}
 				country_event = { id = canada.301 days = 3 }
+			}
+			if = {
+				limit = {
+					is_subject = no
+					has_government = paternal_autocrat
+					has_country_flag = CAN_absolutism_is_temporary
+				}
+				country_event = { id = canada.3010 days = 3 }
 			}
 			else = {
 				set_party_name = {
@@ -7405,8 +8353,8 @@ country_event = {
 		GBR_returning_king_check = yes
 		hidden_effect = {
 			if = {
-				limit = { has_country_flag = CAN_cons_leader_manion }
-				add_ideas = CAN_Robert_Manion_hog_sco
+				limit = { has_country_flag = CAN_cons_leader_meighen }
+				add_ideas = CAN_Arthur_Meighen_hog_sco
 			}
 			else_if = {
 				limit = { has_country_flag = CAN_cons_leader_bracken }
@@ -7416,7 +8364,7 @@ country_event = {
 				add_ideas = CAN_RB_Bennett_hog_sco
 			}
 			if = {
-				limit = { has_country_flag = KR_british_king_base }
+				limit = { has_idea = CAN_brit_govt_exile_idea }
 				CAN_add_british_pm_in_exile = yes
 			}
 			else = {
@@ -7445,6 +8393,86 @@ country_event = {
 	}
 }
 
+# Restoring civilian government in Canada
+country_event = {
+	id = canada.3010
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.3010" }
+	title = canada.3010.t
+	desc = canada.3010.d
+	picture = GFX_report_event_CAN_parliament1
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_subject = no
+		OR = {
+			has_government = authoritarian_democrat
+			has_government = paternal_autocrat
+		}
+	}
+
+	option = {
+		name = canada.301.a
+		add_popularity = { ideology = authoritarian_democrat popularity = -0.20 }
+		add_popularity = { ideology = paternal_autocrat popularity = -0.20 }
+		add_popularity = { ideology = social_conservative popularity = -0.20 }
+		add_popularity = { ideology = market_liberal popularity = 0.25 }
+		meta_effect = {
+			text = {
+				set_politics = {
+					ruling_party = market_liberal
+					last_election = "[CURRENT_DATE]"
+					election_frequency = 12
+					elections_allowed = yes
+				}
+			}
+			CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+		}
+		GBR = {
+			set_country_flag = CAN_allowed_us_to_take_over
+			hidden_effect = {
+				ENT = { save_event_target_as = old_leader }
+			}
+			save_event_target_as = entente_transfer_to
+			CAN_transfer_entente_leader = yes
+			hidden_effect = {
+				every_other_country = {
+					limit = { is_in_faction_with = ROOT }
+					country_event = uk.61
+				}
+			}
+		}
+		set_global_flag = CAN_left_entente
+		CAN = {
+			leave_faction = yes
+		}
+		add_opinion_modifier = { target = GBR modifier = KR_outraged }
+		GBR = {
+			add_opinion_modifier = { target = CAN modifier = KR_outraged }
+		}
+		GBR_returning_king_check = yes
+		hidden_effect = {
+			CAN_setup_transitional_committee = yes
+			set_cosmetic_tag = CAN_republic
+			news_event = { id = canada.316 days = 1 }
+			set_country_flag = CAN_gov_gen
+			country_event = {
+				id = canada.3032
+				days = 3
+			}
+			add_ideas = CAN_William_Lyon_Mackenzie_King_hog_mli
+			add_ideas = CAN_Louis_St_Laurent_for_sli
+			add_ideas = CAN_CD_Howe_eco_mli
+			add_ideas = CAN_Ernest_Lapointe_sec_mli
+			set_party_name = {
+				ideology = authoritarian_democrat
+				long_name = CAN_social_credit_party_long
+				name = CAN_social_credit_party
+			}
+		}
+	}
+}
+
 # The Canadian Governor General (fired by UK focus)
 country_event = {
 	id = canada.302
@@ -7462,341 +8490,94 @@ country_event = {
 		}
 	}
 
-	option = { # appoint Prince Albert
+	option = { # Unite the Thrones
 		name = canada.302.a
-		trigger = { has_global_flag = CAN_king_edward_VIII }
-		ai_chance = {
-			factor = 60
-		}
-		CAN = {
-			set_country_flag = CAN_gov_gen_albert
-			country_event = canada.303
-		}
-	}
-	option = { # appoint Lord Mountbatten
-		name = canada.302.b
-		ai_chance = {
-			factor = 30
-		}
-		add_political_power = 50
-		if = {
-			limit = { has_unit_leader = 931 }
-			random_unit_leader = {
-				limit = { has_id = 931 }
-				remove_unit_leader = yes
-			}
-		}
-		set_country_flag = Lord_Mountbatten_dead
-		CAN = {
-			set_country_flag = CAN_gov_gen_mountbatten
-			add_opinion_modifier = { target = ROOT modifier = KR_disapproves_of_govt }
-			country_event = canada.303
-		}
-	}
-	option = { # appoint John Vereker
-		name = canada.302.c
 		ai_chance = {
 			factor = 20
-		}
-		add_political_power = 30
-		if = {
-			limit = { has_unit_leader = 2938 }
-			random_unit_leader = {
-				limit = { has_id = 2938 }
-				remove_unit_leader = yes
-			}
-		}
-		set_country_flag = John_Vereker_dead
-		CAN = {
-			set_country_flag = CAN_gov_gen_vereker
-			add_opinion_modifier = { target = ROOT modifier = KR_disapproves_of_govt }
-			country_event = canada.303
-		}
-	}
-	option = { # Appoint a Canadian
-		name = canada.302.e
-		ai_chance = {
-			factor = 30
-		}
-		add_political_power = -50
-		CAN = {
-			set_country_flag = CAN_gov_gen_mcnaughton
-			add_opinion_modifier = { target = ROOT modifier = KR_approves_of_govt }
-			country_event = canada.303
-		}
-	}
-	option = { # Appoint a Canadian
-		name = canada.302.e_2
-		ai_chance = {
-			factor = 30
-		}
-		add_political_power = -50
-		CAN = {
-			set_country_flag = CAN_gov_gen_banting
-			add_opinion_modifier = { target = ROOT modifier = KR_approves_of_govt }
-			country_event = canada.303
-		}
-	}
-	option = { # Unite the Thrones
-		name = canada.302.f
-		ai_chance = {
-			factor = 10
 		}
 		add_political_power = -50
 		CAN = {
 			country_event = canada.3031
 		}
 	}
+	
+	option = { # New King
+		name = canada.302.b
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			NOT = {
+				has_global_flag = CAN_king_albert_I
+			}
+			NEE = {
+				NOT = {
+					has_country_leader = {
+						name = "Albert I"
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		CAN_set_king_albert = yes
+	}
+	
+	option = { # New GG
+		name = canada.302.c
+		ai_chance = {
+			factor = 20
+		}
+		country_event = {
+			id = canada.303
+			days = 3
+		}
+		set_country_flag = CAN_gov_gen
+	}
+	
+	option = { # Republic
+		name = canada.302.e
+		ai_chance = {
+			factor = 20
+		}
+		CAN_setup_transitional_committee = yes
+		set_cosmetic_tag = CAN_republic
+		news_event = { id = canada.316 days = 1 }
+		set_country_flag = CAN_gov_gen
+		country_event = {
+			id = canada.3032
+			days = 3
+		}
+	}
 }
 
-# Canada gets its new Governor General
+# Brit or Canadian?
 country_event = {
 	id = canada.303
 	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.303" }
 	title = canada.303.t
 	picture = GFX_report_event_royal_parade
-
-	desc = {
-		text = canada.303.d.albert
-		trigger = { has_country_flag = CAN_gov_gen_albert }
-	}
-	desc = {
-		text = canada.303.d.mountbatten
-		trigger = { has_country_flag = CAN_gov_gen_mountbatten }
-	}
-	desc = {
-		text = canada.303.d.vereker
-		trigger = { has_country_flag = CAN_gov_gen_vereker }
-	}
-	desc = {
-		text = canada.303.d.mcnaughton
-		trigger = { has_country_flag = CAN_gov_gen_mcnaughton }
-	}
-	desc = {
-		text = canada.303.d.banting
-		trigger = { has_country_flag = CAN_gov_gen_banting }
-	}
+	desc = canada.303.d
+	
 
 	is_triggered_only = yes
 
-	option = {
+	option = { #British
 		name = canada.303.a
-		if = {
-			limit = { has_country_flag = CAN_gov_gen_albert }
-			create_country_leader = {
-				name = "Prince Albert"
-				desc = "POLITICS_ALBERT_WINDSOR_DESC"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Prince_Albert.png"
-				expire = "1965.1.1"
-				ideology = socdem_democratic_socialism_subtype
-			}
-			create_country_leader = {
-				name = "Prince Albert"
-				desc = "POLITICS_ALBERT_WINDSOR_DESC"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Prince_Albert.png"
-				expire = "1965.1.1"
-				ideology = classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "Prince Albert"
-				desc = "POLITICS_ALBERT_WINDSOR_DESC"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Prince_Albert.png"
-				expire = "1965.1.1"
-				ideology = marlib_classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "Prince Albert"
-				desc = "POLITICS_ALBERT_WINDSOR_DESC"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Prince_Albert.png"
-				expire = "1965.1.1"
-				ideology = toryism_subtype
-			}
-			create_country_leader = {
-				name = "Prince Albert"
-				desc = "POLITICS_ALBERT_WINDSOR_DESC"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Prince_Albert.png"
-				expire = "1965.1.1"
-				ideology = authdem_toryism_subtype
-			}
-			create_country_leader = {
-				name = "Prince Albert"
-				desc = "POLITICS_ALBERT_WINDSOR_DESC"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Prince_Albert.png"
-				expire = "1965.1.1"
-				ideology = paternal_autocrat_subtype
-			}
+		country_event = {
+			id = canada.3034
+			days = 6
 		}
-		if = {
-			limit = { has_country_flag = CAN_gov_gen_mountbatten }
-			add_political_power = -50
-			subtract_from_variable = { CAN_was_king_popularity = 1 }
-			create_country_leader = {
-				name = "Lord Louis Mountbatten"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Louis_Mountbatten.png"
-				expire = "1965.1.1"
-				ideology = socdem_democratic_socialism_subtype
-			}
-			create_country_leader = {
-				name = "Lord Louis Mountbatten"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Louis_Mountbatten.png"
-				expire = "1965.1.1"
-				ideology = classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "Lord Louis Mountbatten"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Louis_Mountbatten.png"
-				expire = "1965.1.1"
-				ideology = marlib_classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "Lord Louis Mountbatten"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Louis_Mountbatten.png"
-				expire = "1965.1.1"
-				ideology = toryism_subtype
-			}
-			create_country_leader = {
-				name = "Lord Louis Mountbatten"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Louis_Mountbatten.png"
-				expire = "1965.1.1"
-				ideology = authdem_toryism_subtype
-			}
-			create_country_leader = {
-				name = "Lord Louis Mountbatten"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Louis_Mountbatten.png"
-				expire = "1965.1.1"
-				ideology = paternal_autocrat_subtype
-			}
-		}
-		if = {
-			limit = { has_country_flag = CAN_gov_gen_vereker }
-			add_political_power = -30
-			subtract_from_variable = { CAN_was_king_popularity = 1 }
-			create_country_leader = {
-				name = "John Vereker"
-				picture = "gfx/leaders/CAN/Portrait_England_John_Vereker_GG.png"
-				expire = "1965.1.1"
-				ideology = socdem_democratic_socialism_subtype
-			}
-			create_country_leader = {
-				name = "John Vereker"
-				picture = "gfx/leaders/CAN/Portrait_England_John_Vereker_GG.png"
-				expire = "1965.1.1"
-				ideology = classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "John Vereker"
-				picture = "gfx/leaders/CAN/Portrait_England_John_Vereker_GG.png"
-				expire = "1965.1.1"
-				ideology = marlib_classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "John Vereker"
-				picture = "gfx/leaders/CAN/Portrait_England_John_Vereker_GG.png"
-				expire = "1965.1.1"
-				ideology = toryism_subtype
-			}
-			create_country_leader = {
-				name = "John Vereker"
-				picture = "gfx/leaders/CAN/Portrait_England_John_Vereker_GG.png"
-				expire = "1965.1.1"
-				ideology = authdem_toryism_subtype
-			}
-			create_country_leader = {
-				name = "John Vereker"
-				picture = "gfx/leaders/CAN/Portrait_England_John_Vereker_GG.png"
-				expire = "1965.1.1"
-				ideology = paternal_autocrat_subtype
-			}
-		}
-		if = {
-			limit = { has_country_flag = CAN_gov_gen_mcnaughton }
-			add_political_power = 50
-			if = {
-				limit = { has_unit_leader = 2938 }
-				random_unit_leader = {
-					limit = { has_id = 2938 }
-					remove_unit_leader = yes
-				}
-			}
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton_GG.png"
-				expire = "1965.1.1"
-				ideology = socdem_democratic_socialism_subtype
-			}
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton_GG.png"
-				expire = "1965.1.1"
-				ideology = classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton_GG.png"
-				expire = "1965.1.1"
-				ideology = marlib_classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton_GG.png"
-				expire = "1965.1.1"
-				ideology = toryism_subtype
-			}
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton_GG.png"
-				expire = "1965.1.1"
-				ideology = authdem_toryism_subtype
-			}
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton_GG.png"
-				expire = "1965.1.1"
-				ideology = paternal_autocrat_subtype
-			}
-		}
-		if = {
-			limit = { has_country_flag = CAN_gov_gen_banting }
-			add_political_power = 50
-			create_country_leader = {
-				name = "Frederick Banting"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Frederick_Banting.png"
-				expire = "1965.1.1"
-				ideology = socdem_democratic_socialism_subtype
-			}
-			create_country_leader = {
-				name = "Frederick Banting"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Frederick_Banting.png"
-				expire = "1965.1.1"
-				ideology = classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "Frederick Banting"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Frederick_Banting.png"
-				expire = "1965.1.1"
-				ideology = marlib_classical_liberalism_subtype
-			}
-			create_country_leader = {
-				name = "Frederick Banting"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Frederick_Banting.png"
-				expire = "1965.1.1"
-				ideology = toryism_subtype
-			}
-			create_country_leader = {
-				name = "Frederick Banting"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Frederick_Banting.png"
-				expire = "1965.1.1"
-				ideology = authdem_toryism_subtype
-			}
-			create_country_leader = {
-				name = "Frederick Banting"
-				picture = "gfx/leaders/CAN/Portrait_Canada_Frederick_Banting.png"
-				expire = "1965.1.1"
-				ideology = paternal_autocrat_subtype
-			}
+	}
+	
+	option = { #Canadian
+		name = canada.303.b
+		country_event = {
+			id = canada.3035
+			days = 6
 		}
 	}
 }
+
 
 # King of Canada
 country_event = {
@@ -7813,6 +8594,207 @@ country_event = {
 		drop_cosmetic_tag = yes
 		add_stability = 0.06
 	}
+}
+
+# Republic Declared
+country_event = {
+	id = canada.3032
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.3032" }
+	title = canada.3032.t
+	picture = GFX_report_event_royal_parade
+	desc = canada.3032.d
+	
+
+	is_triggered_only = yes
+
+	option = { #PM is President
+		name = canada.3032.a
+		CAN_create_republic = yes
+		set_country_flag = CAN_pm_is_hos
+	}
+	
+	option = { #Indpendent Presidency
+		name = canada.3032.b
+		country_event = {
+			id = canada.3033
+			days = 30
+		}
+		clr_country_flag = CAN_gov_gen
+		set_country_flag = CAN_president
+	}
+}
+
+# First Presidential Election
+country_event = {
+	id = canada.3033
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.3033" }
+	title = canada.3033.t
+	picture = GFX_report_event_royal_parade
+	desc = canada.3033.d
+	
+
+	is_triggered_only = yes
+
+	option = { #Massey
+		name = canada.3035.a
+		CAN_setup_GG_massey = yes
+	}
+	
+	option = { #Vanier
+		name = canada.3035.b
+		CAN_setup_GG_vanier = yes
+	}
+	
+	option = { #McNaughton
+		name = canada.3035.c
+		CAN_setup_GG_mcnaughton = yes
+	}
+	
+	option = { #Banting
+		name = canada.3035.e
+		CAN_setup_GG_banting = yes
+	}
+	
+}
+
+# British GG
+country_event = {
+	id = canada.3034
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.3034" }
+	title = canada.3034.t
+	picture = GFX_report_event_royal_parade
+	desc = {
+		text = canada.3034.d
+		NOT = {
+			OR = {
+				has_global_flag = CAN_king_albert_I
+				NEE = {	
+					OR = {
+						has_country_leader = {
+							name = "Albert I"
+							ruling_only = yes
+						}
+						has_country_leader = {
+							name = "Albert Windsor"
+							ruling_only = yes
+						}
+					}
+				}
+				AST = {
+					has_country_leader = {
+						name = "Prince Albert"
+						ruling_only = yes
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = canada.3034.d_no_albert
+		OR = {
+			has_global_flag = CAN_king_albert_I
+			NEE = {	
+				OR = {
+					has_country_leader = {
+						name = "Albert I"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Albert Windsor"
+						ruling_only = yes
+					}
+				}
+			}
+			AST = {
+				has_country_leader = {
+					name = "Prince Albert"
+					ruling_only = yes
+				}
+			}
+		}
+	}
+	
+
+	is_triggered_only = yes
+
+	option = { #Albert
+		name = canada.3034.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_global_flag = CAN_king_albert_I
+					NEE = {	
+						OR = {
+							has_country_leader = {
+								name = "Albert I"
+								ruling_only = yes
+							}
+							has_country_leader = {
+								name = "Albert Windsor"
+								ruling_only = yes
+							}
+						}
+					}
+					AST = {
+						has_country_leader = {
+							name = "Prince Albert"
+							ruling_only = yes
+						}
+					}
+				}
+			}
+		}
+		CAN_setup_GG_albert = yes
+	}
+	
+	option = { #Alexander
+		name = canada.3034.b
+		CAN_setup_GG_alexander = yes
+	}
+	
+	option = { #Vereker
+		name = canada.3034.c
+		CAN_setup_GG_vereker = yes
+	}
+	
+	option = { #Cambridge
+		name = canada.3034.e
+		CAN_setup_GG_cambridge = yes
+	}
+	
+}
+
+# First Canadian GG
+country_event = {
+	id = canada.3035
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.3035" }
+	title = canada.3035.t
+	picture = GFX_report_event_royal_parade
+	desc = canada.3035.d
+	
+
+	is_triggered_only = yes
+
+	option = { #Massey
+		name = canada.3035.a
+		CAN_setup_GG_massey = yes
+	}
+	
+	option = { #Vanier
+		name = canada.3035.b
+		CAN_setup_GG_vanier = yes
+	}
+	
+	option = { #McNaughton
+		name = canada.3035.c
+		CAN_setup_GG_mcnaughton = yes
+	}
+	
+	option = { #Banting
+		name = canada.3035.e
+		CAN_setup_GG_banting = yes
+	}
+	
 }
 
 # Debate on the referendum begins (fired by focus)
@@ -8493,6 +9475,8 @@ country_event = {
 	option = {
 		name = canada.321.a
 		add_political_power = 100
+		add_stability = 0.04
+		increase_ruling_party_popularity_by_5 = yes
 	}
 }
 
@@ -8515,7 +9499,7 @@ country_event = {
 		unlock_decision_tooltip = CAN_claim_washington
 		unlock_decision_tooltip = CAN_claim_maine
 		hidden_effect = {
-			country_event = { id = canada.325 days = 60 }
+			#country_event = { id = canada.325 days = 60 }
 		}
 	}
 }
@@ -8602,33 +9586,33 @@ country_event = {
 	}
 }
 
-# Diefenbaker takes over the Nationalist Party
-country_event = {
-	id = canada.325
-	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.325" }
-	title = canada.325.t
-	desc = canada.325.d
-	picture = GFX_report_event_generic_rally
+#Diefenbaker takes over the Nationalist Party
+# country_event = {
+	# id = canada.325
+	# immediate = { log = "[GetDateText]: [Root.GetName]: event canada.325" }
+	# title = canada.325.t
+	# desc = canada.325.d
+	# picture = GFX_report_event_generic_rally
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	option = {
-		name = canada.325.a
-		add_popularity = { ideology = national_populist popularity = 0.05 }
-		set_country_flag = CAN_nat_leader_diefenbaker
-		create_country_leader = {
-			name = "John Diefenbaker"
-			picture = "gfx/leaders/CAN/Portrait_Canada_John_Diefenbaker.png"
-			expire = "1965.1.1"
-			ideology = national_populist_subtype
-		}
-		if = {
-			limit = { has_idea = CAN_John_Diefenbaker_sec_sco }
-			remove_ideas = CAN_John_Diefenbaker_sec_sco
-			add_ideas = CAN_Gordon_Graydon_sec_sco
-		}
-	}
-}
+	# option = {
+		# name = canada.325.a
+		# add_popularity = { ideology = national_populist popularity = 0.05 }
+		# set_country_flag = CAN_nat_leader_diefenbaker
+		# create_country_leader = {
+			# name = "John Diefenbaker"
+			# picture = "gfx/leaders/CAN/Portrait_Canada_John_Diefenbaker.png"
+			# expire = "1965.1.1"
+			# ideology = national_populist_subtype
+		# }
+		# if = {
+			# limit = { has_idea = CAN_John_Diefenbaker_sec_sco }
+			# remove_ideas = CAN_John_Diefenbaker_sec_sco
+			# add_ideas = CAN_Gordon_Graydon_sec_sco
+		# }
+	# }
+# }
 
 # Canadian investments in Britain (fired by focus)
 country_event = {
@@ -8702,7 +9686,7 @@ country_event = {
 		}
 		create_corps_commander = { # Thomas George Prince
 			name = "Thomas George Prince"
-			portrait_path = "gfx/leaders/CAN/Portrait_CAN_thomas_prince.png"
+			portrait_path = "gfx/leaders/CAN/Portrait_Canada_Thomas_Prince.png"
 			traits = {
 				career_officer
 				commando
@@ -8796,6 +9780,1228 @@ country_event = { #Kingdom of Iceland
 		}
 	}
 }
+
+country_event = { #Strong And Free
+	id = canada.400
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.400" }
+	title = canada.400.t
+	desc = canada.400.d
+	picture = GFX_report_event_CAN_commons1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.400.a
+		add_stability = 0.05
+	}
+}
+
+country_event = { #Appointing Bible Bill 
+	id = canada.401
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.401" }
+	title = canada.401.t
+	desc = canada.401.d
+	picture = GFX_report_event_CAN_commons1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.401.a
+		add_ideas = CAN_William_Aberhart_hog_pau
+	}
+	
+	option = {
+		name = canada.401.b
+		add_ideas = CAN_Ernest_Manning_hog_ade
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		set_country_leader_ideology = authdem_social_credit_subtype
+	}
+}
+
+# Arthur Currie Death
+country_event = {
+	id = canada.402
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.402" }
+	title = canada.402.t
+	desc = canada.402.d
+	picture = GFX_report_event_CAN_arthur_currie
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.402.a
+		set_country_flag = Arthur_Currie_dead
+		set_country_flag = CAN_currie_dead
+		hidden_effect = {
+			#remove_ideas = CAN_Arthur_Currie_carm_sco
+		}
+		random_unit_leader = {
+			limit = {
+				has_id = 9204
+			}
+			remove_unit_leader = yes
+		}
+	}
+}
+
+####Social Credit######
+country_event = { # Implementing Social Credit
+	id = canada.403
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.403" }
+	title = canada.403.t
+	desc = canada.403.d
+	picture = GFX_report_event_CAN_commons2
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.403.a
+
+		ai_chance = {
+			factor = 35
+		}
+
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_stability = 0.05
+		set_country_flag = CAN_SOCCRED
+		country_event = canada.404
+	}
+	option = {
+		name = canada.403.b
+
+		ai_chance = {
+			factor = 35
+		}
+
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_political_power = 20
+		set_country_flag = CAN_SOCCRED
+		country_event = canada.404
+	}
+	option = {
+		name = canada.403.c
+
+		ai_chance = {
+			factor = 30
+		}
+
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_stability = -0.1
+		set_country_flag = CAN_SOCCRED
+		country_event = canada.404
+	}
+}
+country_event = { # Dupleissis Protests SocCred
+	id = canada.404
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.404" }
+	title = canada.404.t
+	desc = canada.404.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.404.a
+		add_stability = -0.01
+		set_country_flag = duplessis_protests_socred
+	}
+}
+
+country_event = { # For Manning - Reconsidering Social Credit
+	id = canada.405
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.404" }
+	title = canada.405.t
+	desc = canada.405.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+
+	option = { #Keep as is
+		name = canada.405.a
+		set_country_flag = CAN_we_love_social_credit
+		add_political_power = 50
+	}
+	
+	option = { #Scale it Back a bit
+		name = canada.405.b
+		add_stability = -0.03
+		add_political_power = 50
+		set_country_flag = CAN_soccred_for_now
+	}
+	
+	option = { #Scale it Back a lot
+		name = canada.405.c
+		set_country_flag = CAN_distancing_social_credit
+		add_stability = 0.05
+		add_political_power = -40
+		swap_ideas = {
+			remove_idea = CAN_prosperity_certificates
+			add_idea = CAN_prosperity_certificates2
+		}
+	}
+}
+
+country_event = { # Prosperity Certificates Issued
+	id = canada.406
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.406" }
+	title = canada.406.t
+	desc = canada.406.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+
+	option = { #Keep as is
+		name = canada.406.a
+		add_ideas = CAN_prosperity_certificates
+	}
+	
+}
+
+country_event = { # Kibbo Kift
+	id = canada.407
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.407" }
+	title = canada.407.t
+	desc = canada.407.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+
+	option = { #Work with
+		name = canada.407.a
+		add_political_power = -20
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.05
+		}
+		remove_ideas_with_trait = security_minister
+		add_ideas = CAN_John_Hargrave_sec_pau
+	}
+	
+	option = { #Fuck off
+		name = canada.407.b
+		add_stability = 0.06
+	}
+	
+	option = { #Official
+		name = canada.407.c
+		add_stability = 0.06
+		add_political_power = -50
+		remove_ideas_with_trait = security_minister
+		add_ideas = CAN_John_Hargrave_sec_pau
+		set_country_flag = CAN_kibbo_kift
+	}
+	
+}
+
+country_event = { # Work with the CAR?
+	id = canada.408
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.408" }
+	title = canada.408.t
+	desc = canada.408.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+
+	option = { #send the offer
+		name = canada.408.a
+		COR = {
+			country_event = {
+				id = canada.409
+				days = 5
+			}
+		}
+	}
+	
+	option = { #Fuck off yankee
+		name = canada.408.b
+		set_country_flag = CAN_anti_american_flag
+	}
+	
+}
+
+country_event = { # CAN offers great lakes occupation in exchange for intervention
+	id = canada.409
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.409" }
+	title = canada.409.t
+	desc = canada.409.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+
+	option = { #Sure
+		CAN = {
+			country_event = {
+				id = canada.411
+				days = 5
+			}
+		}
+	}
+	
+	option = { #Fuck off Canuck
+		name = canada.409.b
+		CAN = {
+			country_event = {
+				id = canada.410
+				days = 5
+			}
+		}
+	}
+	
+	option = { #Join Entente instead
+		name = canada.409.b
+		CAN = {
+			country_event = {
+				id = canada.412
+				days = 5
+			}
+		}
+	}
+	
+}
+
+country_event = { # CAR says no
+	id = canada.410
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.410" }
+	title = canada.410.t
+	desc = canada.410.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Damn
+		name = canada.410.a
+		set_country_flag = CAN_anti_american_flag
+	}
+	
+}
+
+country_event = { # CAR says Yes
+	id = canada.411
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.411" }
+	title = canada.411.t
+	desc = canada.411.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Damn
+		name = canada.411.a
+		set_country_flag = CAN_great_lakes_proposal_flag
+		set_country_flag = CAN_supports_COR
+	}
+	
+}
+
+country_event = { # CAR counter-proposal
+	id = canada.412
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.412" }
+	title = canada.412.t
+	desc = canada.412.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Damn
+		name = canada.412.a
+		set_country_flag = CAN_supports_COR
+	}
+	
+	option = { #Fuck you bitch
+		name = canada.412.b
+		set_country_flag = CAN_anti_american_flag
+	}
+	
+}
+
+country_event = { # Fate of the Nationalists
+	id = canada.413
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.413" }
+	title = canada.413.t
+	desc = canada.413.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Ban them
+		name = canada.413.a
+		set_country_flag = CAN_no_natpops
+		swap_ideas = {
+			remove_idea = CAN_breaking_center
+			add_idea = CAN_breaking_center_no_natpop
+		}
+	}
+	
+	option = { # Work with them Pragmatically
+		name = canada.413.b
+		trigger = {
+			OR = {
+				has_government = social_conservative
+				has_government = authoritarian_democrat
+			}
+		}
+		swap_ideas = {
+			remove_idea = CAN_breaking_center
+			add_idea = CAN_breaking_center_natpop
+		}
+		add_natpop_to_coalition = yes
+		set_country_flag = CAN_works_with_natpops
+	}
+	
+}
+
+country_event = { # Natpops Banned - if you work with them
+	id = canada.414
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.414" }
+	title = canada.414.t
+	desc = canada.414.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Oops
+		name = canada.414.a
+		remove_ideas = CAN_breaking_center_natpop
+		end_coalition = yes
+		add_stability = -0.10
+	}
+	
+}
+
+country_event = { # Natpops Banned - if you don't work with them
+	id = canada.415
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.415" }
+	title = canada.415.t
+	desc = canada.415.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Yay
+		name = canada.415.a
+		remove_ideas = CAN_breaking_center_no_natpop
+		add_stability = 0.10
+	}
+	
+}
+
+### PM In Exile Stuff ###
+
+country_event = { # King Replaces PM
+	id = canada.416
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.416" }
+	title = canada.416.t
+	desc = canada.416.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = canada.419
+				days = 65
+			}
+		}
+	}
+	
+	option = { #Rothmere
+		name = canada.416.a
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.02
+		}
+		GBR_reset_GB_PM = yes
+		add_ideas = CAN_Harold_Harmsworth_lobe_pau
+		GBR = {
+			set_country_flag = GBR_Harmsworth_PM
+		}
+	}
+	
+	option = { #Beaverbrook
+		name = canada.416.b
+		add_popularity = {
+			ideology = paternal_autocrat
+			popularity = 0.02
+		}
+		GBR_reset_GB_PM = yes
+		GBR = {
+			set_country_flag = GBR_Beaverbrook_PM
+		}
+		add_ideas = CAN_Lord_Beaverbrook_lobe_pau
+	}
+	
+}
+
+country_event = { # Nationalists Replaces PM
+	id = canada.417
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.417" }
+	title = canada.417.t
+	desc = canada.417.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = canada.418
+				days = 65
+			}
+		}
+	}
+	
+	option = { #Luigi
+		name = canada.417.a
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.02
+		}
+		GBR_reset_GB_PM = yes
+		add_ideas = CAN_Anthony_Ludovici_lobe_npo
+		set_country_flag = CAN_GB_PM_Ludovici
+		
+	}
+	
+	option = { #Full House
+		name = canada.417.b
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.02
+		}
+		GBR_reset_GB_PM = yes
+		add_ideas = CAN_JFC_Fuller_lobe_npo
+		set_country_flag = CAN_GB_PM_Fuller
+	}
+	
+	option = { #KING
+		name = canada.417.c
+		add_popularity = {
+			ideology = national_populist
+			popularity = 0.02
+		}
+		GBR_reset_GB_PM = yes
+		add_ideas = CAN_Harold_Harmsworth_for_npo
+		
+	}
+	
+}
+
+country_event = { # Nationalists Dissolve Kingdom of Canada
+	id = canada.418
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.418" }
+	title = canada.418.t
+	desc = canada.418.d
+	picture = GFX_report_event_CAN_duplessis
+	
+	immediate = {
+		hidden_effect = {
+			set_cosmetic_tag = CAN_UK_CAN
+			set_global_flag = CAN_is_uk
+			add_ideas = CAN_canadian_resistance
+		}
+	}
+
+	is_triggered_only = yes
+	
+	option = { #Arcand
+		name = canada.418.a
+		if = {
+			limit = {
+				has_idea_with_trait = leader_of_the_british_exiles
+			}
+			remove_ideas_with_trait = leader_of_the_british_exiles
+			add_ideas = CAN_Harold_Harmsworth_for_npo
+		}
+	}
+	
+	option = { #Taylor
+		name = canada.418.b
+		remove_ideas_with_trait = head_of_government
+		add_ideas = CAN_John_Ross_Taylor_hog_npo
+		set_country_leader_ideology = klan_nationalism_subtype
+		if = {
+			limit = {
+				has_idea_with_trait = leader_of_the_british_exiles
+			}
+			remove_ideas_with_trait = leader_of_the_british_exiles
+			add_ideas = CAN_Harold_Harmsworth_for_npo
+		}
+	}
+	
+	option = { #KING
+		name = canada.418.c
+		remove_ideas_with_trait = head_of_government
+		if = {
+			limit = {
+				has_country_flag = CAN_GB_PM_Ludovici
+			}
+			add_ideas = CAN_Anthony_Ludovici_hog_npo
+			set_country_leader_ideology = occultism_subtype
+		}
+		if = {
+			limit = {
+				has_country_flag = CAN_GB_PM_Fuller
+			}
+			add_ideas = CAN_JFC_Fuller_hog_npo
+			set_country_leader_ideology = occultism_subtype
+		}
+		if = {
+			limit = {
+				has_country_flag = CAN_GB_No_PM
+			}
+			add_ideas = CAN_Edward_VIII_hog_npo
+		}
+		if = {
+			limit = {
+				has_idea_with_trait = leader_of_the_british_exiles
+			}
+			remove_ideas_with_trait = leader_of_the_british_exiles
+			add_ideas = CAN_Harold_Harmsworth_for_npo
+		}
+	}
+	
+}
+
+country_event = { # King Dissolves Kingdom of Canada
+	id = canada.419
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.419" }
+	title = canada.419.t
+	desc = canada.419.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = CAN_WMA_absolutism
+		}
+	}
+	
+	option = { #Temp Govt
+		name = canada.419.a
+		set_country_flag = CAN_absolutism_is_temporary
+	}
+	
+	option = { #King's Govt
+		name = canada.419.b
+		set_cosmetic_tag = CAN_UK_CAN
+		set_global_flag = CAN_is_uk
+		add_ideas = CAN_canadian_resistance
+		if = {
+			limit = {
+				has_idea = CAN_Harold_Harmsworth_lobe_pau
+			}
+			remove_ideas_with_trait = head_of_government
+			GBR_reset_GB_PM = yes
+			add_ideas = CAN_Harold_Harmsworth_hog_pau
+			add_ideas = CAN_Lord_Beaverbrook_for_pau
+		}
+		if = {
+			limit = {
+				has_idea = CAN_Lord_Beaverbrook_lobe_pau
+			}
+			remove_ideas_with_trait = head_of_government
+			GBR_reset_GB_PM = yes
+			add_ideas = CAN_Lord_Beaverbrook_hog_pau
+			add_ideas = CAN_Harold_Harmsworth_for_pau
+		}
+	}
+	
+}
+
+country_event = { # Appoint Douglas
+	id = canada.420
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.420" }
+	title = canada.420.t
+	desc = canada.420.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Nah
+		name = canada.420.a
+		add_political_power = 20
+		hidden_effect = {
+			country_event = {
+				id = canada.421
+				days = 33
+			}
+		}
+	}
+	
+	option = { #Sure
+		name = canada.420.b
+		remove_ideas_with_trait = head_of_government
+		add_ideas = CAN_CH_Douglas_lobe_pau
+		GBR_reset_GB_PM = yes
+		set_country_flag = CAN_Douglas_GB_PM
+		GBR = {
+			set_country_flag = GBR_Douglas_PM
+		}
+		add_political_power = -20
+		
+	}
+	
+}
+
+country_event = { # Appoint Hargrave
+	id = canada.421
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.421" }
+	title = canada.421.t
+	desc = canada.421.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Sure
+		name = canada.421.a
+		add_political_power = 50
+		add_stability = -0.02
+		GBR_reset_GB_PM = yes
+		add_ideas = CAN_John_Hargrave_lobe_pau
+		set_country_flag = CAN_Hargrave_GB_PM
+		GBR = {
+			set_country_flag = GBR_Hargrave_PM
+		}
+	}
+	
+	option = { #No
+		name = canada.421.b
+		add_stability = 0.02
+	}
+	
+}
+
+country_event = { # Appoint Hargrave
+	id = canada.422
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.422" }
+	title = canada.422.t
+	desc = canada.422.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #Sure
+		name = canada.422.a
+		add_political_power = 50
+		add_stability = -0.02
+		remove_ideas_with_trait = head_of_government
+		add_ideas = CAN_John_Hargrave_hog_pau
+	}
+	
+	option = { #No
+		name = canada.422.b
+		add_stability = 0.02
+	}
+	
+}
+
+country_event = { # William Guy Carr
+	id = canada.423
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.422" }
+	title = canada.423.t
+	desc = canada.423.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #SCHIZO!
+		name = canada.423.a
+		add_stability = 0.02
+	}
+	
+	option = { #Work with him
+		name = canada.423.b
+		add_political_power = -10
+		create_navy_leader = {# William Guy Carr
+			name = "William Guy Carr"
+			portrait_path = "gfx/leaders/CAN/Portrait_Canada_Bernard_Rawlings.png"
+			traits = { 
+				seawolf 
+				navy_media_personality
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+}
+
+country_event = { # The Death of William Aberhart
+	id = canada.424
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.424" }
+	title = canada.424.t
+	desc = {
+		text = canada.424.d
+		trigger = {
+			NOT = {
+				has_idea = CAN_William_Aberhart_hog_pau
+				has_idea = CAN_Ernest_Manning_hog_ade
+			}
+		}
+	}
+	desc = {
+		text = canada.424.d_2
+		trigger = {
+			has_idea = CAN_William_Aberhart_hog_pau
+		}
+	}
+	desc = {
+		text = canada.424.d_3
+		trigger = {
+			has_idea = CAN_Ernest_Manning_hog_ade
+		}
+	}
+	picture = GFX_report_event_europe_funeral
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = canada.424.a
+		NOT = {
+			has_idea = CAN_William_Aberhart_hog_pau
+		}
+		
+		set_country_flag = William_Aberhart_dead
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = CAN_distancing_social_credit
+					has_country_flag = CAN_soccred_for_now
+				}
+			}
+			country_event = {
+				id = canada.425
+				days = 55
+			}
+		}
+	}
+	
+	option = {
+		name = canada.424.b
+		trigger = {
+			has_idea = CAN_William_Aberhart_hog_pau
+		}
+		remove_ideas_with_trait = head_of_government
+		add_ideas = CAN_Ernest_Manning_hog_ade
+		set_country_flag = William_Aberhart_dead
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = yes
+		}
+		set_variable = {
+			current_pataut_pop = party_popularity@paternal_autocrat
+		}
+		set_variable = {
+			current_authdem_pop = party_popularity@authoritarian_democrat
+		}
+		subtract_from_variable = {
+			var = current_pataut_pop
+			value = current_authdem_pop
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = current_pataut_pop
+		}
+		set_country_leader_ideology = authdem_social_credit_subtype
+		if = {
+			limit = { has_country_flag = CAN_is_republic }
+			create_country_leader = {
+				name = "Ernest Manning"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Ernest_Manning.png"
+				expire = "1965.1.1"
+				ideology = authdem_social_credit_subtype
+			}
+		}
+	}
+	
+	option = {
+		name = canada.424.c
+		trigger = {
+			has_idea = CAN_William_Aberhart_hog_pau
+		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+		}
+		
+		remove_ideas_with_trait = head_of_government
+		add_ideas = CAN_JH_Blackmore_hog_ade
+		set_country_flag = William_Aberhart_dead
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = yes
+		}
+		set_variable = {
+			current_pataut_pop = party_popularity@paternal_autocrat
+		}
+		set_variable = {
+			current_authdem_pop = party_popularity@authoritarian_democrat
+		}
+		subtract_from_variable = {
+			var = current_pataut_pop
+			value = current_authdem_pop
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = current_pataut_pop
+		}
+		set_country_leader_ideology = authdem_social_credit_subtype
+		if = {
+			limit = { has_country_flag = CAN_is_republic }
+			create_country_leader = {
+				name = "John Horne Blackmore"
+				picture = "gfx/leaders/CAN/Portrait_Canada_JH_Blackmore.png"
+				expire = "1965.1.1"
+				ideology = authdem_social_credit_subtype
+			}
+		}
+	}
+	
+	option = {
+		name = canada.424.e
+		trigger = {
+			has_idea = CAN_William_Aberhart_hog_pau
+		}
+		remove_ideas_with_trait = head_of_government
+		add_ideas = CAN_JH_Blackmore_hog_ade
+		set_country_flag = CAN_Real_Caouette_hog_pau
+		if = {
+			limit = { has_country_flag = CAN_is_republic }
+			create_country_leader = {
+				name = "Réal Caouette"
+				picture = "gfx/leaders/QUE/Portrait_Quebec_Real_Caouette.png"
+				expire = "1965.1.1"
+				ideology = social_credit_subtype
+			}
+		}
+	}
+	
+	
+	option = {
+		name = canada.424.f
+		trigger = {
+			has_idea = CAN_William_Aberhart_hog_pau
+			NOT = {
+				has_idea = CAN_CH_Douglas_lobe_pau
+				country_exists = GBR
+			}
+		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+		}
+		
+		remove_ideas_with_trait = head_of_government
+		add_ideas = CAN_CH_Douglas_hog_ade
+		set_country_flag = William_Aberhart_dead
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = yes
+		}
+		set_variable = {
+			current_pataut_pop = party_popularity@paternal_autocrat
+		}
+		set_variable = {
+			current_authdem_pop = party_popularity@authoritarian_democrat
+		}
+		subtract_from_variable = {
+			var = current_pataut_pop
+			value = current_authdem_pop
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = current_pataut_pop
+		}
+		set_country_leader_ideology = authdem_social_credit_subtype
+		if = {
+			limit = { has_country_flag = CAN_is_republic }
+			create_country_leader = {
+				name = "C. H. Douglas"
+				picture = "gfx/leaders/CAN/Portrait_Britain_Clifford_Hugh_Douglas.png"
+				expire = "1965.1.1"
+				ideology = authdem_social_credit_subtype
+			}
+		}
+	}
+	
+}
+
+country_event = { # Manning goes SocCon
+	id = canada.425
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.425" }
+	title = canada.425.t
+	desc = canada.425.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #cool
+		name = canada.425.a
+		set_politics = {
+			ruling_party = social_conservative
+			elections_allowed = yes
+		}
+		set_variable = {
+			current_soccred_authdem_pop = party_popularity@authoritarian_democrat
+		}
+		set_variable = {
+			current_soccon_pop = party_popularity@social_conservative
+		}
+		subtract_from_variable = {
+			var = current_soccred_authdem_pop
+			value = current_soccon_pop
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = current_soccred_authdem_pop
+		}
+		if = {
+			limit = { has_country_flag = CAN_is_republic }
+			create_country_leader = {
+				name = "Ernest Manning"
+				picture = "gfx/leaders/CAN/Portrait_Canada_Ernest_Manning.png"
+				expire = "1965.1.1"
+				ideology = social_conservative_subtype
+			}
+		}
+		set_party_name = {
+			ideology = social_conservative
+			long_name = CAN_prog_conservative_party_long
+			name = CAN_prog_conservative_party
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = CAN_prog_conservative_party_long
+			name = CAN_prog_conservative_party
+		}
+	}
+}
+
+country_event = { # UK Reclaimed
+	id = canada.426
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.426" }
+	title = canada.426.t
+	desc = canada.426.d
+	picture = GFX_report_event_CAN_duplessis
+
+	is_triggered_only = yes
+	
+	option = { #cool
+		name = canada.426.a
+		set_cosmetic_tag = CAN_UK
+		every_state = {
+			limit = { is_british_isles = yes }
+			add_core_of = CAN
+		}
+		set_variable = { GBR_pw_dev = 20 }
+		set_variable = { GBR_legacy_rev = 5 }
+		add_dynamic_modifier = { modifier = GBR_postwar_devastation }
+		add_dynamic_modifier = { modifier = GBR_legacy_revolution }
+		add_ideas = GBR_postwar_devastation_idea
+		add_ideas = GBR_legacy_revolution_idea
+		add_ideas = GBR_military_chaos_1
+		hidden_effect = {
+			every_country = {
+				limit = { has_socialist_government = yes }
+				add_opinion_modifier = { target = ROOT modifier = embargo }
+				ROOT = {
+					add_opinion_modifier = { target = PREV modifier = embargo }
+				}
+			}
+			country_event = { id = uk.4 days = 3 } #first Liberty Day
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = syndicalist
+			popularity = 0.2
+		}
+		add_popularity = {
+			ideology = radical_socialist
+			popularity = 0.2
+		}
+		add_popularity = {
+			ideology = totalist
+			popularity = 0.2
+		}
+		GBR_recalculate_legacy_revolution = yes
+		GBR_recalculate_postwar_devastation = yes
+		if = {
+			limit = {
+				has_country_leader = {
+					name = "Edward VIII"
+					ruling_only = yes
+				}
+			}
+			set_country_leader_description = {
+				desc = "POLITICS_EDWARD_GBR_DESC"
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					name = "George V"
+					ruling_only = yes
+				}
+			}
+			set_country_leader_description = {
+				desc = "POLITICS_GEORGE_GBR_DESC"
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					name = "Albert I"
+					ruling_only = yes
+				}
+			}
+			set_country_leader_description = {
+				desc = "POLITICS_ALBERT_GBR_DESC"
+			}
+		}
+	}
+}
+
+### Fate of America ###
+
 country_event = {
 	id = canada.999
 	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.999" }
@@ -8812,716 +11018,1840 @@ country_event = {
 		owns_state = 365
 		owns_state = 361
 		owns_state = 932
-		has_completed_focus = CAN_assert_royal_prerogatives
-		has_government = paternal_autocrat
+		#has_completed_focus = CAN_assert_royal_prerogatives
+		#has_government = paternal_autocrat
 	}
 
 	fire_only_once = yes
 
 	option = {
 		name = canada.999.a
-		CAN = {
-			add_state_core = 463
-			add_state_core = 1273
-			add_state_core = 386
-			add_state_core = 385
-			add_state_core = 387
-		}
-		CAN = {
-			puppet = NEE
-			add_to_faction = NEE
-			puppet = CGL
-			add_to_faction = CGL
-			puppet = FSA
-			add_to_faction = FSA
-			puppet = CAL
-			add_to_faction = CAL
-			puppet = TXS
-			add_to_faction = TXS
-			puppet = DSR
-			add_to_faction = DSR
-			puppet = AML
-			add_to_faction = AML
-			puppet = USA
-			add_to_faction = USA
-			transfer_state = 386
-			transfer_state = 385
-			transfer_state = 387
-			set_cosmetic_tag = CAN_NUMEROUNO
-		}
 		ai_chance = {
 			factor = 50
 		}
-		AML = {
-			add_state_core = 388
-			add_state_core = 389
-			add_state_core = 390
-			add_state_core = 381
-			add_state_core = 384
-			add_state_core = 382
-			add_state_core = 383
-			add_state_core = 387
-			add_state_core = 373
-			add_state_core = 1175
-			add_state_core = 1164
-			add_state_core = 1157
-			add_state_core = 1163
-			add_state_core = 1150
-			transfer_state = 388
-			transfer_state = 389
-			transfer_state = 390
-			transfer_state = 381
-			transfer_state = 384
-			transfer_state = 382
-			transfer_state = 383
-			transfer_state = 373
-			transfer_state = 1175
-			transfer_state = 1164
-			transfer_state = 1157
-			transfer_state = 1163
-			transfer_state = 1150
-			set_politics = {
-				ruling_party = authoritarian_democrat
-				elections_allowed = no
-			}
-			set_party_name = {
-			ideology = authoritarian_democrat
-			long_name = "Midwestern Administration Zone"
-			name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "Midwestern Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "Midwestern Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = AML_Dominion
-			create_country_leader = {
-				name = "Harold Alexander"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Harold_Alexander.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Harold Alexander"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Harold_Alexander.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Harold Alexander"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Harold_Alexander.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
-		DSR = {
-			add_state_core = 380
-			add_state_core = 377
-			add_state_core = 376
-			add_state_core = 1174
-			add_state_core = 379
-			transfer_state = 377
-			transfer_state = 376
-			transfer_state = 380
-			transfer_state = 1174
-			transfer_state = 379
-			set_politics = {
-				ruling_party = authoritarian_democrat
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = "Utahn Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "Utahn Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "Utahn Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = DSR_Dominion
-			create_country_leader = {
-				name = "Harry Crerar"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Harry_Crerar.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Harry Crerar"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Harry_Crerar.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Harry Crerar"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Harry_Crerar.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
-		TXS = {
-			add_state_core = 375
-			add_state_core = 833
-			add_state_core = 1096
-			add_state_core = 1161
-			add_state_core = 1166
-			transfer_state = 375
-			transfer_state = 833
-			transfer_state = 1096
-			transfer_state = 1161
-			transfer_state = 1166
-			set_politics = {
-				ruling_party = authoritarian_democrat
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = "Texan Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "Texan Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "Texan Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = TXS_Dominion
-			create_country_leader = {
-				name = "Bernard Montgomery"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_England_Bernard_Montgomery.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Bernard Montgomery"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_England_Bernard_Montgomery.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Bernard Montgomery"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_England_Bernard_Montgomery.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
-		CAL = {
-			transfer_state = 378
-			transfer_state = 829
-			transfer_state = 797
-			transfer_state = 798
-			transfer_state = 1165
-			add_state_core = 386
-			add_state_core = 378
-			add_state_core = 829
-			add_state_core = 385
-			add_state_core = 797
-			add_state_core = 798
-			add_state_core = 1165
-			set_politics = {
-				ruling_party = authoritarian_democrat
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = "Californian Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "Californian Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "Californian Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = CAL_Dominion
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Andrew McNaughton"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Andrew_McNaughton.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
-		FSA = {
-			add_state_core = 375
-			add_state_core = 1131
-			add_state_core = 833
-			add_state_core = 374
-			add_state_core = 372
-			add_state_core = 371
-			add_state_core = 370
-			add_state_core = 369
-			add_state_core = 368
-			add_state_core = 367
-			add_state_core = 366
-			add_state_core = 365
-			add_state_core = 364
-			add_state_core = 363
-			add_state_core = 362
-			add_state_core = 1155
-			add_state_core = 1158
-			add_state_core = 1156
-			add_state_core = 1168
-			add_state_core = 1170
-			add_state_core = 1169
-			add_state_core = 1167
-			add_state_core = 1171
-			add_state_core = 1172
-			transfer_state = 372
-			transfer_state = 374
-			transfer_state = 371
-			transfer_state = 370
-			transfer_state = 369
-			transfer_state = 368
-			transfer_state = 367
-			transfer_state = 366
-			transfer_state = 365
-			transfer_state = 364
-			transfer_state = 363
-			transfer_state = 362
-			transfer_state = 1155
-			transfer_state = 1158
-			transfer_state = 1156
-			transfer_state = 1168
-			transfer_state = 1170
-			transfer_state = 1169
-			transfer_state = 1167
-			transfer_state = 1171
-			transfer_state = 1172
-			set_politics = {
-				ruling_party = authoritarian_democrat
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = "Southern Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "Southern Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "Southern Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = FSA_Dominion
-			create_country_leader = {
-				name = "J.F.C Fuller"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_CAN_JFC_Fuller.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "J.F.C Fuller"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_CAN_JFC_Fuller.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "J.F.C Fuller"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_CAN_JFC_Fuller.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
-		CGL = {
-			add_state_core = 394
-			add_state_core = 393
-			add_state_core = 395
-			add_state_core = 396
-			add_state_core = 261
-			add_state_core = 391
-			add_state_core = 392
-			add_state_core = 1173
-			add_state_core = 1152
-			add_state_core = 1154
-			add_state_core = 1151
-			add_state_core = 1153
-			transfer_state = 391
-			transfer_state = 392
-			transfer_state = 394
-			transfer_state = 393
-			transfer_state = 395
-			transfer_state = 396
-			transfer_state = 261
-			transfer_state = 1173
-			transfer_state = 1152
-			transfer_state = 1154
-			transfer_state = 1151
-			transfer_state = 1153
-			set_politics = {
-				ruling_party = authoritarian_democrat
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = "Great Lake Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "Great Lake Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "Great Lake Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = CGL_Dominion
-			create_country_leader = {
-				name = "Orde Wingate"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Orde_Wingate.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-				}
-			create_country_leader = {
-				name = "Orde Wingate"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Orde_Wingate.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-				}
-			create_country_leader = {
-				name = "Orde Wingate"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Orde_Wingate.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
-		NEE = {
-			add_state_core = 357 #Maine
-			add_state_core = 358 #NYC
-			add_state_core = 796 #Upstate
-			add_state_core = 934 #New Hampshire
-			add_state_core = 933 #Vermont
-			add_state_core = 932 #Massachusetts
-			add_state_core = 931 #Connecticut
-			add_state_core = 935 #Rhode Island
-			transfer_state = 357
-			transfer_state = 796
-			transfer_state = 934
-			transfer_state = 933
-			transfer_state = 932
-			transfer_state = 931
-			transfer_state = 935
-			set_politics = {
-				ruling_party = paternal_autocrat
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = "New English Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "New English Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "New English Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = NEE_Dominion_other
-			create_country_leader = {
-				name = "Georges Vanier"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Georges_Vanier.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Georges Vanier"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Georges_Vanier.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Georges Vanier"
-				desc = ""
-				picture = "gfx/leaders/CAN/Portrait_Canada_Georges_Vanier.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
-		USA = {
-			transfer_state = 361
-			transfer_state = 1159
-			transfer_state = 1160
-			transfer_state = 360
-			transfer_state = 930
-			transfer_state = 1162
-			transfer_state = 358
-			transfer_state = 929
-			transfer_state = 359
-			set_politics = {
-				ruling_party = paternal_autocrat
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = "Federal Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "Federal Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "Federal Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = USA_Dominion
-			create_country_leader = {
-				name = "Joseph Kennedy Sr."
-				desc = ""
-				picture = "gfx/leaders/NEE/Portrait_NEE_Kennedy_governor_general.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Joseph Kennedy Sr."
-				desc = ""
-				picture = "gfx/leaders/NEE/Portrait_NEE_Kennedy_governor_general.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Joseph Kennedy Sr."
-				desc = ""
-				picture = "gfx/leaders/NEE/Portrait_NEE_Kennedy_governor_general.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
+		CAN_fuck_up_US = yes
 	}
 	option = {
 		name = canada.999.b
 		ai_chance = {
 			factor = 30
 		}
-		CAN = {
-			add_state_core = 463
-			add_state_core = 1273
-			add_state_core = 386
-			add_state_core = 385
-			add_state_core = 387
-		}
-		add_stability = 0.1
-		CAN = {
-			puppet = USA
-			add_to_faction = USA
-			transfer_state = 386
-			transfer_state = 385
-			transfer_state = 387
-		}
-		USA = {
-			transfer_state = 361
-			transfer_state = 1159
-			transfer_state = 1160
-			transfer_state = 360
-			transfer_state = 930
-			transfer_state = 1162
-			transfer_state = 358
-			transfer_state = 929
-			transfer_state = 359
-			transfer_state = 391
-			transfer_state = 392
-			transfer_state = 394
-			transfer_state = 393
-			transfer_state = 395
-			transfer_state = 396
-			transfer_state = 261
-			transfer_state = 1173
-			transfer_state = 1152
-			transfer_state = 1154
-			transfer_state = 1151
-			transfer_state = 1153
-			transfer_state = 372
-			transfer_state = 374
-			transfer_state = 371
-			transfer_state = 370
-			transfer_state = 369
-			transfer_state = 368
-			transfer_state = 367
-			transfer_state = 366
-			transfer_state = 365
-			transfer_state = 364
-			transfer_state = 363
-			transfer_state = 362
-			transfer_state = 1155
-			transfer_state = 1158
-			transfer_state = 1156
-			transfer_state = 1168
-			transfer_state = 1170
-			transfer_state = 1169
-			transfer_state = 1167
-			transfer_state = 1171
-			transfer_state = 1172
-			transfer_state = 378
-			transfer_state = 829
-			transfer_state = 797
-			transfer_state = 798
-			transfer_state = 1165
-			transfer_state = 375
-			transfer_state = 833
-			transfer_state = 1096
-			transfer_state = 1161
-			transfer_state = 1166
-			transfer_state = 377
-			transfer_state = 376
-			transfer_state = 380
-			transfer_state = 1174
-			transfer_state = 379
-   			transfer_state = 388
-			transfer_state = 389
-			transfer_state = 390
-			transfer_state = 381
-			transfer_state = 384
-			transfer_state = 382
-			transfer_state = 383
-			transfer_state = 373
-			transfer_state = 1175
-			transfer_state = 1164
-			transfer_state = 1157
-			transfer_state = 1163
-			transfer_state = 1150
-			set_politics = {
-				ruling_party = paternal_autocrat
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = authoritarian_democrat
-				long_name = "Federal Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = paternal_autocrat
-				long_name = "Federal Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_party_name = {
-				ideology = national_populist
-				long_name = "Federal Administration Zone"
-				name = "Canadian Military Occupation"
-			}
-			set_cosmetic_tag = USA_Dominion
-			create_country_leader = {
-				name = "Joseph Kennedy Sr."
-				desc = ""
-				picture = "gfx/leaders/NEE/Portrait_NEE_Kennedy_governor_general.png"
-				expire = "1965.1.1"
-				ideology = authdem_junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Joseph Kennedy Sr."
-				desc = ""
-				picture = "gfx/leaders/NEE/Portrait_NEE_Kennedy_governor_general.png"
-				expire = "1965.1.1"
-				ideology = junta_subtype
-				traits = {}
-			}
-			create_country_leader = {
-				name = "Joseph Kennedy Sr."
-				desc = ""
-				picture = "gfx/leaders/NEE/Portrait_NEE_Kennedy_governor_general.png"
-				expire = "1965.1.1"
-				ideology = militarism_subtype
-				traits = {}
-			}
-		}
+		CAN_form_US_puppet = yes
 	}
 	option = {
 		name = canada.999.c
 		ai_chance = {
 			factor = 0
 		}
-		set_cosmetic_tag = CAN_NUMEROUNO
-		add_stability = -0.2
-		every_state = {
-                limit = {
-					is_united_states = yes
-					}
-				add_core_of = CAN
+		trigger = {
+			NOT = {
+				has_global_flag = CAN_is_uk
+			}
 		}
+		set_country_flag = CAN_occupied_US
+		add_stability = -0.2
+		CAN_add_US_cores = yes
+		set_cosmetic_tag = CAN_NUMEROUNO
+	}
+	option = {
+		name = canada.999.c
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			has_global_flag = CAN_is_uk
+		}
+		set_country_flag = CAN_occupied_US
+		add_stability = -0.2
+		add_ideas = CAN_american_resistance_idea
+	}
+}
+
+#####Taking the Islands of the North Atlantic#####
+country_event = {# Occupying the north atlantic
+	id = canada.820
+	immediate = { log = "[GetDateText]: [Root.GetName]: event canada.82820" }
+	title = canada.820.t
+	desc = canada.820.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		CAN = { has_completed_focus = CAN_iceland_demands }
+		DEN = {
+			controls_state = 100
+			controls_state = 101
+		}
+		DEN = {
+			has_war = yes
+			surrender_progress > 0.50
+		}
+		AND = {
+			OR = {
+				ENG = {
+					OR = {
+						controls_state = 99
+						controls_state = 37
+					}
+				}
+
+				FRA = {
+					OR = {
+						controls_state = 99
+						controls_state = 37
+					}
+				}
+
+				RUS = {
+					OR = {
+						controls_state = 99
+						controls_state = 37
+					}
+				}
+			}
+		}
+		NOT = {
+			is_subject = yes
+			DEN = { is_in_faction_with = CAN }
+			has_war_with = DEN
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = {
+		name = canada.820.a
+
+		ai_chance = {
+			factor = 90
+		}
+
+		reverse_add_opinion_modifier = { target = DEN modifier = CAN_OCC_GREENLAND } # -100
+		reverse_add_opinion_modifier = { target = GER modifier = CAN_OCC_GREENLAND } # -100
+		hidden_effect = { DEN = { country_event = { id = canada.830 days = 1 }}}
+	}
+
+	option = {
+		name = canada.820.b
+
+		ai_chance = {
+			factor = 10
+		}
+
+		add_war_support = -0.08
+		reverse_add_opinion_modifier = { target = ENG modifier = CAN_NO_GREENLAND } # 25
+	}
+}
+
+country_event = {# Danish Response
+	id = canada.830
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.830"}
+	title = canada.830.t
+	desc = canada.830.d
+	picture = diplomacy1
+
+	is_triggered_only = yes
+
+	option = { #Yes
+		name = canada.830.a
+
+		ai_chance = {
+			factor = 100
+		}
+
+		if = {
+			limit = { owns_state = 100 } #Iceland
+			CAN = { transfer_state = 100 }
+		}
+		if = {
+			limit = { owns_state = 101 } #Greenland
+			CAN = { transfer_state = 101 }
+		}
+		if = {
+			limit = { owns_state = 337 } #Faroese
+			CAN = { transfer_state = 337 }
+		}
+		if = {
+			limit = { owns_state = 926 } #Sermersuaq
+			CAN = { transfer_state = 926 }
+		}
+		
+		ICE = {
+			if = {
+				limit = {
+					has_socialist_government = no
+					NOT = {
+						is_subject_of = CAN
+					}
+				}
+			}
+			country_event = {
+				id = canada.662 #Canada Demands we Submit
+				days = 2
+			}
+		}
+
+		add_stability = -0.01
+		reverse_add_opinion_modifier = { target = CAN modifier = CAN_OCC_GREE } # -25
+
+		hidden_effect = { DEN = { country_event = { id = canada.840 days = 1 }}}
+	}
+
+	option = { #No
+		name = canada.830.b
+
+		ai_chance = {
+			factor = 0
+		}
+
+		add_stability = -0.08
+		CAN = { declare_war_on = { target = DEN type = annex_everything	} }
+		add_opinion_modifier = { target = CAN modifier = DEN_WAR_CAN } # -200
+	}
+}
+
+country_event = {# Canadian seizure is unopposed
+	id = canada.840
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.840"}
+	title = canada.840.t
+	desc = canada.840.d
+	picture = diplomacy1
+
+	is_triggered_only = yes
+
+	option = { #Yes
+		name = canada.840.a
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {# Denmark Accepts Claim
+	id = canada.640
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.640"}
+	title = canada.640.t
+	desc = canada.640.d
+	picture = diplomacy1
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.640.a
+		FROM = {
+			if = {
+				limit = { owns_state = 100 }
+				CAN = { transfer_state = 100 }
+			}
+			if = {
+				limit = { owns_state = 101 }
+				CAN = { transfer_state = 101 }
+			}
+			if = {
+				limit = { owns_state = 337 }
+				CAN = { transfer_state = 337 }
+			}
+			if = {
+				limit = { owns_state = 926 }
+				CAN = { transfer_state = 926 }
+			}
+		}
+		ICE = {
+			if = {
+				limit = {
+					has_socialist_government = no
+					NOT = {
+						is_subject_of = CAN
+					}
+				}
+			}
+			country_event = {
+				id = canada.662 #Canada Demands we Submit
+				days = 2
+			}
+		}
+	}
+}
+country_event = {# Denmark Rejects Claim
+	id = canada.650
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.650"}
+	title = canada.650.t
+	desc = canada.650.d
+	picture = diplomacy1
+
+	is_triggered_only = yes
+
+	option = {# Oh well
+		name = canada.650.a
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				DEN = { has_war = yes }
+			}
+		}
+
+		add_stability = -0.01
+	}
+	option = {# Take them anyway!
+		name = canada.650.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				DEN = { has_war = yes }
+			}
+			modifier = {
+				factor = 0.5
+				DEN = {
+					OR = {
+						is_in_faction_with = GER
+						is_in_faction_with = ENG
+					}
+				}
+			}
+		}
+		country_event = { id = canada.660 days = 1 }
+		add_stability = -0.15
+	}
+}
+country_event = {# Canada Claims Greenland and Iceland
+	id = canada.6600
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.6600"}
+	title = canada.6600.t
+	desc = canada.6600.d
+	picture = diplomacy1
+
+	is_triggered_only = yes
+
+	option = { #Concede
+		name = canada.6600.a
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				OR = {
+					DEN = { is_in_faction_with = GER }
+					DEN = { is_in_faction_with = ENG }
+				}
+			}
+			modifier = {
+				factor = 3
+				DEN = { has_war = yes }
+			}
+		}
+
+		effect_tooltip = {
+			if = {
+				limit = { owns_state = 100 } #Iceland
+				CAN = { transfer_state = 100 }
+			}
+			if = {
+				limit = { owns_state = 101 } #Greenland
+				CAN = { transfer_state = 101 }
+			}
+			if = {
+				limit = { owns_state = 337 } #Faeroe
+				CAN = { transfer_state = 337 }
+			}
+			if = {
+				limit = { owns_state = 926 } #Sermersuaq
+				CAN = { transfer_state = 926 }
+			}
+		}
+
+		add_opinion_modifier = { target = CAN modifier = CAN_OCC_GREENLAND } # -100
+		hidden_effect = { CAN = { country_event = { id = canada.640 days = 1 } } }
+	}
+	option = { #Reject
+		name = canada.6600.b
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				OR = {
+					DEN = { is_in_faction_with = GER }
+					DEN = { is_in_faction_with = ENG }
+				}
+			}
+			modifier = {
+				factor = 0.5
+				DEN = { has_war = yes }
+			}
+			modifier = {
+				factor = 0
+				DEN = {
+					OR = {
+						NOT = { controls_state = 99 }
+						NOT = { controls_state = 37 }
+					}
+				}
+			}
+		}
+
+		reverse_add_opinion_modifier = { target = CAN modifier = DEN_CAN_REJ } # -50
+		hidden_effect = { CAN = { country_event = { id = canada.650 days = 1 } } }
+	}
+}
+country_event = {# Greenland and Iceland occupied
+	id = canada.660
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.660"}
+	title = canada.660.t
+	desc = canada.660.d
+	picture = towar
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {# We have the islands
+		name = canada.660.a
+		if = {
+			limit = {
+				DEN = {
+					owns_state = 100 #Iceland
+				}
+			}
+			CAN = { transfer_state = 100 }
+		}
+		if = {
+			limit = {
+				DEN = {
+					owns_state = 101 #Greenland
+				}
+			}
+			CAN = { transfer_state = 101 }
+		}
+		if = {
+			limit = {
+				DEN = {
+					owns_state = 337 #Faeroe
+				}
+			}
+			CAN = { transfer_state = 337 }
+		}
+		if = {
+			limit = {
+				DEN = {
+					owns_state = 926 #Sermersuaq
+				}
+			}
+			CAN = { transfer_state = 926 }
+		}
+		DEN = { country_event = { id = canada.661 } }
+	}
+}
+country_event = {# Denmark is notified about Canada taking the North Atlantic
+	id = canada.661
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.661"}
+	title = canada.661.t
+	desc = canada.661.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Damn you canada
+		name = canada.661.a
+		ai_chance = { factor = 100 }
+		reverse_add_opinion_modifier = { target = CAN modifier = CAN_invaded_islands }# -70
+	}
+	option = {# War with Canada
+		name = canada.661.b
+		ai_chance = { factor = 0 }
+		declare_war_on = { target = CAN type = annex_everything }
+	}
+}
+
+country_event = {# Iceland is notified about Denmark Conceding
+	id = canada.662
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.662"}
+	title = canada.662.t
+	desc = canada.662.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Join the Canadians
+		name = canada.662.a
+		ai_chance = { factor = 50 }
+		CAN = {
+			country_event = {
+				id = canada.664
+				days = 2
+			}
+			change_tag_from = ROOT
+		}
+	}
+	
+	option = {# Join the Entente
+		name = canada.662.b
+		ai_chance = { factor = 25 }
+		CAN = {
+			puppet = ICE
+			country_event = {
+				id = canada.663
+				days = 2
+			}
+		}
+		complete_national_focus = ICE_Ottawa_King
+	}
+	
+	option = {# War with Canada
+		name = canada.662.c
+		ai_chance = { factor = 25 }
+		CAN = {
+			country_event = {
+				id = canada.665
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = {# Canada is notified about Iceland Joining the Entente
+	id = canada.663
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.663"}
+	title = canada.663.t
+	desc = canada.663.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Cool
+		name = canada.663.a
+		add_political_power = 40
+	}
+}
+
+country_event = {# Canada is notified about Iceland Conceding
+	id = canada.664
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.664"}
+	title = canada.664.t
+	desc = canada.664.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Cool
+		name = canada.664.a
+		annex_country = {
+			target = ICE
+			transfer_troops = yes
+		}
+	}
+}
+
+country_event = {# Canada is notified about Iceland Refusing
+	id = canada.665
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.665"}
+	title = canada.665.t
+	desc = canada.665.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Crush them
+		name = canada.665.a
+		ai_chance = { factor = 50 }
+		ICE = {
+			country_event = {
+				id = canada.667
+				days = 2
+			}
+		}
+	}
+	
+	option = {# Stand Down
+		name = canada.665.b
+		ai_chance = { factor = 50 }
+		ICE = {
+			country_event = {
+				id = canada.666
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = {# Iceland is notified about Iceland Standing Down
+	id = canada.666
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.666"}
+	title = canada.666.t
+	desc = canada.666.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# 
+		name = canada.666.a
+		
+	}
+	
+}
+
+country_event = {# Iceland is notified about British Demands
+	id = canada.667
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.667"}
+	title = canada.667.t
+	desc = canada.667.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Submit to the UOB
+		name = canada.667.a
+		ai_chance = { factor = 20 }
+		complete_national_focus = ICE_English_Pup
+		set_global_flag = Cod_War_TI_Victory
+		set_politics = { ruling_party = syndicalist elections_allowed = yes }
+		remove_all_ministers = yes
+		add_ideas = ICE_Einar_Olgeirsson_hog_syn
+		add_ideas = ICE_Emil_Jonsson_for_syn
+		add_ideas = ICE_Einar_Arnason_eco_rso
+		add_ideas = ICE_Hedinn_Valdimarsson_sec_syn
+		add_popularity = { ideology = syndicalist popularity = 0.15 }
+		add_popularity = { ideology = radical_socialist popularity = 0.05 }
+		CAN = {
+			country_event = {
+				id = canada.668
+				days = 2
+			}
+		}
+	}
+	
+	option = {# Stand Down
+		name = canada.667.b
+		ai_chance = { factor = 40 }
+		CAN = {
+			puppet = ICE
+			country_event = {
+				id = canada.663
+				days = 2
+			}
+		}
+	}
+	
+	option = {# We don't need no Britain
+		name = canada.667.c
+		ai_chance = { factor = 40 }
+		declare_war_on = {
+			target = CAN
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {# Canada is notified about being screwed
+	id = canada.668
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.668"}
+	title = canada.668.t
+	desc = canada.668.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# 
+		name = canada.668.a
+		add_political_power = -40
+	}
+	
+}
+
+### Return of Belize
+
+country_event = {# Canada Demands the Return of British Honduras
+	id = canada.669
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.669"}
+	title = canada.669.t
+	desc = canada.669.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# No
+		name = canada.669.a
+		ai_chance = {
+			factor = 50
+		}
+		CAN = {
+			country_event = {
+				id = canada.670
+				days = 2
+			}
+		}
+	}
+	
+	option = {# Yes
+		name = canada.669.b
+		ai_chance = {
+			factor = 25
+		}
+		CAN = {
+			country_event = {
+				id = canada.671
+				days = 2
+			}
+		}
+	}
+	
+	option = {# Only if they fuck up Nicaragua
+		name = canada.669.c
+		trigger = {
+			has_war_with = NIC
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = -20
+				NIC = {
+					is_ai = no
+				}
+			}
+		}
+		CAN = {
+			country_event = {
+				id = canada.672
+				days = 2
+			}
+		}
+	}
+	
+}
+
+country_event = {# Canada Demands the Return of British Honduras
+	id = canada.670
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.670"}
+	title = canada.670.t
+	desc = canada.670.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# War with Guatemala
+		name = canada.670.a
+		ai_chance = {
+			factor = 25
+		}
+		create_wargoal = {
+			target = GUA
+			type = annex_everything
+		}
+		set_country_flag = CAN_war_with_guatemala
+	}
+	
+	option = {# Eh
+		name = canada.670.b
+		ai_chance = {
+			factor = 75
+		}
+		add_war_support = -0.05
+		add_stability = 0.02
+	}
+	
+}
+
+country_event = {# Return of British Honduras
+	id = canada.671
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.671"}
+	title = canada.671.t
+	desc = canada.671.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Keep Belize
+		name = canada.671.a
+		ai_chance = {
+			factor = 25
+		}
+		CAN = {
+			transfer_state = 311
+			add_state_core = 311
+		}
+		GUA = {
+			remove_state_core = 311
+		}
+	}
+	
+	option = {# Give to WIF
+		name = canada.671.b
+		ai_chance = {
+			factor = 75
+		}
+		CAF = {
+			transfer_state = 311
+			add_state_core = 311
+		}
+		GUA = {
+			remove_state_core = 311
+		}
+	}
+	
+	# option = {# Independent Belize
+		# name = canada.671.c
+		# ai_chance = {
+			# factor = 75
+		# }
+		# BLZ = {
+			# transfer_state = 311
+			# add_state_core = 311
+			# create_country_leader = {
+				# name = "Alan Cuthbert Burns"
+				# picture = "gfx/leaders/BLZ/Portrait_BLZ_Alan_Burns.png"
+				# expire = "1965.1.1"
+				# ideology = soclib_colonial_govt_subtype
+				# traits = { tenacious_negotiator }
+			# }
+		# }
+		# BLZ = {
+			# get_current_government_type = yes
+		# }
+		# CAN = {
+			# puppet = BLZ
+		# }
+		# BLZ = {
+			# restore_previous_government_type = yes
+		# }
+		# BLZ = {
+			# set_politics = {
+				# ruling_party = social_liberal
+				# elections_allowed = no
+			# }
+			# add_popularity = {
+				# ideology = social_liberal
+				# popularity = 0.3
+			# }
+		# }
+		# GUA = {
+			# remove_state_core = 311
+		# }
+	# }
+	
+}
+
+country_event = {# Return of British Honduras if you helped NIC
+	id = canada.6710
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.671"}
+	title = canada.671.t
+	desc = canada.671.d_war
+	picture = towar
+
+	trigger = {
+		tag = CAN
+		has_country_flag = CAN_intervened_against_NIC
+		NIC = {
+			exists = no
+		}
+	}
+
+	option = {# Keep Belize
+		name = canada.671.a
+		ai_chance = {
+			factor = 25
+		}
+		CAN = {
+			transfer_state = 311
+			add_state_core = 311
+		}
+		GUA = {
+			remove_state_core = 311
+		}
+	}
+	
+	option = {# Give to WIF
+		name = canada.671.b
+		ai_chance = {
+			factor = 75
+		}
+		CAF = {
+			transfer_state = 311
+			add_state_core = 311
+		}
+		GUA = {
+			remove_state_core = 311
+		}
+	}
+	
+	# option = {# Independent Belize
+		# name = canada.671.c
+		# ai_chance = {
+			# factor = 75
+		# }
+		# BLZ = {
+			# transfer_state = 311
+			# add_state_core = 311
+			# create_country_leader = {
+				# name = "Alan Cuthbert Burns"
+				# picture = "gfx/leaders/BLZ/Portrait_BLZ_Alan_Burns.png"
+				# expire = "1965.1.1"
+				# ideology = soclib_colonial_govt_subtype
+				# traits = { tenacious_negotiator }
+			# }
+		# }
+		# BLZ = {
+			# get_current_government_type = yes
+		# }
+		# CAN = {
+			# puppet = BLZ
+		# }
+		# BLZ = {
+			# restore_previous_government_type = yes
+		# }
+		# BLZ = {
+			# set_politics = {
+				# ruling_party = social_liberal
+				# elections_allowed = no
+			# }
+			# add_popularity = {
+				# ideology = social_liberal
+				# popularity = 0.3
+			# }
+		# }
+		# GUA = {
+			# remove_state_core = 311
+		# }
+	# }
+	
+}
+
+country_event = {# Guatemala accepts if we fuck up Nicaragua
+	id = canada.672
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.672"}
+	title = canada.672.t
+	desc = canada.672.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Fine by Us
+		name = canada.672.a
+		ai_chance = {
+			factor = 50
+		}
+		declare_war_on = {
+			tag = NIC
+			type = annex_everything
+		}
+		set_country_flag = CAN_intervened_against_NIC
+	}
+	
+	option = {# Eh
+		name = canada.672.b
+		ai_chance = {
+			factor = 50
+		}
+		add_war_support = -0.05
+		add_stability = 0.02
+	}
+}
+
+### Return of Falklands
+
+country_event = {# Canada Demands the Return of the Falklands
+	id = canada.673
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.673"}
+	title = canada.673.t
+	desc = canada.673.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# No
+		name = canada.673.a
+		ai_chance = {
+			factor = 50
+		}
+		CAN = {
+			country_event = {
+				id = canada.674
+				days = 2
+			}
+		}
+	}
+	
+	option = {# Yes
+		name = canada.673.b
+		ai_chance = {
+			factor = 25
+		}
+		CAN = {
+			country_event = {
+				id = canada.675
+				days = 2
+			}
+		}
+	}
+	
+	option = {# Only if they fuck up the FOP
+		name = canada.673.c
+		trigger = {
+			has_war_with = FOP
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = -20
+				FOP = {
+					is_ai = no
+				}
+			}
+		}
+		CAN = {
+			country_event = {
+				id = canada.676
+				days = 2
+			}
+		}
+	}
+	
+}
+
+country_event = {# Argentina Refuses
+	id = canada.674
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.674"}
+	title = canada.674.t
+	desc = canada.674.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# War with Guatemala
+		name = canada.674.a
+		ai_chance = {
+			factor = 25
+		}
+		create_wargoal = {
+			target = GUA
+			type = annex_everything
+		}
+		set_country_flag = CAN_war_with_guatemala
+	}
+	
+	option = {# Eh
+		name = canada.674.b
+		ai_chance = {
+			factor = 75
+		}
+		add_war_support = -0.05
+		add_stability = 0.02
+	}
+	
+}
+
+country_event = {# Return of the Falklands
+	id = canada.675
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.675"}
+	title = canada.675.t
+	desc = canada.675.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Cool
+		name = canada.675.a
+		ai_chance = {
+			factor = 25
+		}
+		CAN = {
+			transfer_state = 299
+			add_state_core = 299
+		}
+		ARG = {
+			remove_state_core = 299
+		}
+	}
+	
+}
+
+country_event = {# Return of British Honduras if you beat FOP
+	id = canada.6750
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.675"}
+	title = canada.675.t
+	desc = canada.675.d_war
+	picture = towar
+
+	trigger = {
+		tag = CAN
+		has_country_flag = CAN_intervened_against_FOP
+		FOP = {
+			exists = no
+		}
+	}
+
+	option = {# Cool
+		name = canada.675.a
+		CAN = {
+			transfer_state = 299
+			add_state_core = 299
+		}
+		ARG = {
+			remove_state_core = 299
+		}
+	}
+}
+
+country_event = {# Argentina accepts if we fuck up the FOP
+	id = canada.676
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.676"}
+	title = canada.676.t
+	desc = canada.676.d
+	picture = towar
+
+	is_triggered_only = yes
+
+	option = {# Fine by Us
+		name = canada.676.a
+		ai_chance = {
+			factor = 50
+		}
+		declare_war_on = {
+			tag = FOP
+			type = annex_everything
+		}
+		declare_war_on = {
+			tag = CHL
+			type = annex_everything
+		}
+		set_country_flag = CAN_intervened_against_FOP
+	}
+	
+	option = {# Eh
+		name = canada.676.b
+		ai_chance = {
+			factor = 50
+		}
+		add_war_support = -0.05
+		add_stability = 0.02
+	}
+}
+
+#####Treaty with Germany#####
+country_event = {# Canadian - German Treaty
+	id = canada.3060
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3060"}
+	title = canada.3060.t
+	desc = canada.3060.d
+	picture = diplomacy2
+
+	is_triggered_only = yes
+
+	trigger = {
+		country_exists = CAN
+		country_exists = ENG
+		NOT = { has_war_with = CAN }
+	}
+
+	option = {# Accept
+		name = canada.3060.a
+		ai_chance = {
+			factor = 90
+		}
+		set_global_flag = CAN_germany_treaty
+		if = {
+			limit = { country_exists = CAN }
+			add_opinion_modifier = { target = CAN modifier = CAN_GER_treaty_accept }
+			reverse_add_opinion_modifier = { target = CAN modifier = CAN_GER_treaty_accept }
+		}
+		if = {
+			limit = { country_exists = CAN }
+			diplomatic_relation = { country = CAN relation = non_aggression_pact }
+		}
+		CAN = {
+			if = {
+				limit = { country_exists = GER }
+				diplomatic_relation = { country = GER relation = non_aggression_pact }
+			}
+			country_event = { id = canada.3070 days = 1 }
+		}
+	}
+	option = {# Reject
+		name = canada.3060.b
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = { country_exists = CAN }
+			add_opinion_modifier = { target = CAN modifier = CAN_GER_treaty_reject }
+			reverse_add_opinion_modifier = { target = CAN modifier = CAN_GER_treaty_reject }
+		}
+		CAN = {
+			country_event = { id = canada.3080 days = 1 }
+		}
+	}
+}
+country_event = {# Germany accepts treaty
+	id = canada.3070
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3070"}
+	title = canada.3070.t
+	desc = canada.3070.d
+	picture = diplomacy2
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3070.a
+		add_stability = 0.08
+	}
+}
+country_event = {# Germany rejects treaty
+	id = canada.3080
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3080"}
+	title = canada.3080.t
+	desc = canada.3080.d
+	picture = diplomacy2
+
+	is_triggered_only = yes
+
+	option = { #So be it
+		name = canada.3080.a
+		add_stability = -0.08
+
+	}
+}
+country_event = {# Fullfiling the Treaty
+	id = canada.3090
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3090"}
+	title = canada.3090.t
+	desc = canada.3090.d
+	picture = diplomacy2
+
+	trigger = {
+		tag = GER
+		has_global_flag = CAN_germany_treaty
+		country_exists = CAN
+		NOT = { has_war_with = CAN }
+		any_owned_state = {
+			is_controlled_by = GER
+			OR = {
+				is_core_of = ENG
+				is_core_of = SCT
+				is_core_of = WAL
+			}
+		}
+	}
+
+	mean_time_to_happen = {	days = 5 }
+
+	option = {# Give the Land back
+		name = canada.3090.a
+		ai_chance = { factor = 95 }
+		if = {
+			limit = {
+				126 = { is_owned_and_controlled_by = GER } #Greater London Area
+				122 = { is_owned_and_controlled_by = GER } #Wales
+				136 = { is_owned_and_controlled_by = GER } #Aberdeenshire
+			}
+			clr_global_flag = CAN_germany_treaty
+		}
+		every_owned_state = {
+			limit = {
+				is_controlled_by = GER
+				OR = {
+					is_core_of = ENG
+					is_core_of = SCT
+					is_core_of = WAL
+				}
+			}
+			CAN = { transfer_state = PREV }
+		}
+	}
+	option = {# We shall not.
+		name = canada.3090.b
+		ai_chance = { factor = 5 }
+		add_stability = -0.08
+		clr_global_flag = CAN_germany_treaty
+	}
+}
+
+#####Treaty with Portugal#####
+country_event = {# Canadian - Portugal Treaty
+	id = canada.3000
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3000"}
+	title = canada.3000.t
+	desc = canada.3000.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = { #Accept
+		name = canada.3000.a
+		ai_chance = {
+			factor = 90
+		}
+		set_global_flag = CAN_portugal_treaty
+		add_opinion_modifier = { target = CAN modifier = CAN_POR_treaty_accept }
+		CAN = { add_opinion_modifier = { target = ROOT modifier = CAN_POR_treaty_accept } }
+		CAN = {
+			give_military_access = POR
+			give_guarantee = POR
+			if = {
+				limit = { country_exists = POR }
+				diplomatic_relation = { country = POR relation = non_aggression_pact }
+			}
+			country_event = { id = canada.3011 days = 1 }
+		}
+	}
+	option = { #Reject
+		name = canada.3000.b
+		ai_chance = {
+			factor = 10
+		}
+		add_opinion_modifier = { target = CAN modifier = CAN_POR_treaty_reject }
+		CAN = { add_opinion_modifier = { target = ROOT modifier = CAN_POR_treaty_reject } }
+		CAN = { country_event = { id = canada.3020 days = 1 } }
+
+	}
+}
+
+country_event = {# Portugal accepts treaty
+	id = canada.3011
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3011"}
+	title = canada.3011.t
+	desc = canada.3011.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3011.a
+		add_stability = 0.08
+	}
+}
+
+country_event = {# Portugal rejects treaty
+	id = canada.3020
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3020"}
+	title = canada.3020.t
+	desc = canada.3020.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = { #So be it
+		name = canada.3020.a
+		add_stability = -0.08
+
+	}
+}
+
+country_event = {# Portugal Alliance
+	id = canada.3030
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3030"}
+	title = canada.3030.t
+	desc = canada.3030.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {# accept
+		name = canada.3030.a
+		ai_chance = {
+			factor = 100
+		}
+		CAN = { country_event = { id = canada.3040 days = 1 }}
+	}
+	option = { #reject
+		name = canada.3030.b
+		ai_chance = {
+			factor = 0
+		}
+		CAN = { country_event = { id = canada.3050 days = 1 }}
+	}
+}
+
+country_event = {# Portugal joins Entente
+	id = canada.3040
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3040"}
+	title = canada.3040.t
+	desc = canada.3040.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3040.a
+		add_to_faction = POR
+	}
+}
+
+country_event = {# Portugal rejects aid deal
+	id = canada.3050
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3050"}
+	title = canada.3050.t
+	desc = canada.3050.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3050.a
+		add_opinion_modifier = { target = POR modifier = CAN_POR_alliance_reject }
+		POR = { add_opinion_modifier = { target = ROOT modifier = CAN_POR_alliance_reject } }
+
+	}
+}
+
+### British Sabatoge ###
+
+country_event = {# Naval Sabatoge Campaign Goes Well
+	id = canada.3051
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3051"}
+	title = canada.3051.t
+	desc = canada.3051.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3051.a
+		add_political_power = 50
+		navy_experience = 30
+		ENG = {
+			add_timed_idea {
+				idea = ENG_shitty_navy
+				days = 430
+			}
+		}
+		set_country_flag = CAN_weakened_uob_navy
+	}
+}
+
+country_event = {# Naval Sabatoge Campaign Fails
+	id = canada.3052
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3052"}
+	title = canada.3052.t
+	desc = canada.3052.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3052.a
+		add_political_power = -50
+		navy_experience = -30
+	}
+}
+
+### Seizing Shetland ###
+
+country_event = {# England is informed that the Canadians are at it again
+	id = canada.3053
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3053"}
+	title = canada.3053.t
+	desc = canada.3053.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3053.a
+		
+	}
+}
+
+country_event = {# Shetland Operation Fails
+	id = canada.3054
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3054"}
+	title = canada.3054.t
+	desc = {
+		text = canada.3054.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3054.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3054.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = -50
+		navy_experience = -30
+	}
+	
+	option = {
+		name = canada.3054.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = -50
+		navy_experience = -30
+	}
+}
+
+country_event = {# Shetland Operation Succeeds Somewhat
+	id = canada.3055
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3055"}
+	title = canada.3055.t
+	desc = {
+		text = canada.3055.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3055.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3055.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = -50
+		navy_experience = 30
+		set_country_flag = CAN_shetland_will_rise_up
+	}
+	
+	option = {
+		name = canada.3054.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = 50
+		navy_experience = -30
+	}
+}
+
+country_event = {# Shetland Operation Succeeds
+	id = canada.3056
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3055"}
+	title = canada.3056.t
+	desc = {
+		text = canada.3056.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3056.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3056.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = 50
+		navy_experience = 30
+		CAN = {
+			transfer_state = 938
+		}
+		set_global_flag = CAN_canada_controls_shetland
+	}
+	
+	option = {
+		name = canada.3056.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = -50
+		navy_experience = -30
+	}
+}
+
+### Seizing the Isle of Man ###
+
+country_event = {# England is informed that the Canadians are at it again
+	id = canada.3057
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3057"}
+	title = canada.3057.t
+	desc = canada.3057.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3057.a
+		
+	}
+}
+
+country_event = {# Mann Operation Fails
+	id = canada.3058
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3058"}
+	title = canada.3058.t
+	desc = {
+		text = canada.3058.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3058.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3058.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = -50
+		navy_experience = -30
+	}
+	
+	option = {
+		name = canada.3058.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = 50
+		navy_experience = 30
+	}
+}
+
+country_event = {# Mann Operation Succeeds Somewhat
+	id = canada.3059
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3059"}
+	title = canada.3059.t
+	desc = {
+		text = canada.3059.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3059.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3059.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = -50
+		navy_experience = 30
+		set_country_flag = CAN_mann_will_rise_up
+	}
+	
+	option = {
+		name = canada.3059.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = 50
+		navy_experience = -30
+	}
+}
+
+country_event = {# Mann Operation Succeeds
+	id = canada.3160
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3160"}
+	title = canada.3160.t
+	desc = {
+		text = canada.3160.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3160.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3160.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = 50
+		navy_experience = 30
+		CAN = {
+			transfer_state = 1317
+		}
+		set_global_flag = CAN_canada_controls_mann
+	}
+	
+	option = {
+		name = canada.3160.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = -50
+		navy_experience = -30
+	}
+}
+
+### Seizing the Channel Islands ###
+
+country_event = {# England is informed that the Canadians are at it again
+	id = canada.3161
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3161"}
+	title = canada.3161.t
+	desc = canada.3161.d
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3161.a
+		
+	}
+}
+
+country_event = {# Channel Islands Operation Fails
+	id = canada.3162
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3162"}
+	title = canada.3162.t
+	desc = {
+		text = canada.3162.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3162.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3162.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = -50
+		navy_experience = -30
+	}
+	
+	option = {
+		name = canada.3162.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = 50
+		navy_experience = 30
+	}
+}
+
+country_event = {# Channel Islands Operation Succeeds Somewhat
+	id = canada.3163
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3163"}
+	title = canada.3163.t
+	desc = {
+		text = canada.3163.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3163.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3163.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = -50
+		navy_experience = 30
+		set_country_flag = CAN_channel_islands_will_rise_up
+	}
+	
+	option = {
+		name = canada.3163.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = 50
+		navy_experience = -30
+	}
+}
+
+country_event = {# Channel Islands Operation Succeeds
+	id = canada.3164
+	immediate = {log = "[GetDateText]: [Root.GetName]: event canada.3164"}
+	title = canada.3164.t
+	desc = {
+		text = canada.3164.d
+		trigger = {
+			tag = CAN
+		}
+	}
+	desc = {
+		text = canada.3164.d_eng
+		trigger = {
+			tag = ENG
+		}
+	}
+	picture = diplomacy4
+
+	is_triggered_only = yes
+
+	option = {
+		name = canada.3164.a
+		trigger = {
+			tag = CAN
+		}
+		add_political_power = 50
+		navy_experience = 30
+		CAN = {
+			transfer_state = 1315
+		}
+		set_global_flag = CAN_canada_controls_channel_islands
+	}
+	
+	option = {
+		name = canada.3164.b
+		trigger = {
+			tag = ENG
+		}
+		add_political_power = -50
+		navy_experience = -30
 	}
 }
