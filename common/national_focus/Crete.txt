@@ -1194,10 +1194,10 @@ focus_tree = {
 			focus = CRE_protectors_of_the_suez
 		}
 		prerequisite = {
-			focus = CRE_question_of_germanifaction
+			focus = CRE_a_permeant_lease
 		}
-		x = 9
-		y = 6
+		x = 10
+		y = 7
 		relative_position_id = CRE_germany_stays
 		cost = 10
 		completion_reward = {
