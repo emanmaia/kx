@@ -2477,6 +2477,7 @@ focus = {
 					}
 				}
 			686 = { add_claim_by = CAR }
+			1312 = { add_claim_by = CAR }
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -2532,6 +2533,7 @@ focus = {
 			log = "[GetDateText]: [Root.GetName]: Focus CAR_new_reconquista"
 			319 = { add_core_of = CAR }
 			686 = { add_core_of = CAR }
+			1312 = { add_core_of = CAR }
 			318 = { add_core_of = CAR }
 			set_cosmetic_tag = CAR_empire
 			add_political_power = 200
@@ -2691,7 +2693,7 @@ focus = {
 				limit = { 
 					OR = {
 					is_core_of = VEN 
-				    is_claimed_by = VEN
+					is_claimed_by = VEN
 					}
 				}	
 				add_claim_by = CAR
@@ -2779,7 +2781,7 @@ focus = {
 				limit = { 
 					OR = {
 					is_core_of = BOL 
-				    is_claimed_by = BOL
+					is_claimed_by = BOL
 					}
 				}
 				add_claim_by = CAR
